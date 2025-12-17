@@ -17,19 +17,21 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true)
-    const saved = localStorage.getItem('theme') as Theme
-    if (saved && (saved === 'dark' || saved === 'light')) {
-      setTheme(saved)
-      document.documentElement.classList.toggle('light', saved === 'light')
-    } else {
-      document.documentElement.classList.remove('light')
-    }
+    // Always start with dark mode, don't read from localStorage on initial load
+    document.documentElement.classList.remove('light')
+    document.documentElement.classList.add('dark')
   }, [])
 
   useEffect(() => {
     if (mounted) {
       localStorage.setItem('theme', theme)
-      document.documentElement.classList.toggle('light', theme === 'light')
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark')
+        document.documentElement.classList.add('light')
+      } else {
+        document.documentElement.classList.remove('light')
+        document.documentElement.classList.add('dark')
+      }
     }
   }, [theme, mounted])
 

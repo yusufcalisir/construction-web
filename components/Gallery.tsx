@@ -18,7 +18,7 @@ export default function Gallery() {
     <section
       id="works"
       className={`py-10 sm:py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${
-        theme === 'dark' ? 'bg-dark-900' : 'bg-white'
+        theme === 'dark' ? 'bg-dark-900' : 'bg-stone-50'
       }`}
     >
       <div className="max-w-7xl mx-auto">
@@ -42,10 +42,10 @@ export default function Gallery() {
             return (
               <div
                 key={index}
-                className={`relative aspect-[4/3] rounded-xl overflow-hidden border transition-all duration-500 group ${
+                className={`relative aspect-[4/3] rounded-xl overflow-hidden border-2 transition-all duration-500 group hover:scale-[1.02] hover:shadow-xl ${
                   theme === 'dark'
-                    ? 'border-dark-800 hover:border-dark-700'
-                    : 'border-stone-200 hover:border-stone-300'
+                    ? 'border-dark-800 hover:border-dark-700 shadow-lg shadow-dark-950/50'
+                    : 'border-stone-300 hover:border-stone-400 shadow-lg shadow-stone-200/50'
                 }`}
               >
                 <div className="relative w-full h-full">
@@ -53,18 +53,9 @@ export default function Gallery() {
                     src={imagePath}
                     alt={`${t('gallery.project')} ${index + 1}`}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-t opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5 ${
-                    theme === 'dark'
-                      ? 'from-dark-950/80 via-dark-950/0 to-transparent'
-                      : 'from-stone-900/60 via-stone-900/0 to-transparent'
-                  }`}>
-                    <p className="text-white font-semibold text-base">
-                      {t('gallery.project')} {index + 1}
-                    </p>
-                  </div>
                 </div>
               </div>
             )

@@ -11,7 +11,7 @@ export default function Contact() {
     <section
       id="contact"
       className={`py-10 sm:py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${
-        theme === 'dark' ? 'bg-dark-900' : 'bg-white'
+        theme === 'dark' ? 'bg-dark-900' : 'bg-stone-200'
       }`}
     >
       <div className="max-w-7xl mx-auto">
@@ -28,31 +28,33 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Phone */}
-          <div className={`rounded-xl p-8 border transition-all duration-300 ${
+          <div className={`rounded-2xl p-8 border-2 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${
             theme === 'dark'
-              ? 'bg-dark-800 border-dark-700 hover:border-dark-600'
-              : 'bg-stone-50 border-stone-200 hover:border-stone-300'
+              ? 'bg-dark-800 border-dark-700 hover:border-accent-500/50 shadow-lg shadow-dark-950/50'
+              : 'bg-white border-stone-300 hover:border-stone-400 shadow-lg shadow-stone-200/50'
           }`}>
-            <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 ${
-              theme === 'dark' ? 'bg-dark-700' : 'bg-stone-200'
+            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${
+              theme === 'dark' 
+                ? 'bg-gradient-to-br from-accent-500/20 to-accent-600/10' 
+                : 'bg-gradient-to-br from-stone-100 to-stone-50'
             }`}>
-              <svg className={`w-7 h-7 ${theme === 'dark' ? 'text-accent-400' : 'text-stone-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className={`w-8 h-8 ${theme === 'dark' ? 'text-accent-400' : 'text-stone-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
             </div>
-            <h3 className={`text-xl font-bold mb-3 transition-colors ${
+            <h3 className={`text-xl font-bold mb-4 transition-colors ${
               theme === 'dark' ? 'text-white' : 'text-stone-900'
             }`}>
               {t('contact.phone')}
             </h3>
             <a
               href="tel:+905458259495"
-              className={`text-xl font-semibold transition-colors duration-300 ${
+              className={`text-2xl font-bold transition-all duration-300 inline-block ${
                 theme === 'dark'
                   ? 'text-accent-400 hover:text-accent-300'
-                  : 'text-stone-700 hover:text-stone-900'
+                  : 'text-stone-800 hover:text-stone-900'
               }`}
             >
               0545 825 94 95
@@ -60,59 +62,65 @@ export default function Contact() {
           </div>
 
           {/* Address */}
-          <div className={`rounded-xl p-8 border transition-all duration-300 ${
+          <div className={`rounded-2xl p-8 border-2 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${
             theme === 'dark'
-              ? 'bg-dark-800 border-dark-700 hover:border-dark-600'
-              : 'bg-stone-50 border-stone-200 hover:border-stone-300'
+              ? 'bg-dark-800 border-dark-700 hover:border-accent-500/50 shadow-lg shadow-dark-950/50'
+              : 'bg-white border-stone-300 hover:border-stone-400 shadow-lg shadow-stone-200/50'
           }`}>
-            <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 ${
-              theme === 'dark' ? 'bg-dark-700' : 'bg-stone-200'
+            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${
+              theme === 'dark' 
+                ? 'bg-gradient-to-br from-accent-500/20 to-accent-600/10' 
+                : 'bg-gradient-to-br from-stone-100 to-stone-50'
             }`}>
-              <svg className={`w-7 h-7 ${theme === 'dark' ? 'text-accent-400' : 'text-stone-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className={`w-8 h-8 ${theme === 'dark' ? 'text-accent-400' : 'text-stone-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <h3 className={`text-xl font-bold mb-3 transition-colors ${
+            <h3 className={`text-xl font-bold mb-4 transition-colors ${
               theme === 'dark' ? 'text-white' : 'text-stone-900'
             }`}>
               {t('contact.address')}
             </h3>
             <p className={`text-lg leading-relaxed transition-colors ${
-              theme === 'dark' ? 'text-dark-300' : 'text-stone-600'
+              theme === 'dark' ? 'text-dark-300' : 'text-stone-700'
             }`}>
               {t('contact.location')}
             </p>
           </div>
 
           {/* Working Hours */}
-          <div className={`rounded-xl p-8 border transition-all duration-300 ${
+          <div className={`rounded-2xl p-8 border-2 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${
             theme === 'dark'
-              ? 'bg-dark-800 border-dark-700 hover:border-dark-600'
-              : 'bg-stone-50 border-stone-200 hover:border-stone-300'
+              ? 'bg-dark-800 border-dark-700 hover:border-accent-500/50 shadow-lg shadow-dark-950/50'
+              : 'bg-white border-stone-300 hover:border-stone-400 shadow-lg shadow-stone-200/50'
           }`}>
-            <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 ${
-              theme === 'dark' ? 'bg-dark-700' : 'bg-stone-200'
+            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${
+              theme === 'dark' 
+                ? 'bg-gradient-to-br from-accent-500/20 to-accent-600/10' 
+                : 'bg-gradient-to-br from-stone-100 to-stone-50'
             }`}>
-              <svg className={`w-7 h-7 ${theme === 'dark' ? 'text-accent-400' : 'text-stone-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className={`w-8 h-8 ${theme === 'dark' ? 'text-accent-400' : 'text-stone-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className={`text-xl font-bold mb-3 transition-colors ${
+            <h3 className={`text-xl font-bold mb-4 transition-colors ${
               theme === 'dark' ? 'text-white' : 'text-stone-900'
             }`}>
               {t('contact.workingHours')}
             </h3>
-            <div className={`space-y-2 text-lg ${
-              theme === 'dark' ? 'text-dark-300' : 'text-stone-600'
+            <div className={`space-y-3 text-lg ${
+              theme === 'dark' ? 'text-dark-300' : 'text-stone-700'
             }`}>
-              <div className="flex justify-between">
-                <span>{t('contact.weekdays')}:</span>
-                <span className={`font-semibold ${theme === 'dark' ? 'text-accent-400' : 'text-stone-800'}`}>{t('contact.allDay')}</span>
+              <div className="flex justify-between items-center py-2 border-b border-opacity-20" style={{
+                borderColor: theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'
+              }}>
+                <span className="font-medium">{t('contact.weekdays')}:</span>
+                <span className={`font-bold text-lg ${theme === 'dark' ? 'text-accent-400' : 'text-stone-900'}`}>{t('contact.allDay')}</span>
               </div>
-              <div className="flex justify-between">
-                <span>{t('contact.weekends')}:</span>
-                <span className={`font-semibold ${theme === 'dark' ? 'text-accent-400' : 'text-stone-800'}`}>{t('contact.allDay')}</span>
+              <div className="flex justify-between items-center py-2">
+                <span className="font-medium">{t('contact.weekends')}:</span>
+                <span className={`font-bold text-lg ${theme === 'dark' ? 'text-accent-400' : 'text-stone-900'}`}>{t('contact.allDay')}</span>
               </div>
             </div>
           </div>

@@ -1,0 +1,58 @@
+# Ber Tadilat - robots.txt
+# Tüm arama motorlarının siteyi taramasına izin ver
+
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Sitemap konumu (domain ayarlandıktan sonra güncellenecek)
+Sitemap: https://bertadilat.com/sitemap.xml
+
+# Google için özel
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Google Image Bot
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing için özel
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yandex için özel
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+# Yandex Image Bot
+User-agent: YandexImages
+Allow: /
+
+# Baidu için özel
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# DuckDuckGo için özel
+User-agent: DuckDuckBot
+Allow: /
+
+# Facebook için özel
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitter için özel
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn için özel
+User-agent: LinkedInBot
+Allow: /
+
+# WhatsApp için özel
+User-agent: WhatsApp
+Allow: /
+

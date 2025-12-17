@@ -51,7 +51,7 @@ export default function Services() {
     <section
       id="services"
       className={`py-10 sm:py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${
-        theme === 'dark' ? 'bg-dark-950' : 'bg-stone-50'
+        theme === 'dark' ? 'bg-dark-950' : 'bg-stone-100'
       }`}
     >
       <div className="max-w-7xl mx-auto">
@@ -72,10 +72,10 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.key}
-              className={`rounded-xl overflow-hidden border transition-all duration-500 group ${
+              className={`rounded-xl overflow-hidden border-2 transition-all duration-500 group hover:scale-[1.02] hover:shadow-xl ${
                 theme === 'dark'
-                  ? 'bg-dark-900 border-dark-800 hover:border-dark-700'
-                  : 'bg-white border-stone-200 hover:border-stone-300'
+                  ? 'bg-dark-900 border-dark-800 hover:border-dark-700 shadow-lg shadow-dark-950/50'
+                  : 'bg-white border-stone-300 hover:border-stone-400 shadow-lg shadow-stone-200/50'
               }`}
             >
               <div className="relative h-72 w-full overflow-hidden">

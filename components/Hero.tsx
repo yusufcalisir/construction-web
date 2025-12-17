@@ -13,7 +13,7 @@ export default function Hero() {
       className={`min-h-screen flex items-center justify-center pt-24 px-4 sm:px-6 lg:px-8 transition-colors duration-300 relative overflow-hidden ${
         theme === 'dark'
           ? 'bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950'
-          : 'bg-gradient-to-b from-stone-100 via-stone-50 to-stone-100'
+          : 'bg-gradient-to-b from-stone-200 via-stone-100 to-stone-200'
       }`}
     >
       {/* Continuous gradient drift background */}

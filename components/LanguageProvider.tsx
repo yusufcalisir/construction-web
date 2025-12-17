@@ -76,61 +76,61 @@ const translations: Record<Language, Record<string, string>> = {
   en: {
     // Navigation
     'nav.home': 'Home',
-    'nav.works': 'Our Works',
+    'nav.works': 'Our Portfolio',
     'nav.services': 'Services',
     'nav.contact': 'Contact',
     'nav.navigation': 'Navigation',
     
     // Hero
     'hero.title': 'Ber Tadilat',
-    'hero.subtitle': 'Renovate your home, workplace, and all types of spaces as you dream. Quality craftsmanship, reliable service, customer satisfaction.',
+    'hero.subtitle': 'Transform your home, workplace, and any space into exactly what you envision. Expert craftsmanship, dependable service, and complete customer satisfaction.',
     'hero.getQuote': 'Get a Quick Quote',
     
     // Gallery
-    'gallery.title': 'Our Works',
-    'gallery.subtitle': 'Examples from our completed projects',
+    'gallery.title': 'Our Portfolio',
+    'gallery.subtitle': 'A showcase of our completed projects',
     'gallery.project': 'Project',
     'gallery.image': 'Image',
     
     // Services
     'services.title': 'Our Services',
-    'services.subtitle': 'We offer solutions tailored to your needs with our wide range of services',
+    'services.subtitle': 'Comprehensive solutions tailored to meet your every need',
     
     // Service names
-    'service.dekorasyon': 'Decoration',
+    'service.dekorasyon': 'Interior Design',
     'service.restorasyon': 'Restoration',
-    'service.boya': 'Painting',
-    'service.alciplan': 'Drywall',
-    'service.fayans': 'Tiles',
-    'service.mutfak': 'Kitchen',
+    'service.boya': 'Painting & Decorating',
+    'service.alciplan': 'Drywall & Partitions',
+    'service.fayans': 'Tiling',
+    'service.mutfak': 'Kitchen Renovation',
     'service.parke': 'Flooring',
-    'service.isolation': 'Thermal and Acoustic Insulation',
-    'service.facade': 'Facade',
+    'service.isolation': 'Insulation Services',
+    'service.facade': 'Exterior Cladding',
     
     // Service descriptions
-    'service.dekorasyon.desc': 'We transform your living spaces with modern and elegant decoration solutions. With our expert team in interior design, furniture selection, and color harmony, we create the space of your dreams.',
-    'service.restorasyon.desc': 'We are experienced in restoring buildings with historical and cultural value while preserving their original character. We offer lasting solutions by combining traditional techniques with modern materials.',
-    'service.boya.desc': 'We give your walls a new look with professional painting services. We guarantee long-lasting results with quality paints, proper surface preparation, and meticulous workmanship.',
-    'service.alciplan.desc': 'We create smooth and aesthetic walls using modern techniques in drywall applications. We offer professional solutions for suspended ceilings, partition walls, and decorative applications.',
-    'service.fayans.desc': 'We provide quality tile installation services for bathrooms, kitchens, and other areas. We work meticulously on waterproofing, proper placement, and aesthetic appearance.',
-    'service.mutfak.desc': 'We specialize in modern kitchen design and installation. We make your kitchen both beautiful and functional with ergonomic planning, quality materials, and functional solutions.',
-    'service.parke.desc': 'We provide services in wood and laminate flooring with years of experience. We create long-lasting floors with proper subfloor preparation, proper installation, and finishing processes.',
-    'service.isolation.desc': 'We offer thermal and acoustic insulation solutions for energy savings and comfort. We keep your home cool in summer and warm in winter with modern insulation materials and proper application techniques.',
-    'service.facade.desc': 'We renew your building\'s appearance with facade cladding, painting, and insulation services. We guarantee long-lasting results with weather-resistant materials and professional application.',
+    'service.dekorasyon.desc': 'Our expert team brings your vision to life with contemporary interior design solutions. From concept to completion, we handle everything from furniture selection to colour schemes, creating spaces that truly reflect your style.',
+    'service.restorasyon.desc': 'Specialising in the careful restoration of historic and culturally significant buildings, we preserve their authentic character while ensuring structural integrity. Our approach blends time-honoured techniques with contemporary materials for lasting results.',
+    'service.boya.desc': 'Professional painting services that breathe new life into your property. Using premium paints and meticulous preparation, we deliver flawless finishes that stand the test of time.',
+    'service.alciplan.desc': 'Expert drywall installation and finishing for smooth, seamless walls. Whether you need suspended ceilings, partition walls, or decorative features, we provide precision workmanship and professional results.',
+    'service.fayans.desc': 'Quality tile installation for bathrooms, kitchens, and wet areas. We ensure perfect waterproofing, precise alignment, and a finish that combines durability with aesthetic appeal.',
+    'service.mutfak.desc': 'Complete kitchen design and installation services. We create beautiful, highly functional spaces through thoughtful planning, quality materials, and attention to every detail.',
+    'service.parke.desc': 'Professional wood and laminate flooring installation backed by years of expertise. From subfloor preparation to final finishing, we ensure your floors look stunning and last for years to come.',
+    'service.isolation.desc': 'Comprehensive thermal and acoustic insulation solutions for improved energy efficiency and comfort. Using advanced materials and proven techniques, we help keep your property comfortable year-round.',
+    'service.facade.desc': 'Transform your building\'s exterior with our cladding, painting, and insulation services. We use weather-resistant materials and professional application methods to deliver results that protect and enhance your property.',
     
     // Contact
-    'contact.title': 'Contact Us',
-    'contact.subtitle': 'Get a free consultation and quote for your projects',
+    'contact.title': 'Get in Touch',
+    'contact.subtitle': 'Request a free consultation and detailed quote for your project',
     'contact.phone': 'Phone',
     'contact.address': 'Address',
     'contact.location': 'Istanbul, Turkey',
-    'contact.workingHours': 'Working Hours',
+    'contact.workingHours': 'Opening Hours',
     'contact.weekdays': 'Weekdays',
     'contact.weekends': 'Weekends',
     'contact.allDay': '24/7',
     
     // Footer
-    'footer.description': 'With years of experience, we provide construction, renovation, and decoration services in Istanbul. We transform your homes, offices, or commercial spaces according to modern standards. We prioritize customer satisfaction with quality materials, professional craftsmanship, and on-time delivery guarantee.',
+    'footer.description': 'With extensive experience in Istanbul, we deliver construction, renovation, and interior design services that meet the highest standards. Whether it\'s residential, commercial, or retail spaces, we transform properties using quality materials, skilled craftsmanship, and a commitment to timely completion. Your satisfaction is our priority.',
     'footer.copyright': '© 2025 Ber Tadilat. All rights reserved.',
   },
 }
@@ -141,10 +141,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true)
-    const saved = localStorage.getItem('language') as Language
-    if (saved && (saved === 'tr' || saved === 'en')) {
-      setLanguage(saved)
-    }
+    // Always start with Turkish, don't read from localStorage on initial load
   }, [])
 
   useEffect(() => {
