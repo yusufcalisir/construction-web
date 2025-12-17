@@ -115,7 +115,7 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-10">
+            <div className="hidden lg:flex items-center space-x-10">
               <a
                 href="#home"
                 onClick={(e) => handleNavClick(e, 'home')}
@@ -204,7 +204,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center space-x-3">
+            <div className="lg:hidden flex items-center space-x-3">
               <button
                 onClick={toggleTheme}
                 className={`p-2 rounded-lg transition-all duration-300 ${
@@ -268,7 +268,7 @@ export default function Navbar() {
       {/* Mobile Navigation Overlay - Outside navbar for proper z-index */}
       {isMobileMenuOpen && (
         <div 
-          className={`md:hidden fixed inset-0 top-24 z-[60] overflow-y-auto ${
+          className={`lg:hidden fixed inset-0 top-24 z-[60] overflow-y-auto ${
             theme === 'dark' 
               ? 'bg-dark-950' 
               : 'bg-stone-50'

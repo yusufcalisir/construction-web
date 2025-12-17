@@ -22,7 +22,7 @@ export default function Footer() {
   return (
     <>
       <footer
-        className={`relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${
+        className={`relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${
           theme === 'dark' 
             ? 'bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950' 
             : 'bg-gradient-to-b from-stone-50 via-white to-stone-50'
@@ -36,20 +36,20 @@ export default function Footer() {
         }`} />
         
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-16 mb-12 sm:mb-16 items-start">
             {/* Company Info */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-4 sm:space-y-6">
               <div>
-                <h3 className={`text-3xl font-bold mb-4 transition-colors tracking-tight ${
+                <h3 className={`text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 transition-colors tracking-tight ${
                   theme === 'dark' ? 'text-white' : 'text-stone-900'
                 }`}>
                   Ber Tadilat
                 </h3>
-                <div className={`h-1 w-16 mb-6 ${
+                <div className={`h-1 w-16 mb-4 sm:mb-6 ${
                   theme === 'dark' ? 'bg-dark-700' : 'bg-stone-300'
                 }`} />
               </div>
-              <p className={`text-base leading-relaxed max-w-lg transition-colors ${
+              <p className={`text-sm sm:text-base leading-relaxed max-w-lg transition-colors ${
                 theme === 'dark' ? 'text-dark-300' : 'text-stone-600'
               }`}>
                 {t('footer.description')}
@@ -57,13 +57,13 @@ export default function Footer() {
             </div>
 
             {/* Navigation Links */}
-            <div className="space-y-6">
-              <h4 className={`text-sm font-semibold uppercase tracking-wider mb-6 transition-colors ${
+            <div className="space-y-4 sm:space-y-6">
+              <h4 className={`text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6 transition-colors ${
                 theme === 'dark' ? 'text-white' : 'text-stone-900'
               }`}>
                 {t('nav.navigation')}
               </h4>
-              <ul className="space-y-4">
+              <ul className="space-y-3 sm:space-y-4">
                 {[
                   { key: 'home', id: 'home' },
                   { key: 'works', id: 'works' },
@@ -91,16 +91,16 @@ export default function Footer() {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-6">
-              <h4 className={`text-sm font-semibold uppercase tracking-wider mb-6 transition-colors ${
+            <div className="space-y-4 sm:space-y-6">
+              <h4 className={`text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6 transition-colors ${
                 theme === 'dark' ? 'text-white' : 'text-stone-900'
               }`}>
                 {t('contact.title')}
               </h4>
-              <div className="space-y-5">
+              <div className="space-y-4 sm:space-y-5">
                 <a
                   href="tel:+905458259495"
-                  className={`group flex items-center text-lg font-medium transition-all duration-300 ${
+                  className={`group flex items-center text-base sm:text-lg font-medium transition-all duration-300 ${
                     theme === 'dark' 
                       ? 'text-white hover:text-dark-300' 
                       : 'text-stone-900 hover:text-stone-600'
@@ -111,7 +111,7 @@ export default function Footer() {
                 </a>
                 
                 {/* Social Media Icons */}
-                <div className="flex items-center space-x-4 pt-2">
+                <div className="flex items-center space-x-4 pt-1 sm:pt-2">
                   <a
                     href="https://www.instagram.com/berdekorasyontadilat/"
                     target="_blank"
