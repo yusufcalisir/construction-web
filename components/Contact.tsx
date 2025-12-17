@@ -28,70 +28,93 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Contact Information */}
-          <div className="space-y-6">
-            <div className={`rounded-xl p-8 border transition-all duration-300 ${
-              theme === 'dark'
-                ? 'bg-dark-800 border-dark-700 hover:border-dark-600'
-                : 'bg-stone-50 border-stone-200 hover:border-stone-300'
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Phone */}
+          <div className={`rounded-xl p-8 border transition-all duration-300 ${
+            theme === 'dark'
+              ? 'bg-dark-800 border-dark-700 hover:border-dark-600'
+              : 'bg-stone-50 border-stone-200 hover:border-stone-300'
+          }`}>
+            <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 ${
+              theme === 'dark' ? 'bg-dark-700' : 'bg-stone-200'
             }`}>
-              <h3 className={`text-2xl font-bold mb-6 transition-colors ${
-                theme === 'dark' ? 'text-white' : 'text-stone-900'
-              }`}>
-                {t('contact.phone')}
-              </h3>
-              <a
-                href="tel:+905458259495"
-                className={`text-2xl font-semibold transition-colors duration-300 ${
-                  theme === 'dark'
-                    ? 'text-white hover:text-accent-400'
-                    : 'text-stone-700 hover:text-stone-900'
-                }`}
-              >
-                0545 825 94 95
-              </a>
+              <svg className={`w-7 h-7 ${theme === 'dark' ? 'text-accent-400' : 'text-stone-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
             </div>
-
-            <div className={`rounded-xl p-8 border transition-all duration-300 ${
-              theme === 'dark'
-                ? 'bg-dark-800 border-dark-700 hover:border-dark-600'
-                : 'bg-stone-50 border-stone-200 hover:border-stone-300'
+            <h3 className={`text-xl font-bold mb-3 transition-colors ${
+              theme === 'dark' ? 'text-white' : 'text-stone-900'
             }`}>
-              <h3 className={`text-2xl font-bold mb-6 transition-colors ${
-                theme === 'dark' ? 'text-white' : 'text-stone-900'
-              }`}>
-                {t('contact.address')}
-              </h3>
-              <p className={`text-lg leading-relaxed transition-colors ${
-                theme === 'dark' ? 'text-dark-300' : 'text-stone-600'
-              }`}>
-                {t('contact.location')}
-                <br />
-                <span className={theme === 'dark' ? 'text-dark-400' : 'text-stone-500'}>
-                  {t('contact.hours')}
-                </span>
-              </p>
-            </div>
+              {t('contact.phone')}
+            </h3>
+            <a
+              href="tel:+905458259495"
+              className={`text-xl font-semibold transition-colors duration-300 ${
+                theme === 'dark'
+                  ? 'text-accent-400 hover:text-accent-300'
+                  : 'text-stone-700 hover:text-stone-900'
+              }`}
+            >
+              0545 825 94 95
+            </a>
           </div>
 
-          {/* Map */}
-          <div className={`rounded-xl overflow-hidden border transition-colors duration-300 ${
+          {/* Address */}
+          <div className={`rounded-xl p-8 border transition-all duration-300 ${
             theme === 'dark'
-              ? 'border-dark-800 shadow-2xl'
-              : 'border-stone-200 shadow-lg'
+              ? 'bg-dark-800 border-dark-700 hover:border-dark-600'
+              : 'bg-stone-50 border-stone-200 hover:border-stone-300'
           }`}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.631878707191!2d29.026137999999996!3d40.989541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9f29fafa289%3A0x2fa3fe6b2656f5e3!2sBER%20TAD%C4%B0LAT%2C%20DEKORASYON%2C%20RESTORASYON%2C%20BOYA%20BADANA%2C%20AL%C3%87IPAN%2C%20FAYANS%2C%20MUTFAK%2C%20PARKE%2C%20ISI%20-%20SES%20YALITIMI%2C%20DI%C5%9E%20CEPHE!5e0!3m2!1str!2str!4v1720032709476!5m2!1str!2str"
-              width="100%"
-              height="100%"
-              style={{ minHeight: '450px', border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title={t('contact.title')}
-              className="w-full"
-            />
+            <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 ${
+              theme === 'dark' ? 'bg-dark-700' : 'bg-stone-200'
+            }`}>
+              <svg className={`w-7 h-7 ${theme === 'dark' ? 'text-accent-400' : 'text-stone-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 className={`text-xl font-bold mb-3 transition-colors ${
+              theme === 'dark' ? 'text-white' : 'text-stone-900'
+            }`}>
+              {t('contact.address')}
+            </h3>
+            <p className={`text-lg leading-relaxed transition-colors ${
+              theme === 'dark' ? 'text-dark-300' : 'text-stone-600'
+            }`}>
+              {t('contact.location')}
+            </p>
+          </div>
+
+          {/* Working Hours */}
+          <div className={`rounded-xl p-8 border transition-all duration-300 ${
+            theme === 'dark'
+              ? 'bg-dark-800 border-dark-700 hover:border-dark-600'
+              : 'bg-stone-50 border-stone-200 hover:border-stone-300'
+          }`}>
+            <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 ${
+              theme === 'dark' ? 'bg-dark-700' : 'bg-stone-200'
+            }`}>
+              <svg className={`w-7 h-7 ${theme === 'dark' ? 'text-accent-400' : 'text-stone-700'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 className={`text-xl font-bold mb-3 transition-colors ${
+              theme === 'dark' ? 'text-white' : 'text-stone-900'
+            }`}>
+              {t('contact.workingHours')}
+            </h3>
+            <div className={`space-y-2 text-lg ${
+              theme === 'dark' ? 'text-dark-300' : 'text-stone-600'
+            }`}>
+              <div className="flex justify-between">
+                <span>{t('contact.weekdays')}:</span>
+                <span className={`font-semibold ${theme === 'dark' ? 'text-accent-400' : 'text-stone-800'}`}>{t('contact.allDay')}</span>
+              </div>
+              <div className="flex justify-between">
+                <span>{t('contact.weekends')}:</span>
+                <span className={`font-semibold ${theme === 'dark' ? 'text-accent-400' : 'text-stone-800'}`}>{t('contact.allDay')}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

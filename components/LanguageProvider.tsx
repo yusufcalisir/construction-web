@@ -23,7 +23,8 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero
     'hero.title': 'Ber Tadilat',
-    'hero.subtitle': 'Evinizi hayalinizdeki gibi yenileyin. Kaliteli işçilik, güvenilir hizmet, müşteri memnuniyeti.',
+    'hero.subtitle': 'Ev, iş yeri ve her türlü mekânınızı hayalinizdeki gibi yenileyin. Kaliteli işçilik, güvenilir hizmet, müşteri memnuniyeti.',
+    'hero.getQuote': 'Hemen Teklif Al',
     
     // Gallery
     'gallery.title': 'Çalışmalarımız',
@@ -63,7 +64,10 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.phone': 'Telefon',
     'contact.address': 'Adres',
     'contact.location': 'İstanbul, Türkiye',
-    'contact.hours': 'Çalışma Saatleri: Pazartesi - Cumartesi 09:00 - 18:00',
+    'contact.workingHours': 'Çalışma Saatleri',
+    'contact.weekdays': 'Hafta İçi',
+    'contact.weekends': 'Hafta Sonu',
+    'contact.allDay': '7/24',
     
     // Footer
     'footer.description': 'Yılların deneyimi ile İstanbul\'da inşaat, renovasyon ve dekorasyon hizmetleri sunuyoruz. Evinizi, iş yerinizi veya ticari alanlarınızı modern standartlara uygun şekilde dönüştürüyoruz. Kaliteli malzemeler, profesyonel işçilik ve zamanında teslimat garantisi ile müşteri memnuniyetini ön planda tutuyoruz.',
@@ -79,7 +83,8 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero
     'hero.title': 'Ber Tadilat',
-    'hero.subtitle': 'Renovate your home as you dream. Quality craftsmanship, reliable service, customer satisfaction.',
+    'hero.subtitle': 'Renovate your home, workplace, and all types of spaces as you dream. Quality craftsmanship, reliable service, customer satisfaction.',
+    'hero.getQuote': 'Get a Quick Quote',
     
     // Gallery
     'gallery.title': 'Our Works',
@@ -119,7 +124,10 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.phone': 'Phone',
     'contact.address': 'Address',
     'contact.location': 'Istanbul, Turkey',
-    'contact.hours': 'Working Hours: Monday - Saturday 09:00 - 18:00',
+    'contact.workingHours': 'Working Hours',
+    'contact.weekdays': 'Weekdays',
+    'contact.weekends': 'Weekends',
+    'contact.allDay': '24/7',
     
     // Footer
     'footer.description': 'With years of experience, we provide construction, renovation, and decoration services in Istanbul. We transform your homes, offices, or commercial spaces according to modern standards. We prioritize customer satisfaction with quality materials, professional craftsmanship, and on-time delivery guarantee.',
