@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: 'Ber Tadilat',
     description: 'İstanbul\'da profesyonel tadilat, dekorasyon ve renovasyon hizmetleri',
     start_url: '/',
-    display: 'standalone',
+    display: 'browser',
     background_color: '#1a1a1a',
     theme_color: '#1a1a1a',
     icons: [
