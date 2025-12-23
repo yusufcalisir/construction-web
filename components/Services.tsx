@@ -64,19 +64,17 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.key}
-              className="rounded-xl overflow-hidden border-2 transition-[transform,shadow,border-color] duration-500 group hover:scale-[1.02] hover:shadow-xl bg-white border-stone-300 hover:border-stone-400 shadow-lg shadow-stone-200/50 will-change-transform"
+              className="rounded-xl overflow-hidden border-2 transition-all duration-500 group hover:scale-[1.02] hover:shadow-xl bg-white border-stone-300 hover:border-stone-400 shadow-lg shadow-stone-200/50"
             >
               <div className="relative h-72 w-full overflow-hidden">
                 <Image
                   src={`/hizmetler/${service.imageName}`}
                   alt={t(`service.${service.key}`)}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 will-change-transform"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  quality={75}
-                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t opacity-0 group-hover:opacity-100 transition-opacity duration-500 from-stone-900/40 to-transparent will-change-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t opacity-0 group-hover:opacity-100 transition-opacity duration-500 from-stone-900/40 to-transparent" />
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-4 transition-colors text-stone-900">

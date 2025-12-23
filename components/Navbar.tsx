@@ -11,32 +11,22 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home')
 
   useEffect(() => {
-    let ticking = false
-    
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 20)
-          
-          // Determine active section based on scroll position
-          const sections = ['home', 'works', 'services', 'contact']
-          const scrollPosition = window.scrollY + 150
-          
-          for (let i = sections.length - 1; i >= 0; i--) {
-            const element = document.getElementById(sections[i])
-            if (element && element.offsetTop <= scrollPosition) {
-              setActiveSection(sections[i])
-              break
-            }
-          }
-          
-          ticking = false
-        })
-        ticking = true
+      setIsScrolled(window.scrollY > 20)
+      
+      // Determine active section based on scroll position
+      const sections = ['home', 'works', 'services', 'contact']
+      const scrollPosition = window.scrollY + 150
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sections[i])
+        if (element && element.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i])
+          break
+        }
       }
     }
-    
-    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('scroll', handleScroll)
     handleScroll() // Initial check
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -93,7 +83,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500 ${getNavbarBg()}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${getNavbarBg()}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24">
@@ -122,7 +112,7 @@ export default function Navbar() {
                 } : {}}
               >
                 {t('nav.home')}
-                <span className="absolute left-0 -bottom-1 h-0.5 w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 bg-stone-700" />
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 group-hover:w-full transition-all duration-300 bg-stone-700" />
               </a>
               <a
                 href="#works"
@@ -133,7 +123,7 @@ export default function Navbar() {
                 } : {}}
               >
                 {t('nav.works')}
-                <span className="absolute left-0 -bottom-1 h-0.5 w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 bg-stone-700" />
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 group-hover:w-full transition-all duration-300 bg-stone-700" />
               </a>
               <a
                 href="#services"
@@ -144,7 +134,7 @@ export default function Navbar() {
                 } : {}}
               >
                 {t('nav.services')}
-                <span className="absolute left-0 -bottom-1 h-0.5 w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 bg-stone-700" />
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 group-hover:w-full transition-all duration-300 bg-stone-700" />
               </a>
               <a
                 href="#contact"
@@ -155,11 +145,11 @@ export default function Navbar() {
                 } : {}}
               >
                 {t('nav.contact')}
-                <span className="absolute left-0 -bottom-1 h-0.5 w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 bg-stone-700" />
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 group-hover:w-full transition-all duration-300 bg-stone-700" />
               </a>
               <button
                 onClick={toggleLanguage}
-                className={`px-3 py-1.5 rounded-md transition-[background-color,border-color,color,box-shadow] duration-300 text-xs font-semibold border backdrop-blur-sm ${
+                className={`px-3 py-1.5 rounded-md transition-all duration-300 text-xs font-semibold border backdrop-blur-sm ${
                   !isScrolled
                     ? 'text-stone-900 hover:text-stone-700 border-white/30 bg-white/20 hover:bg-white/30 shadow-md'
                     : 'text-stone-700 hover:text-stone-900 border-stone-200 bg-white/90 hover:bg-white shadow-sm'
@@ -173,7 +163,7 @@ export default function Navbar() {
             <div className="lg:hidden flex items-center space-x-2">
               <button
                 onClick={toggleLanguage}
-                className={`px-2.5 py-1.5 rounded-md transition-[background-color,border-color,color,box-shadow] duration-300 text-xs font-semibold border backdrop-blur-sm ${
+                className={`px-2.5 py-1.5 rounded-md transition-all duration-300 text-xs font-semibold border backdrop-blur-sm ${
                   !isScrolled
                     ? 'text-stone-900 hover:text-stone-700 border-white/30 bg-white/20 hover:bg-white/30 shadow-md'
                     : 'text-stone-700 hover:text-stone-900 border-stone-200 bg-white/90 hover:bg-white shadow-sm'
@@ -221,28 +211,28 @@ export default function Navbar() {
               <a
                 href="#home"
                 onClick={(e) => handleNavClick(e, 'home')}
-                className="block w-full text-center px-6 py-4 rounded-xl transition-[background-color] duration-300 font-semibold text-lg bg-white text-stone-900 hover:bg-stone-50 border-2 border-stone-300 shadow-lg shadow-stone-200/50 backdrop-blur-sm"
+                className="block w-full text-center px-6 py-4 rounded-xl transition-all duration-300 font-semibold text-lg bg-white text-stone-900 hover:bg-stone-50 border-2 border-stone-300 shadow-lg shadow-stone-200/50 backdrop-blur-sm"
               >
                 {t('nav.home')}
               </a>
               <a
                 href="#works"
                 onClick={(e) => handleNavClick(e, 'works')}
-                className="block w-full text-center px-6 py-4 rounded-xl transition-[background-color] duration-300 font-semibold text-lg bg-white text-stone-900 hover:bg-stone-50 border-2 border-stone-300 shadow-lg shadow-stone-200/50 backdrop-blur-sm"
+                className="block w-full text-center px-6 py-4 rounded-xl transition-all duration-300 font-semibold text-lg bg-white text-stone-900 hover:bg-stone-50 border-2 border-stone-300 shadow-lg shadow-stone-200/50 backdrop-blur-sm"
               >
                 {t('nav.works')}
               </a>
               <a
                 href="#services"
                 onClick={(e) => handleNavClick(e, 'services')}
-                className="block w-full text-center px-6 py-4 rounded-xl transition-[background-color] duration-300 font-semibold text-lg bg-white text-stone-900 hover:bg-stone-50 border-2 border-stone-300 shadow-lg shadow-stone-200/50 backdrop-blur-sm"
+                className="block w-full text-center px-6 py-4 rounded-xl transition-all duration-300 font-semibold text-lg bg-white text-stone-900 hover:bg-stone-50 border-2 border-stone-300 shadow-lg shadow-stone-200/50 backdrop-blur-sm"
               >
                 {t('nav.services')}
               </a>
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, 'contact')}
-                className="block w-full text-center px-6 py-4 rounded-xl transition-[background-color] duration-300 font-semibold text-lg bg-white text-stone-900 hover:bg-stone-50 border-2 border-stone-300 shadow-lg shadow-stone-200/50 backdrop-blur-sm"
+                className="block w-full text-center px-6 py-4 rounded-xl transition-all duration-300 font-semibold text-lg bg-white text-stone-900 hover:bg-stone-50 border-2 border-stone-300 shadow-lg shadow-stone-200/50 backdrop-blur-sm"
               >
                 {t('nav.contact')}
               </a>
@@ -253,7 +243,7 @@ export default function Navbar() {
                   href="https://wa.me/905458259495"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-3 px-6 py-4 rounded-lg transition-[background-color] duration-300 font-bold text-base shadow-lg bg-green-500 text-white hover:bg-green-600"
+                  className="w-full flex items-center justify-center gap-3 px-6 py-4 rounded-lg transition-all duration-300 font-bold text-base shadow-lg bg-green-500 text-white hover:bg-green-600"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
