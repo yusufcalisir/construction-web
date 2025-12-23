@@ -34,17 +34,17 @@ export default function Gallery() {
             return (
               <div
                 key={index}
-                className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 transition-all duration-500 group hover:scale-[1.02] hover:shadow-xl border-stone-300 hover:border-stone-400 shadow-lg shadow-stone-200/50"
+                className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 transition-[transform,shadow,border-color] duration-500 group hover:scale-[1.02] hover:shadow-xl border-stone-300 hover:border-stone-400 shadow-lg shadow-stone-200/50 will-change-transform"
               >
                 <div className="relative w-full h-full">
                   <Image
                     src={imagePath}
                     alt={`${t('gallery.project')} ${index + 1}`}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105 will-change-transform"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     loading={index < 6 ? 'eager' : 'lazy'}
-                    quality={90}
+                    quality={75}
                   />
                 </div>
               </div>

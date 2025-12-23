@@ -4,7 +4,12 @@ import './globals.css'
 import { LanguageProvider } from '@/components/LanguageProvider'
 import { ThemeProvider } from '@/components/ThemeProvider'
 
-const inter = Inter({ subsets: ['latin', 'latin-ext'] })
+const inter = Inter({ 
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
+})
 
 const baseUrl = 'https://bertadilat.com' // Domain ayarlandıktan sonra güncellenecek
 
@@ -386,7 +391,17 @@ export default function RootLayout({
   return (
     <html lang="tr" suppressHydrationWarning>
       <head>
-        {/* JSON-LD Yapılandırılmış Veri - Sanitized */}
+        {/* Preload critical hero image - Highest priority */}
+        <link 
+          rel="preload" 
+          href="/calisma-galeri/hero.png" 
+          as="image" 
+          fetchPriority="high"
+          type="image/png"
+        />
+        <link rel="dns-prefetch" href="/calisma-galeri/" />
+        
+        {/* JSON-LD Yapılandırılmış Veri - Non-blocking data scripts */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: sanitizeJSONLD(localBusinessSchema) }}
