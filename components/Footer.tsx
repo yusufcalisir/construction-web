@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 transition-colors duration-300 bg-stone-100"
+      className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 transition-colors duration-300 bg-stone-50"
       suppressHydrationWarning
     >
       <div className="max-w-7xl mx-auto">
@@ -35,7 +35,7 @@ export default function Footer() {
                 {t('nav.home')}
               </a>
               <a
-                href="#gallery"
+                href="#works"
                 className="text-sm sm:text-base transition-colors duration-300 hover:underline text-stone-600 hover:text-stone-900"
               >
                 {t('nav.works')}

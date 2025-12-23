@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-10 sm:py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300 bg-stone-200"
+      className="py-10 sm:py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300 bg-white"
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">

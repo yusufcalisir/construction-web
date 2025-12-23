@@ -64,6 +64,8 @@ export default function Navbar() {
     }
     
     // Match active section background
+    // 1-3-5 (home, services, footer): bg-stone-50 (soft beige)
+    // 2-4 (works, contact): bg-white
     switch (activeSection) {
       case 'home':
         return 'bg-stone-50/95 backdrop-blur-md border-b border-stone-200/50'

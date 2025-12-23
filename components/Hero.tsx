@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center pt-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center pt-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-stone-50"
       suppressHydrationWarning
     >
       {/* Hero Background Image */}

@@ -15,7 +15,7 @@ export default function Gallery() {
   return (
     <section
       id="works"
-      className="py-10 sm:py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300 bg-stone-50"
+      className="py-10 sm:py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300 bg-white"
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
@@ -43,6 +43,8 @@ export default function Gallery() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                    loading={index < 6 ? 'eager' : 'lazy'}
+                    quality={90}
                   />
                 </div>
               </div>
