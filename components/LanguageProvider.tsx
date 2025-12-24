@@ -72,6 +72,14 @@ const translations: Record<Language, Record<string, string>> = {
     // Footer
     'footer.description': 'Yılların deneyimi ile İstanbul\'da inşaat, renovasyon ve dekorasyon hizmetleri sunuyoruz. Evinizi, iş yerinizi veya ticari alanlarınızı modern standartlara uygun şekilde dönüştürüyoruz. Kaliteli malzemeler, profesyonel işçilik ve zamanında teslimat garantisi ile müşteri memnuniyetini ön planda tutuyoruz.',
     'footer.copyright': '© 2025 Ber Tadilat. Tüm hakları saklıdır.',
+    
+    // WhatsApp Widget
+    'whatsapp.title': 'Ber Tadilat',
+    'whatsapp.status': 'Genellikle hemen yanıt verir',
+    'whatsapp.message': 'Size nasıl yardımcı olabilirim?',
+    'whatsapp.connect': 'Sohbete bağlan',
+    'whatsapp.ariaLabel': 'WhatsApp ile iletişime geç',
+    'whatsapp.close': 'Kapat',
   },
   en: {
     // Navigation
@@ -132,6 +140,14 @@ const translations: Record<Language, Record<string, string>> = {
     // Footer
     'footer.description': 'With extensive experience in Istanbul, we deliver construction, renovation, and interior design services that meet the highest standards. Whether it\'s residential, commercial, or retail spaces, we transform properties using quality materials, skilled craftsmanship, and a commitment to timely completion. Your satisfaction is our priority.',
     'footer.copyright': '© 2025 Ber Tadilat. All rights reserved.',
+    
+    // WhatsApp Widget
+    'whatsapp.title': 'Ber Tadilat',
+    'whatsapp.status': 'Usually replies immediately',
+    'whatsapp.message': 'How can I help you?',
+    'whatsapp.connect': 'Start Chat',
+    'whatsapp.ariaLabel': 'Contact via WhatsApp',
+    'whatsapp.close': 'Close',
   },
 }
 
