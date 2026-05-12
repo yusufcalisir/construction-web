@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useLanguage } from './LanguageProvider'
 
@@ -10,23 +10,32 @@ export default function WhatsAppWidget() {
   const { t } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
-  const heroRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
-    // Find hero section
-    const heroSection = document.getElementById('home')
-    heroRef.current = heroSection || null
-
     const handleScroll = () => {
-      if (!heroRef.current) {
-        // If hero section doesn't exist, show widget
-        setIsVisible(true)
-        return
+      const heroSection = document.getElementById('home')
+      const footerSection = document.getElementById('footer')
+      
+      let shouldShow = true
+
+      if (heroSection) {
+        const heroRect = heroSection.getBoundingClientRect()
+        // Wait until hero section is mostly scrolled past.
+        // We use 200 to account for sticky navbar offsets when scrolled to the next section.
+        if (heroRect.bottom > 200) {
+          shouldShow = false
+        }
       }
 
-      const heroRect = heroRef.current.getBoundingClientRect()
-      // Show widget when hero section is completely scrolled past
-      setIsVisible(heroRect.bottom < 0)
+      if (footerSection) {
+        const footerRect = footerSection.getBoundingClientRect()
+        // Hide if footer is visible in the viewport
+        if (footerRect.top < window.innerHeight) {
+          shouldShow = false
+        }
+      }
+
+      setIsVisible(shouldShow)
     }
 
     // Check initial state

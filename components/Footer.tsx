@@ -7,6 +7,7 @@ export default function Footer() {
 
   return (
     <footer
+      id="footer"
       className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 transition-colors duration-300 bg-stone-50"
       suppressHydrationWarning
     >
