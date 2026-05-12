@@ -153,7 +153,6 @@ export const metadata: Metadata = {
   
   // Apple Web App
   appleWebApp: {
-    capable: true,
     statusBarStyle: 'default',
     title: 'Ber Tadilat',
   },
@@ -407,6 +406,7 @@ export default function RootLayout({
         />
         
         {/* Additional SEO Meta Tags */}
+        <meta name="mobile-web-app-capable" content="yes" />
         <meta name="geo.region" content="TR-34" />
         <meta name="geo.placename" content="İstanbul" />
         <meta name="geo.position" content="40.989541;29.026138" />
