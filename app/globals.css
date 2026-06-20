@@ -8,18 +8,78 @@
   margin: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   color: #e5e7eb;
   background: #1a1a1a;
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ═══════════════════════════════════════════
+   Custom Scrollbar — macOS-style auto-hide
+   Only visible while scrolling, fades away after.
+   ═══════════════════════════════════════════ */
+
+/* 1. Size */
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 2. Track is always transparent (no gutter line) */
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 3. Thumb: invisible by default */
+html::-webkit-scrollbar-thumb {
+  background: rgba(68, 64, 60, 0);
+  border-radius: 9999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* 4. Thumb becomes visible when html has .is-scrolling */
+html.is-scrolling::-webkit-scrollbar-thumb {
+  background: rgba(68, 64, 60, 0.7);
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* 5. Hover turns amber (brand color) */
+html.is-scrolling::-webkit-scrollbar-thumb:hover {
+  background: #d97706;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* 6. Light theme variants */
+html.light.is-scrolling::-webkit-scrollbar-thumb {
+  background: rgba(168, 162, 158, 0.7);
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+html.light.is-scrolling::-webkit-scrollbar-thumb:hover {
+  background: #b45309;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* 7. Firefox */
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+html.is-scrolling {
+  scrollbar-color: rgba(68, 64, 60, 0.7) transparent;
+}
+
+html.light.is-scrolling {
+  scrollbar-color: rgba(168, 162, 158, 0.7) transparent;
 }
 
 /* Light theme */
@@ -156,4 +216,30 @@ p {
     transform: translateY(0);
   }
 }
+
+/* Category Icon Micro-Animations */
+@keyframes icon-draw {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(10deg) translateY(-2px); }
+}
+.animate-icon-draw {
+  animation: icon-draw 3s ease-in-out infinite;
+}
+
+@keyframes icon-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+.animate-icon-pulse {
+  animation: icon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes icon-lightning {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.05) translateY(-1px); }
+}
+.animate-icon-lightning {
+  animation: icon-lightning 1.8s ease-in-out infinite;
+}
+
 

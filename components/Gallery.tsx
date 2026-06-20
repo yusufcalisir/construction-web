@@ -15,16 +15,18 @@ export default function Gallery() {
   return (
     <section
       id="works"
-      className="py-10 sm:py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300 bg-white"
+      className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 transition-colors duration-300 bg-white"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 transition-colors duration-300 text-stone-900">
+        {/* Unified Header */}
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <span className="font-mono text-xs sm:text-sm tracking-[0.3em] text-amber-600 font-bold uppercase block mb-4">
             {t('gallery.title')}
-          </h2>
-          <p className="text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed transition-colors duration-300 text-stone-600">
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight leading-tight font-serif">
             {t('gallery.subtitle')}
-          </p>
+          </h2>
+          <div className="h-[2px] w-12 bg-amber-500 mx-auto mt-8 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -34,18 +36,20 @@ export default function Gallery() {
             return (
               <div
                 key={index}
-                className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 transition-all duration-500 group hover:scale-[1.02] hover:shadow-xl border-stone-300 hover:border-stone-400 shadow-lg shadow-stone-200/50"
+                className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-stone-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-500 group hover:scale-[1.02] hover:shadow-2xl hover:border-stone-300/85 bg-white"
               >
                 <div className="relative w-full h-full">
                   <Image
                     src={imagePath}
                     alt={`${t('gallery.project')} ${index + 1}`}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     loading={index < 6 ? 'eager' : 'lazy'}
                     quality={90}
                   />
+                  {/* Premium gold-shaded subtle overlay on hover */}
+                  <div className="absolute inset-0 bg-stone-950/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                 </div>
               </div>
             )

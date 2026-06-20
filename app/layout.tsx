@@ -1,12 +1,21 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 import { LanguageProvider } from '@/components/LanguageProvider'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import WhatsAppWidget from '@/components/WhatsAppWidget'
 
-const inter = Inter({ subsets: ['latin', 'latin-ext'] })
+const inter = Inter({ 
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-inter',
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-playfair',
+  weight: ['400', '500', '600', '700', '800', '900'],
+})
 
 const baseUrl = 'https://bertadilat.com' // Domain ayarlandıktan sonra güncellenecek
 
@@ -80,13 +89,13 @@ export const metadata: Metadata = {
   // Favicon
   icons: {
     icon: [
-      { url: '/favicon/ber1-tadilat.png', sizes: 'any' },
-      { url: '/favicon/ber1-tadilat.png', type: 'image/png' },
+      { url: '/favicon/ber-tadilat-gold.png', sizes: 'any' },
+      { url: '/favicon/ber-tadilat-gold.png', type: 'image/png' },
     ],
     apple: [
-      { url: '/favicon/ber1-tadilat.png', sizes: '180x180', type: 'image/png' },
+      { url: '/favicon/ber-tadilat-gold.png', sizes: '180x180', type: 'image/png' },
     ],
-    shortcut: '/favicon/ber1-tadilat.png',
+    shortcut: '/favicon/ber-tadilat-gold.png',
   },
   
   // Robots
@@ -218,7 +227,7 @@ const localBusinessSchema = {
   ],
   priceRange: '₺₺',
   image: [`${baseUrl}/og-image.jpg`],
-  logo: `${baseUrl}/favicon/ber-tadilat.png`,
+  logo: `${baseUrl}/favicon/ber-tadilat-gold.png`,
   sameAs: [
     'https://www.instagram.com/berdekorasyontadilat/',
   ],
@@ -313,7 +322,7 @@ const organizationSchema = {
   '@id': `${baseUrl}#organization`,
   name: 'Ber Tadilat',
   url: baseUrl,
-  logo: `${baseUrl}/favicon/ber-tadilat.png`,
+  logo: `${baseUrl}/favicon/ber-tadilat-gold.png`,
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+905458259495',
@@ -415,8 +424,26 @@ export default function RootLayout({
         <meta name="revisit-after" content="7 days" />
         <meta name="distribution" content="global" />
         <meta name="rating" content="general" />
+        
+        {/* Scroll Tracker for elegant scrollbar visibility */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var timer;
+                window.addEventListener('scroll', function() {
+                  document.documentElement.classList.add('is-scrolling');
+                  clearTimeout(timer);
+                  timer = setTimeout(function() {
+                    document.documentElement.classList.remove('is-scrolling');
+                  }, 1200);
+                }, { passive: true });
+              })();
+            `
+          }}
+        />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         {/* Google Tag Manager */}
         <Script
           id="gtm"

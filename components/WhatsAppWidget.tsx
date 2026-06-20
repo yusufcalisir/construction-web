@@ -18,10 +18,9 @@ export default function WhatsAppWidget() {
       
       let shouldShow = true
 
+      // Hide if the hero section is visible on screen to avoid duplicate WhatsApp buttons
       if (heroSection) {
         const heroRect = heroSection.getBoundingClientRect()
-        // Wait until hero section is mostly scrolled past.
-        // We use 200 to account for sticky navbar offsets when scrolled to the next section.
         if (heroRect.bottom > 200) {
           shouldShow = false
         }

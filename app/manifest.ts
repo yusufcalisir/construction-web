@@ -11,12 +11,12 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#1a1a1a',
     icons: [
       {
-        src: '/favicon/ber-tadilat.png',
+        src: '/favicon/ber-tadilat-gold.png',
         sizes: '192x192',
         type: 'image/png',
       },
       {
-        src: '/favicon/ber-tadilat.png',
+        src: '/favicon/ber-tadilat-gold.png',
         sizes: '512x512',
         type: 'image/png',
       },
