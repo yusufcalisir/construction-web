@@ -46,6 +46,8 @@ const translations: Record<Language, Record<string, string>> = {
     'service.parke': 'Parke',
     'service.isolation': 'Isı ve Ses Yalıtımı',
     'service.facade': 'Dış Cephe',
+    'service.akillisistem': 'Akıllı Ev Sistemleri',
+    'service.tesisat': 'Tesisat',
 
     // Service descriptions
     'service.dekorasyon.desc': 'Modern ve şık dekorasyon çözümleri ile yaşam alanlarınızı dönüştürüyoruz. İç mimari tasarım, mobilya seçimi ve renk uyumu konularında uzman ekibimizle hayalinizdeki mekanı yaratıyoruz.',
@@ -57,6 +59,8 @@ const translations: Record<Language, Record<string, string>> = {
     'service.parke.desc': 'Ahşap parke ve laminat parke döşeme hizmetlerinde yılların deneyimi ile hizmet veriyoruz. Doğru alt yapı hazırlığı, düzgün döşeme ve cilalama işlemleri ile uzun ömürlü zeminler oluşturuyoruz.',
     'service.isolation.desc': 'Enerji tasarrufu ve konfor için ısı ve ses yalıtımı çözümleri sunuyoruz. Modern yalıtım malzemeleri ve doğru uygulama teknikleri ile evinizi yazın serin, kışın sıcak tutuyoruz.',
     'service.facade.desc': 'Dış cephe kaplama, boyama ve yalıtım hizmetleri ile binanızın görünümünü yeniliyoruz. Hava koşullarına dayanıklı malzemeler ve profesyonel uygulama ile uzun ömürlü sonuçlar garantiliyoruz.',
+    'service.akillisistem.desc': 'Ev otomasyonu, akıllı aydınlatma, güvenlik kameraları ve iklimlendirme sistemlerinin tek bir merkezden kontrolü. Yaşam alanlarınıza konfor ve yüksek enerji tasarrufu katıyoruz.',
+    'service.tesisat.desc': 'Ev ve iş yerleriniz için komple tesisat çözümleri. Elektrik tesisatı yenileme, sıhhi tesisat ve temiz/atık su altyapısı ile kalorifer ve ısıtma sistemleri kurulumlarını modern ve güvenli standartlarda gerçekleştiriyoruz.',
 
     // Contact
     'contact.title': 'Bize Ulaşın',
@@ -70,7 +74,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.allDay': '7/24',
 
     // Footer
-    'footer.description': 'Yılların deneyimi ile İstanbul\'da inşaat, renovasyon ve dekorasyon hizmetleri sunuyoruz. Evinizi, iş yerinizi veya ticari alanlarınızı modern standartlara uygun şekilde dönüştürüyoruz. Kaliteli malzemeler, profesyonel işçilik ve zamanında teslimat garantisi ile müşteri memnuniyetini ön planda tutuyoruz.',
+    'footer.description': 'Yılların deneyimi ile İstanbul\'da inşaat, renovasyon, dekorasyon, tesisat ve akıllı ev sistemleri hizmetleri sunuyoruz. Evinizi, iş yerinizi veya ticari alanlarınızı modern standartlara uygun şekilde dönüştürüyoruz. Kaliteli malzemeler, profesyonel işçilik ve zamanında teslimat garantisi ile müşteri memnuniyetini ön planda tutuyoruz.',
     'footer.copyright': '© 2026 Ber Tadilat. Tüm hakları saklıdır.',
 
     // WhatsApp Widget
@@ -139,6 +143,8 @@ const translations: Record<Language, Record<string, string>> = {
     'service.parke': 'Flooring',
     'service.isolation': 'Insulation Services',
     'service.facade': 'Exterior Cladding',
+    'service.akillisistem': 'Smart Home Systems',
+    'service.tesisat': 'Installations & Plumbing',
 
     // Service descriptions
     'service.dekorasyon.desc': 'Our expert team brings your vision to life with contemporary interior design solutions. From concept to completion, we handle everything from furniture selection to colour schemes, creating spaces that truly reflect your style.',
@@ -150,6 +156,8 @@ const translations: Record<Language, Record<string, string>> = {
     'service.parke.desc': 'Professional wood and laminate flooring installation backed by years of expertise. From subfloor preparation to final finishing, we ensure your floors look stunning and last for years to come.',
     'service.isolation.desc': 'Comprehensive thermal and acoustic insulation solutions for improved energy efficiency and comfort. Using advanced materials and proven techniques, we help keep your property comfortable year-round.',
     'service.facade.desc': 'Transform your building\'s exterior with our cladding, painting, and insulation services. We use weather-resistant materials and professional application methods to deliver results that protect and enhance your property.',
+    'service.akillisistem.desc': 'Centralized control of home automation, smart lighting, security cameras, and climate control. We bring comfort and energy efficiency to your living spaces.',
+    'service.tesisat.desc': 'Complete installation and plumbing solutions for homes and workplaces. We perform electrical wiring renovations, plumbing and water infrastructure, and heating/radiator system installations to modern and safe standards.',
 
     // Contact
     'contact.title': 'Get in Touch',
@@ -163,7 +171,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.allDay': '24/7',
 
     // Footer
-    'footer.description': 'With extensive experience in Istanbul, we deliver construction, renovation, and interior design services that meet the highest standards. Whether it\'s residential, commercial, or retail spaces, we transform properties using quality materials, skilled craftsmanship, and a commitment to timely completion. Your satisfaction is our priority.',
+    'footer.description': 'With extensive experience in Istanbul, we deliver construction, renovation, interior design, installation, plumbing, and smart home services that meet the highest standards. Whether it\'s residential, commercial, or retail spaces, we transform properties using quality materials, skilled craftsmanship, and a commitment to timely completion. Your satisfaction is our priority.',
     'footer.copyright': '© 2026 Ber Tadilat. All rights reserved.',
 
     // WhatsApp Widget

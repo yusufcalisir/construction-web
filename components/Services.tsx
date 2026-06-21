@@ -6,39 +6,47 @@ import { useLanguage } from './LanguageProvider'
 const services = [
   {
     key: 'dekorasyon',
-    imageName: 'dekorasyon.png',
+    imageName: 'dekorasyon.jpg',
   },
   {
     key: 'restorasyon',
-    imageName: 'restorasyon.png',
+    imageName: 'restorasyon.jpg',
   },
   {
     key: 'boya',
-    imageName: 'boya-badana.png',
+    imageName: 'boya-badana.jpg',
   },
   {
     key: 'alciplan',
-    imageName: 'alcipan.png',
+    imageName: 'alcipan.jpg',
   },
   {
     key: 'fayans',
-    imageName: 'fayans.png',
+    imageName: 'fayans.jpg',
   },
   {
     key: 'mutfak',
-    imageName: 'mutfak.png',
+    imageName: 'mutfak.jpg',
   },
   {
     key: 'parke',
-    imageName: 'parke.png',
+    imageName: 'parke.jpg',
   },
   {
     key: 'isolation',
-    imageName: 'isi-ses-yalitimi.png',
+    imageName: 'isi-ses-yalitimi.jpg',
   },
   {
     key: 'facade',
-    imageName: 'dis-cephe.png',
+    imageName: 'dis-cephe.jpg',
+  },
+  {
+    key: 'akillisistem',
+    imageName: 'akilli-sistemler.jpg',
+  },
+  {
+    key: 'tesisat',
+    imageName: 'tesisat.jpg',
   },
 ]
 
@@ -62,11 +70,11 @@ export default function Services() {
           <div className="h-[2px] w-12 bg-amber-500 mx-auto mt-8 rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {services.map((service) => (
             <div
               key={service.key}
-              className="relative rounded-3xl overflow-hidden border border-stone-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-500 group hover:scale-[1.02] hover:shadow-2xl hover:border-stone-300/80 bg-white flex flex-col h-full"
+              className="relative rounded-3xl overflow-hidden border border-stone-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-500 group hover:scale-[1.02] hover:shadow-2xl hover:border-stone-300/80 bg-white flex flex-col h-full w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)]"
             >
               {/* Symmetrical Gold Line Sweep on hover */}
               <div className="absolute top-0 left-0 h-[3px] bg-amber-500 w-0 group-hover:w-full transition-all duration-500 z-20" />
