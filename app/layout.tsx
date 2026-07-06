@@ -89,13 +89,14 @@ export const metadata: Metadata = {
   // Favicon
   icons: {
     icon: [
-      { url: '/favicon/ber-tadilat-gold.png', sizes: 'any' },
-      { url: '/favicon/ber-tadilat-gold.png', type: 'image/png' },
+      { url: '/favicon/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
     ],
     apple: [
-      { url: '/favicon/ber-tadilat-gold.png', sizes: '180x180', type: 'image/png' },
+      { url: '/favicon/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
-    shortcut: '/favicon/ber-tadilat-gold.png',
+    shortcut: '/favicon/favicon-192x192.png',
   },
   
   // Robots
