@@ -20,11 +20,8 @@ export default function Gallery() {
       <div className="max-w-7xl mx-auto">
         {/* Unified Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <span className="font-mono text-xs sm:text-sm tracking-[0.3em] text-amber-600 font-bold uppercase block mb-4">
-            {t('gallery.title')}
-          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight leading-tight font-serif">
-            {t('gallery.subtitle')}
+            {t('gallery.title')}
           </h2>
           <div className="h-[2px] w-12 bg-amber-500 mx-auto mt-8 rounded-full" />
         </div>

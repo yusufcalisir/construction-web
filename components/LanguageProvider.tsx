@@ -28,7 +28,6 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Gallery (Hizmetlerimiz)
     'gallery.title': 'Hizmetlerimiz',
-    'gallery.subtitle': 'Gerçekleştirdiğimiz projelerden örnekler',
     'gallery.project': 'Proje',
     'gallery.image': 'Görsel',
 
@@ -126,7 +125,6 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Gallery (Our Services)
     'gallery.title': 'Our Services',
-    'gallery.subtitle': 'A showcase of our completed projects',
     'gallery.project': 'Project',
     'gallery.image': 'Image',
 
