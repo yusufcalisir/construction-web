@@ -110,7 +110,7 @@ export default function Navbar() {
                     key={section}
                     href={`#${section}`}
                     onClick={(e) => handleNavClick(e, section)}
-                    className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] transition-all duration-300 group focus:outline-none ${
+                    className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
                       isActive
                         ? !isScrolled
                           ? 'text-amber-400 font-bold'

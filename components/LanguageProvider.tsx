@@ -16,8 +16,8 @@ const translations: Record<Language, Record<string, string>> = {
   tr: {
     // Navigation
     'nav.home': 'Ana Sayfa',
-    'nav.works': 'Çalışmalarımız',
-    'nav.services': 'Hizmetler',
+    'nav.works': 'Hizmetlerimiz',
+    'nav.services': 'Tadilat & Yenileme',
     'nav.contact': 'İletişim',
     'nav.navigation': 'Navigasyon',
 
@@ -26,14 +26,14 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.subtitle': 'Ev, iş yeri ve her türlü mekânınızı hayalinizdeki gibi yenileyin. Kaliteli işçilik, güvenilir hizmet, müşteri memnuniyeti.',
     'hero.getQuote': 'Hemen Teklif Al',
 
-    // Gallery
-    'gallery.title': 'Çalışmalarımız',
+    // Gallery (Hizmetlerimiz)
+    'gallery.title': 'Hizmetlerimiz',
     'gallery.subtitle': 'Gerçekleştirdiğimiz projelerden örnekler',
     'gallery.project': 'Proje',
     'gallery.image': 'Görsel',
 
-    // Services
-    'services.title': 'Hizmetlerimiz',
+    // Services (Tadilat & Yenileme)
+    'services.title': 'Tadilat & Yenileme',
     'services.subtitle': 'Geniş hizmet yelpazemiz ile ihtiyacınıza uygun çözümler sunuyoruz',
 
     // Service names
@@ -65,6 +65,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Contact
     'contact.title': 'Bize Ulaşın',
     'contact.subtitle': 'Projeleriniz için ücretsiz keşif ve fiyat teklifi alın',
+    'contact.whatsapp': 'WhatsApp ile İletişim',
     'contact.phone': 'Telefon',
     'contact.address': 'Adres',
     'contact.location': 'İstanbul, Türkiye',
@@ -113,8 +114,8 @@ const translations: Record<Language, Record<string, string>> = {
   en: {
     // Navigation
     'nav.home': 'Home',
-    'nav.works': 'Our Portfolio',
-    'nav.services': 'Services',
+    'nav.works': 'Our Services',
+    'nav.services': 'Renovation & Remodeling',
     'nav.contact': 'Contact',
     'nav.navigation': 'Navigation',
 
@@ -123,14 +124,14 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.subtitle': 'Transform your home, workplace, and any space into exactly what you envision. Expert craftsmanship, dependable service, and complete customer satisfaction.',
     'hero.getQuote': 'Get a Quick Quote',
 
-    // Gallery
-    'gallery.title': 'Our Portfolio',
+    // Gallery (Our Services)
+    'gallery.title': 'Our Services',
     'gallery.subtitle': 'A showcase of our completed projects',
     'gallery.project': 'Project',
     'gallery.image': 'Image',
 
-    // Services
-    'services.title': 'Our Services',
+    // Services (Renovation & Remodeling)
+    'services.title': 'Renovation & Remodeling',
     'services.subtitle': 'Comprehensive solutions tailored to meet your every need',
 
     // Service names
@@ -162,6 +163,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Contact
     'contact.title': 'Get in Touch',
     'contact.subtitle': 'Request a free consultation and detailed quote for your project',
+    'contact.whatsapp': 'Contact via WhatsApp',
     'contact.phone': 'Phone',
     'contact.address': 'Address',
     'contact.location': 'Istanbul, Turkey',
