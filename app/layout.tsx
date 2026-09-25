@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     default: 'Ber Tadilat',
     template: '%s | Ber Tadilat',
   },
-  description: 'İstanbul\'da ev, iş yeri ve her türlü mekân için profesyonel tadilat, dekorasyon, restorasyon, boya badana, alçıpan, fayans, mutfak dekorasyon, mutfak tadilat, dekorasyon tavan, tadilat işleri, dekorasyon tadilat, parke, tesisat, akıllı ev sistemleri, ısı-ses yalıtımı ve dış cephe hizmetleri. Dekorasyon firmaları arasında güvenilir çözümler. 7/24 hizmet, ücretsiz keşif. ☎ 0545 825 94 95',
+  description: 'İstanbul\'da ev, iş yeri ve her türlü mekân için profesyonel tadilat, dekorasyon, restorasyon, boya badana, alçıpan, fayans, mutfak dekorasyon, mutfak tadilat, dekorasyon tavan, tadilat işleri, dekorasyon tadilat, parke, tesisat, akıllı ev sistemleri, ısı-ses yalıtımı ve dış cephe hizmetleri. Dekorasyon firmaları arasında güvenilir çözümler. 7/24 hizmet, ücretsiz keşif ve hızlı teklif imkânı.',
   keywords: [
     'ber tadilat',
     'ber tadilat istanbul',
@@ -203,7 +203,6 @@ const localBusinessSchema = {
   description: 'İstanbul\'da ev, iş yeri ve her türlü mekân için profesyonel tadilat, dekorasyon, renovasyon, tesisat ve akıllı ev sistemleri hizmetleri. Mutfak dekorasyon, mutfak tadilat, dekorasyon tavan, tadilat işleri, dekorasyon tadilat. Dekorasyon firmaları arasında güvenilir çözümler. 7/24 hizmet, ücretsiz keşif.',
   keywords: 'mutfak dekorasyon, dekorasyon firmaları, mutfak tadilat, tadilat işleri dekorasyon tadilat, dekorasyon tavan, tadilat dekorasyon, ber tadilat, istanbul tadilat, istanbul dekorasyon',
   url: baseUrl,
-  telephone: '+905458259495',
   email: 'info@bertadilat.com',
   address: {
     '@type': 'PostalAddress',
@@ -326,7 +325,7 @@ const organizationSchema = {
   logo: `${baseUrl}/favicon/ber-tadilat-gold.png`,
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+905458259495',
+    email: 'info@bertadilat.com',
     contactType: 'customer service',
     areaServed: 'TR',
     availableLanguage: ['Turkish', 'English'],

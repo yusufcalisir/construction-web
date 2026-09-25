@@ -3,8 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useLanguage } from './LanguageProvider'
-
-const WHATSAPP_URL = 'https://wa.me/905458259495'
+import { openWhatsApp } from '@/lib/safeContact'
 
 export default function WhatsAppWidget() {
   const { t } = useLanguage()
@@ -51,7 +50,7 @@ export default function WhatsAppWidget() {
   }, [])
 
   const handleConnect = () => {
-    window.open(WHATSAPP_URL, '_blank', 'noopener,noreferrer')
+    openWhatsApp()
   }
 
   if (!isVisible) {
