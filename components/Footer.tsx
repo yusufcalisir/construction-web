@@ -7,6 +7,18 @@ import SafeWhatsAppButton from './SafeWhatsAppButton'
 export default function Footer() {
   const { t } = useLanguage()
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault()
+    const element = document.getElementById(targetId)
+    if (element) {
+      const offsetTop = element.offsetTop - 80
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth',
+      })
+    }
+  }
+
   return (
     <footer
       id="footer"
@@ -33,15 +45,15 @@ export default function Footer() {
             </h4>
             <nav className="flex flex-col space-y-3">
               {[
-                { key: 'home', hash: '#home' },
-                { key: 'works', hash: '#works' },
-                { key: 'services', hash: '#services' },
-                { key: 'gallery', hash: '#gallery' },
-                { key: 'contact', hash: '#contact' }
+                { key: 'home', hash: '#home', id: 'home' },
+                { key: 'works', hash: '#works', id: 'works' },
+                { key: 'services', hash: '#services', id: 'services' },
+                { key: 'contact', hash: '#contact', id: 'contact' }
               ].map((link) => (
                 <a
                   key={link.key}
                   href={link.hash}
+                  onClick={(e) => handleNavClick(e, link.id)}
                   className="text-sm transition-colors duration-300 hover:text-amber-500 text-stone-400 font-medium tracking-wide w-fit"
                 >
                   {t(`nav.${link.key}`)}
