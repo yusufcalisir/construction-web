@@ -25,6 +25,13 @@ function GalleryCard({ photos, cardIndex, photoIndex, onOpen }: GalleryCardProps
   const [prevIdx, setPrevIdx] = useState<number | null>(null)
   const [isSliding, setIsSliding] = useState(false)
 
+  // Preload next and previous images for this card on idle/hover
+  const handleMouseEnter = () => {
+    const nextIdx = (currentIdx + 1) % photos.length
+    const nextImg = new window.Image()
+    nextImg.src = photos[nextIdx]
+  }
+
   useEffect(() => {
     if (photoIndex !== currentIdx) {
       setPrevIdx(currentIdx)
@@ -43,6 +50,7 @@ function GalleryCard({ photos, cardIndex, photoIndex, onOpen }: GalleryCardProps
   return (
     <div
       onClick={() => onOpen(currentIdx)}
+      onMouseEnter={handleMouseEnter}
       className="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-stone-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:border-amber-400/50 bg-stone-900 cursor-pointer select-none"
       role="button"
       tabIndex={0}
@@ -63,7 +71,7 @@ function GalleryCard({ photos, cardIndex, photoIndex, onOpen }: GalleryCardProps
             fill
             className="object-cover"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-            quality={75}
+            unoptimized
           />
         </div>
       )}
@@ -79,7 +87,7 @@ function GalleryCard({ photos, cardIndex, photoIndex, onOpen }: GalleryCardProps
           className="object-cover"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
           loading={cardIndex < 4 ? 'eager' : 'lazy'}
-          quality={75}
+          unoptimized
         />
       </div>
 
@@ -139,27 +147,42 @@ export default function ProjectGallery() {
 
   const activePhotos = lightbox ? cardBuckets[lightbox.cardIndex] : []
 
+  // Preload all photos of the active card when lightbox is opened for 0ms instantaneous transitions
+  useEffect(() => {
+    if (lightbox) {
+      const photos = cardBuckets[lightbox.cardIndex]
+      photos.forEach((src) => {
+        const img = new window.Image()
+        img.src = src
+      })
+    }
+  }, [lightbox, cardBuckets])
+
+  // Synchronized photo update: updates lightbox state and card index simultaneously
+  const goToPhoto = useCallback((newIdx: number) => {
+    if (!lightbox) return
+    setLightbox((prev) => (prev ? { ...prev, photoIndex: newIdx } : null))
+    setCardIndices((prev) => {
+      const next = [...prev]
+      next[lightbox.cardIndex] = newIdx
+      return next
+    })
+  }, [lightbox])
+
   // Lightbox navigation handlers
   const handleNextPhoto = useCallback(() => {
     if (!lightbox) return
     const photos = cardBuckets[lightbox.cardIndex]
-    setLightbox((prev) =>
-      prev ? { ...prev, photoIndex: (prev.photoIndex + 1) % photos.length } : null
-    )
-  }, [lightbox, cardBuckets])
+    const nextIdx = (lightbox.photoIndex + 1) % photos.length
+    goToPhoto(nextIdx)
+  }, [lightbox, cardBuckets, goToPhoto])
 
   const handlePrevPhoto = useCallback(() => {
     if (!lightbox) return
     const photos = cardBuckets[lightbox.cardIndex]
-    setLightbox((prev) =>
-      prev
-        ? {
-            ...prev,
-            photoIndex: (prev.photoIndex - 1 + photos.length) % photos.length,
-          }
-        : null
-    )
-  }, [lightbox, cardBuckets])
+    const prevIdx = (lightbox.photoIndex - 1 + photos.length) % photos.length
+    goToPhoto(prevIdx)
+  }, [lightbox, cardBuckets, goToPhoto])
 
   const handleClose = useCallback(() => {
     setLightbox(null)
@@ -313,16 +336,17 @@ export default function ProjectGallery() {
               </button>
             )}
 
-            {/* Active Image */}
+            {/* Active Image with instantaneous unoptimized static serving */}
             <div className="relative w-full h-full max-h-[72vh] rounded-2xl overflow-hidden shadow-2xl">
               <Image
+                key={activePhotos[lightbox.photoIndex]}
                 src={activePhotos[lightbox.photoIndex]}
                 alt={`Proje ${lightbox.cardIndex + 1} Fotoğraf ${lightbox.photoIndex + 1}`}
                 fill
                 className="object-contain"
                 sizes="(max-width: 1200px) 100vw, 1200px"
                 priority
-                quality={85}
+                unoptimized
               />
             </div>
 
@@ -362,11 +386,7 @@ export default function ProjectGallery() {
                 <button
                   key={src}
                   type="button"
-                  onClick={() =>
-                    setLightbox((prev) =>
-                      prev ? { ...prev, photoIndex: pIdx } : null
-                    )
-                  }
+                  onClick={() => goToPhoto(pIdx)}
                   className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden transition-all focus:outline-none flex-shrink-0 touch-manipulation ${
                     isCurrent
                       ? 'ring-2 ring-amber-500 scale-105 opacity-100 shadow-md'
@@ -380,7 +400,7 @@ export default function ProjectGallery() {
                     fill
                     className="object-cover"
                     sizes="56px"
-                    quality={60}
+                    unoptimized
                   />
                 </button>
               )

@@ -35,7 +35,7 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 20)
 
       // Determine active section based on scroll position
-      const sections = ['home', 'works', 'services', 'contact']
+      const sections = ['home', 'works', 'services', 'gallery', 'contact']
       const scrollPosition = window.scrollY + 150
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -90,6 +90,8 @@ export default function Navbar() {
         return 'bg-white/90 backdrop-blur-md border-b border-stone-200/40 shadow-[0_2px_15px_rgba(0,0,0,0.02)]'
       case 'services':
         return 'bg-stone-50/90 backdrop-blur-md border-b border-stone-200/40 shadow-[0_2px_15px_rgba(0,0,0,0.02)]'
+      case 'gallery':
+        return 'bg-white/90 backdrop-blur-md border-b border-stone-200/40 shadow-[0_2px_15px_rgba(0,0,0,0.02)]'
       case 'contact':
         return 'bg-white/90 backdrop-blur-md border-b border-stone-200/40 shadow-[0_2px_15px_rgba(0,0,0,0.02)]'
       default:
@@ -123,7 +125,7 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-7 xl:gap-8">
-              {['home', 'works', 'services', 'contact'].map((section) => {
+              {['home', 'works', 'services', 'gallery', 'contact'].map((section) => {
                 const isActive = activeSection === section;
                 return (
                   <a
@@ -293,7 +295,7 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-40 bg-stone-950/95 backdrop-blur-lg flex flex-col justify-center px-6 py-20">
           <div className="flex flex-col space-y-3 max-w-sm mx-auto w-full text-center">
-            {['home', 'works', 'services', 'contact'].map((section) => {
+            {['home', 'works', 'services', 'gallery', 'contact'].map((section) => {
               const isActive = activeSection === section;
               return (
                 <a
