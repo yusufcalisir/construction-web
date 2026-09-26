@@ -45,6 +45,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${baseUrl}/#gallery`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/#gallery`,
+          en: `${baseUrl}/?lang=en#gallery`,
+          fa: `${baseUrl}/?lang=fa#gallery`,
+        },
+      },
+    },
+    {
       url: `${baseUrl}/#contact`,
       lastModified: now,
       changeFrequency: 'monthly',

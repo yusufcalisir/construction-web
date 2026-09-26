@@ -19,6 +19,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': 'Ana Sayfa',
     'nav.works': 'Hizmetlerimiz',
     'nav.services': 'Tadilat & Yenileme',
+    'nav.gallery': 'Galeri',
     'nav.contact': 'İletişim',
     'nav.navigation': 'Navigasyon',
 
@@ -31,6 +32,11 @@ const translations: Record<Language, Record<string, string>> = {
     'gallery.title': 'Hizmetlerimiz',
     'gallery.project': 'Proje',
     'gallery.image': 'Görsel',
+
+    // New Project Gallery (Galeri)
+    'gallery2.title': 'Proje Galerisi',
+    'gallery2.subtitle': 'Tamamlanan tadilat ve dekorasyon projelerimizden kareler',
+    'gallery2.close': 'Kapat',
 
     // Services (Tadilat & Yenileme)
     'services.title': 'Tadilat & Yenileme',
@@ -120,6 +126,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': 'Home',
     'nav.works': 'Our Services',
     'nav.services': 'Renovation & Remodeling',
+    'nav.gallery': 'Gallery',
     'nav.contact': 'Contact',
     'nav.navigation': 'Navigation',
 
@@ -132,6 +139,11 @@ const translations: Record<Language, Record<string, string>> = {
     'gallery.title': 'Our Services',
     'gallery.project': 'Project',
     'gallery.image': 'Image',
+
+    // New Project Gallery (Gallery)
+    'gallery2.title': 'Project Gallery',
+    'gallery2.subtitle': 'Moments from our completed renovation and decoration projects',
+    'gallery2.close': 'Close',
 
     // Services (Renovation & Remodeling)
     'services.title': 'Renovation & Remodeling',
@@ -221,6 +233,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': 'صفحه اصلی',
     'nav.works': 'خدمات ما',
     'nav.services': 'بازسازی و نوسازی',
+    'nav.gallery': 'گالری',
     'nav.contact': 'تماس با ما',
     'nav.navigation': 'دسترسی سریع',
 
@@ -233,6 +246,11 @@ const translations: Record<Language, Record<string, string>> = {
     'gallery.title': 'خدمات و پروژه‌های ما',
     'gallery.project': 'پروژه',
     'gallery.image': 'تصویر',
+
+    // New Project Gallery (Galeri)
+    'gallery2.title': 'گالری پروژه‌ها',
+    'gallery2.subtitle': 'تصاویر منتخب از پروژه‌های اجرا شده بازسازی و دکوراسیون',
+    'gallery2.close': 'بستن',
 
     // Services (Tadilat & Yenileme)
     'services.title': 'بازسازی و نوسازی',

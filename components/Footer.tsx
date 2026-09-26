@@ -36,6 +36,7 @@ export default function Footer() {
                 { key: 'home', hash: '#home' },
                 { key: 'works', hash: '#works' },
                 { key: 'services', hash: '#services' },
+                { key: 'gallery', hash: '#gallery' },
                 { key: 'contact', hash: '#contact' }
               ].map((link) => (
                 <a
