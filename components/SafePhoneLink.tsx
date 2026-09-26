@@ -127,14 +127,14 @@ export default function SafePhoneLink({
       <button
         type="button"
         onClick={handleReveal}
-        className={`group text-left font-bold tracking-wide transition-all duration-300 focus:outline-none flex items-center gap-2.5 ${
+        className={`group text-left rtl:text-right font-bold tracking-wide transition-all duration-300 focus:outline-none flex items-center gap-2.5 ${
           isDark
             ? 'text-stone-200 hover:text-amber-400'
             : 'text-stone-900 hover:text-amber-600'
         }`}
         title={isRevealed ? t('contact.clickToCall') : t('contact.revealPhone')}
       >
-        <span className="font-mono tracking-wider text-inherit">
+        <span className="font-mono tracking-wider text-inherit" dir="ltr">
           {isRevealed ? getDisplayPhone() : MASKED_PHONE_DISPLAY}
         </span>
 

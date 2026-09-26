@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-16">
           
           {/* Company Info */}
-          <div className="lg:col-span-6 space-y-6 text-left">
+          <div className="lg:col-span-6 space-y-6 text-left rtl:text-right">
             <span className="text-xl font-bold tracking-widest text-white font-serif">
               BER<span className="text-amber-500 font-light tracking-[0.15em] ml-1">TADİLAT</span>
             </span>

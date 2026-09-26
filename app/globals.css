@@ -242,4 +242,25 @@ p {
   animation: icon-lightning 1.8s ease-in-out infinite;
 }
 
+/* ═══════════════════════════════════════════
+   Persian (Farsi) & RTL Typography Support
+   ═══════════════════════════════════════════ */
+html[lang="fa"], [dir="rtl"] {
+  font-family: var(--font-inter), system-ui, -apple-system, 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+html[lang="fa"] h1,
+html[lang="fa"] h2,
+html[lang="fa"] h3,
+html[lang="fa"] h4,
+html[lang="fa"] h5,
+html[lang="fa"] h6 {
+  line-height: 1.35;
+  letter-spacing: normal;
+}
+
+html[lang="fa"] p {
+  line-height: 1.85;
+}
+
 

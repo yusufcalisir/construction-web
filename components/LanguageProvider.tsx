@@ -2,10 +2,11 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react'
 
-type Language = 'tr' | 'en'
+export type Language = 'tr' | 'en' | 'fa'
 
 interface LanguageContextType {
   language: Language
+  setLanguage: (lang: Language) => void
   toggleLanguage: () => void
   t: (key: string) => string
 }
@@ -215,6 +216,107 @@ const translations: Record<Language, Record<string, string>> = {
     'overview.install.item3': 'Smart home electrical systems and automation',
     'overview.footer': 'From a small room renovation to a complete building facade, we offer turnkey solutions for projects of all sizes. Contact us to plan your project with a free survey.',
   },
+  fa: {
+    // Navigation
+    'nav.home': 'صفحه اصلی',
+    'nav.works': 'خدمات ما',
+    'nav.services': 'بازسازی و نوسازی',
+    'nav.contact': 'تماس با ما',
+    'nav.navigation': 'دسترسی سریع',
+
+    // Hero
+    'hero.title': 'بر تادیلات',
+    'hero.subtitle': 'فضاهای مسکونی، اداری و تجاری خود را مطابق رویاهایتان بازسازی کنید. مهارت استادانه، خدمات متعهدانه و رضایت کامل مشتری.',
+    'hero.getQuote': 'دریافت استعلام قیمت',
+
+    // Gallery (Hizmetlerimiz)
+    'gallery.title': 'خدمات و پروژه‌های ما',
+    'gallery.project': 'پروژه',
+    'gallery.image': 'تصویر',
+
+    // Services (Tadilat & Yenileme)
+    'services.title': 'بازسازی و نوسازی',
+    'services.subtitle': 'ارائه راهکارهای جامع مهندسی و ساختمانی متناسب با نیاز و سلیقه شما',
+
+    // Service names
+    'service.dekorasyon': 'طراحی دکوراسیون داخلی',
+    'service.restorasyon': 'مرمت و بازسازی ابنیه',
+    'service.boya': 'نقاشی ساختمان و رنگ‌آمیزی',
+    'service.alciplan': 'کناف و سقف کاذب',
+    'service.fayans': 'کاشی‌کاری و سرامیک',
+    'service.mutfak': 'طراحی و اجرای کابینت آشپزخانه',
+    'service.parke': 'پارکت و کف‌پوش',
+    'service.isolation': 'عایق‌کاری حرارتی و صوتی',
+    'service.facade': 'نماکاری و عایق نمای ساختمان',
+    'service.akillisistem': 'سیستم‌های هوشمند ساختمان (BMS)',
+    'service.tesisat': 'تاسیسات مکانیکی و برقی',
+
+    // Service descriptions
+    'service.dekorasyon.desc': 'فضاهای زندگی شما را با راهکارهای مدرن و لوکس دکوراسیون متحول می‌کنیم. با تیمی مجرب در طراحی معماری داخلی، چیدمان فضا و ترکیب رنگ‌ها، محیطی متناسب با سلیقه شما خلق می‌کنیم.',
+    'service.restorasyon.desc': 'با تجربه تخصصی در مرمت اصولی سازه‌ها و بناهای ارزشمند، اصالت و هویت معماری را حفظ و استحکام سازه را ارتقا می‌دهیم. تلفیقی از متدهای سنتی و مصالح مهندسی نوین برای نتایجی ماندگار.',
+    'service.boya.desc': 'خدمات حرفه‌ای نقاشی و رنگ‌آمیزی ساختمان با مرغوب‌ترین رنگ‌ها، بتونه‌کاری و زیرسازی استاندارد و اجرای دقیق برای سطوحی یکدست و با دوام طولانی.',
+    'service.alciplan.desc': 'اجرای مهندسی کناف، سقف کاذب دکوراتیو، لاین‌های نوری و دیوارهای پیش‌ساخته جداکننده (درای‌وال) با دقت میلی‌متری و تراز دقیق.',
+    'service.fayans.desc': 'نصب دقیق انواع کاشی، سرامیک، پرسلان و اسلب برای حمام، سرویس بهداشتی و آشپزخانه؛ همراه با آب‌بندی کامل صددرصدی و بندکشی مقاوم.',
+    'service.mutfak.desc': 'طراحی سه‌بعدی، ساخت و نصب کابینت‌های مدرن و کلاسیک آشپزخانه. بهینه‌سازی حداکثری فضا، یراق‌آلات باکیفیت و متریال مقاوم در برابر رطوبت و حرارت.',
+    'service.parke.desc': 'نصب تخصصی انواع پارکت، لمینت و کف‌پوش چوبی با سال‌ها سابقه درخشان. زیرسازی هموار، فوم سایلنت باکیفیت و نصب دقیق قرنیزها جهت زیبایی و ماندگاری کف.',
+    'service.isolation.desc': 'عایق‌کاری تخصصی حرارتی و صوتی جهت کاهش مصرف انرژی و ایجاد محیطی آرام. به کارگیری مدرن‌ترین متریال عایق برای خنک ماندن در تابستان و گرم بودن در زمستان.',
+    'service.facade.desc': 'طراحی، اجرای نما، نقاشی و عایق‌کاری حرارتی پوسته خارجی ساختمان (مانتولاما). مقاوم در برابر رطوبت و شرایط جوی مختلف با جلوه‌ای شیک و مدرن.',
+    'service.akillisistem.desc': 'هوشمندسازی ساختمان، کنترل یکپارچه سیستم‌های روشنایی، سرمایش و گرمایش، پرده‌های برقی و سیستم‌های امنیتی از طریق تلفن همراه جهت ارتقای راحتی و صرفه‌جویی در انرژی.',
+    'service.tesisat.desc': 'انجام کلیه خدمات تاسیسات مکانیکی و الکتریکی ساختمان؛ شامل بازسازی سیستم برق‌کشی، لوله‌کشی آب و فاضلاب، نصب و راه‌اندازی رادیاتور، پکیج و سیستم‌های گرمایشی طبق استانداردهای روز مهندسی.',
+
+    // Contact
+    'contact.title': 'تماس با ما',
+    'contact.subtitle': 'جهت بازدید، مشاوره فنی و دریافت پیش‌فاکتور رایگان با ما در ارتباط باشید',
+    'contact.whatsapp': 'ارتباط در واتس‌اپ',
+    'contact.phone': 'تلفن تماس',
+    'contact.revealPhone': 'نمایش شماره تماس',
+    'contact.callNow': 'تماس تلفنی',
+    'contact.copied': 'کپی شد',
+    'contact.clickToCall': 'برای تماس ضربه بزنید',
+    'contact.address': 'آدرس',
+    'contact.location': 'استانبول، ترکیه',
+    'contact.workingHours': 'ساعات کاری',
+    'contact.weekdays': 'روزهای کاری',
+    'contact.weekends': 'آخر هفته',
+    'contact.allDay': '۲۴ ساعته / ۷ روز هفته',
+
+    // Footer
+    'footer.description': 'با سال‌ها تجربه درخشان در استانبول، ارائه‌دهنده خدمات تخصصی ساخت و ساز، بازسازی، دکوراسیون داخلی، تاسیسات و هوشمندسازی ساختمان هستیم. فضاهای مسکونی و تجاری شما را با بهره‌گیری از مصالح مرغوب، تیم مهندسی ماهر و تضمین تحویل به‌موقع متحول می‌سازیم. رضایت شما تعهد ماست.',
+    'footer.copyright': '© ۲۰۲۶ بر تادیلات. تمامی حقوق محفوظ است.',
+
+    // WhatsApp Widget
+    'whatsapp.title': 'بر تادیلات (Ber Tadilat)',
+    'whatsapp.status': 'پاسخگویی سریع',
+    'whatsapp.message': 'سلام، چطور می‌توانیم در پروژه ساختمانی یا بازسازی‌تان به شما کمک کنیم؟',
+    'whatsapp.connect': 'شروع گفتگو در واتس‌اپ',
+    'whatsapp.ariaLabel': 'ارتباط در واتس‌اپ',
+    'whatsapp.close': 'بستن',
+
+    // Overview Section
+    'overview.title': 'از طراحی تا تحویل کلید؛ همراه در تمامی جزئیات خانه شما',
+    'overview.description': 'از طراحی ایده تا اجرای نهایی، خدمات جامع بازسازی و دکوراسیون را به‌صورت صفر تا صد و کلید تحویل ارائه می‌دهیم. از بازسازی داخلی و مرمت سازه گرفته تا تاسیسات برق، آب، گاز، عایق‌بندی و هوشمندسازی، کلیه مراحل توسط تیم حرفه‌ای ما هدایت می‌شود. بدون دغدغه هماهنگی با استادکاران گوناگون، تمامی امور را با یک مدیریت منسجم و پاسخگو پیش ببرید.',
+    'overview.description.slide0': 'از طراحی ایده تا اجرای نهایی، خدمات جامع بازسازی و دکوراسیون را به‌صورت صفر تا صد و کلید تحویل ارائه می‌دهیم.',
+    'overview.description.slide1': 'از دکوراسیون و مرمت بنا تا سیستم‌های تاسیساتی، کلیه مراحل توسط تیم مهندسی باسابقه ما مدیریت می‌شود.',
+    'overview.description.slide2': 'از عایق‌کاری حرارتی و صوتی تا سیستم‌های هوشمند، خانه‌تان را برای آینده‌ای باکیفیت آماده می‌سازیم.',
+    'overview.description.slide3': 'بدون دغدغه هماهنگی میان چندین اکیپ و استادکار، با یک طرف قرارداد مسئول به بهترین نتیجه برسید.',
+    'overview.decorTitle': 'دکوراسیون و نوسازی',
+    'overview.decor.item1': 'طراحی معماری و اجرای دکوراسیون داخلی',
+    'overview.decor.item2': 'مرمت و بازسازی اساسی ابنیه',
+    'overview.decor.item3': 'نقاشی و رنگ‌آمیزی ساختمانی',
+    'overview.decor.item4': 'کناف، سقف کاذب و دیوارهای پارتیشن',
+    'overview.decor.item5': 'نصب کاشی، سرامیک و اسلب',
+    'overview.decor.item6': 'طراحی و اجرای کابینت آشپزخانه',
+    'overview.decor.item7': 'نصب انواع پارکت و کف‌پوش',
+    'overview.insulationTitle': 'عایق‌کاری',
+    'overview.insulation.item1': 'عایق‌کاری حرارتی ساختمان (مانتولاما)',
+    'overview.insulation.item2': 'عایق‌کاری صوتی پیشرفته',
+    'overview.insulation.item3': 'نماکاری و پوشش‌های مقاوم خارجی',
+    'overview.installTitle': 'تاسیسات و هوشمندسازی',
+    'overview.install.item1': 'تاسیسات و سیم‌کشی الکتریکی',
+    'overview.install.item2': 'لوله‌کشی آب، فاضلاب و گاز',
+    'overview.install.item3': 'هوشمندسازی ساختمان و اتوماسیون خانگی',
+    'overview.footer': 'از بازسازی یک اتاق تا نوسازی کامل ساختمان و نما، پروژه‌های شما را با بالاترین کیفیت و به‌صورت کلید تحویل اجرا می‌کنیم. جهت بازدید و برآورد رایگان با ما تماس بگیرید.',
+  },
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
@@ -223,26 +325,41 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true)
-    // Always start with Turkish, don't read from localStorage on initial load
+    const saved = localStorage.getItem('language') as Language | null
+    if (saved && (saved === 'tr' || saved === 'en' || saved === 'fa')) {
+      setLanguage(saved)
+    }
   }, [])
 
   useEffect(() => {
     if (mounted) {
       localStorage.setItem('language', language)
     }
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = language
+      document.documentElement.dir = language === 'fa' ? 'rtl' : 'ltr'
+      if (language === 'fa') {
+        document.documentElement.classList.add('lang-fa')
+      } else {
+        document.documentElement.classList.remove('lang-fa')
+      }
+    }
   }, [language, mounted])
 
   const toggleLanguage = () => {
-    setLanguage((prev) => (prev === 'tr' ? 'en' : 'tr'))
+    setLanguage((prev) => {
+      if (prev === 'tr') return 'en'
+      if (prev === 'en') return 'fa'
+      return 'tr'
+    })
   }
 
   const t = (key: string): string => {
-    return translations[language][key] || key
+    return translations[language]?.[key] || translations['tr']?.[key] || key
   }
 
-  // Always provide the context, even during SSR
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   )
@@ -255,4 +372,3 @@ export function useLanguage() {
   }
   return context
 }
-

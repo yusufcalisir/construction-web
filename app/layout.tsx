@@ -158,6 +158,7 @@ export const metadata: Metadata = {
     languages: {
       'tr-TR': baseUrl,
       'en-US': `${baseUrl}/?lang=en`,
+      'fa-IR': `${baseUrl}/?lang=fa`,
     },
   },
   

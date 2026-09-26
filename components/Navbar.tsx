@@ -6,11 +6,29 @@ import SafePhoneLink from './SafePhoneLink'
 import SafeWhatsAppButton from './SafeWhatsAppButton'
 
 export default function Navbar() {
-  const { t, language, toggleLanguage } = useLanguage()
+  const { t, language, setLanguage } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const [activeSection, setActiveSection] = useState('home')
+
+  // Always show only the OTHER 2 languages to switch to
+  const otherLanguages = (
+    language === 'tr'
+      ? [
+          { code: 'en' as const, label: 'EN', title: 'English' },
+          { code: 'fa' as const, label: 'FA', title: 'فارسی' },
+        ]
+      : language === 'en'
+      ? [
+          { code: 'tr' as const, label: 'TR', title: 'Türkçe' },
+          { code: 'fa' as const, label: 'FA', title: 'فارسی' },
+        ]
+      : [
+          { code: 'tr' as const, label: 'TR', title: 'Türkçe' },
+          { code: 'en' as const, label: 'EN', title: 'English' },
+        ]
+  )
 
   useEffect(() => {
     const handleScroll = () => {
@@ -104,7 +122,7 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center gap-8">
               {['home', 'works', 'services', 'contact'].map((section) => {
                 const isActive = activeSection === section;
                 return (
@@ -136,7 +154,7 @@ export default function Navbar() {
               {/* Vertical separator */}
               <span className={`h-4 w-[1px] transition-colors duration-500 ${!isScrolled ? 'bg-white/20' : 'bg-stone-200'}`} />
 
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center gap-2.5">
                 {/* Call Button */}
                 <SafePhoneLink
                   variant="icon-button"
@@ -148,22 +166,47 @@ export default function Navbar() {
                   ariaLabel="Call us"
                 />
                 
-                {/* Language Button */}
-                <button
-                  onClick={toggleLanguage}
-                  className={`px-3 py-1.5 rounded-xl transition-all duration-300 text-xs font-bold tracking-wider border focus:outline-none ${
+                {/* Modern Capsule 2-Language Switcher */}
+                <div
+                  dir="ltr"
+                  className={`inline-flex items-center p-1 rounded-xl border backdrop-blur-md transition-all duration-300 select-none shadow-sm ${
                     !isScrolled
-                      ? 'text-white border-white/20 bg-white/10 hover:bg-white/20 hover:border-white/30 shadow-md backdrop-blur-sm'
-                      : 'text-stone-700 border-stone-200 bg-white hover:bg-stone-50 hover:text-stone-950 shadow-sm'
+                      ? 'bg-stone-950/45 border-white/20'
+                      : 'bg-stone-100/90 border-stone-200/90'
                   }`}
+                  role="group"
+                  aria-label="Dil seçenekleri"
                 >
-                  {language === 'tr' ? 'EN' : 'TR'}
-                </button>
+                  {otherLanguages.map((target, idx) => (
+                    <span key={target.code} className="inline-flex items-center">
+                      {idx > 0 && (
+                        <span
+                          className={`w-[1px] h-3.5 transition-colors duration-300 mx-1 ${
+                            !isScrolled ? 'bg-white/20' : 'bg-stone-300'
+                          }`}
+                        />
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => setLanguage(target.code)}
+                        title={target.title}
+                        aria-label={target.title}
+                        className={`px-3 py-1 min-w-[38px] text-center rounded-lg text-xs font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 ${
+                          !isScrolled
+                            ? 'text-stone-200 hover:text-white hover:bg-white/15'
+                            : 'text-stone-700 hover:text-amber-600 hover:bg-stone-200/70'
+                        }`}
+                      >
+                        {target.label}
+                      </button>
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* Mobile menu trigger */}
-            <div className="lg:hidden flex items-center space-x-2">
+            <div className="lg:hidden flex items-center gap-1.5 sm:gap-2">
               <SafePhoneLink
                 variant="icon-button"
                 className={`p-2 rounded-xl transition-all duration-300 border focus:outline-none ${
@@ -176,18 +219,44 @@ export default function Navbar() {
                 ariaLabel="Call us"
               />
               
-              <button
-                onClick={toggleLanguage}
-                className={`px-2.5 py-1.5 rounded-xl transition-all duration-300 text-xs font-bold border focus:outline-none ${
+              {/* Mobile Capsule 2-Language Switcher */}
+              <div
+                dir="ltr"
+                className={`inline-flex items-center p-0.5 rounded-xl border backdrop-blur-md transition-all duration-300 select-none shadow-sm ${
                   isMobileMenuOpen
-                    ? 'text-white border-white/10 bg-white/10'
+                    ? 'bg-white/10 border-white/15'
                     : !isScrolled
-                      ? 'text-white border-white/25 bg-white/10'
-                      : 'text-stone-700 border-stone-200 bg-white'
+                    ? 'bg-stone-950/45 border-white/20'
+                    : 'bg-stone-100/90 border-stone-200'
                 }`}
+                role="group"
+                aria-label="Dil seçenekleri"
               >
-                {language === 'tr' ? 'EN' : 'TR'}
-              </button>
+                {otherLanguages.map((target, idx) => (
+                  <span key={target.code} className="inline-flex items-center">
+                    {idx > 0 && (
+                      <span
+                        className={`w-[1px] h-3 transition-colors duration-300 mx-0.5 ${
+                          isMobileMenuOpen || !isScrolled ? 'bg-white/20' : 'bg-stone-300'
+                        }`}
+                      />
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => setLanguage(target.code)}
+                      title={target.title}
+                      aria-label={target.title}
+                      className={`px-2 py-1 min-w-[30px] text-center rounded-lg text-[11px] font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 ${
+                        isMobileMenuOpen || !isScrolled
+                          ? 'text-stone-200 hover:text-white active:bg-white/20'
+                          : 'text-stone-700 hover:text-amber-600 active:bg-stone-200'
+                      }`}
+                    >
+                      {target.label}
+                    </button>
+                  </span>
+                ))}
+              </div>
               
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -242,8 +311,33 @@ export default function Navbar() {
               );
             })}
             
+            {/* Mobile Menu 2-Language Switcher */}
+            <div
+              dir="ltr"
+              className="p-1 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex items-center justify-center gap-2 mx-auto w-full max-w-xs select-none"
+              role="group"
+              aria-label="Dil seçenekleri"
+            >
+              {otherLanguages.map((target) => (
+                <button
+                  key={target.code}
+                  type="button"
+                  onClick={() => {
+                    setLanguage(target.code)
+                    setIsMobileMenuOpen(false)
+                  }}
+                  title={target.title}
+                  aria-label={target.title}
+                  className="flex-1 py-2.5 px-4 rounded-xl text-center font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 bg-white/10 hover:bg-amber-500 text-white shadow-sm"
+                >
+                  <span className="text-xs font-bold">{target.label}</span>
+                  <span className="text-[11px] opacity-80 font-normal ml-1.5">({target.title})</span>
+                </button>
+              ))}
+            </div>
+
             {/* WhatsApp CTA Button */}
-            <div className="pt-6">
+            <div className="pt-4">
               <SafeWhatsAppButton
                 className="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-green-500 hover:bg-green-600 text-white font-bold tracking-widest uppercase text-xs transition-all duration-300 shadow-lg shadow-green-500/20"
                 onClick={() => setIsMobileMenuOpen(false)}
