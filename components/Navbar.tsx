@@ -28,8 +28,8 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 20)
 
       // Determine active section based on scroll position
-      const sections = ['home', 'about', 'services', 'why-ber', 'how-we-work', 'gallery', 'contact']
-      const scrollPosition = window.scrollY + 150
+      const sections = ['home', 'about', 'services', 'why-ber', 'how-we-work', 'gallery', 'contact', 'footer']
+      const scrollPosition = window.scrollY + 80
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const element = document.getElementById(sections[i])
@@ -39,7 +39,7 @@ export default function Navbar() {
         }
       }
     }
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll() // Initial check
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -69,30 +69,24 @@ export default function Navbar() {
     setIsMobileMenuOpen(false)
   }
 
+  // Check if current active section has a dark background
+  const isDarkSection = (section: string) => {
+    return ['home', 'services', 'how-we-work', 'footer'].includes(section)
+  }
+
+  const isDark = !isScrolled || isMobileMenuOpen || isDarkSection(activeSection)
+
   // Get background color based on active section
   const getNavbarBg = () => {
     if (!isScrolled) {
       return 'bg-transparent'
     }
 
-    // Match active section background
-    switch (activeSection) {
-      case 'home':
-        return 'bg-stone-50/90 backdrop-blur-md border-b border-stone-200/40 shadow-[0_2px_15px_rgba(0,0,0,0.02)]'
-      case 'about':
-        return 'bg-white/90 backdrop-blur-md border-b border-stone-200/40 shadow-[0_2px_15px_rgba(0,0,0,0.02)]'
-      case 'services':
-      case 'how-we-work':
-        return 'bg-stone-950/90 backdrop-blur-md border-b border-stone-800/40 shadow-[0_2px_15px_rgba(0,0,0,0.2)]'
-      case 'why-ber':
-        return 'bg-stone-50/90 backdrop-blur-md border-b border-stone-200/40 shadow-[0_2px_15px_rgba(0,0,0,0.02)]'
-      case 'gallery':
-        return 'bg-white/90 backdrop-blur-md border-b border-stone-200/40 shadow-[0_2px_15px_rgba(0,0,0,0.02)]'
-      case 'contact':
-        return 'bg-white/90 backdrop-blur-md border-b border-stone-200/40 shadow-[0_2px_15px_rgba(0,0,0,0.02)]'
-      default:
-        return 'bg-stone-50/90 backdrop-blur-md border-b border-stone-200/40 shadow-[0_2px_15px_rgba(0,0,0,0.02)]'
+    if (isDark) {
+      return 'bg-stone-950/95 backdrop-blur-md border-b border-stone-800/80 shadow-[0_4px_20px_rgba(0,0,0,0.35)]'
     }
+
+    return 'bg-stone-50/95 backdrop-blur-md border-b border-stone-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.04)]'
   }
 
   return (
@@ -101,7 +95,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${getNavbarBg()}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`flex items-center justify-between transition-all duration-500 ${isScrolled ? 'h-20' : 'h-24'}`}>
+          <div className={`flex items-center justify-between transition-all duration-500 ${isScrolled ? 'h-16 sm:h-18 lg:h-20' : 'h-18 sm:h-20 lg:h-24'}`}>
             {/* Logo */}
             <div className="flex-shrink-0">
               <a
@@ -109,12 +103,10 @@ export default function Navbar() {
                 onClick={(e) => handleNavClick(e, 'home')}
                 className="flex items-center group focus:outline-none"
               >
-                <span className={`text-2xl font-bold tracking-widest leading-none transition-colors duration-500 font-serif ${
-                  isMobileMenuOpen
-                    ? 'text-white'
-                    : !isScrolled ? 'text-white' : 'text-stone-900'
+                <span className={`text-xl sm:text-2xl font-bold tracking-widest leading-none transition-colors duration-500 font-serif ${
+                  isDark ? 'text-white' : 'text-stone-900'
                 }`}>
-                  BER<span className="text-amber-500 font-light tracking-[0.15em] ml-1">TADİLAT</span>
+                  BER<span className={`${isDark ? 'text-amber-400' : 'text-amber-600'} font-light tracking-[0.15em] ml-1 transition-colors duration-500`}>TADİLAT</span>
                 </span>
               </a>
             </div>
@@ -136,11 +128,11 @@ export default function Navbar() {
                     onClick={(e) => handleNavClick(e, item.id)}
                     className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
                       isActive
-                        ? !isScrolled
+                        ? isDark
                           ? 'text-amber-400 font-bold'
                           : 'text-amber-600 font-bold'
-                        : !isScrolled
-                          ? 'text-stone-200 hover:text-white'
+                        : isDark
+                          ? 'text-stone-300 hover:text-white'
                           : 'text-stone-600 hover:text-stone-900'
                     }`}
                   >
@@ -156,14 +148,15 @@ export default function Navbar() {
               })}
               
               {/* Vertical separator */}
-              <span className={`h-4 w-[1px] transition-colors duration-500 ${!isScrolled ? 'bg-white/20' : 'bg-stone-200'}`} />
+              <span className={`h-4 w-[1px] transition-colors duration-500 ${isDark ? 'bg-white/20' : 'bg-stone-200'}`} />
 
               <div className="flex items-center gap-2.5">
                 {/* Call Button */}
                 <SafePhoneLink
                   variant="icon-button"
-                  className={`flex items-center justify-center p-2 rounded-xl transition-all duration-300 border focus:outline-none ${
-                    !isScrolled
+                  iconSize="w-4 h-4"
+                  className={`h-10 w-10 flex items-center justify-center rounded-xl transition-all duration-300 border focus:outline-none shrink-0 ${
+                    isDark
                       ? 'text-white border-white/20 bg-white/10 hover:bg-white/20 hover:border-white/30 shadow-md backdrop-blur-sm'
                       : 'text-stone-700 border-stone-200 bg-white hover:bg-stone-50 hover:text-stone-950 shadow-sm'
                   }`}
@@ -173,20 +166,20 @@ export default function Navbar() {
                 {/* Modern Capsule Language Switcher */}
                 <div
                   dir="ltr"
-                  className={`inline-flex items-center p-1 rounded-xl border backdrop-blur-md transition-all duration-300 select-none shadow-sm ${
-                    !isScrolled
-                      ? 'bg-stone-950/45 border-white/20'
+                  className={`h-10 inline-flex items-center p-1 rounded-xl border backdrop-blur-md transition-all duration-300 select-none shadow-sm ${
+                    isDark
+                      ? 'bg-stone-900/80 border-white/20'
                       : 'bg-stone-100/90 border-stone-200/90'
                   }`}
                   role="group"
                   aria-label="Dil seçenekleri"
                 >
                   {otherLanguages.map((target, idx) => (
-                    <span key={target.code} className="inline-flex items-center">
+                    <span key={target.code} className="inline-flex items-center h-full">
                       {idx > 0 && (
                         <span
                           className={`w-[1px] h-3.5 transition-colors duration-300 mx-0.5 ${
-                            !isScrolled ? 'bg-white/20' : 'bg-stone-300'
+                            isDark ? 'bg-white/20' : 'bg-stone-300'
                           }`}
                         />
                       )}
@@ -195,8 +188,8 @@ export default function Navbar() {
                         onClick={() => setLanguage(target.code)}
                         title={target.title}
                         aria-label={target.title}
-                        className={`px-2.5 py-1 min-w-[32px] text-center rounded-lg text-xs font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 ${
-                          !isScrolled
+                        className={`h-8 px-2.5 flex items-center justify-center min-w-[32px] text-center rounded-lg text-xs font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 ${
+                          isDark
                             ? 'text-stone-200 hover:text-white hover:bg-white/15'
                             : 'text-stone-700 hover:text-amber-600 hover:bg-stone-200/70'
                         }`}
@@ -213,12 +206,11 @@ export default function Navbar() {
             <div className="lg:hidden flex items-center gap-1.5 sm:gap-2">
               <SafePhoneLink
                 variant="icon-button"
-                className={`p-2 rounded-xl transition-all duration-300 border focus:outline-none ${
-                  isMobileMenuOpen
-                    ? 'text-white border-white/10 bg-white/10'
-                    : !isScrolled
-                      ? 'text-white border-white/25 bg-white/10'
-                      : 'text-stone-700 border-stone-200 bg-white'
+                iconSize="w-4 h-4"
+                className={`h-9 w-9 flex items-center justify-center rounded-xl transition-all duration-300 border focus:outline-none shrink-0 ${
+                  isDark
+                    ? 'text-white border-white/20 bg-white/10 hover:bg-white/20 active:scale-95 shadow-sm'
+                    : 'text-stone-800 border-stone-300/80 bg-stone-100/90 hover:bg-stone-200 active:scale-95 shadow-sm'
                 }`}
                 ariaLabel="Call us"
               />
@@ -226,22 +218,20 @@ export default function Navbar() {
               {/* Mobile Capsule Language Switcher */}
               <div
                 dir="ltr"
-                className={`inline-flex items-center p-0.5 rounded-xl border backdrop-blur-md transition-all duration-300 select-none shadow-sm ${
-                  isMobileMenuOpen
-                    ? 'bg-white/10 border-white/15'
-                    : !isScrolled
-                    ? 'bg-stone-950/45 border-white/20'
-                    : 'bg-stone-100/90 border-stone-200'
+                className={`h-9 inline-flex items-center p-1 rounded-xl border backdrop-blur-md transition-all duration-300 select-none shadow-sm shrink-0 ${
+                  isDark
+                    ? 'bg-stone-900/80 border-white/20'
+                    : 'bg-stone-100/90 border-stone-300/80'
                 }`}
                 role="group"
                 aria-label="Dil seçenekleri"
               >
                 {otherLanguages.map((target, idx) => (
-                  <span key={target.code} className="inline-flex items-center">
+                  <span key={target.code} className="inline-flex items-center h-full">
                     {idx > 0 && (
                       <span
-                        className={`w-[1px] h-2.5 transition-colors duration-300 mx-0.5 ${
-                          isMobileMenuOpen || !isScrolled ? 'bg-white/20' : 'bg-stone-300'
+                        className={`w-[1px] h-3 transition-colors duration-300 mx-0.5 ${
+                          isDark ? 'bg-white/20' : 'bg-stone-300'
                         }`}
                       />
                     )}
@@ -250,10 +240,10 @@ export default function Navbar() {
                       onClick={() => setLanguage(target.code)}
                       title={target.title}
                       aria-label={target.title}
-                      className={`px-1.5 py-0.5 min-w-[24px] text-center rounded-md text-[10px] font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 ${
-                        isMobileMenuOpen || !isScrolled
-                          ? 'text-stone-200 hover:text-white active:bg-white/20'
-                          : 'text-stone-700 hover:text-amber-600 active:bg-stone-200'
+                      className={`h-7 px-1.5 sm:px-2 flex items-center justify-center min-w-[26px] text-center rounded-lg text-[11px] font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 ${
+                        isDark
+                          ? 'text-stone-300 hover:text-white hover:bg-white/10 active:bg-white/20'
+                          : 'text-stone-700 hover:text-amber-600 hover:bg-stone-200/70 active:bg-stone-200'
                       }`}
                     >
                       {target.label}
@@ -264,16 +254,16 @@ export default function Navbar() {
               
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={`p-2 rounded-xl transition-colors focus:outline-none ${
-                  isMobileMenuOpen || !isScrolled
-                    ? 'text-white hover:text-amber-400'
-                    : 'text-stone-900 hover:text-amber-600'
+                className={`h-9 w-9 flex items-center justify-center rounded-xl transition-all duration-300 border focus:outline-none shrink-0 ${
+                  isDark
+                    ? 'text-white border-white/20 bg-white/10 hover:bg-white/20 active:scale-95 shadow-sm'
+                    : 'text-stone-800 border-stone-300/80 bg-stone-100/90 hover:bg-stone-200 active:scale-95 shadow-sm'
                 }`}
                 aria-label="Toggle menu"
                 aria-expanded={isMobileMenuOpen}
               >
                 <svg
-                  className="h-6 w-6"
+                  className="w-5 h-5"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
