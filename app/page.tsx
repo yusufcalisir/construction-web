@@ -17,9 +17,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <Services />
       <WhyBer />
       <HowWeWork />
+      <Services />
       <ProjectGallery />
       <Contact />
       <BrandMarquee />

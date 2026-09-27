@@ -9,6 +9,7 @@ export default function Navbar() {
   const { t, language, setLanguage } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false)
 
   const [activeSection, setActiveSection] = useState('home')
 
@@ -71,10 +72,11 @@ export default function Navbar() {
 
   // Check if current active section has a dark background
   const isDarkSection = (section: string) => {
-    return ['home', 'services', 'how-we-work', 'footer'].includes(section)
+    return ['home', 'how-we-work', 'services', 'footer'].includes(section)
   }
 
   const isDark = !isScrolled || isMobileMenuOpen || isDarkSection(activeSection)
+  const isAboutActive = activeSection === 'about' || activeSection === 'why-ber' || activeSection === 'how-we-work'
 
   // Get background color based on active section
   const getNavbarBg = () => {
@@ -113,39 +115,193 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-7 xl:gap-8">
-              {[
-                { id: 'home', key: 'nav.home' },
-                { id: 'about', key: 'nav.about' },
-                { id: 'services', key: 'nav.services' },
-                { id: 'gallery', key: 'nav.gallery' },
-                { id: 'contact', key: 'nav.contact' },
-              ].map((item) => {
-                const isActive = activeSection === item.id || (item.id === 'services' && (activeSection === 'why-ber' || activeSection === 'how-we-work'));
-                return (
-                  <a
-                    key={item.id}
-                    href={`#${item.id}`}
-                    onClick={(e) => handleNavClick(e, item.id)}
-                    className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
-                      isActive
-                        ? isDark
-                          ? 'text-amber-400 font-bold'
-                          : 'text-amber-600 font-bold'
-                        : isDark
-                          ? 'text-stone-300 hover:text-white'
-                          : 'text-stone-600 hover:text-stone-900'
-                    }`}
+              {/* Home */}
+              <a
+                href="#home"
+                onClick={(e) => handleNavClick(e, 'home')}
+                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                  activeSection === 'home'
+                    ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
+                    : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
+                }`}
+              >
+                {t('nav.home')}
+                <span className={`absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] transition-all duration-300 rounded-full ${
+                  activeSection === 'home' ? 'w-6 bg-amber-500' : 'w-0 group-hover:w-4 bg-amber-500/60'
+                }`} />
+              </a>
+
+              {/* Hakkımızda with Section Dropdown */}
+              <div
+                className="relative group py-2"
+                onMouseEnter={() => setIsAboutDropdownOpen(true)}
+                onMouseLeave={() => setIsAboutDropdownOpen(false)}
+              >
+                <a
+                  href="#about"
+                  onClick={(e) => {
+                    handleNavClick(e, 'about')
+                    setIsAboutDropdownOpen(false)
+                  }}
+                  className={`inline-flex items-center gap-1.5 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 focus:outline-none cursor-pointer ${
+                    isAboutActive
+                      ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
+                      : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
+                  }`}
+                >
+                  <span>{t('nav.about')}</span>
+                  <svg
+                    className={`w-3.5 h-3.5 transition-transform duration-300 opacity-70 ${isAboutDropdownOpen ? 'rotate-180' : 'group-hover:rotate-180'}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                   >
-                    {t(item.key)}
-                    {/* Modern animated accent line */}
-                    <span className={`absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] transition-all duration-300 rounded-full ${
-                      isActive 
-                        ? 'w-6 bg-amber-500' 
-                        : 'w-0 group-hover:w-4 bg-amber-500/60'
-                    }`} />
-                  </a>
-                );
-              })}
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                  <span className={`absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] transition-all duration-300 rounded-full ${
+                    isAboutActive ? 'w-6 bg-amber-500' : 'w-0 group-hover:w-4 bg-amber-500/60'
+                  }`} />
+                </a>
+
+                {/* Dropdown Menu */}
+                <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-300 z-50 ${
+                  isAboutDropdownOpen
+                    ? 'opacity-100 translate-y-0 pointer-events-auto'
+                    : 'opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto'
+                }`}>
+                  <div className={`w-80 p-2.5 rounded-2xl shadow-2xl border backdrop-blur-xl ${
+                    isDark
+                      ? 'bg-stone-900/95 border-stone-800 shadow-black/60'
+                      : 'bg-white/95 border-stone-200/90 shadow-stone-900/10'
+                  }`}>
+                    {/* Item 1: Kurumsal & Mühendislik */}
+                    <a
+                      href="#about"
+                      onClick={(e) => {
+                        handleNavClick(e, 'about')
+                        setIsAboutDropdownOpen(false)
+                      }}
+                      className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-200 group/item ${
+                        activeSection === 'about'
+                          ? isDark ? 'bg-white/10 text-amber-400' : 'bg-stone-100 text-amber-600'
+                          : isDark ? 'hover:bg-white/5 text-stone-200' : 'hover:bg-stone-50 text-stone-700'
+                      }`}
+                    >
+                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
+                        isDark ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30' : 'bg-amber-50 text-amber-600 border border-amber-200'
+                      }`}>
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs font-bold font-serif tracking-normal group-hover/item:text-amber-400 transition-colors">{t('nav.about.corporate')}</div>
+                        <div className="text-[11px] text-stone-400 leading-snug mt-0.5 line-clamp-1">{t('nav.about.corporate.desc')}</div>
+                      </div>
+                    </a>
+
+                    {/* Item 2: Neden Ber? */}
+                    <a
+                      href="#why-ber"
+                      onClick={(e) => {
+                        handleNavClick(e, 'why-ber')
+                        setIsAboutDropdownOpen(false)
+                      }}
+                      className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-200 group/item ${
+                        activeSection === 'why-ber'
+                          ? isDark ? 'bg-white/10 text-amber-400' : 'bg-stone-100 text-amber-600'
+                          : isDark ? 'hover:bg-white/5 text-stone-200' : 'hover:bg-stone-50 text-stone-700'
+                      }`}
+                    >
+                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
+                        isDark ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30' : 'bg-amber-50 text-amber-600 border border-amber-200'
+                      }`}>
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs font-bold font-serif tracking-normal group-hover/item:text-amber-400 transition-colors">{t('nav.about.whyber')}</div>
+                        <div className="text-[11px] text-stone-400 leading-snug mt-0.5 line-clamp-1">{t('nav.about.whyber.desc')}</div>
+                      </div>
+                    </a>
+
+                    {/* Item 3: Çalışma Sürecimiz */}
+                    <a
+                      href="#how-we-work"
+                      onClick={(e) => {
+                        handleNavClick(e, 'how-we-work')
+                        setIsAboutDropdownOpen(false)
+                      }}
+                      className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-200 group/item ${
+                        activeSection === 'how-we-work'
+                          ? isDark ? 'bg-white/10 text-amber-400' : 'bg-stone-100 text-amber-600'
+                          : isDark ? 'hover:bg-white/5 text-stone-200' : 'hover:bg-stone-50 text-stone-700'
+                      }`}
+                    >
+                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
+                        isDark ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30' : 'bg-amber-50 text-amber-600 border border-amber-200'
+                      }`}>
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs font-bold font-serif tracking-normal group-hover/item:text-amber-400 transition-colors">{t('nav.about.process')}</div>
+                        <div className="text-[11px] text-stone-400 leading-snug mt-0.5 line-clamp-1">{t('nav.about.process.desc')}</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Services */}
+              <a
+                href="#services"
+                onClick={(e) => handleNavClick(e, 'services')}
+                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                  activeSection === 'services'
+                    ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
+                    : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
+                }`}
+              >
+                {t('nav.services')}
+                <span className={`absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] transition-all duration-300 rounded-full ${
+                  activeSection === 'services' ? 'w-6 bg-amber-500' : 'w-0 group-hover:w-4 bg-amber-500/60'
+                }`} />
+              </a>
+
+              {/* Gallery */}
+              <a
+                href="#gallery"
+                onClick={(e) => handleNavClick(e, 'gallery')}
+                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                  activeSection === 'gallery'
+                    ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
+                    : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
+                }`}
+              >
+                {t('nav.gallery')}
+                <span className={`absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] transition-all duration-300 rounded-full ${
+                  activeSection === 'gallery' ? 'w-6 bg-amber-500' : 'w-0 group-hover:w-4 bg-amber-500/60'
+                }`} />
+              </a>
+
+              {/* Contact */}
+              <a
+                href="#contact"
+                onClick={(e) => handleNavClick(e, 'contact')}
+                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                  activeSection === 'contact'
+                    ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
+                    : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
+                }`}
+              >
+                {t('nav.contact')}
+                <span className={`absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] transition-all duration-300 rounded-full ${
+                  activeSection === 'contact' ? 'w-6 bg-amber-500' : 'w-0 group-hover:w-4 bg-amber-500/60'
+                }`} />
+              </a>
               
               {/* Vertical separator */}
               <span className={`h-4 w-[1px] transition-colors duration-500 ${isDark ? 'bg-white/20' : 'bg-stone-200'}`} />
@@ -287,31 +443,96 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-40 bg-stone-950/95 backdrop-blur-lg flex flex-col justify-center px-6 py-20">
           <div className="flex flex-col space-y-2 max-w-sm mx-auto w-full text-center">
-            {[
-              { id: 'home', key: 'nav.home' },
-              { id: 'about', key: 'nav.about' },
-              { id: 'services', key: 'nav.services' },
-              { id: 'why-ber', key: 'nav.whyber' },
-              { id: 'how-we-work', key: 'nav.howwework' },
-              { id: 'gallery', key: 'nav.gallery' },
-              { id: 'contact', key: 'nav.contact' },
-            ].map((item) => {
-              const isActive = activeSection === item.id;
-              return (
+            {/* Home */}
+            <a
+              href="#home"
+              onClick={(e) => handleNavClick(e, 'home')}
+              className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
+                activeSection === 'home'
+                  ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
+                  : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
+              }`}
+            >
+              {t('nav.home')}
+            </a>
+
+            {/* Hakkımızda Section with sub-items */}
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-2 space-y-1.5 text-center">
+              <a
+                href="#about"
+                onClick={(e) => handleNavClick(e, 'about')}
+                className={`block py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold tracking-[0.15em] uppercase transition-all duration-300 ${
+                  activeSection === 'about'
+                    ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/20'
+                    : 'text-white hover:text-amber-400'
+                }`}
+              >
+                {t('nav.about')}
+              </a>
+              <div className="grid grid-cols-2 gap-1.5 pt-0.5">
                 <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  onClick={(e) => handleNavClick(e, item.id)}
-                  className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
-                    isActive
-                      ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
-                      : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
+                  href="#why-ber"
+                  onClick={(e) => handleNavClick(e, 'why-ber')}
+                  className={`block py-2 px-2.5 rounded-lg text-[11px] font-semibold tracking-wider uppercase transition-all duration-200 border text-center ${
+                    activeSection === 'why-ber'
+                      ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                      : 'text-stone-400 hover:text-white border-white/5 bg-white/[0.02]'
                   }`}
                 >
-                  {t(item.key)}
+                  {t('nav.about.whyber')}
                 </a>
-              );
-            })}
+                <a
+                  href="#how-we-work"
+                  onClick={(e) => handleNavClick(e, 'how-we-work')}
+                  className={`block py-2 px-2.5 rounded-lg text-[11px] font-semibold tracking-wider uppercase transition-all duration-200 border text-center ${
+                    activeSection === 'how-we-work'
+                      ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                      : 'text-stone-400 hover:text-white border-white/5 bg-white/[0.02]'
+                  }`}
+                >
+                  {t('nav.about.process')}
+                </a>
+              </div>
+            </div>
+
+            {/* Services */}
+            <a
+              href="#services"
+              onClick={(e) => handleNavClick(e, 'services')}
+              className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
+                activeSection === 'services'
+                  ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
+                  : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
+              }`}
+            >
+              {t('nav.services')}
+            </a>
+
+            {/* Gallery */}
+            <a
+              href="#gallery"
+              onClick={(e) => handleNavClick(e, 'gallery')}
+              className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
+                activeSection === 'gallery'
+                  ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
+                  : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
+              }`}
+            >
+              {t('nav.gallery')}
+            </a>
+
+            {/* Contact */}
+            <a
+              href="#contact"
+              onClick={(e) => handleNavClick(e, 'contact')}
+              className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
+                activeSection === 'contact'
+                  ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
+                  : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
+              }`}
+            >
+              {t('nav.contact')}
+            </a>
             
             {/* Mobile Menu Language Switcher */}
             <div
