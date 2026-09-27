@@ -26,14 +26,14 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.navigation': 'Navigasyon',
 
     // Hero
-    'hero.badge': 'Ber Yapı & İç Mimarlık',
+    'hero.badge': 'Ber Tadilat',
     'hero.headline': 'İstanbul\'da Anahtar Teslim\nÜst Segment Renovasyon',
     'hero.subheadline': 'İç mimari tasarımdan uygulamaya; konut, villa ve ticari mekânlarınızı tek elden yönetiyor ve teslim ediyoruz.',
     'hero.btnProjects': 'PROJELERİ İNCELE',
     'hero.btnDiscuss': 'PROJENİZİ GÖRÜŞELİM',
     'hero.getQuote': 'Ücretsiz Keşif Talebi',
     'hero.slide0': 'Villa, rezidans ve büyük daireler için konseptten teslime tam kapsamlı proje yönetimi.',
-    'hero.slide1': 'İç mimari tasarım, mühendislik denetimi ve uygulama — tek bir elden, tek bir sorumlulukla.',
+    'hero.slide1': 'İç mimari tasarım, mühendislik denetimi ve uygulama, tek bir elden, tek bir sorumlulukla.',
     'hero.slide2': 'Şeffaf bütçe, belirli takvim. Sürpriz maliyet yok, taahhüdümüzden şaşmıyoruz.',
     'hero.slide3': 'İnşaat Mühendisi denetiminde, premium markalarla; evinizi gelecek 20 yıl için inşa ediyoruz.',
 
@@ -48,48 +48,48 @@ const translations: Record<Language, Record<string, string>> = {
     'gallery2.close': 'Kapat',
 
     // Brands
-    'brands.badge': 'İş Birliği Yaptığımız Markalar & Çözüm Ortaklarımız',
+    'brands.badge': 'İş Birliği Yaptığımız Markalar ve Çözüm Ortaklarımız',
 
-    // Services — premium categories
+    // Services, premium categories
     'services.badge': 'Hizmet Kapsamımız',
     'services.title': 'Bütünleşik Proje Hizmetleri',
     'services.subtitle': 'Tek bir muhatap, tam bir proje. Tasarımdan uygulama ve teslime kadar her adımda yanınızdayız.',
     'services.cta.label': 'Projenizi konuşmak için hemen iletişime geçin',
     'services.cta.button': 'Ücretsiz Keşif Talebi',
 
-    'service.turnkey.name': 'Anahtar Teslim Villa & Daire Renovasyonu',
-    'service.turnkey.desc': 'Büyük ölçekli konut projelerini konsept aşamasından teslim gününe kadar eksiksiz yönetiyoruz. Farklı ustalar arasında koordinasyon derdinden kurtulun — tek sözleşme, tek sorumluluk.',
+    'service.turnkey.name': 'Anahtar Teslim Villa ve Daire Renovasyonu',
+    'service.turnkey.desc': 'Büyük ölçekli konut projelerini konsept aşamasından teslim gününe kadar eksiksiz yönetiyoruz. Farklı ustalar arasında koordinasyon derdinden kurtulun, tek sözleşme, tek sorumluluk.',
     'service.turnkey.tag1': 'Proje Yönetimi',
     'service.turnkey.tag2': 'Komple Tadilat',
     'service.turnkey.tag3': 'Teslimata Kadar Takip',
 
-    'service.interior.name': 'İç Mimari Tasarım & Uygulama',
+    'service.interior.name': 'İç Mimari Tasarım ve Uygulama',
     'service.interior.desc': 'Mimar ve tasarımcılarımız yaşam alanınızı 3D konsept olarak tasarlar, uygulamacılarımız birebir hayata geçirir. Hayalinizi kâğıt üzerinde bırakmıyoruz.',
-    'service.interior.tag1': 'Konsept & 3D Tasarım',
-    'service.interior.tag2': 'Mobilya & Renk Danışmanlığı',
+    'service.interior.tag1': 'Konsept ve 3D Tasarım',
+    'service.interior.tag2': 'Mobilya ve Renk Danışmanlığı',
     'service.interior.tag3': 'Birebir Uygulama',
 
-    'service.commercial.name': 'Ticari Alan & Ofis Dönüşümleri',
+    'service.commercial.name': 'Ticari Alan ve Ofis Dönüşümleri',
     'service.commercial.desc': 'Otel, restoran, ofis, butik mağaza gibi ticari alanların eksiksiz dönüşüm projeleri. Zaman ve bütçeye tam sadakat, minimum iş akışı kesintisi.',
-    'service.commercial.tag1': 'Otel & Restoran',
-    'service.commercial.tag2': 'Ofis & Showroom',
+    'service.commercial.tag1': 'Otel ve Restoran',
+    'service.commercial.tag2': 'Ofis ve Showroom',
     'service.commercial.tag3': 'Hızlı Teslimat',
 
-    'service.systems.name': 'Tesisat, Elektrik & Akıllı Ev',
+    'service.systems.name': 'Tesisat, Elektrik ve Akıllı Ev',
     'service.systems.desc': 'Elektrik, su, doğalgaz tesisatından akıllı ev otomasyon sistemlerine kadar tüm teknik altyapıyı mühendis denetiminde kuruyoruz. Enerji verimliliği ve güvenlik standartları ön planda.',
     'service.systems.tag1': 'Mühendis Denetimi',
     'service.systems.tag2': 'Akıllı Ev Otomasyonu',
     'service.systems.tag3': 'Enerji Verimliliği',
 
-    'service.restoration.name': 'Restorasyon & Tarihi Yapı Yenileme',
+    'service.restoration.name': 'Restorasyon ve Tarihi Yapı Yenileme',
     'service.restoration.desc': 'Tarihi ve mimari değeri olan yapılarda orijinal karakteri koruyarak çağdaş konfor standartlarına kavuşturma. Geleneksel teknikler, modern malzemeler.',
     'service.restoration.tag1': 'Tarihi Yapılar',
     'service.restoration.tag2': 'Karakter Koruma',
     'service.restoration.tag3': 'Uzman Ekip',
 
-    'service.exterior.name': 'Dış Cephe & Yalıtım Projeleri',
+    'service.exterior.name': 'Dış Cephe ve Yalıtım Projeleri',
     'service.exterior.desc': 'Binanın dış kabuğunu baştan sona yeniliyoruz: mantolama, cephe kaplaması, çatı yalıtımı. Enerji faturasında kalıcı düşüş, görsel değerde dramatik artış.',
-    'service.exterior.tag1': 'Isı & Ses Yalıtımı',
+    'service.exterior.tag1': 'Isı ve Ses Yalıtımı',
     'service.exterior.tag2': 'Cephe Kaplama',
     'service.exterior.tag3': 'Enerji Tasarrufu',
 
@@ -109,7 +109,9 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.weekends': 'Hafta Sonu',
     'contact.allDay': '7/24',
 
-    // Footer
+        'overview.footer': 'Tek bir odanın yenilenmesinden tüm yapının anahtar teslim renovasyonuna kadar, projelerinizi en yüksek kalite ve mühendislik disipliniyle hayata geçiriyoruz. Keşif ve detaylı görüşme için bizimle iletişime geçebilirsiniz.',
+
+// Footer
     'footer.description': 'Yılların deneyimi ile İstanbul\'da inşaat, renovasyon, dekorasyon, tesisat ve akıllı ev sistemleri hizmetleri sunuyoruz. Evinizi, iş yerinizi veya ticari alanlarınızı modern standartlara uygun şekilde dönüştürüyoruz. Kaliteli malzemeler, profesyonel işçilik ve zamanında teslimat garantisi ile müşteri memnuniyetini ön planda tutuyoruz.',
     'footer.copyright': '© 2026 Ber Tadilat. Tüm hakları saklıdır.',
 
@@ -124,20 +126,22 @@ const translations: Record<Language, Record<string, string>> = {
     // About
     'about.badge': 'Hakkımızda',
     'about.title': 'Bir Proje Firması Olarak Biz',
-    'about.description': 'Ber Yapı olarak üst segment konut ve ticari projelerin tasarım, mühendislik denetimi ve uygulamasını tek çatı altında yönetiyoruz. Kurucumuz İnşaat Mühendisi Livan Gür öncülüğünde, her projeyi salt bir tadilat değil; kalıcı bir değer yatırımı olarak ele alıyoruz.',
+    'about.description': 'Ber Tadilat olarak üst segment konut ve ticari projelerin tasarım, mühendislik denetimi ve uygulamasını tek çatı altında yönetiyoruz. Kurucumuz İnşaat Mühendisi Livan Gür öncülüğünde, her projeyi salt bir tadilat değil; kalıcı bir değer yatırımı olarak ele alıyoruz.',
     'about.since': 'Est. İstanbul',
     'about.engineer.name': 'Livan Gür',
-    'about.engineer.title': 'İnşaat Mühendisi — Kurucu & Proje Direktörü',
+    'about.engineer.title': 'İnşaat Mühendisi, Kurucu ve Proje Direktörü',
     'about.engineer.edu': 'Okan Üniversitesi • İnşaat Mühendisliği (Tam Burslu)',
-    'about.engineer.exp': 'Uluslararası Proje Deneyimi • Doğu, Batı & Kuzey Afrika',
+    'about.engineer.exp': 'Uluslararası Proje Deneyimi • Doğu, Batı ve Kuzey Afrika',
     'about.engineer.desc': 'Okan Üniversitesi İnşaat Mühendisliği bölümünden tam burslu mezun olan Livan Gür, kariyeri boyunca Doğu, Batı ve Kuzey Afrika\'da uluslararası büyük ölçekli altyapı ve inşaat projelerinde uzun yıllar görev almıştır. Küresel saha ve proje yönetimi standartlarını İstanbul\'daki üst segment konut, villa ve ticari renovasyon projelerine aktararak her süreci mühendislik disiplini, yapı güvenliği ve mimari kusursuzlukla yönetmektedir.',
     'about.projects.num': '200+',
     'about.projects.label': 'Tamamlanan Proje',
+    'about.audit.num': '%100',
+    'about.audit.label': 'Mühendis Denetimi',
     'about.pillar1.title': 'Tek Elden Proje Yönetimi',
-    'about.pillar1.desc': 'Tasarımcı, mühendis, usta — tüm ekibi siz için koordine ediyoruz. Tek muhatap, tam sorumluluk.',
+    'about.pillar1.desc': 'Tasarımcı, mühendis, usta, tüm ekibi siz için koordine ediyoruz. Tek muhatap, tam sorumluluk.',
     'about.pillar2.title': 'Mühendis Denetimi Güvencesi',
     'about.pillar2.desc': 'Her aşamada İnşaat Mühendisi onaylı uygulamalar. Yapısal güvenlik asla tavize uğramaz.',
-    'about.pillar3.title': 'Şeffaf Sözleşme & Taahhüt',
+    'about.pillar3.title': 'Şeffaf Sözleşme ve Taahhüt',
     'about.pillar3.desc': 'Başlangıçta net bütçe ve takvim. Süreç boyunca düzenli raporlama ve sürpriz maliyet yok.',
     'about.cta': 'Projenizi Konuşalım',
 
@@ -149,7 +153,7 @@ const translations: Record<Language, Record<string, string>> = {
     'whyber.item.singlepoint.desc': 'Farklı ustalarla koordinasyon derdi yok. Tasarımdan teslime tüm süreç tek sözleşme altında.',
     'whyber.item.engineer.title': 'İnşaat Mühendisi Denetimi',
     'whyber.item.engineer.desc': 'Her kritik aşama Livan Gür ve ekibinin mühendislik onayından geçer. Yapısal güvenlik garantili.',
-    'whyber.item.budget.title': 'Şeffaf & Sabit Bütçe',
+    'whyber.item.budget.title': 'Şeffaf ve Sabit Bütçe',
     'whyber.item.budget.desc': 'Proje başında detaylı keşif, kalem kalem maliyet tablosu. Sürpriz fatura yok, taahhüdümüzden sapma yok.',
     'whyber.item.timeline.title': 'Taahhütlü Takvim',
     'whyber.item.timeline.desc': 'Proje milestoneları sözleşmeye yazılır. Gecikme durumunda şeffaf bildirim ve çözüm planı.',
@@ -171,20 +175,21 @@ const translations: Record<Language, Record<string, string>> = {
     'howwework.badge': 'Sürecimiz',
     'howwework.title': 'Nasıl Çalışıyoruz?',
     'howwework.subtitle': '6 adımda şeffaf, öngörülebilir ve profesyonel proje yönetimi.',
-    'howwework.step.discovery.title': 'Ücretsiz Keşif & İhtiyaç Analizi',
+    'howwework.step.discovery.title': 'Ücretsiz Keşif ve İhtiyaç Analizi',
     'howwework.step.discovery.desc': 'Yerinde ziyaretle alanı inceler, istek ve bütçenizi anlayarak projenin kapsamını netleştiririz.',
-    'howwework.step.design.title': 'Konsept Tasarım & Malzeme Seçimi',
+    'howwework.step.design.title': 'Konsept Tasarım ve Malzeme Seçimi',
     'howwework.step.design.desc': '3D görsellerle projenizin nasıl görüneceğini önceden sunuyoruz. Onayınızla malzeme ve marka seçimlerini birlikte yapıyoruz.',
-    'howwework.step.budget.title': 'Şeffaf Bütçe & Sözleşme',
+    'howwework.step.budget.title': 'Şeffaf Bütçe ve Sözleşme',
     'howwework.step.budget.desc': 'Kalem kalem maliyet tablosu, net takvim ve taahhütlerin yer aldığı resmi sözleşme imzalanır.',
-    'howwework.step.execution.title': 'Uygulama & Mühendis Denetimi',
+    'howwework.step.execution.title': 'Uygulama ve Mühendis Denetimi',
     'howwework.step.execution.desc': 'Tüm uygulamalar İnşaat Mühendisi gözetiminde yürütülür. Düzenli ilerleme raporları sizi sürekli bilgilendirir.',
-    'howwework.step.quality.title': 'Kalite Kontrol & Punch-List',
+    'howwework.step.quality.title': 'Kalite Kontrol ve Punch-List',
     'howwework.step.quality.desc': 'Teslimden önce kapsamlı kalite kontrolü yapılır; tespit edilen her eksik tamamlanır.',
-    'howwework.step.delivery.title': 'Anahtar Teslim & Destek',
+    'howwework.step.delivery.title': 'Anahtar Teslim ve Destek',
     'howwework.step.delivery.desc': 'Projenizi teslim alır, tüm garanti belgelerini edinirsiniz. Teslim sonrası destek kapsamında kalırsınız.',
-    'howwework.callout': 'Her proje bir yolculuktur. Biz bu yolculuğu şeffaf, öngörülebilir ve stressiz hale getiriyoruz — siz sadece hayalinize odaklanın.',
+    'howwework.callout': 'Her proje bir yolculuktur. Biz bu yolculuğu şeffaf, öngörülebilir ve stressiz hale getiriyoruz, siz sadece hayalinize odaklanın.',
   },
+  
   en: {
     // Navigation
     'nav.home': 'Home',
@@ -197,16 +202,16 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.navigation': 'Navigation',
 
     // Hero
-    'hero.badge': 'Ber Construction & Interior Architecture',
-    'hero.headline': 'Premium Turnkey Renovation\\nin Istanbul',
+    'hero.badge': 'Ber Tadilat',
+    'hero.headline': 'Premium Turnkey Renovation\nin Istanbul',
     'hero.subheadline': 'From interior design to execution; we manage and deliver residences, luxury villas, and commercial spaces with end-to-end accountability.',
     'hero.btnProjects': 'EXPLORE PROJECTS',
     'hero.btnDiscuss': 'DISCUSS YOUR PROJECT',
     'hero.getQuote': 'Request a Free Survey',
-    'hero.slide0': 'Full-scope project management for villas, residences and large apartments — from concept to handover.',
-    'hero.slide1': 'Interior design, engineering oversight and execution — single contract, single responsibility.',
+    'hero.slide0': 'Full-scope project management for villas, residences and large apartments, from concept to handover.',
+    'hero.slide1': 'Interior design, engineering oversight and execution, single contract, single responsibility.',
     'hero.slide2': 'Transparent budget, fixed timeline. No surprise costs, no compromises on our commitments.',
-    'hero.slide3': 'Under civil engineer supervision, with premium brands — we build your home for the next 20 years.',
+    'hero.slide3': 'Under civil engineer supervision, with premium brands, we build your home for the next 20 years.',
 
     // Gallery (Our Services)
     'gallery.title': 'Our Services',
@@ -219,48 +224,48 @@ const translations: Record<Language, Record<string, string>> = {
     'gallery2.close': 'Close',
 
     // Brands (Brand Partners)
-    'brands.badge': 'Our Trusted Brand Partners & Collaborations',
+    'brands.badge': 'Our Trusted Brand Partners and Collaborations',
 
-    // Services — premium categories
+    // Services, premium categories
     'services.badge': 'Our Service Scope',
     'services.title': 'Integrated Project Services',
     'services.subtitle': 'One point of contact, one complete project. We are with you at every step from design to handover.',
     'services.cta.label': 'Get in touch to discuss your project',
     'services.cta.button': 'Request a Free Survey',
 
-    'service.turnkey.name': 'Turnkey Villa & Apartment Renovation',
-    'service.turnkey.desc': 'We manage large-scale residential projects from concept to handover without exception. No coordination headache with different contractors — one contract, one responsibility.',
+    'service.turnkey.name': 'Turnkey Villa and Apartment Renovation',
+    'service.turnkey.desc': 'We manage large-scale residential projects from concept to handover without exception. No coordination headache with different contractors, one contract, one responsibility.',
     'service.turnkey.tag1': 'Project Management',
     'service.turnkey.tag2': 'Full Renovation',
     'service.turnkey.tag3': 'End-to-End Delivery',
 
-    'service.interior.name': 'Interior Design & Application',
+    'service.interior.name': 'Interior Design and Application',
     'service.interior.desc': 'Our architects and designers create your living space as a 3D concept, and our applicators bring it to life exactly as designed. We don\'t leave your dream on paper.',
-    'service.interior.tag1': 'Concept & 3D Design',
-    'service.interior.tag2': 'Furniture & Colour Consultancy',
+    'service.interior.tag1': 'Concept and 3D Design',
+    'service.interior.tag2': 'Furniture and Colour Consultancy',
     'service.interior.tag3': 'Exact Application',
 
-    'service.commercial.name': 'Commercial Space & Office Transformations',
+    'service.commercial.name': 'Commercial Space and Office Transformations',
     'service.commercial.desc': 'Complete transformation projects for hotels, restaurants, offices and boutique stores. Full adherence to time and budget, minimum disruption to operations.',
-    'service.commercial.tag1': 'Hotels & Restaurants',
-    'service.commercial.tag2': 'Offices & Showrooms',
+    'service.commercial.tag1': 'Hotels and Restaurants',
+    'service.commercial.tag2': 'Offices and Showrooms',
     'service.commercial.tag3': 'Fast Delivery',
 
-    'service.systems.name': 'Plumbing, Electrical & Smart Home',
+    'service.systems.name': 'Plumbing, Electrical and Smart Home',
     'service.systems.desc': 'From electrical, water and gas installations to smart home automation, all technical infrastructure installed under engineer supervision. Energy efficiency and safety standards first.',
     'service.systems.tag1': 'Engineer Supervision',
     'service.systems.tag2': 'Smart Home Automation',
     'service.systems.tag3': 'Energy Efficiency',
 
-    'service.restoration.name': 'Restoration & Historic Building Renewal',
+    'service.restoration.name': 'Restoration and Historic Building Renewal',
     'service.restoration.desc': 'Bringing historically and architecturally valuable buildings up to contemporary comfort standards while preserving their original character. Traditional techniques, modern materials.',
     'service.restoration.tag1': 'Historic Buildings',
     'service.restoration.tag2': 'Character Preservation',
     'service.restoration.tag3': 'Expert Team',
 
-    'service.exterior.name': 'Exterior Cladding & Insulation Projects',
+    'service.exterior.name': 'Exterior Cladding and Insulation Projects',
     'service.exterior.desc': 'We renew the entire building envelope: thermal cladding, facade coverings, roof insulation. Permanent reduction in energy bills, dramatic increase in visual value.',
-    'service.exterior.tag1': 'Thermal & Acoustic Insulation',
+    'service.exterior.tag1': 'Thermal and Acoustic Insulation',
     'service.exterior.tag2': 'Facade Cladding',
     'service.exterior.tag3': 'Energy Savings',
 
@@ -280,8 +285,10 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.weekends': 'Weekends',
     'contact.allDay': '24/7',
 
-    // Footer
-    'footer.description': 'With extensive experience in Istanbul, we deliver premium turnkey renovation and interior design projects for high-end residential and commercial clients. Engineer-supervised, brand-guaranteed, transparent budget — your complete project partner.',
+        'overview.footer': 'From a single-room renovation to full-scale turnkey villa and commercial projects, we execute every detail with superior quality and engineering discipline. Contact us today to discuss your project.',
+
+// Footer
+    'footer.description': 'With extensive experience in Istanbul, we deliver premium turnkey renovation and interior design projects for high-end residential and commercial clients. Engineer-supervised, brand-guaranteed, transparent budget, your complete project partner.',
     'footer.copyright': '© 2026 Ber Tadilat. All rights reserved.',
 
     // WhatsApp Widget
@@ -295,20 +302,22 @@ const translations: Record<Language, Record<string, string>> = {
     // About
     'about.badge': 'About Us',
     'about.title': 'Who We Are as a Project Firm',
-    'about.description': 'At Ber Construction, we manage the design, engineering oversight and application of premium residential and commercial projects under one roof. Led by our founder, Civil Engineer Livan Gür, we treat every project not merely as a renovation — but as a lasting value investment.',
+    'about.description': 'At Ber Tadilat, we manage the design, engineering oversight and application of premium residential and commercial projects under one roof. Led by our founder, Civil Engineer Livan Gür, we treat every project not merely as a renovation, but as a lasting value investment.',
     'about.since': 'Est. Istanbul',
     'about.engineer.name': 'Livan Gür',
-    'about.engineer.title': 'Civil Engineer — Founder & Project Director',
+    'about.engineer.title': 'Civil Engineer, Founder and Project Director',
     'about.engineer.edu': 'Okan University • Civil Engineering (Full Scholarship)',
-    'about.engineer.exp': 'International Project Experience • East, West & North Africa',
+    'about.engineer.exp': 'International Project Experience • East, West and North Africa',
     'about.engineer.desc': 'Graduating with a full scholarship in Civil Engineering from Okan University, Livan Gür has extensive international experience directing large-scale infrastructure and construction projects across East, West, and North Africa. Bringing global project management standards to high-end residential, villa, and commercial renovations in Istanbul, he ensures structural excellence and architectural finesse at every phase.',
     'about.projects.num': '200+',
     'about.projects.label': 'Projects Completed',
+    'about.audit.num': '100%',
+    'about.audit.label': 'Engineer Oversight',
     'about.pillar1.title': 'Single-Source Project Management',
-    'about.pillar1.desc': 'Designer, engineer, contractor — we coordinate the entire team for you. One point of contact, full accountability.',
+    'about.pillar1.desc': 'Designer, engineer, contractor, we coordinate the entire team for you. One point of contact, full accountability.',
     'about.pillar2.title': 'Engineer Oversight Assurance',
     'about.pillar2.desc': 'Civil Engineer-approved applications at every critical stage. Structural safety is never compromised.',
-    'about.pillar3.title': 'Transparent Contract & Commitment',
+    'about.pillar3.title': 'Transparent Contract and Commitment',
     'about.pillar3.desc': 'Clear budget and timeline from day one. Regular reporting throughout and no surprise costs.',
     'about.cta': 'Let\'s Discuss Your Project',
 
@@ -320,7 +329,7 @@ const translations: Record<Language, Record<string, string>> = {
     'whyber.item.singlepoint.desc': 'No coordination headache with multiple contractors. The entire process from design to handover under one contract.',
     'whyber.item.engineer.title': 'Civil Engineer Supervision',
     'whyber.item.engineer.desc': 'Every critical stage passes through the engineering approval of Livan Gür and team. Structural safety guaranteed.',
-    'whyber.item.budget.title': 'Transparent & Fixed Budget',
+    'whyber.item.budget.title': 'Transparent and Fixed Budget',
     'whyber.item.budget.desc': 'Detailed survey at project start, itemised cost table. No surprise invoices, no deviation from our commitments.',
     'whyber.item.timeline.title': 'Committed Timeline',
     'whyber.item.timeline.desc': 'Project milestones are written into the contract. Transparent notification and solution plan in case of delays.',
@@ -342,20 +351,21 @@ const translations: Record<Language, Record<string, string>> = {
     'howwework.badge': 'Our Process',
     'howwework.title': 'How Do We Work?',
     'howwework.subtitle': 'Transparent, predictable and professional project management in 6 steps.',
-    'howwework.step.discovery.title': 'Free Survey & Needs Analysis',
+    'howwework.step.discovery.title': 'Free Survey and Needs Analysis',
     'howwework.step.discovery.desc': 'We visit the site, understand your wishes and budget, and clarify the project scope.',
-    'howwework.step.design.title': 'Concept Design & Material Selection',
+    'howwework.step.design.title': 'Concept Design and Material Selection',
     'howwework.step.design.desc': 'We present how your project will look in advance with 3D visuals. Material and brand selections are made together with your approval.',
-    'howwework.step.budget.title': 'Transparent Budget & Contract',
+    'howwework.step.budget.title': 'Transparent Budget and Contract',
     'howwework.step.budget.desc': 'A formal contract is signed with an itemised cost table, clear timeline and all commitments.',
-    'howwework.step.execution.title': 'Application & Engineer Supervision',
+    'howwework.step.execution.title': 'Application and Engineer Supervision',
     'howwework.step.execution.desc': 'All applications are carried out under Civil Engineer supervision. Regular progress reports keep you continuously informed.',
-    'howwework.step.quality.title': 'Quality Control & Punch-List',
+    'howwework.step.quality.title': 'Quality Control and Punch-List',
     'howwework.step.quality.desc': 'A comprehensive quality check is carried out before handover; every identified deficiency is completed.',
-    'howwework.step.delivery.title': 'Turnkey Handover & Support',
+    'howwework.step.delivery.title': 'Turnkey Handover and Support',
     'howwework.step.delivery.desc': 'You receive your project and all warranty documents. You remain within post-handover support coverage.',
-    'howwework.callout': 'Every project is a journey. We make that journey transparent, predictable and stress-free — you just focus on your vision.',
+    'howwework.callout': 'Every project is a journey. We make that journey transparent, predictable and stress-free, you just focus on your vision.',
   },
+  
   ar: {
     // Navigation
     'nav.home': 'الرئيسية',
@@ -368,16 +378,16 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.navigation': 'التنقل',
 
     // Hero
-    'hero.badge': 'بر إنشاءات وتصميم داخلي',
-    'hero.headline': 'تجديد فاخر تسليم مفتاح\\nفي إسطنبول',
+    'hero.badge': 'بر تاديلات (Ber Tadilat)',
+    'hero.headline': 'تجديد فاخر تسليم مفتاح\nفي إسطنبول',
     'hero.subheadline': 'من التصميم الداخلي المعماري حتى التسليم؛ ندير وننفذ منازلكم وفيلاتكم ومساحاتكم التجارية بجهة مسؤولة واحدة.',
     'hero.btnProjects': 'استعراض المشاريع',
     'hero.btnDiscuss': 'لنتحدث عن مشروعكم',
     'hero.getQuote': 'طلب معاينة مجانية',
     'hero.slide0': 'إدارة شاملة للمشاريع السكنية الكبرى من الفكرة حتى التسليم النهائي.',
-    'hero.slide1': 'تصميم داخلي، إشراف هندسي وتنفيذ — عقد واحد، مسؤولية واحدة.',
+    'hero.slide1': 'تصميم داخلي، إشراف هندسي وتنفيذ, عقد واحد، مسؤولية واحدة.',
     'hero.slide2': 'ميزانية شفافة، جدول زمني محدد. لا تكاليف مفاجئة، لا تنازل عن التزاماتنا.',
-    'hero.slide3': 'تحت إشراف مهندس مدني ومع علامات تجارية راقية — نبني منزلك للعشرين سنة القادمة.',
+    'hero.slide3': 'تحت إشراف مهندس مدني ومع علامات تجارية راقية, نبني منزلك للعشرين سنة القادمة.',
 
     // Gallery (Hizmetlerimiz)
     'gallery.title': 'خدماتنا ومشاريعنا',
@@ -392,7 +402,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Brands (Çözüm Ortakları & İş Birlikleri)
     'brands.badge': 'شركاء النجاح والعلامات التجارية التي نتعاون معها',
 
-    // Services — premium categories
+    // Services, premium categories
     'services.badge': 'نطاق خدماتنا',
     'services.title': 'خدمات المشاريع المتكاملة',
     'services.subtitle': 'جهة واحدة، مشروع متكامل. نرافقك في كل خطوة من التصميم حتى التسليم.',
@@ -400,7 +410,7 @@ const translations: Record<Language, Record<string, string>> = {
     'services.cta.button': 'طلب معاينة مجانية',
 
     'service.turnkey.name': 'تجديد فيلا وشقة تسليم مفتاح',
-    'service.turnkey.desc': 'ندير المشاريع السكنية الكبرى من مرحلة الفكرة حتى التسليم النهائي. لا معاناة من التنسيق مع مقاولين مختلفين — عقد واحد، مسؤولية واحدة.',
+    'service.turnkey.desc': 'ندير المشاريع السكنية الكبرى من مرحلة الفكرة حتى التسليم النهائي. لا معاناة من التنسيق مع مقاولين مختلفين, عقد واحد، مسؤولية واحدة.',
     'service.turnkey.tag1': 'إدارة المشاريع',
     'service.turnkey.tag2': 'تجديد شامل',
     'service.turnkey.tag3': 'متابعة حتى التسليم',
@@ -465,7 +475,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.allDay': 'على مدار الساعة 24/7',
 
     // Footer
-    'footer.description': 'بسنوات طويلة من الخبرة في إسطنبول، نقدم مشاريع تجديد وتصميم داخلي فاخرة للعملاء الراقيين سكنياً وتجارياً. إشراف هندسي، ضمان العلامة التجارية، ميزانية شفافة — شريكك المتكامل في المشاريع.',
+    'footer.description': 'بسنوات طويلة من الخبرة في إسطنبول، نقدم مشاريع تجديد وتصميم داخلي فاخرة للعملاء الراقيين سكنياً وتجارياً. إشراف هندسي، ضمان العلامة التجارية، ميزانية شفافة, شريكك المتكامل في المشاريع.',
     'footer.copyright': '© 2026 بر تاديلات. جميع الحقوق محفوظة.',
 
     // WhatsApp Widget
@@ -479,17 +489,19 @@ const translations: Record<Language, Record<string, string>> = {
     // About
     'about.badge': 'من نحن',
     'about.title': 'نحن كشركة مشاريع متكاملة',
-    'about.description': 'في بر إنشاءات، ندير التصميم والإشراف الهندسي وتنفيذ المشاريع السكنية والتجارية الراقية تحت سقف واحد. بقيادة مؤسسنا المهندس المدني ليفان غور، نتعامل مع كل مشروع ليس مجرد تجديد — بل استثماراً في قيمة دائمة.',
+    'about.description': 'في بر تاديلات (Ber Tadilat)، ندير التصميم والإشراف الهندسي وتنفيذ المشاريع السكنية والتجارية الراقية تحت سقف واحد. بقيادة مؤسسنا المهندس المدني ليفان غور، نتعامل مع كل مشروع ليس مجرد تجديد, بل استثماراً في قيمة دائمة.',
     'about.since': 'إسطنبول',
     'about.engineer.name': 'ليفان غور (Livan Gür)',
-    'about.engineer.title': 'مهندس مدني — المؤسس ومدير المشاريع',
+    'about.engineer.title': 'مهندس مدني، المؤسس ومدير المشاريع',
     'about.engineer.edu': 'جامعة أوكان • هندسة مدنية (منحة كاملة)',
     'about.engineer.exp': 'خبرة مشاريع دولية • شرق وغرب وشمال إفريقيا',
     'about.engineer.desc': 'تخرج ليفان غور بمنحة دراسية كاملة في الهندسة المدنية من جامعة أوكان، واكتسب خبرة ميدانية واسعة على مدار سنوات طويلة في إدارة مشاريع بنية تحتية وإنشائية دولية كبرى في شرق وغرب وشمال إفريقيا. ينقل هذه المعايير العالمية في إدارة المشاريع إلى تجديد الفيلات والمساكن الراقية والمساحات التجارية في إسطنبول لضمان أعلى درجات الأمان الإنشائي والجودة المعمارية.',
     'about.projects.num': '+200',
     'about.projects.label': 'مشروع منجز',
+    'about.audit.num': '100%',
+    'about.audit.label': 'إشراف هندسي معتمد',
     'about.pillar1.title': 'إدارة مشاريع من مصدر واحد',
-    'about.pillar1.desc': 'مصمم، مهندس، مقاول — ننسق الفريق بأكمله نيابةً عنك. جهة اتصال واحدة، مساءلة كاملة.',
+    'about.pillar1.desc': 'مصمم، مهندس، مقاول, ننسق الفريق بأكمله نيابةً عنك. جهة اتصال واحدة، مساءلة كاملة.',
     'about.pillar2.title': 'ضمان الإشراف الهندسي',
     'about.pillar2.desc': 'تطبيقات معتمدة من مهندس مدني في كل مرحلة حرجة. السلامة الإنشائية لا تُساوَم أبداً.',
     'about.pillar3.title': 'عقد وتعهد شفاف',
@@ -538,7 +550,7 @@ const translations: Record<Language, Record<string, string>> = {
     'howwework.step.quality.desc': 'فحص شامل للجودة قبل التسليم؛ كل نقص محدد يتم إتمامه.',
     'howwework.step.delivery.title': 'التسليم وما بعده',
     'howwework.step.delivery.desc': 'تستلم مشروعك وجميع وثائق الضمان. تبقى ضمن نطاق دعم ما بعد التسليم.',
-    'howwework.callout': 'كل مشروع رحلة. نجعل تلك الرحلة شفافة وقابلة للتنبؤ وخالية من التوتر — أنت فقط ركّز على رؤيتك.',
+    'howwework.callout': 'كل مشروع رحلة. نجعل تلك الرحلة شفافة وقابلة للتنبؤ وخالية من التوتر, أنت فقط ركّز على رؤيتك.',
 
     // Old overview (kept for Gallery component references)
     'overview.title': 'من التصميم وحتى التسليم، نهتم بأدق تفاصيل منزلك',
@@ -565,6 +577,7 @@ const translations: Record<Language, Record<string, string>> = {
     'overview.install.item3': 'أنظمة المنازل الذكية والأتمتة الكاملة',
     'overview.footer': 'من تجديد غرفة واحدة وحتى إعادة تأهيل مبنى كامل، نقدم حلول تسليم مفتاح تناسب جميع المشروعات. اتصل بنا الآن لتحديد موعد معاينة مجانية.',
   },
+  
   fa: {
     // Navigation
     'nav.home': 'صفحه اصلی',
@@ -577,16 +590,16 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.navigation': 'دسترسی سریع',
 
     // Hero
-    'hero.badge': 'بر ساختمان و طراحی داخلی',
-    'hero.headline': 'بازسازی لوکس کلید تحویل\\nدر استانبول',
+    'hero.badge': 'بر تادیلات (Ber Tadilat)',
+    'hero.headline': 'بازسازی لوکس کلید تحویل\nدر استانبول',
     'hero.subheadline': 'از طراحی معماری داخلی تا تحویل نهایی؛ مدیریت و اجرای یکپارچه پروژه‌های مسکونی، ویلایی و تجاری شما.',
     'hero.btnProjects': 'مشاهده پروژه‌ها',
     'hero.btnDiscuss': 'گفتگو درباره پروژه',
     'hero.getQuote': 'درخواست بازدید رایگان',
     'hero.slide0': 'مدیریت جامع پروژه‌های مسکونی بزرگ از ایده تا تحویل نهایی.',
-    'hero.slide1': 'طراحی داخلی، نظارت مهندسی و اجرا — یک قرارداد، یک مسئولیت.',
+    'hero.slide1': 'طراحی داخلی، نظارت مهندسی و اجرا, یک قرارداد، یک مسئولیت.',
     'hero.slide2': 'بودجه شفاف، برنامه زمانی مشخص. بدون هزینه غافلگیرکننده، بدون تنازل از تعهداتمان.',
-    'hero.slide3': 'زیر نظارت مهندس عمران و با برندهای برتر — خانه شما را برای ۲۰ سال آینده می‌سازیم.',
+    'hero.slide3': 'زیر نظارت مهندس عمران و با برندهای برتر, خانه شما را برای ۲۰ سال آینده می‌سازیم.',
 
     // Gallery (Hizmetlerimiz)
     'gallery.title': 'خدمات و پروژه‌های ما',
@@ -601,7 +614,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Brands (Brand Partners)
     'brands.badge': 'برندهای همکار و شرکای تجاری ما',
 
-    // Services — premium categories
+    // Services, premium categories
     'services.badge': 'دامنه خدمات ما',
     'services.title': 'خدمات یکپارچه پروژه',
     'services.subtitle': 'یک طرف قرارداد، یک پروژه کامل. از طراحی تا تحویل در هر مرحله همراه شما هستیم.',
@@ -609,7 +622,7 @@ const translations: Record<Language, Record<string, string>> = {
     'services.cta.button': 'درخواست بازدید رایگان',
 
     'service.turnkey.name': 'بازسازی ویلا و آپارتمان کلید تحویل',
-    'service.turnkey.desc': 'پروژه‌های مسکونی بزرگ را از مرحله ایده تا تحویل نهایی بدون استثنا مدیریت می‌کنیم. بدون دردسر هماهنگی با پیمانکاران مختلف — یک قرارداد، یک مسئولیت.',
+    'service.turnkey.desc': 'پروژه‌های مسکونی بزرگ را از مرحله ایده تا تحویل نهایی بدون استثنا مدیریت می‌کنیم. بدون دردسر هماهنگی با پیمانکاران مختلف, یک قرارداد، یک مسئولیت.',
     'service.turnkey.tag1': 'مدیریت پروژه',
     'service.turnkey.tag2': 'بازسازی کامل',
     'service.turnkey.tag3': 'پیگیری تا تحویل',
@@ -661,7 +674,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.allDay': '۲۴ ساعته / ۷ روز هفته',
 
     // Footer
-    'footer.description': 'با سال‌ها تجربه درخشان در استانبول، ارائه‌دهنده پروژه‌های بازسازی لوکس و طراحی داخلی برای مشتریان مسکونی و تجاری برتر هستیم. نظارت مهندسی، ضمانت برند، بودجه شفاف — شریک کامل پروژه شما.',
+    'footer.description': 'با سال‌ها تجربه درخشان در استانبول، ارائه‌دهنده پروژه‌های بازسازی لوکس و طراحی داخلی برای مشتریان مسکونی و تجاری برتر هستیم. نظارت مهندسی، ضمانت برند، بودجه شفاف, شریک کامل پروژه شما.',
     'footer.copyright': '© ۲۰۲۶ بر تادیلات. تمامی حقوق محفوظ است.',
 
     // WhatsApp Widget
@@ -675,17 +688,19 @@ const translations: Record<Language, Record<string, string>> = {
     // About
     'about.badge': 'درباره ما',
     'about.title': 'ما به عنوان یک شرکت پروژه',
-    'about.description': 'در بر ساختمان، طراحی، نظارت مهندسی و اجرای پروژه‌های مسکونی و تجاری برتر را زیر یک سقف مدیریت می‌کنیم. به رهبری بنیانگذار ما، مهندس عمران لیوان گور، هر پروژه را نه صرفاً یک بازسازی — بلکه یک سرمایه‌گذاری ارزش ماندگار می‌دانیم.',
+    'about.description': 'در بر تادیلات (Ber Tadilat)، طراحی، نظارت مهندسی و اجرای پروژه‌های مسکونی و تجاری برتر را زیر یک سقف مدیریت می‌کنیم. به رهبری بنیانگذار ما، مهندس عمران لیوان گور، هر پروژه را نه صرفاً یک بازسازی, بلکه یک سرمایه‌گذاری ارزش ماندگار می‌دانیم.',
     'about.since': 'استانبول',
     'about.engineer.name': 'لیوان گور (Livan Gür)',
-    'about.engineer.title': 'مهندس عمران — بنیان‌گذار و مدیر پروژه‌ها',
+    'about.engineer.title': 'مهندس عمران، بنیان‌گذار و مدیر پروژه‌ها',
     'about.engineer.edu': 'دانشگاه اوکان • مهندسی عمران (بورسیه کامل)',
     'about.engineer.exp': 'تجربه پروژه‌های بین‌المللی • شرق، غرب و شمال آفریقا',
     'about.engineer.desc': 'لیوان گور فارغ‌التحصیل رشته مهندسی عمران با بورسیه کامل از دانشگاه اوکان است. وی سال‌های متمادی در پروژه‌های بزرگ مقیاس مهندسی و زیرساختی بین‌المللی در شرق، غرب و شمال آفریقا مدیریت داشته است. او استانداردهای جهانی نظارت مهندسی و ساخت را در پروژه‌های لوکس ویلایی، مسکونی و تجاری استانبول پیاده‌سازی کرده و امنیت سازه‌ای و کیفیت برتر را تضمین می‌کند.',
     'about.projects.num': '+۲۰۰',
     'about.projects.label': 'پروژه تکمیل‌شده',
+    'about.audit.num': '۱۰۰%',
+    'about.audit.label': 'نظارت مهندسی',
     'about.pillar1.title': 'مدیریت پروژه از یک منبع',
-    'about.pillar1.desc': 'طراح، مهندس، پیمانکار — کل تیم را به نمایندگی از شما هماهنگ می‌کنیم. یک نقطه تماس، مسئولیت کامل.',
+    'about.pillar1.desc': 'طراح، مهندس، پیمانکار, کل تیم را به نمایندگی از شما هماهنگ می‌کنیم. یک نقطه تماس، مسئولیت کامل.',
     'about.pillar2.title': 'تضمین نظارت مهندسی',
     'about.pillar2.desc': 'برنامه‌های تأییدشده توسط مهندس عمران در هر مرحله حساس. ایمنی سازه‌ای هرگز به خطر نمی‌افتد.',
     'about.pillar3.title': 'قرارداد و تعهد شفاف',
@@ -734,7 +749,7 @@ const translations: Record<Language, Record<string, string>> = {
     'howwework.step.quality.desc': 'یک بررسی جامع کیفیت قبل از تحویل انجام می‌شود؛ هر نقص شناسایی‌شده تکمیل می‌گردد.',
     'howwework.step.delivery.title': 'تحویل کلید و پشتیبانی',
     'howwework.step.delivery.desc': 'پروژه و تمام اسناد ضمانت را دریافت می‌کنید. در پوشش پشتیبانی پس از تحویل باقی می‌مانید.',
-    'howwework.callout': 'هر پروژه یک سفر است. ما آن سفر را شفاف، قابل پیش‌بینی و بدون استرس می‌کنیم — شما فقط روی چشم‌انداز خود تمرکز کنید.',
+    'howwework.callout': 'هر پروژه یک سفر است. ما آن سفر را شفاف، قابل پیش‌بینی و بدون استرس می‌کنیم, شما فقط روی چشم‌انداز خود تمرکز کنید.',
 
     // Old overview (kept for Gallery component references)
     'overview.title': 'از طراحی تا تحویل کلید؛ همراه در تمامی جزئیات خانه شما',

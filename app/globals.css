@@ -335,3 +335,9 @@ html[lang="ar"] p, html[lang="fa"] p {
 .animate-marquee-right:hover {
   animation-play-state: paused;
 }
+
+/* Disable ornate/script ampersand ligatures in serif headings */
+.font-serif {
+  font-feature-settings: "liga" 0, "dlig" 0;
+}
+

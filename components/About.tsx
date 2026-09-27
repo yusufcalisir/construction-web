@@ -46,7 +46,7 @@ export default function About() {
                 <div className="relative w-full h-full rounded-full p-[3px] bg-gradient-to-tr from-amber-400 via-amber-200 to-amber-600 shadow-2xl">
                   {/* Inner contrast ring */}
                   <div className="w-full h-full rounded-full p-1 bg-stone-950">
-                    {/* Image Container — strictly rounded with transparent background */}
+                    {/* Image Container: strictly rounded with transparent background */}
                     <div className="relative w-full h-full rounded-full overflow-hidden bg-stone-900">
                       <Image
                         src="/about/livan-gur.png"
@@ -110,10 +110,10 @@ export default function About() {
                 </div>
                 <div className="text-right">
                   <span className="text-2xl font-bold text-white font-serif block">
-                    %100
+                    {t('about.audit.num')}
                   </span>
                   <span className="text-[11px] font-mono text-stone-400 uppercase tracking-wider">
-                    Mühendis Denetimi
+                    {t('about.audit.label')}
                   </span>
                 </div>
               </div>

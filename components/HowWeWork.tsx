@@ -36,7 +36,7 @@ export default function HowWeWork() {
 
         {/* Steps */}
         <div className="relative">
-          {/* Connecting line — desktop only */}
+          {/* Connecting line: desktop only */}
           <div className="hidden lg:block absolute top-[2.75rem] left-[8.5%] right-[8.5%] h-[2px] bg-gradient-to-r from-transparent via-amber-500/30 to-transparent z-0" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative z-10">
