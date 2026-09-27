@@ -36,16 +36,11 @@ export default function WhyBer() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {WHY_BER_ITEMS.map((item, index) => (
+          {WHY_BER_ITEMS.map((item) => (
             <div
               key={item.key}
               className="group relative bg-white rounded-2xl p-8 border border-stone-200/60 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-500 hover:-translate-y-1"
             >
-              {/* Number */}
-              <div className="absolute top-6 right-6 font-mono text-xs text-stone-200 font-bold tracking-widest">
-                {String(index + 1).padStart(2, '0')}
-              </div>
-
               {/* Icon */}
               <div className="w-14 h-14 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500 group-hover:border-amber-500 transition-all duration-300">
                 <span>{item.icon}</span>

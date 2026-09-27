@@ -77,12 +77,6 @@ export default function Services() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent z-10" />
-                {/* Index badge */}
-                <div className="absolute top-4 left-4 z-20 w-8 h-8 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
-                  <span className="text-amber-400 text-xs font-bold font-mono">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                </div>
               </div>
 
               {/* Content */}

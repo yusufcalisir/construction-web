@@ -35,19 +35,14 @@ export default function HowWeWork() {
 
         {/* Steps Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {STEPS.map((step, index) => (
+          {STEPS.map((step) => (
             <div
               key={step.key}
               className="group relative bg-stone-900/90 rounded-2xl p-8 border border-stone-800/80 hover:border-amber-500/40 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/5 hover:-translate-y-1"
             >
-              {/* Step number and icon */}
-              <div className="flex items-center justify-between mb-6">
-                <div className="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center shrink-0 group-hover:bg-amber-500 group-hover:border-amber-500 transition-all duration-300">
-                  <span className="text-amber-400 text-sm font-bold font-mono group-hover:text-stone-950 transition-colors duration-300">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                </div>
-                <span className="text-2xl">{step.icon}</span>
+              {/* Step Icon */}
+              <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-2xl mb-6 group-hover:bg-amber-500/20 group-hover:border-amber-500/40 transition-all duration-300">
+                <span>{step.icon}</span>
               </div>
 
               <h3 className="text-lg font-bold text-white mb-3 font-serif group-hover:text-amber-400 transition-colors duration-300">
