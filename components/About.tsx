@@ -33,7 +33,7 @@ export default function About() {
                   {t('about.since')}
                 </span>
                 <span className="text-amber-400 text-xs font-mono tracking-wider font-semibold">
-                  Civil Engineering
+                  {t('about.discipline')}
                 </span>
               </div>
 
@@ -63,7 +63,7 @@ export default function About() {
                 {/* Verified Civil Engineer Seal */}
                 <div
                   className="absolute bottom-1 right-1 sm:bottom-2 sm:right-2 w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 border-2 border-stone-900 shadow-xl flex items-center justify-center text-stone-950"
-                  title="İnşaat Mühendisi"
+                  title={t('about.discipline')}
                 >
                   <svg className="w-5 h-5 text-stone-950" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
