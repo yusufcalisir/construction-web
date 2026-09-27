@@ -6,6 +6,7 @@ import Gallery from '@/components/Gallery'
 import Services from '@/components/Services'
 import ProjectGallery from '@/components/ProjectGallery'
 import Contact from '@/components/Contact'
+import BrandMarquee from '@/components/BrandMarquee'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Services />
       <ProjectGallery />
       <Contact />
+      <BrandMarquee />
       <Footer />
     </main>
   )

@@ -38,6 +38,9 @@ const translations: Record<Language, Record<string, string>> = {
     'gallery2.subtitle': 'Tamamlanan tadilat ve dekorasyon projelerimizden kareler',
     'gallery2.close': 'Kapat',
 
+    // Brands (Çözüm Ortakları & İş Birlikleri)
+    'brands.badge': 'İş Birliği Yaptığımız Markalar & Çözüm Ortaklarımız',
+
     // Services (Tadilat & Yenileme)
     'services.title': 'Tadilat & Yenileme',
     'services.subtitle': 'Geniş hizmet yelpazemiz ile ihtiyacınıza uygun çözümler sunuyoruz',
@@ -145,6 +148,9 @@ const translations: Record<Language, Record<string, string>> = {
     'gallery2.subtitle': 'Moments from our completed renovation and decoration projects',
     'gallery2.close': 'Close',
 
+    // Brands (Brand Partners)
+    'brands.badge': 'Our Trusted Brand Partners & Collaborations',
+
     // Services (Renovation & Remodeling)
     'services.title': 'Renovation & Remodeling',
     'services.subtitle': 'Comprehensive solutions tailored to meet your every need',
@@ -251,6 +257,9 @@ const translations: Record<Language, Record<string, string>> = {
     'gallery2.title': 'گالری پروژه‌ها',
     'gallery2.subtitle': 'تصاویر منتخب از پروژه‌های اجرا شده بازسازی و دکوراسیون',
     'gallery2.close': 'بستن',
+
+    // Brands (Brand Partners)
+    'brands.badge': 'برندهای همکار و شرکای تجاری ما',
 
     // Services (Tadilat & Yenileme)
     'services.title': 'بازسازی و نوسازی',
