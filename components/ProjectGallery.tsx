@@ -257,7 +257,6 @@ export default function ProjectGallery() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight leading-tight font-serif">
             {t('gallery2.subtitle')}
           </h2>
-          <div className="h-[2px] w-12 bg-amber-500 mx-auto mt-6 rounded-full" />
         </div>
 
         {/* 48 Responsive Cards Grid */}

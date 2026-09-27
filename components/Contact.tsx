@@ -27,9 +27,6 @@ export default function Contact() {
               {t('overview.footer')}
             </p>
             
-            {/* Elegant Line */}
-            <div className="h-[2px] w-16 bg-amber-500 rounded-full" />
-            
             {/* Quick WhatsApp Action button */}
             <div className="pt-6">
               <SafeWhatsAppButton

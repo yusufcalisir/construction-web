@@ -56,7 +56,6 @@ export default function Services() {
           <p className="mt-6 text-stone-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             {t('services.subtitle')}
           </p>
-          <div className="h-[2px] w-16 bg-gradient-to-r from-amber-500 to-amber-300 mx-auto mt-8 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

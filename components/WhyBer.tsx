@@ -32,7 +32,6 @@ export default function WhyBer() {
           <p className="mt-6 text-stone-500 text-base sm:text-lg leading-relaxed">
             {t('whyber.subtitle')}
           </p>
-          <div className="h-[2px] w-16 bg-amber-500 mx-auto mt-8 rounded-full" />
         </div>
 
         {/* Grid */}
