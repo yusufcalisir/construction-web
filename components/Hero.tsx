@@ -7,19 +7,19 @@ import SafeWhatsAppButton from './SafeWhatsAppButton'
 
 const backgroundImages = [
   {
-    src: '/galeri/image-109.jpg',
+    src: '/calisma-galeri/hero_luxury_renovation.png',
+    position: 'object-left sm:object-center',
+  },
+  {
+    src: '/calisma-galeri/hero_luxury_kitchen.png',
     position: 'object-center',
   },
   {
-    src: '/galeri/image-104.jpg',
+    src: '/calisma-galeri/hero_luxury_bathroom.png',
     position: 'object-center',
   },
   {
-    src: '/galeri/image-93.jpg',
-    position: 'object-center',
-  },
-  {
-    src: '/galeri/image-50.jpg',
+    src: '/calisma-galeri/hero_luxury_exterior.png',
     position: 'object-center',
   },
 ]
