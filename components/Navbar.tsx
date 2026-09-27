@@ -28,7 +28,7 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 20)
 
       // Determine active section based on scroll position
-      const sections = ['home', 'works', 'services', 'gallery', 'contact']
+      const sections = ['home', 'about', 'services', 'why-ber', 'how-we-work', 'gallery', 'contact']
       const scrollPosition = window.scrollY + 150
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -79,9 +79,12 @@ export default function Navbar() {
     switch (activeSection) {
       case 'home':
         return 'bg-stone-50/90 backdrop-blur-md border-b border-stone-200/40 shadow-[0_2px_15px_rgba(0,0,0,0.02)]'
-      case 'works':
+      case 'about':
         return 'bg-white/90 backdrop-blur-md border-b border-stone-200/40 shadow-[0_2px_15px_rgba(0,0,0,0.02)]'
       case 'services':
+      case 'how-we-work':
+        return 'bg-stone-950/90 backdrop-blur-md border-b border-stone-800/40 shadow-[0_2px_15px_rgba(0,0,0,0.2)]'
+      case 'why-ber':
         return 'bg-stone-50/90 backdrop-blur-md border-b border-stone-200/40 shadow-[0_2px_15px_rgba(0,0,0,0.02)]'
       case 'gallery':
         return 'bg-white/90 backdrop-blur-md border-b border-stone-200/40 shadow-[0_2px_15px_rgba(0,0,0,0.02)]'
@@ -118,13 +121,19 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-7 xl:gap-8">
-              {['home', 'works', 'services', 'gallery', 'contact'].map((section) => {
-                const isActive = activeSection === section;
+              {[
+                { id: 'home', key: 'nav.home' },
+                { id: 'about', key: 'nav.about' },
+                { id: 'services', key: 'nav.services' },
+                { id: 'gallery', key: 'nav.gallery' },
+                { id: 'contact', key: 'nav.contact' },
+              ].map((item) => {
+                const isActive = activeSection === item.id || (item.id === 'services' && (activeSection === 'why-ber' || activeSection === 'how-we-work'));
                 return (
                   <a
-                    key={section}
-                    href={`#${section}`}
-                    onClick={(e) => handleNavClick(e, section)}
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={(e) => handleNavClick(e, item.id)}
                     className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
                       isActive
                         ? !isScrolled
@@ -135,7 +144,7 @@ export default function Navbar() {
                           : 'text-stone-600 hover:text-stone-900'
                     }`}
                   >
-                    {t(`nav.${section}`)}
+                    {t(item.key)}
                     {/* Modern animated accent line */}
                     <span className={`absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] transition-all duration-300 rounded-full ${
                       isActive 
@@ -287,21 +296,29 @@ export default function Navbar() {
       {/* Mobile Navigation Overlay */}
       {isMobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-40 bg-stone-950/95 backdrop-blur-lg flex flex-col justify-center px-6 py-20">
-          <div className="flex flex-col space-y-3 max-w-sm mx-auto w-full text-center">
-            {['home', 'works', 'services', 'gallery', 'contact'].map((section) => {
-              const isActive = activeSection === section;
+          <div className="flex flex-col space-y-2 max-w-sm mx-auto w-full text-center">
+            {[
+              { id: 'home', key: 'nav.home' },
+              { id: 'about', key: 'nav.about' },
+              { id: 'services', key: 'nav.services' },
+              { id: 'why-ber', key: 'nav.whyber' },
+              { id: 'how-we-work', key: 'nav.howwework' },
+              { id: 'gallery', key: 'nav.gallery' },
+              { id: 'contact', key: 'nav.contact' },
+            ].map((item) => {
+              const isActive = activeSection === item.id;
               return (
                 <a
-                  key={section}
-                  href={`#${section}`}
-                  onClick={(e) => handleNavClick(e, section)}
-                  className={`block py-4 px-6 rounded-2xl text-sm font-bold tracking-[0.25em] uppercase transition-all duration-300 border ${
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={(e) => handleNavClick(e, item.id)}
+                  className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
                     isActive
-                      ? 'bg-amber-500 text-white border-amber-500 shadow-lg shadow-amber-500/20'
+                      ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
                       : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
                   }`}
                 >
-                  {t(`nav.${section}`)}
+                  {t(item.key)}
                 </a>
               );
             })}

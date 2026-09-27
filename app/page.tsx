@@ -2,8 +2,10 @@
 
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import Gallery from '@/components/Gallery'
+import About from '@/components/About'
+import WhyBer from '@/components/WhyBer'
 import Services from '@/components/Services'
+import HowWeWork from '@/components/HowWeWork'
 import ProjectGallery from '@/components/ProjectGallery'
 import Contact from '@/components/Contact'
 import BrandMarquee from '@/components/BrandMarquee'
@@ -14,8 +16,10 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <Gallery />
+      <About />
       <Services />
+      <WhyBer />
+      <HowWeWork />
       <ProjectGallery />
       <Contact />
       <BrandMarquee />
@@ -23,4 +27,3 @@ export default function Home() {
     </main>
   )
 }
-
