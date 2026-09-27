@@ -6,7 +6,7 @@ import { useLanguage } from './LanguageProvider'
 
 const FIRST_PHOTOS = [118, 109, 104, 93, 67, 50, 25, 24, 10, 5, 47, 12]
 const EXCLUDED_PHOTOS = new Set([16, 20, 30, 31, 35, 38, 42, 46, 54, 78])
-const TOTAL_CARDS = 12
+const TOTAL_CARDS = 48
 
 interface LightboxState {
   cardIndex: number
@@ -27,9 +27,11 @@ function GalleryCard({ photos, cardIndex, photoIndex, onOpen }: GalleryCardProps
 
   // Preload next and previous images for this card on idle/hover
   const handleMouseEnter = () => {
-    const nextIdx = (currentIdx + 1) % photos.length
-    const nextImg = new window.Image()
-    nextImg.src = photos[nextIdx]
+    if (photos.length > 1) {
+      const nextIdx = (currentIdx + 1) % photos.length
+      const nextImg = new window.Image()
+      nextImg.src = photos[nextIdx]
+    }
   }
 
   useEffect(() => {
@@ -86,7 +88,7 @@ function GalleryCard({ photos, cardIndex, photoIndex, onOpen }: GalleryCardProps
           fill
           className="object-cover"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-          loading={cardIndex < 4 ? 'eager' : 'lazy'}
+          loading={cardIndex < 8 ? 'eager' : 'lazy'}
           unoptimized
         />
       </div>
@@ -103,26 +105,38 @@ export default function ProjectGallery() {
   const [touchStartX, setTouchStartX] = useState<number | null>(null)
   const [isHovered, setIsHovered] = useState(false)
 
-  // 12 cards, starting with FIRST_PHOTOS, excluding EXCLUDED_PHOTOS
-  // 108 total photos distributed evenly (9 photos per card, no duplicates between cards)
+  // 48 cards, starting with FIRST_PHOTOS + other unique photos for initial view
+  // All 108 valid photos distributed evenly across the 48 cards (36 cards with 2 photos, 12 cards with 3 photos)
   const cardBuckets = useMemo(() => {
-    const firstSet = new Set(FIRST_PHOTOS)
-    const remaining: number[] = []
-
+    const allValid: number[] = []
     for (let i = 1; i <= 118; i++) {
-      if (!EXCLUDED_PHOTOS.has(i) && !firstSet.has(i)) {
-        remaining.push(i)
+      if (!EXCLUDED_PHOTOS.has(i)) {
+        allValid.push(i)
       }
     }
 
-    return FIRST_PHOTOS.map((first, cardIdx) => {
-      const others = remaining.filter((_, idx) => idx % TOTAL_CARDS === cardIdx)
-      const allNumbers = [first, ...others]
-      return allNumbers.map((num) => `/galeri/image-${num}.jpg`)
+    const firstSet = new Set(FIRST_PHOTOS)
+    const remainingForFirst = allValid.filter((id) => !firstSet.has(id))
+    const cardStarts = [
+      ...FIRST_PHOTOS,
+      ...remainingForFirst.slice(0, TOTAL_CARDS - FIRST_PHOTOS.length),
+    ]
+
+    const startSet = new Set(cardStarts)
+    const remainingPool = allValid.filter((id) => !startSet.has(id))
+
+    // Distribute remainingPool across the 48 cards
+    const buckets: number[][] = cardStarts.map((start) => [start])
+    remainingPool.forEach((photoId, idx) => {
+      buckets[idx % TOTAL_CARDS].push(photoId)
     })
+
+    return buckets.map((cardPhotos) =>
+      cardPhotos.map((num) => `/galeri/image-${num}.jpg`)
+    )
   }, [])
 
-  // Track the active photo index for each of the 12 cards
+  // Track the active photo index for each of the 48 cards
   const [cardIndices, setCardIndices] = useState<number[]>(() =>
     Array(TOTAL_CARDS).fill(0)
   )
@@ -246,7 +260,7 @@ export default function ProjectGallery() {
           <div className="h-[2px] w-12 bg-amber-500 mx-auto mt-6 rounded-full" />
         </div>
 
-        {/* 12 Responsive Cards Grid */}
+        {/* 48 Responsive Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {cardBuckets.map((photos, cardIndex) => (
             <GalleryCard
@@ -270,18 +284,20 @@ export default function ProjectGallery() {
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Top Bar: Title & Minimal Close Icon (No text) */}
+          {/* Top Bar: Title & Minimal Close Icon (No text, No #) */}
           <div
             className="flex items-center justify-between w-full max-w-6xl mx-auto z-10 pt-2"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center gap-3">
               <span className="text-sm sm:text-base font-bold text-white font-serif">
-                {t('gallery2.title')} #{lightbox.cardIndex + 1}
+                {t('gallery2.title')}
               </span>
-              <span className="text-xs px-2.5 py-1 rounded-full bg-white/10 text-stone-300 font-mono">
-                {lightbox.photoIndex + 1} / {activePhotos.length}
-              </span>
+              {activePhotos.length > 1 && (
+                <span className="text-xs px-2.5 py-1 rounded-full bg-white/10 text-stone-300 font-mono">
+                  {lightbox.photoIndex + 1} / {activePhotos.length}
+                </span>
+              )}
             </div>
 
             {/* Minimal Close Button */}
@@ -341,7 +357,7 @@ export default function ProjectGallery() {
               <Image
                 key={activePhotos[lightbox.photoIndex]}
                 src={activePhotos[lightbox.photoIndex]}
-                alt={`Proje ${lightbox.cardIndex + 1} Fotoğraf ${lightbox.photoIndex + 1}`}
+                alt={`Proje Fotoğraf ${lightbox.photoIndex + 1}`}
                 fill
                 className="object-contain"
                 sizes="(max-width: 1200px) 100vw, 1200px"
@@ -375,37 +391,39 @@ export default function ProjectGallery() {
             )}
           </div>
 
-          {/* Bottom Bar: Thumbnails of all 9 photos for this card */}
-          <div
-            className="w-full max-w-2xl mx-auto z-10 pb-2 overflow-x-auto py-2 flex items-center justify-center gap-2 sm:gap-3"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {activePhotos.map((src, pIdx) => {
-              const isCurrent = pIdx === lightbox.photoIndex
-              return (
-                <button
-                  key={src}
-                  type="button"
-                  onClick={() => goToPhoto(pIdx)}
-                  className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden transition-all focus:outline-none flex-shrink-0 touch-manipulation ${
-                    isCurrent
-                      ? 'ring-2 ring-amber-500 scale-105 opacity-100 shadow-md'
-                      : 'opacity-50 hover:opacity-85 border border-white/10'
-                  }`}
-                  aria-label={`Fotoğraf ${pIdx + 1}`}
-                >
-                  <Image
-                    src={src}
-                    alt="thumbnail"
-                    fill
-                    className="object-cover"
-                    sizes="56px"
-                    unoptimized
-                  />
-                </button>
-              )
-            })}
-          </div>
+          {/* Bottom Bar: Thumbnails of photos for this card */}
+          {activePhotos.length > 1 && (
+            <div
+              className="w-full max-w-2xl mx-auto z-10 pb-2 overflow-x-auto py-2 flex items-center justify-center gap-2 sm:gap-3"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {activePhotos.map((src, pIdx) => {
+                const isCurrent = pIdx === lightbox.photoIndex
+                return (
+                  <button
+                    key={src}
+                    type="button"
+                    onClick={() => goToPhoto(pIdx)}
+                    className={`relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden transition-all focus:outline-none flex-shrink-0 touch-manipulation ${
+                      isCurrent
+                        ? 'ring-2 ring-amber-500 scale-105 opacity-100 shadow-md'
+                        : 'opacity-50 hover:opacity-85 border border-white/10'
+                    }`}
+                    aria-label={`Fotoğraf ${pIdx + 1}`}
+                  >
+                    <Image
+                      src={src}
+                      alt="thumbnail"
+                      fill
+                      className="object-cover"
+                      sizes="56px"
+                      unoptimized
+                    />
+                  </button>
+                )
+              })}
+            </div>
+          )}
         </div>
       )}
     </section>
