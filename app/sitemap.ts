@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           tr: baseUrl,
           en: `${baseUrl}/?lang=en`,
+          ar: `${baseUrl}/?lang=ar`,
           fa: `${baseUrl}/?lang=fa`,
         },
       },
@@ -27,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           tr: `${baseUrl}/#works`,
           en: `${baseUrl}/?lang=en#works`,
+          ar: `${baseUrl}/?lang=ar#works`,
           fa: `${baseUrl}/?lang=fa#works`,
         },
       },
@@ -40,6 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           tr: `${baseUrl}/#services`,
           en: `${baseUrl}/?lang=en#services`,
+          ar: `${baseUrl}/?lang=ar#services`,
           fa: `${baseUrl}/?lang=fa#services`,
         },
       },
@@ -53,6 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           tr: `${baseUrl}/#gallery`,
           en: `${baseUrl}/?lang=en#gallery`,
+          ar: `${baseUrl}/?lang=ar#gallery`,
           fa: `${baseUrl}/?lang=fa#gallery`,
         },
       },
@@ -66,6 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           tr: `${baseUrl}/#contact`,
           en: `${baseUrl}/?lang=en#contact`,
+          ar: `${baseUrl}/?lang=ar#contact`,
           fa: `${baseUrl}/?lang=fa#contact`,
         },
       },

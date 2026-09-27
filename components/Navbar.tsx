@@ -12,23 +12,16 @@ export default function Navbar() {
 
   const [activeSection, setActiveSection] = useState('home')
 
-  // Always show only the OTHER 2 languages to switch to
-  const otherLanguages = (
-    language === 'tr'
-      ? [
-          { code: 'en' as const, label: 'EN', title: 'English' },
-          { code: 'fa' as const, label: 'FA', title: 'فارسی' },
-        ]
-      : language === 'en'
-      ? [
-          { code: 'tr' as const, label: 'TR', title: 'Türkçe' },
-          { code: 'fa' as const, label: 'FA', title: 'فارسی' },
-        ]
-      : [
-          { code: 'tr' as const, label: 'TR', title: 'Türkçe' },
-          { code: 'en' as const, label: 'EN', title: 'English' },
-        ]
-  )
+  // All languages in order: TR, EN, AR, FA (Arabic between EN and FA)
+  const ALL_LANGUAGES = [
+    { code: 'tr' as const, label: 'TR', title: 'Türkçe' },
+    { code: 'en' as const, label: 'EN', title: 'English' },
+    { code: 'ar' as const, label: 'AR', title: 'العربية' },
+    { code: 'fa' as const, label: 'FA', title: 'فارسی' },
+  ]
+
+  // Always show only the OTHER 3 languages to switch to
+  const otherLanguages = ALL_LANGUAGES.filter((item) => item.code !== language)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -168,7 +161,7 @@ export default function Navbar() {
                   ariaLabel="Call us"
                 />
                 
-                {/* Modern Capsule 2-Language Switcher */}
+                {/* Modern Capsule Language Switcher */}
                 <div
                   dir="ltr"
                   className={`inline-flex items-center p-1 rounded-xl border backdrop-blur-md transition-all duration-300 select-none shadow-sm ${
@@ -183,7 +176,7 @@ export default function Navbar() {
                     <span key={target.code} className="inline-flex items-center">
                       {idx > 0 && (
                         <span
-                          className={`w-[1px] h-3.5 transition-colors duration-300 mx-1 ${
+                          className={`w-[1px] h-3.5 transition-colors duration-300 mx-0.5 ${
                             !isScrolled ? 'bg-white/20' : 'bg-stone-300'
                           }`}
                         />
@@ -193,7 +186,7 @@ export default function Navbar() {
                         onClick={() => setLanguage(target.code)}
                         title={target.title}
                         aria-label={target.title}
-                        className={`px-3 py-1 min-w-[38px] text-center rounded-lg text-xs font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 ${
+                        className={`px-2.5 py-1 min-w-[32px] text-center rounded-lg text-xs font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 ${
                           !isScrolled
                             ? 'text-stone-200 hover:text-white hover:bg-white/15'
                             : 'text-stone-700 hover:text-amber-600 hover:bg-stone-200/70'
@@ -221,7 +214,7 @@ export default function Navbar() {
                 ariaLabel="Call us"
               />
               
-              {/* Mobile Capsule 2-Language Switcher */}
+              {/* Mobile Capsule Language Switcher */}
               <div
                 dir="ltr"
                 className={`inline-flex items-center p-0.5 rounded-xl border backdrop-blur-md transition-all duration-300 select-none shadow-sm ${
@@ -238,7 +231,7 @@ export default function Navbar() {
                   <span key={target.code} className="inline-flex items-center">
                     {idx > 0 && (
                       <span
-                        className={`w-[1px] h-3 transition-colors duration-300 mx-0.5 ${
+                        className={`w-[1px] h-2.5 transition-colors duration-300 mx-0.5 ${
                           isMobileMenuOpen || !isScrolled ? 'bg-white/20' : 'bg-stone-300'
                         }`}
                       />
@@ -248,7 +241,7 @@ export default function Navbar() {
                       onClick={() => setLanguage(target.code)}
                       title={target.title}
                       aria-label={target.title}
-                      className={`px-2 py-1 min-w-[30px] text-center rounded-lg text-[11px] font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 ${
+                      className={`px-1.5 py-0.5 min-w-[24px] text-center rounded-md text-[10px] font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 ${
                         isMobileMenuOpen || !isScrolled
                           ? 'text-stone-200 hover:text-white active:bg-white/20'
                           : 'text-stone-700 hover:text-amber-600 active:bg-stone-200'
@@ -313,10 +306,10 @@ export default function Navbar() {
               );
             })}
             
-            {/* Mobile Menu 2-Language Switcher */}
+            {/* Mobile Menu Language Switcher */}
             <div
               dir="ltr"
-              className="p-1 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex items-center justify-center gap-2 mx-auto w-full max-w-xs select-none"
+              className="p-1 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex items-center justify-center gap-1.5 mx-auto w-full max-w-xs select-none"
               role="group"
               aria-label="Dil seçenekleri"
             >
@@ -330,10 +323,10 @@ export default function Navbar() {
                   }}
                   title={target.title}
                   aria-label={target.title}
-                  className="flex-1 py-2.5 px-4 rounded-xl text-center font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 bg-white/10 hover:bg-amber-500 text-white shadow-sm"
+                  className="flex-1 py-2 px-1.5 rounded-xl text-center font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 bg-white/10 hover:bg-amber-500 text-white shadow-sm flex flex-col items-center justify-center"
                 >
                   <span className="text-xs font-bold">{target.label}</span>
-                  <span className="text-[11px] opacity-80 font-normal ml-1.5">({target.title})</span>
+                  <span className="text-[10px] opacity-75 font-normal mt-0.5">({target.title})</span>
                 </button>
               ))}
             </div>

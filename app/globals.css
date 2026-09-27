@@ -243,23 +243,23 @@ p {
 }
 
 /* ═══════════════════════════════════════════
-   Persian (Farsi) & RTL Typography Support
+   Arabic, Persian (Farsi) & RTL Typography Support
    ═══════════════════════════════════════════ */
-html[lang="fa"], [dir="rtl"] {
+html[lang="ar"], html[lang="fa"], [dir="rtl"] {
   font-family: var(--font-inter), system-ui, -apple-system, 'Segoe UI', Tahoma, Arial, sans-serif;
 }
 
-html[lang="fa"] h1,
-html[lang="fa"] h2,
-html[lang="fa"] h3,
-html[lang="fa"] h4,
-html[lang="fa"] h5,
-html[lang="fa"] h6 {
+html[lang="ar"] h1, html[lang="fa"] h1,
+html[lang="ar"] h2, html[lang="fa"] h2,
+html[lang="ar"] h3, html[lang="fa"] h3,
+html[lang="ar"] h4, html[lang="fa"] h4,
+html[lang="ar"] h5, html[lang="fa"] h5,
+html[lang="ar"] h6, html[lang="fa"] h6 {
   line-height: 1.35;
   letter-spacing: normal;
 }
 
-html[lang="fa"] p {
+html[lang="ar"] p, html[lang="fa"] p {
   line-height: 1.85;
 }
 

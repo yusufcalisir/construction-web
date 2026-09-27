@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react'
 
-export type Language = 'tr' | 'en' | 'fa'
+export type Language = 'tr' | 'en' | 'ar' | 'fa'
 
 interface LanguageContextType {
   language: Language
@@ -234,6 +234,116 @@ const translations: Record<Language, Record<string, string>> = {
     'overview.install.item3': 'Smart home electrical systems and automation',
     'overview.footer': 'From a small room renovation to a complete building facade, we offer turnkey solutions for projects of all sizes. Contact us to plan your project with a free survey.',
   },
+  ar: {
+    // Navigation
+    'nav.home': 'الرئيسية',
+    'nav.works': 'خدماتنا',
+    'nav.services': 'التجديد والترميم',
+    'nav.gallery': 'معرض المشاريع',
+    'nav.contact': 'اتصل بنا',
+    'nav.navigation': 'التنقل',
+
+    // Hero
+    'hero.title': 'بر تاديلات',
+    'hero.subtitle': 'قم بتجديد منزلك، ومكان عملك، ومساحاتك تماماً كما تحلم. حرفية عالية، وخدمة موثوقة، ورضا تام للعملاء.',
+    'hero.getQuote': 'احصل على عرض سعر فوري',
+
+    // Gallery (Hizmetlerimiz)
+    'gallery.title': 'خدماتنا ومشاريعنا',
+    'gallery.project': 'مشروع',
+    'gallery.image': 'صورة',
+
+    // New Project Gallery (Galeri)
+    'gallery2.title': 'معرض المشاريع',
+    'gallery2.subtitle': 'لقطات مختارة من مشاريعنا المنجزة في التجديد والديكور',
+    'gallery2.close': 'إغلاق',
+
+    // Brands (Çözüm Ortakları & İş Birlikleri)
+    'brands.badge': 'شركاء النجاح والعلامات التجارية التي نتعاون معها',
+
+    // Services (Tadilat & Yenileme)
+    'services.title': 'التجديد والترميم الشامل',
+    'services.subtitle': 'نقدم حلولاً متكاملة ومصممة خصيصاً لتلبية احتياجاتكم المعمارية والديكورية',
+
+    // Service names
+    'service.dekorasyon': 'التصميم الداخلي والديكور',
+    'service.restorasyon': 'الترميم وإعادة التأهيل',
+    'service.boya': 'الدهانات والطلاء الحديث',
+    'service.alciplan': 'ألواح الجبس والأسقف المستعارة',
+    'service.fayans': 'تركيب السيراميك والبورسلين',
+    'service.mutfak': 'تصميم وتنفيذ المطابخ الحديثة',
+    'service.parke': 'أرضيات الباركيه والخشب',
+    'service.isolation': 'العزل الحراري والصوتي',
+    'service.facade': 'تشطيبات وتجديد الواجهات',
+    'service.akillisistem': 'أنظمة المنازل الذكية (Smart Home)',
+    'service.tesisat': 'التمديدات الصحية والكهربائية',
+
+    // Service descriptions
+    'service.dekorasyon.desc': 'نحول مساحاتك المعيشية بحلول ديكور عصرية وفاخرة. مع فريقنا المتخصص في التصميم الداخلي، وتنسيق الأثاث والألوان، نصنع المكان الذي تحلم به.',
+    'service.restorasyon.desc': 'نمتلك خبرة واسعة في ترميم المباني ذات القيمة التاريخية والثقافية مع الحفاظ على طابعها الأصلي، بالجمع بين التقنيات الأصيلة والمواد المتطورة.',
+    'service.boya.desc': 'نمنح جدرانك إطلالة جديدة ومشرقة بخدمات دهان احترافية. نضمن نتائج تدوم طويلاً بفضل الدهانات عالية الجودة والإعداد المتقن للأسطح.',
+    'service.alciplan.desc': 'نبتكر جدران وأسقف جمالية ومستوية باستخدام أحدث تقنيات ألواح الجبس، والأسقف المعلقة، والقواطع الجدارية والديكورات العصرية.',
+    'service.fayans.desc': 'نقدم خدمات متقنة لتركيب السيراميك والبورسلين للحمامات والمطابخ، مع مراعاة كاملة للعزل المائي والدقة الهندسية والجمال البصري.',
+    'service.mutfak.desc': 'خبراء في تصميم وتركيب المطابخ الحديثة. نحقق توازناً مثالياً بين التصميم المريح والمواد المتينة والحلول العملية لتنظيم مطبخك.',
+    'service.parke.desc': 'سنوات من الخبرة في تركيب وتجهيز أرضيات الباركيه والخشب الطبيعي والمصفح، مع تسوية ممتازة للأسطح وضمان متانة وطول عمر الأرضيات.',
+    'service.isolation.desc': 'حلول متقدمة في العزل الحراري والصوتي لتوفير الطاقة والراحة، للحفاظ على اعتدال منزلك صيفاً ودفئه شتاءً بتقنيات معتمدة.',
+    'service.facade.desc': 'تجديد كامل للواجهات الخارجية للمباني بالكسوات والدهانات والعوازل المقاومة لمختلف العوامل الجوية مع جودة تدوم طويلاً.',
+    'service.akillisistem.desc': 'التحكم الذكي بالإضاءة، والتكييف، وكاميرات الأمان والأجهزة عبر نظام مركزي واحد، لإضفاء أقصى درجات الراحة والأمان وتوفير الطاقة.',
+    'service.tesisat.desc': 'حلول سباكة وكهرباء شاملة وموثوقة للمنازل والمكاتب، وتحديث شبكات المياه والصرف الصحي وأنظمة التدفئة المركزية بأعلى معايير السلامة.',
+
+    // Contact
+    'contact.title': 'تواصل معنا',
+    'contact.subtitle': 'احصل على معاينة مجانية وعرض سعر مخصص لمشروعك',
+    'contact.whatsapp': 'تواصل عبر واتساب',
+    'contact.phone': 'الهاتف',
+    'contact.revealPhone': 'إظهار الرقم',
+    'contact.callNow': 'اتصل الآن',
+    'contact.copied': 'تم النسخ',
+    'contact.clickToCall': 'انقر للاتصال',
+    'contact.address': 'العنوان',
+    'contact.location': 'إسطنبول، تركيا',
+    'contact.workingHours': 'ساعات العمل',
+    'contact.weekdays': 'أيام الأسبوع',
+    'contact.weekends': 'عطلة نهاية الأسبوع',
+    'contact.allDay': 'على مدار الساعة 24/7',
+
+    // Footer
+    'footer.description': 'بسنوات طويلة من الخبرة في إسطنبول، نقدم خدمات البناء، والتجديد، والديكور الداخلي، والتمديدات والأنظمة الذكية للمنازل والمنشآت التجارية وفق أرقى المعايير الحديثة، مع الالتزام التام بالمواد الفاخرة والمواعيد الدقيقة.',
+    'footer.copyright': '© 2026 بر تاديلات. جميع الحقوق محفوظة.',
+
+    // WhatsApp Widget
+    'whatsapp.title': 'بر تاديلات',
+    'whatsapp.status': 'متاح للرد السريع',
+    'whatsapp.message': 'مرحباً، كيف يمكننا مساعدتك اليوم؟',
+    'whatsapp.connect': 'بدء المحادثة',
+    'whatsapp.ariaLabel': 'تواصل عبر واتساب',
+    'whatsapp.close': 'إغلاق',
+
+    // Overview Section
+    'overview.title': 'من التصميم وحتى التسليم، نهتم بأدق تفاصيل منزلك',
+    'overview.description': 'نقدم خدمات تجديد وديكور شاملة ومتكاملة من المفهوم الأولي وحتى التسليم النهائي. نتولى إدارة كافة مراحل مشروعك دون عناء التنسيق مع حرفيين متعددين، لتقديم نتائج دقيقة بجهة اتصال ومسؤولية واحدة موثوقة.',
+    'overview.description.slide0': 'نقدم خدمات تجديد وديكور شاملة ومتكاملة من الفكرة الأولية وحتى التسليم النهائي على المفتاح.',
+    'overview.description.slide1': 'من أعمال التشطيبات والديكور وحتى الأنظمة الكهربائية والصحية، ندير مشروعك بخبرة متناهية.',
+    'overview.description.slide2': 'من العزل الحراري والصوتي وحتى أنظمة المنازل الذكية، نجهز منزلك للمستقبل بأعلى كفاءة.',
+    'overview.description.slide3': 'دون عناء التنسيق مع أطراف متعددة، تحصل على نتائج متكاملة ومتقنة من خلال جهة واحدة مسؤولة.',
+    'overview.decorTitle': 'الديكور والتجديد',
+    'overview.decor.item1': 'تطبيقات وتصاميم الديكور الداخلي',
+    'overview.decor.item2': 'أعمال الترميم وإعادة التأهيل',
+    'overview.decor.item3': 'الدهانات والطلاءات الجدارية الفاخرة',
+    'overview.decor.item4': 'ألواح الجبس والقواطع والأسقف المعلقة',
+    'overview.decor.item5': 'تركيب السيراميك والرخام والبورسلين',
+    'overview.decor.item6': 'تصميم وتركيب المطابخ العصرية',
+    'overview.decor.item7': 'تركيب أرضيات الباركيه والخشب',
+    'overview.insulationTitle': 'العزل والواجهات',
+    'overview.insulation.item1': 'العزل الحراري الخارجي والداخلي',
+    'overview.insulation.item2': 'العزل الصوتي المتقدم',
+    'overview.insulation.item3': 'دهانات وتشطيبات واجهات المباني',
+    'overview.installTitle': 'التمديدات والأنظمة الذكية',
+    'overview.install.item1': 'التمديدات والشبكات الكهربائية',
+    'overview.install.item2': 'تمديدات المياه والصرف والغاز الطبيعي',
+    'overview.install.item3': 'أنظمة المنازل الذكية والأتمتة الكاملة',
+    'overview.footer': 'من تجديد غرفة واحدة وحتى إعادة تأهيل مبنى كامل، نقدم حلول تسليم مفتاح تناسب جميع المشروعات. اتصل بنا الآن لتحديد موعد معاينة مجانية.',
+  },
   fa: {
     // Navigation
     'nav.home': 'صفحه اصلی',
@@ -353,7 +463,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     setMounted(true)
     const saved = localStorage.getItem('language') as Language | null
-    if (saved && (saved === 'tr' || saved === 'en' || saved === 'fa')) {
+    if (saved && (saved === 'tr' || saved === 'en' || saved === 'ar' || saved === 'fa')) {
       setLanguage(saved)
     }
   }, [])
@@ -363,12 +473,18 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       localStorage.setItem('language', language)
     }
     if (typeof document !== 'undefined') {
+      const isRTL = language === 'ar' || language === 'fa'
       document.documentElement.lang = language
-      document.documentElement.dir = language === 'fa' ? 'rtl' : 'ltr'
+      document.documentElement.dir = isRTL ? 'rtl' : 'ltr'
       if (language === 'fa') {
         document.documentElement.classList.add('lang-fa')
       } else {
         document.documentElement.classList.remove('lang-fa')
+      }
+      if (language === 'ar') {
+        document.documentElement.classList.add('lang-ar')
+      } else {
+        document.documentElement.classList.remove('lang-ar')
       }
     }
   }, [language, mounted])
@@ -376,7 +492,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const toggleLanguage = () => {
     setLanguage((prev) => {
       if (prev === 'tr') return 'en'
-      if (prev === 'en') return 'fa'
+      if (prev === 'en') return 'ar'
+      if (prev === 'ar') return 'fa'
       return 'tr'
     })
   }
