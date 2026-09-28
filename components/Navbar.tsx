@@ -189,7 +189,7 @@ export default function Navbar() {
                       ? 'bg-stone-900/95 border-stone-800 shadow-black/60'
                       : 'bg-white/95 border-stone-200/90 shadow-stone-900/10'
                   }`}>
-                    {/* Item 1: Kurumsal & Mühendislik */}
+                    {/* Item 1: Kurumsal & Vizyonumuz */}
                     <a
                       href="#about"
                       onClick={(e) => {

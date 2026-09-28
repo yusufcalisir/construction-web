@@ -204,8 +204,8 @@ const localBusinessSchema = {
   '@id': `${baseUrl}#business`,
   name: 'Ber Tadilat',
   alternateName: ['Ber Tadilat Dekorasyon', 'Ber Tadilat İstanbul', 'İstanbul Anahtar Teslim Tadilat', 'Mutfak Dekorasyon', 'Dekorasyon Firmaları', 'Mutfak Tadilat', 'Dekorasyon Tavan', 'Tadilat Dekorasyon'],
-  description: 'İstanbul\'da ev, iş yeri, villa ve rezidanslar için inşaat mühendisi denetiminde profesyonel anahtar teslim tadilat, lüks dekorasyon, 3D mimari projelendirme, şeffaf bütçe garantili restorasyon, tesisat ve akıllı ev sistemleri hizmetleri. 7/24 hizmet, ücretsiz keşif.',
-  keywords: 'istanbul anahtar teslim tadilat, general contractor istanbul, lüks tadilat, inşaat mühendisi denetiminde tadilat, mutfak dekorasyon, dekorasyon firmaları, mutfak tadilat, tadilat işleri dekorasyon tadilat, dekorasyon tavan, tadilat dekorasyon, ber tadilat, istanbul tadilat, istanbul dekorasyon',
+  description: 'İstanbul\'da ev, iş yeri, villa ve rezidanslar için mimari tasarım ve profesyonel denetimde anahtar teslim tadilat, lüks dekorasyon, 3D mimari projelendirme, şeffaf bütçe garantili restorasyon, tesisat ve akıllı ev sistemleri hizmetleri. 7/24 hizmet, ücretsiz keşif.',
+  keywords: 'istanbul anahtar teslim tadilat, general contractor istanbul, lüks tadilat, anahtar teslim villa tadilatı, mutfak dekorasyon, dekorasyon firmaları, mutfak tadilat, tadilat işleri dekorasyon tadilat, dekorasyon tavan, tadilat dekorasyon, ber tadilat, istanbul tadilat, istanbul dekorasyon',
   url: baseUrl,
   email: 'info@bertadilat.com',
   address: {
@@ -474,7 +474,7 @@ const faqSchema = {
       name: 'Hangi tadilat ve dekorasyon hizmetlerini sunuyorsunuz?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Mutfak ve banyo renovasyonu, salon yenileme, lüks iç mimari tasarım, boya badana, alçıpan asma tavan, seramik/fayans döşeme, parke kaplama, elektrik/su tesisatı ve akıllı ev sistemleri hizmetlerini inşaat mühendisi denetiminde sunuyoruz.',
+        text: 'Mutfak ve banyo renovasyonu, salon yenileme, lüks iç mimari tasarım, boya badana, alçıpan asma tavan, seramik/fayans döşeme, parke kaplama, elektrik/su tesisatı ve akıllı ev sistemleri hizmetlerini uzman mimari ve teknik denetimde sunuyoruz.',
       },
     },
     {

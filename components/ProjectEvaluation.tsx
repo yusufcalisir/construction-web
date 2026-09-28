@@ -262,7 +262,7 @@ ${notes ? `📝 Not: ${notes}\n` : ''}Detayları ve keşif takvimini görüşebi
                   </div>
 
                   <p className="text-stone-300 text-sm sm:text-base max-w-lg mx-auto mb-8 leading-relaxed">
-                    Proje Direktörümüz <strong>İnşaat Mühendisi Livan Gür</strong> ile doğrudan iletişime geçmek ve 
+                    Ber Tadilat uzman proje ekibimiz ile doğrudan iletişime geçmek ve 
                     bilgilerinizi tek tıkla iletmek için aşağıdaki WhatsApp butonuna tıklayabilirsiniz.
                   </p>
 
@@ -280,7 +280,7 @@ ${notes ? `📝 Not: ${notes}\n` : ''}Detayları ve keşif takvimini görüşebi
                 </>
               ) : (
                 <p className="text-stone-300 text-sm max-w-md mx-auto leading-relaxed">
-                  Proje detaylarınız kaydedildi. Talebiniz mühendislik ekibimizce incelenip uygunluk durumunda 
+                  Proje detaylarınız kaydedildi. Talebiniz uzman proje ekibimizce incelenip uygunluk durumunda 
                   sizinle iletişime geçilecektir.
                 </p>
               )}

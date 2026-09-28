@@ -15,18 +15,18 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-          {/* Left: Executive Engineer Card (5 cols on lg) */}
+          {/* Left: Premium Architectural Showcase Card (5 cols on lg) */}
           <div className="lg:col-span-5 relative order-2 lg:order-1">
             {/* Background subtle ambient glow */}
             <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-amber-500/10 via-stone-200/50 to-amber-500/5 blur-xl -z-10" />
 
-            {/* Main Executive Card */}
+            {/* Main Showcase Card */}
             <div className="relative bg-stone-900 rounded-3xl p-8 sm:p-10 border border-stone-800 shadow-2xl overflow-hidden">
               {/* Radial warm lighting in card header */}
               <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-amber-500/10 blur-3xl pointer-events-none" />
               <div className="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-amber-500/10 blur-3xl pointer-events-none" />
 
-              {/* Top Bar: Location & Est pill */}
+              {/* Top Bar: Location & Discipline pill */}
               <div className="flex items-center justify-between gap-4 mb-6">
                 <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-stone-800/90 border border-stone-700/60 text-stone-300 text-[11px] font-mono tracking-widest uppercase">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
@@ -37,41 +37,28 @@ export default function About() {
                 </span>
               </div>
 
-              {/* Circular Portrait with Design-Matched Metallic Ring */}
-              <div className="relative mx-auto my-4 w-44 h-44 sm:w-52 sm:h-52">
-                {/* Ambient glow behind ring */}
-                <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-amber-500/40 via-amber-300/20 to-amber-600/40 blur-md" />
-
-                {/* Luxury Metallic Gold/Amber Ring */}
-                <div className="relative w-full h-full rounded-full p-[3px] bg-gradient-to-tr from-amber-400 via-amber-200 to-amber-600 shadow-2xl">
-                  {/* Inner contrast ring */}
-                  <div className="w-full h-full rounded-full p-1 bg-stone-950">
-                    {/* Image Container: strictly rounded with transparent background */}
-                    <div className="relative w-full h-full rounded-full overflow-hidden bg-stone-900">
-                      <Image
-                        src="/about/livan-gur.png"
-                        alt={t('about.engineer.name')}
-                        fill
-                        className="object-cover scale-105"
-                        sizes="(max-width: 640px) 176px, 208px"
-                        priority
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Verified Civil Engineer Seal */}
-                <div
-                  className="absolute bottom-1 right-1 sm:bottom-2 sm:right-2 w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 border-2 border-stone-900 shadow-xl flex items-center justify-center text-stone-950"
-                  title={t('about.discipline')}
-                >
-                  <svg className="w-5 h-5 text-stone-950" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
-                  </svg>
+              {/* Architectural Image Showcase */}
+              <div className="relative mx-auto my-4 w-full h-56 sm:h-64 rounded-2xl overflow-hidden border border-stone-800 shadow-2xl group">
+                <Image
+                  src="/galeri/image-1.jpg"
+                  alt="Ber Tadilat Üst Segment Renovasyon Projesi"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, 400px"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent" />
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-900/80 backdrop-blur-md border border-amber-500/40 text-amber-300 text-[11px] font-bold tracking-wider uppercase">
+                    BER TADİLAT
+                  </span>
+                  <span className="text-stone-300 text-[11px] font-mono font-medium">
+                    İstanbul
+                  </span>
                 </div>
               </div>
 
-              {/* Engineer Name & Title */}
+              {/* Company Title */}
               <div className="text-center mt-6">
                 <h3 className="text-2xl sm:text-3xl font-bold text-white font-serif tracking-tight">
                   {t('about.engineer.name')}
@@ -84,16 +71,16 @@ export default function About() {
               {/* Professional Credential Pills */}
               <div className="mt-6 space-y-2.5">
                 <div className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-stone-800/60 border border-stone-700/60 text-xs text-stone-200">
-                  <span className="text-base shrink-0">🎓</span>
+                  <span className="text-base shrink-0">📐</span>
                   <span className="font-medium">{t('about.engineer.edu')}</span>
                 </div>
                 <div className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-stone-800/60 border border-stone-700/60 text-xs text-stone-200">
-                  <span className="text-base shrink-0">🌍</span>
+                  <span className="text-base shrink-0">🏛️</span>
                   <span className="font-medium">{t('about.engineer.exp')}</span>
                 </div>
               </div>
 
-              {/* Executive Bio Paragraph */}
+              {/* Executive Overview Paragraph */}
               <p className="mt-5 pt-4 border-t border-stone-800 text-stone-300 text-xs sm:text-sm leading-relaxed text-justify">
                 {t('about.engineer.desc')}
               </p>
