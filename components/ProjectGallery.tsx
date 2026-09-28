@@ -11,7 +11,7 @@ const TOTAL_CARDS = 48
 const PROJECT_DESCRIPTIONS = [
   'Kadıköy Modern Salon ve Mutfak Renovasyonu',
   'Beşiktaş Lüks Villa İçi Anahtar Teslim Tadilat',
-  'Sarıyer Özel Tasarım Mutfak ve Ada Tezgah Uygulaması',
+  'Sarıyer Özel Tasarım Mutfak Yenileme ve Dolap Tasarımı',
   'Bakırköy Ebeveyn Banyosu ve Doğal Taş Kaplama',
   'Üsküdar Boğaz Manzaralı Daire İç Mimari Yenileme',
   'Ataşehir Rezidans Komple Dekorasyon ve Asma Tavan',

@@ -73,7 +73,7 @@ const AREA_RANGES = ['50 – 100 m²', '100 – 150 m²', '150 – 250 m²', '25
 
 const SERVICES = [
   { id: 'Komple Anahtar Teslim Renovasyon', label: 'Komple Tadilat (Anahtar Teslim)', highlight: true },
-  { id: 'Mutfak & Ada Tezgah', label: 'Mutfak & Ada Tezgah' },
+  { id: 'Mutfak Yenileme', label: 'Mutfak Yenileme' },
   { id: 'Banyo & Tesisat', label: 'Banyo & Tesisat' },
   { id: 'Zemin & Parke', label: 'Zemin & Parke' },
   { id: 'Boya Badana', label: 'Boya Badana' },
