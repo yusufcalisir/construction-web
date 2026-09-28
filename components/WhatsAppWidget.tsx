@@ -38,6 +38,7 @@ export default function WhatsAppWidget() {
   useEffect(() => {
     const handleScroll = () => {
       const heroSection = document.getElementById('home')
+      const contactSection = document.getElementById('contact')
       const footerSection = document.getElementById('footer')
       
       let shouldShow = true
@@ -50,12 +51,24 @@ export default function WhatsAppWidget() {
         }
       }
 
+      // Hide if the contact section is visible on screen to avoid duplicate WhatsApp buttons
+      if (contactSection) {
+        const contactRect = contactSection.getBoundingClientRect()
+        if (contactRect.top < window.innerHeight && contactRect.bottom > 0) {
+          shouldShow = false
+        }
+      }
+
+      // Hide if footer is visible in the viewport
       if (footerSection) {
         const footerRect = footerSection.getBoundingClientRect()
-        // Hide if footer is visible in the viewport
         if (footerRect.top < window.innerHeight) {
           shouldShow = false
         }
+      }
+
+      if (!shouldShow) {
+        setIsOpen(false)
       }
 
       setIsVisible(shouldShow)
@@ -78,12 +91,17 @@ export default function WhatsAppWidget() {
     openWhatsApp()
   }
 
-  if (!isVisible || isMobileMenuOpen) {
+  if (isMobileMenuOpen) {
     return null
   }
 
   return (
-    <div id="whatsapp-floating-widget" className="whatsapp-floating-widget">
+    <div
+      id="whatsapp-floating-widget"
+      className={`whatsapp-floating-widget transition-all duration-300 ${
+        isVisible ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
+      }`}
+    >
       {/* Floating WhatsApp Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
