@@ -177,6 +177,15 @@ const translations: Record<Language, Record<string, string>> = {
     'whyber.stat4.num': '30+',
     'whyber.stat4.label': 'Partner Marka',
     'whyber.cta': 'Ücretsiz Keşif Talebi',
+    'whyber.reviews.badge': 'Müşteri Değerlendirmeleri',
+    'whyber.reviews.title': 'Müşterilerimizin Gözünden Ber Tadilat',
+    'whyber.reviews.verified': 'Doğrulanmış Müşteri',
+    'whyber.review1.name': 'Elif A.',
+    'whyber.review1.comment': 'Boya badana, alçıpan, dolap boyama, kapı pencere, asma tavan işlerimizi yaptırdık. Gerçekten çok profesyonel. İşçilikleri gayet temizdi ve fiyatları uygundu. Çok teşekkür ederiz.',
+    'whyber.review2.name': 'Musa A.',
+    'whyber.review2.comment': 'İstanbul\'a yeni geldim ve piyasayı araştırdım, gerçekten çok kaliteli ve titiz işçilikle çalışan bir şirket.',
+    'whyber.review3.name': 'Büşra A.',
+    'whyber.review3.comment': 'Salonu ve mutfağı yenilettik. Çok memnun kaldık. Oldukça kaliteli ve piyasaya göre uygun fiyat.',
 
     // HowWeWork
     'howwework.badge': 'Sürecimiz',
@@ -360,6 +369,15 @@ const translations: Record<Language, Record<string, string>> = {
     'whyber.stat4.num': '30+',
     'whyber.stat4.label': 'Partner Brands',
     'whyber.cta': 'Request a Free Survey',
+    'whyber.reviews.badge': 'Client Reviews',
+    'whyber.reviews.title': 'What Our Clients Say About Ber Tadilat',
+    'whyber.reviews.verified': 'Verified Client',
+    'whyber.review1.name': 'Elif A.',
+    'whyber.review1.comment': 'We had painting, drywall, cabinet painting, doors and windows, and suspended ceiling work done. Truly very professional. Their craftsmanship was very clean and their prices were reasonable. Thank you so much.',
+    'whyber.review2.name': 'Musa A.',
+    'whyber.review2.comment': 'I recently moved to Istanbul and researched the market; they are truly a company that works with high quality and meticulous craftsmanship.',
+    'whyber.review3.name': 'Büşra A.',
+    'whyber.review3.comment': 'We renovated our living room and kitchen. We were very satisfied. Quite high quality and fair prices compared to the market.',
 
     // HowWeWork
     'howwework.badge': 'Our Process',
@@ -554,6 +572,15 @@ const translations: Record<Language, Record<string, string>> = {
     'whyber.stat4.num': '+30',
     'whyber.stat4.label': 'علامة شريكة',
     'whyber.cta': 'طلب معاينة مجانية',
+    'whyber.reviews.badge': 'تقييمات العملاء',
+    'whyber.reviews.title': 'آراء عملائنا في بر تاديلات',
+    'whyber.reviews.verified': 'عميل موثق',
+    'whyber.review1.name': 'Elif A.',
+    'whyber.review1.comment': 'قمنا بأعمال الدهان والجبس بورد وطلاء الخزائن والأبواب والنوافذ والأسقف المعلقة. عمل احترافي للغاية ونظيف وبأسعار مناسبة. شكراً جزيلاً لكم.',
+    'whyber.review2.name': 'Musa A.',
+    'whyber.review2.comment': 'لقد انتقلت حديثاً إلى إسطنبول وبحثت في السوق، إنها حقاً شركة تعمل بجودة عالية وحرفية دقيقة للغاية.',
+    'whyber.review3.name': 'Büşra A.',
+    'whyber.review3.comment': 'قمنا بتجديد الصالون والمطبخ. كنا راضين جداً. جودة ممتازة وأسعار مناسبة جداً مقارنة بالسوق.',
 
     // HowWeWork
     'howwework.badge': 'أسلوب عملنا',
@@ -760,6 +787,15 @@ const translations: Record<Language, Record<string, string>> = {
     'whyber.stat4.num': '+۳۰',
     'whyber.stat4.label': 'برند شریک',
     'whyber.cta': 'درخواست بازدید رایگان',
+    'whyber.reviews.badge': 'نظرات مشتریان',
+    'whyber.reviews.title': 'تجربه مشتریان با بر تادیلات',
+    'whyber.reviews.verified': 'مشتری تأییدشده',
+    'whyber.review1.name': 'Elif A.',
+    'whyber.review1.comment': 'کارهای نقاشی، کناف، رنگ‌آمیزی کمد، درب و پنجره و سقف کاذب خود را انجام دادیم. واقعاً بسیار حرفه‌ای بودند. کیفیت کار بسیار تمیز و قیمت‌ها بسیار مناسب بود. با تشکر فراوان.',
+    'whyber.review2.name': 'Musa A.',
+    'whyber.review2.comment': 'به تازگی به استانبول آمدم و بازار را بررسی کردم، واقعاً شرکتی با کیفیت بالا و ظرافت و دقت بسیار در اجرا هستند.',
+    'whyber.review3.name': 'Büşra A.',
+    'whyber.review3.comment': 'سالن پذیرایی و آشپزخانه را بازسازی کردیم. بسیار راضی بودیم. کیفیت بسیار بالا و قیمتی کاملاً مناسب نسبت به بازار.',
 
     // HowWeWork
     'howwework.badge': 'فرآیند ما',

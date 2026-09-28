@@ -74,3 +74,30 @@ test('Components: LanguageProvider client directive and storage initialization',
     'LanguageProvider must export useLanguage hook'
   )
 })
+
+test('Components: WhyBer renders 3 customer reviews with 5 stars and no reviewer photo images', () => {
+  const whyBerContent = fs.readFileSync('components/WhyBer.tsx', 'utf8')
+  const langContent = fs.readFileSync('components/LanguageProvider.tsx', 'utf8')
+
+  // Ensure reviews section exists with 3 cards
+  assert.ok(
+    whyBerContent.includes('whyber.reviews.badge') && whyBerContent.includes('whyber.reviews.title'),
+    'WhyBer should render customer reviews header and badge'
+  )
+  assert.ok(
+    whyBerContent.includes('[1, 2, 3].map'),
+    'WhyBer should iterate over the 3 customer reviews'
+  )
+
+  // Ensure no <img> or <Image> is used for reviews in WhyBer
+  assert.strictEqual(
+    whyBerContent.includes('<Image') || whyBerContent.includes('<img'),
+    false,
+    'WhyBer should not use reviewer photos or avatar images'
+  )
+
+  // Ensure names only have full first name and surname initial
+  assert.ok(langContent.includes("'whyber.review1.name': 'Elif A.'"), 'Reviewer 1 name should be Elif A.')
+  assert.ok(langContent.includes("'whyber.review2.name': 'Musa A.'"), 'Reviewer 2 name should be Musa A.')
+  assert.ok(langContent.includes("'whyber.review3.name': 'Büşra A.'"), 'Reviewer 3 name should be Büşra A.')
+})

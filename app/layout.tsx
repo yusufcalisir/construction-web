@@ -246,6 +246,54 @@ const localBusinessSchema = {
     { '@type': 'AdministrativeArea', name: 'Maltepe' },
     { '@type': 'AdministrativeArea', name: 'Beylikdüzü' },
   ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '3',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  review: [
+    {
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: 'Elif A.',
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+      },
+      reviewBody: 'Boya badana, alçıpan, dolap boyama, kapı pencere, asma tavan işlerimizi yaptırdık. Gerçekten çok profesyonel. İşçilikleri gayet temizdi ve fiyatları uygundu. Çok teşekkür ederiz.',
+    },
+    {
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: 'Musa A.',
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+      },
+      reviewBody: 'İstanbul\'a yeni geldim ve piyasayı araştırdım, gerçekten çok kaliteli ve titiz işçilikle çalışan bir şirket.',
+    },
+    {
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: 'Büşra A.',
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+      },
+      reviewBody: 'Salonu ve mutfağı yenilettik. Çok memnun kaldık. Oldukça kaliteli ve piyasaya göre uygun fiyat.',
+    },
+  ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Tadilat Hizmetleri',

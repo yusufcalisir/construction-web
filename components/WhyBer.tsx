@@ -74,6 +74,59 @@ export default function WhyBer() {
           ))}
         </div>
 
+        {/* Customer Reviews Section */}
+        <div className="mt-20 sm:mt-24">
+          <div className="text-center mb-12 max-w-2xl mx-auto">
+            <span className="font-mono text-xs sm:text-sm tracking-[0.3em] text-amber-600 font-bold uppercase block mb-3">
+              {t('whyber.reviews.badge')}
+            </span>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-stone-900 tracking-tight font-serif">
+              {t('whyber.reviews.title')}
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {[1, 2, 3].map((id) => (
+              <div
+                key={id}
+                className="group relative bg-white rounded-2xl p-7 sm:p-8 border border-stone-200/60 shadow-sm hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1"
+              >
+                <div>
+                  {/* 5 Stars */}
+                  <div className="flex items-center gap-1 text-amber-400 mb-4" aria-label="5 yıldız">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+
+                  {/* Comment */}
+                  <p className="text-stone-600 text-sm sm:text-base leading-relaxed italic">
+                    “{t(`whyber.review${id}.comment`)}”
+                  </p>
+                </div>
+
+                {/* Reviewer Name */}
+                <div className="mt-6 pt-5 border-t border-stone-100 flex items-center justify-between">
+                  <span className="font-bold text-stone-900 text-base font-serif">
+                    {t(`whyber.review${id}.name`)}
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-100">
+                    <svg className="w-3 h-3 fill-current text-emerald-600" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    {t('whyber.reviews.verified')}
+                  </span>
+                </div>
+
+                {/* Bottom accent hover line */}
+                <div className="absolute bottom-0 left-0 h-[2px] bg-amber-500 w-0 group-hover:w-full transition-all duration-500 rounded-b-2xl" />
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* CTA */}
         <div className="mt-14 text-center">
           <SafeWhatsAppButton
