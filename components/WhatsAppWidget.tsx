@@ -43,18 +43,15 @@ export default function WhatsAppWidget() {
       
       let shouldShow = true
 
-      // Hide if the hero section is visible on screen to avoid duplicate WhatsApp buttons
-      if (heroSection) {
-        const heroRect = heroSection.getBoundingClientRect()
-        if (heroRect.bottom > 200) {
-          shouldShow = false
-        }
+      // Hide only when at the very top landing view (window.scrollY < 120)
+      if (window.scrollY < 120) {
+        shouldShow = false
       }
 
-      // Hide if the contact section is visible on screen to avoid duplicate WhatsApp buttons
+      // Hide only when scrolled well into the Contact section (does not hide while in Gallery!)
       if (contactSection) {
         const contactRect = contactSection.getBoundingClientRect()
-        if (contactRect.top < window.innerHeight && contactRect.bottom > 0) {
+        if (contactRect.top <= 200 && contactRect.bottom >= 150) {
           shouldShow = false
         }
       }
@@ -62,7 +59,7 @@ export default function WhatsAppWidget() {
       // Hide if footer is visible in the viewport
       if (footerSection) {
         const footerRect = footerSection.getBoundingClientRect()
-        if (footerRect.top < window.innerHeight) {
+        if (footerRect.top <= window.innerHeight - 50) {
           shouldShow = false
         }
       }
@@ -91,19 +88,15 @@ export default function WhatsAppWidget() {
     openWhatsApp()
   }
 
-  if (isMobileMenuOpen) {
+  if (!isVisible || isMobileMenuOpen) {
     return null
   }
 
   return (
-    <div
-      id="whatsapp-floating-widget"
-      className={`whatsapp-floating-widget transition-all duration-300 ${
-        isVisible ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
-      }`}
-    >
+    <>
       {/* Floating WhatsApp Button */}
       <button
+        id="whatsapp-floating-button"
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] hover:bg-[#20BA5A] shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
         aria-label={t('whatsapp.ariaLabel')}
@@ -196,7 +189,7 @@ export default function WhatsAppWidget() {
           aria-hidden="true"
         />
       )}
-    </div>
+    </>
   )
 }
 

@@ -341,9 +341,8 @@ html[lang="ar"] p, html[lang="fa"] p {
   font-feature-settings: "liga" 0, "dlig" 0;
 }
 
-/* Hide floating WhatsApp widget when mobile navigation menu is open */
-body.mobile-menu-open #whatsapp-floating-widget,
-body.mobile-menu-open .whatsapp-floating-widget {
+/* Hide floating WhatsApp button when mobile navigation menu is open */
+body.mobile-menu-open #whatsapp-floating-button {
   display: none !important;
 }
 
