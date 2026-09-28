@@ -246,6 +246,10 @@ const localBusinessSchema = {
     { '@type': 'AdministrativeArea', name: 'Şişli' },
     { '@type': 'AdministrativeArea', name: 'Maltepe' },
     { '@type': 'AdministrativeArea', name: 'Beyoğlu' },
+    { '@type': 'AdministrativeArea', name: 'Beykoz' },
+    { '@type': 'AdministrativeArea', name: 'Eyüpsultan' },
+    { '@type': 'AdministrativeArea', name: 'Çekmeköy' },
+    { '@type': 'AdministrativeArea', name: 'Beylikdüzü' },
   ],
   aggregateRating: {
     '@type': 'AggregateRating',

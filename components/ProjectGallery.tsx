@@ -25,6 +25,9 @@ const PROJECT_DESCRIPTIONS = [
   'Beykoz Riva Müstakil Villa Çatı ve Isı Yalıtımı Projesi',
   'Kadıköy Moda Tarihi Apartman Dairesi Restorasyonu',
   'Florya Lüks Konut Akıllı Ev ve Aydınlatma Sistemleri',
+  'Göktürk Eyüpsultan Müstakil Villa Mimari Renovasyonu',
+  'Çekmeköy Modern Konut Komple Tadilat ve Dekorasyon',
+  'Beylikdüzü Geniş Daire ve Mutfak Yenileme Projesi',
 ]
 
 interface LightboxState {
