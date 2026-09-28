@@ -114,8 +114,8 @@ test('Components: ProjectEvaluation enforces 300K+ threshold, triggers GTM event
     'ProjectEvaluation must explicitly state the 300.000 TL+ criteria'
   )
   assert.ok(
-    evalContent.includes('qualified_lead_submitted'),
-    'ProjectEvaluation must trigger the qualified_lead_submitted GTM dataLayer event'
+    evalContent.includes('qualified_project_lead'),
+    'ProjectEvaluation must trigger the qualified_project_lead GTM dataLayer event'
   )
   assert.ok(
     evalContent.includes('id="on-degerlendirme"'),

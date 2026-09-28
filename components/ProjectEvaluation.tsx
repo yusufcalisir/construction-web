@@ -143,7 +143,7 @@ export default function ProjectEvaluation() {
     return hasValidBudget && hasScope && hasDistrict && hasPhone
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setErrorMessage('')
 
@@ -172,33 +172,90 @@ export default function ProjectEvaluation() {
     const qualified = calculateQualification()
     setIsQualified(qualified)
 
-    // GTM / Google Ads conversion tracking
-    if (typeof window !== 'undefined') {
-      const win = window as any
-      win.dataLayer = win.dataLayer || []
-      if (qualified) {
-        win.dataLayer.push({
-          event: 'qualified_lead_submitted',
-          lead_district: district,
-          lead_property: propertyType,
-          lead_area: area,
-          lead_scope: selectedServices.join(', '),
-          lead_budget: budget,
-          lead_timeline: timeline,
-          lead_name: name.trim(),
-          is_qualified: true,
-        })
-      }
-      win.dataLayer.push({ event: 'lead_form_submitted', is_qualified: qualified })
+    const payload = {
+      name: name.trim(),
+      phone: phone.trim(),
+      district,
+      propertyType,
+      area,
+      services: selectedServices,
+      budget,
+      timeline,
+      notes: notes.trim(),
+      isQualified: qualified,
+      submittedAt: new Date().toISOString(),
     }
 
-    // Direct single-click redirect to WhatsApp without intermediate screen
-    redirectWhatsApp(generateWhatsAppMessage())
+    try {
+      // 1. Persist lead on server and trigger email dispatch
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      const result = await res.json()
 
-    // If user returns back to tab, re-enable button after short delay
-    setTimeout(() => {
-      setIsSubmitting(false)
-    }, 2000)
+      // 2. ONLY AFTER SUCCESSFUL SERVER RESPONSE: push GTM dataLayer events
+      if (result && result.success) {
+        if (typeof window !== 'undefined') {
+          const win = window as any
+          win.dataLayer = win.dataLayer || []
+
+          // Only fire qualified event if requirements met: 300K+ budget AND (komple or >= 2 services)
+          if (qualified) {
+            const e164Phone = `+90${cleanPhone.startsWith('90') ? cleanPhone.slice(2) : cleanPhone.startsWith('0') ? cleanPhone.slice(1) : cleanPhone}`
+            const nameParts = name.trim().split(/\s+/)
+            const firstName = nameParts[0] || ''
+            const lastName = nameParts.slice(1).join(' ') || ''
+
+            // Google Tag Manager: qualified_project_lead
+            // Generic event attributes do NOT contain raw PII (handled via user_data for Enhanced Conversions)
+            win.dataLayer.push({
+              event: 'qualified_project_lead',
+              lead_district: district,
+              lead_property: propertyType,
+              lead_area: area,
+              lead_scope: selectedServices.join(', '),
+              lead_budget: budget,
+              lead_timeline: timeline,
+              is_qualified: true,
+              // Standard User-Provided Data object for Enhanced Conversions
+              user_data: {
+                phone_number: e164Phone,
+                address: {
+                  first_name: firstName,
+                  last_name: lastName,
+                  city: 'İstanbul',
+                  region: district,
+                  country: 'TR',
+                },
+              },
+            })
+
+            // Backward compatibility alias
+            win.dataLayer.push({
+              event: 'qualified_lead_submitted',
+              is_qualified: true,
+            })
+          }
+
+          win.dataLayer.push({
+            event: 'lead_form_submitted',
+            is_qualified: qualified,
+          })
+        }
+      }
+    } catch (err) {
+      console.warn('Lead dispatch network note:', err)
+    } finally {
+      // Direct single-click redirect to WhatsApp
+      redirectWhatsApp(generateWhatsAppMessage())
+
+      // If user returns back to tab, re-enable button after short delay
+      setTimeout(() => {
+        setIsSubmitting(false)
+      }, 2000)
+    }
   }
 
   // Generate structured message for WhatsApp pre-fill without emojis (prevents character corruption like  in wa.me redirects)
