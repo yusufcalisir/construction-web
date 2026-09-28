@@ -9,7 +9,6 @@ export default function Navbar() {
   const { t, language, setLanguage } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false)
 
   const [activeSection, setActiveSection] = useState('home')
 
@@ -91,7 +90,7 @@ export default function Navbar() {
   }
 
   const isDark = !isScrolled || isMobileMenuOpen || isDarkSection(activeSection)
-  const isAboutActive = activeSection === 'about' || activeSection === 'how-we-work'
+  const isAboutActive = activeSection === 'about'
 
   // Get background color based on active section
   const getNavbarBg = () => {
@@ -146,103 +145,37 @@ export default function Navbar() {
                 }`} />
               </a>
 
-              {/* Hakkımızda with Section Dropdown */}
-              <div
-                className="relative group py-2"
-                onMouseEnter={() => setIsAboutDropdownOpen(true)}
-                onMouseLeave={() => setIsAboutDropdownOpen(false)}
+              {/* About */}
+              <a
+                href="#about"
+                onClick={(e) => handleNavClick(e, 'about')}
+                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                  activeSection === 'about'
+                    ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
+                    : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
+                }`}
               >
-                <a
-                  href="#about"
-                  onClick={(e) => {
-                    handleNavClick(e, 'about')
-                    setIsAboutDropdownOpen(false)
-                  }}
-                  className={`inline-flex items-center gap-1.5 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 focus:outline-none cursor-pointer ${
-                    isAboutActive
-                      ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
-                      : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
-                  }`}
-                >
-                  <span>{t('nav.about')}</span>
-                  <svg
-                    className={`w-3.5 h-3.5 transition-transform duration-300 opacity-70 ${isAboutDropdownOpen ? 'rotate-180' : 'group-hover:rotate-180'}`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                  <span className={`absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] transition-all duration-300 rounded-full ${
-                    isAboutActive ? 'w-6 bg-amber-500' : 'w-0 group-hover:w-4 bg-amber-500/60'
-                  }`} />
-                </a>
+                {t('nav.about')}
+                <span className={`absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] transition-all duration-300 rounded-full ${
+                  activeSection === 'about' ? 'w-6 bg-amber-500' : 'w-0 group-hover:w-4 bg-amber-500/60'
+                }`} />
+              </a>
 
-                {/* Dropdown Menu */}
-                <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-300 z-50 ${
-                  isAboutDropdownOpen
-                    ? 'opacity-100 translate-y-0 pointer-events-auto'
-                    : 'opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto'
-                }`}>
-                  <div className={`w-80 p-2.5 rounded-2xl shadow-2xl border backdrop-blur-xl ${
-                    isDark
-                      ? 'bg-stone-900/95 border-stone-800 shadow-black/60'
-                      : 'bg-white/95 border-stone-200/90 shadow-stone-900/10'
-                  }`}>
-                    {/* Item 1: Kurumsal & Vizyonumuz */}
-                    <a
-                      href="#about"
-                      onClick={(e) => {
-                        handleNavClick(e, 'about')
-                        setIsAboutDropdownOpen(false)
-                      }}
-                      className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-200 group/item ${
-                        activeSection === 'about'
-                          ? isDark ? 'bg-white/10 text-amber-400' : 'bg-stone-100 text-amber-600'
-                          : isDark ? 'hover:bg-white/5 text-stone-200' : 'hover:bg-stone-50 text-stone-700'
-                      }`}
-                    >
-                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
-                        isDark ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30' : 'bg-amber-50 text-amber-600 border border-amber-200'
-                      }`}>
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="text-xs font-bold font-serif tracking-normal group-hover/item:text-amber-400 transition-colors">{t('nav.about.corporate')}</div>
-                        <div className="text-[11px] text-stone-400 leading-snug mt-0.5 line-clamp-1">{t('nav.about.corporate.desc')}</div>
-                      </div>
-                    </a>
-
-                    {/* Item 3: Çalışma Sürecimiz */}
-                    <a
-                      href="#how-we-work"
-                      onClick={(e) => {
-                        handleNavClick(e, 'how-we-work')
-                        setIsAboutDropdownOpen(false)
-                      }}
-                      className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-200 group/item ${
-                        activeSection === 'how-we-work'
-                          ? isDark ? 'bg-white/10 text-amber-400' : 'bg-stone-100 text-amber-600'
-                          : isDark ? 'hover:bg-white/5 text-stone-200' : 'hover:bg-stone-50 text-stone-700'
-                      }`}
-                    >
-                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
-                        isDark ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30' : 'bg-amber-50 text-amber-600 border border-amber-200'
-                      }`}>
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                        </svg>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="text-xs font-bold font-serif tracking-normal group-hover/item:text-amber-400 transition-colors">{t('nav.about.process')}</div>
-                        <div className="text-[11px] text-stone-400 leading-snug mt-0.5 line-clamp-1">{t('nav.about.process.desc')}</div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              {/* How We Work */}
+              <a
+                href="#how-we-work"
+                onClick={(e) => handleNavClick(e, 'how-we-work')}
+                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                  activeSection === 'how-we-work'
+                    ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
+                    : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
+                }`}
+              >
+                {t('nav.howwework')}
+                <span className={`absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] transition-all duration-300 rounded-full ${
+                  activeSection === 'how-we-work' ? 'w-6 bg-amber-500' : 'w-0 group-hover:w-4 bg-amber-500/60'
+                }`} />
+              </a>
 
               {/* Services */}
               <a
@@ -463,33 +396,31 @@ export default function Navbar() {
               {t('nav.home')}
             </a>
 
-            {/* Hakkımızda Section with sub-items */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-2 space-y-1.5 text-center">
-              <a
-                href="#about"
-                onClick={(e) => handleNavClick(e, 'about')}
-                className={`block py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold tracking-[0.15em] uppercase transition-all duration-300 ${
-                  activeSection === 'about'
-                    ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/20'
-                    : 'text-white hover:text-amber-400'
-                }`}
-              >
-                {t('nav.about')}
-              </a>
-              <div className="pt-0.5">
-                <a
-                  href="#how-we-work"
-                  onClick={(e) => handleNavClick(e, 'how-we-work')}
-                  className={`block py-2 px-3 rounded-lg text-[11px] font-semibold tracking-wider uppercase transition-all duration-200 border text-center ${
-                    activeSection === 'how-we-work'
-                      ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
-                      : 'text-stone-400 hover:text-white border-white/5 bg-white/[0.02]'
-                  }`}
-                >
-                  {t('nav.about.process')}
-                </a>
-              </div>
-            </div>
+            {/* About */}
+            <a
+              href="#about"
+              onClick={(e) => handleNavClick(e, 'about')}
+              className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
+                activeSection === 'about'
+                  ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
+                  : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
+              }`}
+            >
+              {t('nav.about')}
+            </a>
+
+            {/* How We Work */}
+            <a
+              href="#how-we-work"
+              onClick={(e) => handleNavClick(e, 'how-we-work')}
+              className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
+                activeSection === 'how-we-work'
+                  ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
+                  : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
+              }`}
+            >
+              {t('nav.howwework')}
+            </a>
 
             {/* Services */}
             <a
