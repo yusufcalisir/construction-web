@@ -9,6 +9,31 @@ export default function WhatsAppWidget() {
   const { t } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  // Listen to mobile menu open state from document.body class
+  useEffect(() => {
+    const checkMobileMenu = () => {
+      const isMenuOpen = document.body.classList.contains('mobile-menu-open')
+      setIsMobileMenuOpen(isMenuOpen)
+      if (isMenuOpen) {
+        setIsOpen(false)
+      }
+    }
+
+    checkMobileMenu()
+
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          checkMobileMenu()
+        }
+      }
+    })
+
+    observer.observe(document.body, { attributes: true })
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,12 +78,12 @@ export default function WhatsAppWidget() {
     openWhatsApp()
   }
 
-  if (!isVisible) {
+  if (!isVisible || isMobileMenuOpen) {
     return null
   }
 
   return (
-    <>
+    <div id="whatsapp-floating-widget" className="whatsapp-floating-widget">
       {/* Floating WhatsApp Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -153,7 +178,7 @@ export default function WhatsAppWidget() {
           aria-hidden="true"
         />
       )}
-    </>
+    </div>
   )
 }
 

@@ -45,17 +45,31 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Prevent body scroll when mobile menu is open
+  // Prevent body scroll and signal menu state when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden'
+      document.body.classList.add('mobile-menu-open')
     } else {
       document.body.style.overflow = 'unset'
+      document.body.classList.remove('mobile-menu-open')
     }
     return () => {
       document.body.style.overflow = 'unset'
+      document.body.classList.remove('mobile-menu-open')
     }
   }, [isMobileMenuOpen])
+
+  // Close mobile menu on desktop resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+    window.addEventListener('resize', handleResize, { passive: true })
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
