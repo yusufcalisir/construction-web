@@ -5,6 +5,7 @@ import {
   getRawPhone,
   getDisplayPhone,
   getWhatsAppUrl,
+  redirectWhatsApp,
   MASKED_PHONE_DISPLAY
 } from '../lib/safeContact.ts'
 
@@ -31,6 +32,14 @@ test('SafeContact: getWhatsAppUrl returns valid wa.me URL with optional message 
     customUrl,
     `https://wa.me/905458259495?text=${encodeURIComponent(customMessage)}`
   )
+})
+
+test('SafeContact: redirectWhatsApp is defined and handles message argument safely in Node', () => {
+  assert.strictEqual(typeof redirectWhatsApp, 'function')
+  // Should execute without throwing in non-browser environment
+  assert.doesNotThrow(() => {
+    redirectWhatsApp('Test message')
+  })
 })
 
 test('SafeContact: MASKED_PHONE_DISPLAY correctly masks middle digits', () => {

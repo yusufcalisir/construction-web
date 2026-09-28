@@ -67,3 +67,12 @@ export function openWhatsApp(message?: string): void {
   const url = getWhatsAppUrl(message);
   window.open(url, '_blank', 'noopener,noreferrer');
 }
+
+/**
+ * Redirects directly to WhatsApp in the current window (prevents popup blockers and navigates immediately)
+ */
+export function redirectWhatsApp(message?: string): void {
+  if (typeof window === 'undefined') return;
+  const url = getWhatsAppUrl(message);
+  window.location.href = url;
+}

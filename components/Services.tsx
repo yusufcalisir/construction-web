@@ -7,32 +7,26 @@ const services = [
   {
     key: 'turnkey',
     imageName: 'dekorasyon.jpg',
-    icon: '🏠',
   },
   {
     key: 'interior',
     imageName: 'mutfak.jpg',
-    icon: '✏️',
   },
   {
     key: 'commercial',
     imageName: 'dis-cephe.jpg',
-    icon: '🏢',
   },
   {
     key: 'systems',
     imageName: 'akilli-sistemler.jpg',
-    icon: '⚡',
   },
   {
     key: 'restoration',
     imageName: 'restorasyon.jpg',
-    icon: '🏛️',
   },
   {
     key: 'exterior',
     imageName: 'isi-ses-yalitimi.jpg',
-    icon: '🌿',
   },
 ]
 
