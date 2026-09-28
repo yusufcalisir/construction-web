@@ -29,6 +29,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.whyber': 'Neden Ber?',
     'nav.gallery': 'Galeri',
     'nav.contact': 'İletişim',
+    'nav.quote': 'Teklif Al',
     'nav.navigation': 'Navigasyon',
 
     // Hero
@@ -224,6 +225,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.whyber': 'Why Ber?',
     'nav.gallery': 'Gallery',
     'nav.contact': 'Contact',
+    'nav.quote': 'Get a Quote',
     'nav.navigation': 'Navigation',
 
     // Hero
@@ -419,6 +421,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.whyber': 'لماذا بير؟',
     'nav.gallery': 'معرض المشاريع',
     'nav.contact': 'اتصل بنا',
+    'nav.quote': 'طلب عرض أسعار',
     'nav.navigation': 'التنقل',
 
     // Hero
@@ -650,6 +653,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.whyber': 'چرا بر؟',
     'nav.gallery': 'گالری',
     'nav.contact': 'تماس با ما',
+    'nav.quote': 'دریافت قیمت',
     'nav.navigation': 'دسترسی سریع',
 
     // Hero
