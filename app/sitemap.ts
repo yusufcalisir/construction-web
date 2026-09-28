@@ -20,16 +20,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
-      url: `${baseUrl}/#works`,
+      url: `${baseUrl}/#about`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
       alternates: {
         languages: {
-          tr: `${baseUrl}/#works`,
-          en: `${baseUrl}/?lang=en#works`,
-          ar: `${baseUrl}/?lang=ar#works`,
-          fa: `${baseUrl}/?lang=fa#works`,
+          tr: `${baseUrl}/#about`,
+          en: `${baseUrl}/?lang=en#about`,
+          ar: `${baseUrl}/?lang=ar#about`,
+          fa: `${baseUrl}/?lang=fa#about`,
         },
       },
     },

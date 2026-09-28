@@ -29,8 +29,8 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 20)
 
       // Determine active section based on scroll position
-      const sections = ['home', 'about', 'services', 'why-ber', 'how-we-work', 'gallery', 'contact', 'footer']
-      const scrollPosition = window.scrollY + 80
+      const sections = ['home', 'about', 'why-ber', 'how-we-work', 'services', 'gallery', 'contact', 'footer']
+      const scrollPosition = window.scrollY + 100
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const element = document.getElementById(sections[i])
@@ -59,6 +59,7 @@ export default function Navbar() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
+    setActiveSection(targetId)
     const element = document.getElementById(targetId)
     if (element) {
       const offsetTop = element.offsetTop - 80

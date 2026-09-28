@@ -350,13 +350,13 @@ const breadcrumbSchema = {
     {
       '@type': 'ListItem',
       position: 2,
-      name: 'Hizmetlerimiz',
-      item: `${baseUrl}#works`,
+      name: 'Hakkımızda',
+      item: `${baseUrl}#about`,
     },
     {
       '@type': 'ListItem',
       position: 3,
-      name: 'Tadilat & Yenileme',
+      name: 'Hizmetlerimiz',
       item: `${baseUrl}#services`,
     },
     {
