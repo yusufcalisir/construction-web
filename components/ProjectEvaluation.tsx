@@ -497,7 +497,7 @@ export default function ProjectEvaluation() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-stone-950 font-bold text-sm sm:text-base tracking-wider uppercase transition-all duration-300 shadow-xl shadow-emerald-500/20 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-10 py-3.5 sm:py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-stone-950 font-bold text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-xl shadow-emerald-500/20 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 cursor-pointer"
                 >
                   {isSubmitting ? (
                     <>

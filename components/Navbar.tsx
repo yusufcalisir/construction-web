@@ -113,13 +113,13 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`flex items-center justify-between transition-all duration-500 ${isScrolled ? 'h-16 sm:h-18 lg:h-20' : 'h-18 sm:h-20 lg:h-24'}`}>
             {/* Logo */}
-            <div className="flex-shrink-0 mr-4 lg:mr-6 xl:mr-8">
+            <div className="flex-shrink-0 mr-2 sm:mr-4 lg:mr-6 xl:mr-8 whitespace-nowrap">
               <a
                 href="#home"
                 onClick={(e) => handleNavClick(e, 'home')}
-                className="flex items-center group focus:outline-none"
+                className="flex items-center group focus:outline-none whitespace-nowrap"
               >
-                <span className={`text-xl sm:text-2xl font-bold tracking-widest leading-none transition-colors duration-500 font-serif ${
+                <span className={`text-lg sm:text-2xl font-bold tracking-widest leading-none transition-colors duration-500 font-serif whitespace-nowrap ${
                   isDark ? 'text-white' : 'text-stone-900'
                 }`}>
                   BER<span className={`${isDark ? 'text-amber-400' : 'text-amber-600'} font-light tracking-[0.15em] ml-1 transition-colors duration-500`}>TADİLAT</span>
@@ -300,16 +300,6 @@ export default function Navbar() {
             <div className="lg:hidden flex items-center gap-1.5 sm:gap-2">
               {!isMobileMenuOpen && (
                 <>
-                  {/* Mobile Direct Teklif Al Button */}
-                  <a
-                    href="#on-degerlendirme"
-                    onClick={(e) => handleNavClick(e, 'on-degerlendirme')}
-                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full font-black text-[11px] sm:text-xs uppercase tracking-wider bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-sm shrink-0 active:scale-95 transition-all"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-stone-950 animate-pulse" />
-                    <span>{t('nav.quote')}</span>
-                  </a>
-
                   <SafePhoneLink
                     variant="icon-button"
                     iconSize="w-4 h-4"

@@ -103,16 +103,16 @@ export default function Services() {
         </div>
 
         {/* Middle of Page - Big "Teklif Al" CTA Card */}
-        <div className="mt-20 p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-stone-900/90 via-amber-950/20 to-stone-900/90 border border-amber-500/30 text-center max-w-3xl mx-auto shadow-2xl relative overflow-hidden backdrop-blur-md">
+        <div className="mt-12 sm:mt-20 p-5 sm:p-10 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-stone-900/90 via-amber-950/20 to-stone-900/90 border border-amber-500/30 text-center max-w-3xl mx-auto shadow-2xl relative overflow-hidden backdrop-blur-md">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
           <div className="relative z-10">
-            <span className="font-mono text-xs sm:text-sm tracking-[0.25em] text-amber-400 uppercase font-bold block mb-3">
+            <span className="font-mono text-[11px] sm:text-sm tracking-[0.25em] text-amber-400 uppercase font-bold block mb-2 sm:mb-3">
               PREMİUM RENOVASYON & KEŞİF
             </span>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-serif mb-4 leading-tight">
+            <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white font-serif mb-3 sm:mb-4 leading-tight">
               Projeniz İçin Hızlı Teklif Alın
             </h3>
-            <p className="text-stone-300 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+            <p className="text-stone-300 text-xs sm:text-base max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed">
               Mekanınıza, ihtiyaçlarınıza ve bütçenize en uygun çözümleri belirlemek için projenizi hemen paylaşın, doğrudan WhatsApp üzerinden değerlendirme ve keşif takviminizi başlatalım.
             </p>
             <a
@@ -122,14 +122,14 @@ export default function Services() {
                 const el = document.getElementById('on-degerlendirme')
                 if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' })
               }}
-              className="inline-flex items-center justify-center gap-3.5 px-10 sm:px-14 py-5 rounded-full font-black text-base sm:text-lg tracking-wider uppercase bg-amber-500 hover:bg-amber-400 text-stone-950 transition-all duration-300 shadow-2xl shadow-amber-500/35 hover:shadow-amber-500/50 hover:scale-105 active:scale-95 cursor-pointer border-2 border-amber-400"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-12 py-3.5 sm:py-5 rounded-full font-black text-xs sm:text-base tracking-wider uppercase bg-amber-500 hover:bg-amber-400 text-stone-950 transition-all duration-300 shadow-xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105 active:scale-95 cursor-pointer border-2 border-amber-400"
             >
-              <svg className="w-5 h-5 fill-none stroke-current" strokeWidth={2.5} viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-none stroke-current" strokeWidth={2.2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
               </svg>
               <span>{t('nav.quote')}</span>
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
           </div>

@@ -50,7 +50,7 @@ export default function WhyBer() {
           {[1, 2, 3].map((id) => (
             <div
               key={id}
-              className="group relative bg-stone-950/80 rounded-3xl p-8 sm:p-9 border border-stone-800 shadow-xl hover:shadow-2xl hover:border-amber-400/50 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 backdrop-blur-sm"
+              className="group relative bg-stone-950/80 rounded-2xl sm:rounded-3xl p-6 sm:p-9 border border-stone-800 shadow-xl hover:shadow-2xl hover:border-amber-400/50 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 backdrop-blur-sm"
             >
               <div>
                 {/* 5 Stars and Quote icon */}
@@ -104,7 +104,7 @@ export default function WhyBer() {
         {/* CTA */}
         <div className="text-center">
           <SafeWhatsAppButton
-            className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-bold text-sm bg-amber-500 text-stone-950 hover:bg-amber-400 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/30 hover:-translate-y-0.5"
+            className="group inline-flex items-center gap-2.5 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold text-xs sm:text-sm bg-amber-500 text-stone-950 hover:bg-amber-400 transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/30 hover:-translate-y-0.5"
             ariaLabel={t('whyber.cta')}
           >
             <span>{t('whyber.cta')}</span>
