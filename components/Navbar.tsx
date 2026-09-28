@@ -317,6 +317,16 @@ export default function Navbar() {
                   activeSection === 'contact' ? 'w-6 bg-amber-500' : 'w-0 group-hover:w-4 bg-amber-500/60'
                 }`} />
               </a>
+
+              {/* Pre-evaluation CTA */}
+              <a
+                href="#on-degerlendirme"
+                onClick={(e) => handleNavClick(e, 'on-degerlendirme')}
+                className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-amber-500/50 bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-stone-950 font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow-amber-500/20 hover:-translate-y-0.5"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                <span>Teklif Al (300K+)</span>
+              </a>
               
               {/* Vertical separator */}
               <span className={`h-4 w-[1px] transition-colors duration-500 ${isDark ? 'bg-white/20' : 'bg-stone-200'}`} />
@@ -551,6 +561,15 @@ export default function Navbar() {
               }`}
             >
               {t('nav.contact')}
+            </a>
+
+            {/* Pre-evaluation CTA */}
+            <a
+              href="#on-degerlendirme"
+              onClick={(e) => handleNavClick(e, 'on-degerlendirme')}
+              className="block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.15em] uppercase transition-all duration-300 border bg-gradient-to-r from-amber-500/20 via-amber-500/30 to-amber-600/20 border-amber-500/50 text-amber-300 hover:bg-amber-500 hover:text-stone-950 shadow-md"
+            >
+              ✨ Teklif Al (300K+)
             </a>
             
             {/* Mobile Menu Language Switcher */}

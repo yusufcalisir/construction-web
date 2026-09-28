@@ -186,6 +186,9 @@ const translations: Record<Language, Record<string, string>> = {
     'whyber.review2.comment': 'İstanbul\'a yeni geldim ve piyasayı araştırdım, gerçekten çok kaliteli ve titiz işçilikle çalışan bir şirket.',
     'whyber.review3.name': 'Büşra A.',
     'whyber.review3.comment': 'Salonu ve mutfağı yenilettik. Çok memnun kaldık. Oldukça kaliteli ve piyasaya göre uygun fiyat.',
+    'evaluation.badge': 'Proje Ön Değerlendirme & Teklif',
+    'evaluation.title': 'Projeniz İçin Hızlı Ön Değerlendirme Alın',
+    'evaluation.subtitle': '300.000 TL ve üzeri üst segment anahtar teslim renovasyon projeleriniz için bilgilerinizi iletin; 24 saat içinde maliyet ve takvim ön fizibilitesini çıkaralım.',
 
     // HowWeWork
     'howwework.badge': 'Sürecimiz',
@@ -378,6 +381,9 @@ const translations: Record<Language, Record<string, string>> = {
     'whyber.review2.comment': 'I recently moved to Istanbul and researched the market; they are truly a company that works with high quality and meticulous craftsmanship.',
     'whyber.review3.name': 'Büşra A.',
     'whyber.review3.comment': 'We renovated our living room and kitchen. We were very satisfied. Quite high quality and fair prices compared to the market.',
+    'evaluation.badge': 'Project Pre-Evaluation & Estimate',
+    'evaluation.title': 'Get an Instant Pre-Evaluation For Your Project',
+    'evaluation.subtitle': 'Submit your project details for turnkey renovation projects of 300,000 TL and above; we will prepare an initial cost and timeline feasibility within 24 hours.',
 
     // HowWeWork
     'howwework.badge': 'Our Process',
@@ -581,6 +587,9 @@ const translations: Record<Language, Record<string, string>> = {
     'whyber.review2.comment': 'لقد انتقلت حديثاً إلى إسطنبول وبحثت في السوق، إنها حقاً شركة تعمل بجودة عالية وحرفية دقيقة للغاية.',
     'whyber.review3.name': 'Büşra A.',
     'whyber.review3.comment': 'قمنا بتجديد الصالون والمطبخ. كنا راضين جداً. جودة ممتازة وأسعار مناسبة جداً مقارنة بالسوق.',
+    'evaluation.badge': 'التقييم الأولي للمشروع والتكلفة',
+    'evaluation.title': 'احصل على تقييم أولي سريع لمشروعك',
+    'evaluation.subtitle': 'أرسل تفاصيل مشروعك للمشاريع الشاملة تسليم مفتاح بقيمة 300,000 ليرة وما فوق؛ وسنقوم بإعداد دراسة أولية للجدول الزمني والتكلفة خلال 24 ساعة.',
 
     // HowWeWork
     'howwework.badge': 'أسلوب عملنا',
@@ -796,6 +805,9 @@ const translations: Record<Language, Record<string, string>> = {
     'whyber.review2.comment': 'به تازگی به استانبول آمدم و بازار را بررسی کردم، واقعاً شرکتی با کیفیت بالا و ظرافت و دقت بسیار در اجرا هستند.',
     'whyber.review3.name': 'Büşra A.',
     'whyber.review3.comment': 'سالن پذیرایی و آشپزخانه را بازسازی کردیم. بسیار راضی بودیم. کیفیت بسیار بالا و قیمتی کاملاً مناسب نسبت به بازار.',
+    'evaluation.badge': 'ارزیابی اولیه و برآورد پروژه',
+    'evaluation.title': 'ارزیابی اولیه سریع برای پروژه خود دریافت کنید',
+    'evaluation.subtitle': 'اطلاعات پروژه خود را برای بازسازی‌های کلید تحویل ۳۰۰,۰۰۰ لیر و بالاتر ارسال کنید؛ ظرف ۲۴ ساعت برآورد اولیه هزینه و زمان‌بندی را آماده خواهیم کرد.',
 
     // HowWeWork
     'howwework.badge': 'فرآیند ما',
