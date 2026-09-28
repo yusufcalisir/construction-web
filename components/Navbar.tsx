@@ -375,53 +375,57 @@ export default function Navbar() {
 
             {/* Mobile menu trigger */}
             <div className="lg:hidden flex items-center gap-1.5 sm:gap-2">
-              <SafePhoneLink
-                variant="icon-button"
-                iconSize="w-4 h-4"
-                className={`h-9 w-9 flex items-center justify-center rounded-xl transition-all duration-300 border focus:outline-none shrink-0 ${
-                  isDark
-                    ? 'text-white border-white/20 bg-white/10 hover:bg-white/20 active:scale-95 shadow-sm'
-                    : 'text-stone-800 border-stone-300/80 bg-stone-100/90 hover:bg-stone-200 active:scale-95 shadow-sm'
-                }`}
-                ariaLabel="Call us"
-              />
-              
-              {/* Mobile Capsule Language Switcher */}
-              <div
-                dir="ltr"
-                className={`h-9 inline-flex items-center p-1 rounded-xl border backdrop-blur-md transition-all duration-300 select-none shadow-sm shrink-0 ${
-                  isDark
-                    ? 'bg-stone-900/80 border-white/20'
-                    : 'bg-stone-100/90 border-stone-300/80'
-                }`}
-                role="group"
-                aria-label="Dil seçenekleri"
-              >
-                {otherLanguages.map((target, idx) => (
-                  <span key={target.code} className="inline-flex items-center h-full">
-                    {idx > 0 && (
-                      <span
-                        className={`w-[1px] h-3 transition-colors duration-300 mx-0.5 ${
-                          isDark ? 'bg-white/20' : 'bg-stone-300'
-                        }`}
-                      />
-                    )}
-                    <button
-                      type="button"
-                      onClick={() => setLanguage(target.code)}
-                      title={target.title}
-                      aria-label={target.title}
-                      className={`h-7 px-1.5 sm:px-2 flex items-center justify-center min-w-[26px] text-center rounded-lg text-[11px] font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 ${
-                        isDark
-                          ? 'text-stone-300 hover:text-white hover:bg-white/10 active:bg-white/20'
-                          : 'text-stone-700 hover:text-amber-600 hover:bg-stone-200/70 active:bg-stone-200'
-                      }`}
-                    >
-                      {target.label}
-                    </button>
-                  </span>
-                ))}
-              </div>
+              {!isMobileMenuOpen && (
+                <>
+                  <SafePhoneLink
+                    variant="icon-button"
+                    iconSize="w-4 h-4"
+                    className={`h-9 w-9 flex items-center justify-center rounded-xl transition-all duration-300 border focus:outline-none shrink-0 ${
+                      isDark
+                        ? 'text-white border-white/20 bg-white/10 hover:bg-white/20 active:scale-95 shadow-sm'
+                        : 'text-stone-800 border-stone-300/80 bg-stone-100/90 hover:bg-stone-200 active:scale-95 shadow-sm'
+                    }`}
+                    ariaLabel="Call us"
+                  />
+                  
+                  {/* Mobile Capsule Language Switcher */}
+                  <div
+                    dir="ltr"
+                    className={`h-9 inline-flex items-center p-1 rounded-xl border backdrop-blur-md transition-all duration-300 select-none shadow-sm shrink-0 ${
+                      isDark
+                        ? 'bg-stone-900/80 border-white/20'
+                        : 'bg-stone-100/90 border-stone-300/80'
+                    }`}
+                    role="group"
+                    aria-label="Dil seçenekleri"
+                  >
+                    {otherLanguages.map((target, idx) => (
+                      <span key={target.code} className="inline-flex items-center h-full">
+                        {idx > 0 && (
+                          <span
+                            className={`w-[1px] h-3 transition-colors duration-300 mx-0.5 ${
+                              isDark ? 'bg-white/20' : 'bg-stone-300'
+                            }`}
+                          />
+                        )}
+                        <button
+                          type="button"
+                          onClick={() => setLanguage(target.code)}
+                          title={target.title}
+                          aria-label={target.title}
+                          className={`h-7 px-1.5 sm:px-2 flex items-center justify-center min-w-[26px] text-center rounded-lg text-[11px] font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 ${
+                            isDark
+                              ? 'text-stone-300 hover:text-white hover:bg-white/10 active:bg-white/20'
+                              : 'text-stone-700 hover:text-amber-600 hover:bg-stone-200/70 active:bg-stone-200'
+                          }`}
+                        >
+                          {target.label}
+                        </button>
+                      </span>
+                    ))}
+                  </div>
+                </>
+              )}
               
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
