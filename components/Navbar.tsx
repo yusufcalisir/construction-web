@@ -228,18 +228,17 @@ export default function Navbar() {
 
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0 ml-auto pl-3 xl:pl-6">
-              {/* Pre-evaluation CTA */}
+              {/* Pre-evaluation CTA - Prominent & Large */}
               <a
                 href="#on-degerlendirme"
                 onClick={(e) => handleNavClick(e, 'on-degerlendirme')}
-                className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border text-xs uppercase tracking-wider font-bold whitespace-nowrap shrink-0 transition-all duration-300 shadow-sm hover:-translate-y-0.5 ${
-                  isDark
-                    ? 'border-amber-500/50 bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-stone-950 hover:shadow-amber-500/20'
-                    : 'border-amber-500/60 bg-amber-500/15 hover:bg-amber-500 text-amber-700 hover:text-stone-950 hover:shadow-amber-500/20'
-                }`}
+                className="inline-flex items-center gap-2 px-5 xl:px-6 py-2 xl:py-2.5 rounded-full font-black text-xs xl:text-sm uppercase tracking-wider whitespace-nowrap shrink-0 transition-all duration-300 bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-md shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/40 hover:scale-105 active:scale-95"
               >
-                <span className={`w-1.5 h-1.5 rounded-full shrink-0 animate-pulse ${isDark ? 'bg-amber-400' : 'bg-amber-500'}`} />
-                <span className="whitespace-nowrap">{t('nav.quote')}</span>
+                <span className="w-2 h-2 rounded-full shrink-0 bg-stone-950 animate-pulse" />
+                <span className="whitespace-nowrap font-extrabold">{t('nav.quote')}</span>
+                <svg className="w-3.5 h-3.5 fill-none stroke-current" strokeWidth={2.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </a>
               
               {/* Vertical separator */}
@@ -297,10 +296,20 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Mobile menu trigger */}
+            {/* Mobile menu trigger & actions */}
             <div className="lg:hidden flex items-center gap-1.5 sm:gap-2">
               {!isMobileMenuOpen && (
                 <>
+                  {/* Mobile Direct Teklif Al Button */}
+                  <a
+                    href="#on-degerlendirme"
+                    onClick={(e) => handleNavClick(e, 'on-degerlendirme')}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full font-black text-[11px] sm:text-xs uppercase tracking-wider bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-sm shrink-0 active:scale-95 transition-all"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-stone-950 animate-pulse" />
+                    <span>{t('nav.quote')}</span>
+                  </a>
+
                   <SafePhoneLink
                     variant="icon-button"
                     iconSize="w-4 h-4"
@@ -464,11 +473,11 @@ export default function Navbar() {
               {t('nav.contact')}
             </a>
 
-            {/* Pre-evaluation CTA */}
+            {/* Pre-evaluation CTA - Prominent & Large */}
             <a
               href="#on-degerlendirme"
               onClick={(e) => handleNavClick(e, 'on-degerlendirme')}
-              className="block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.15em] uppercase transition-all duration-300 border bg-gradient-to-r from-amber-500/20 via-amber-500/30 to-amber-600/20 border-amber-500/50 text-amber-300 hover:bg-amber-500 hover:text-stone-950 shadow-md"
+              className="block py-4 px-6 rounded-2xl text-sm sm:text-base font-black tracking-[0.15em] uppercase text-center transition-all duration-300 bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-xl shadow-amber-500/30 active:scale-95"
             >
               {t('nav.quote')}
             </a>

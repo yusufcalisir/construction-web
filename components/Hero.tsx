@@ -108,8 +108,30 @@ export default function Hero() {
             {t('hero.subheadline')}
           </p>
 
-          {/* Two Premium CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full sm:w-auto">
+          {/* Premium CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 mb-8 w-full sm:w-auto">
+            {/* Primary Large Teklif Al Button */}
+            <a
+              href="#on-degerlendirme"
+              onClick={(e) => {
+                e.preventDefault()
+                const element = document.getElementById('on-degerlendirme')
+                if (element) {
+                  const offsetTop = element.offsetTop - 80
+                  window.scrollTo({ top: offsetTop, behavior: 'smooth' })
+                }
+              }}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 sm:px-11 py-4 rounded-full font-black text-sm sm:text-base tracking-wider uppercase bg-amber-500 text-stone-950 hover:bg-amber-400 hover:shadow-2xl hover:shadow-amber-500/40 transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none cursor-pointer border-2 border-amber-400 shadow-xl shadow-amber-500/25"
+            >
+              <svg className="w-5 h-5 fill-none stroke-current" strokeWidth={2.5} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+              </svg>
+              <span>{t('nav.quote')}</span>
+              <svg className="w-4 h-4 fill-none stroke-current" strokeWidth={2.5} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+
             <a
               href="#gallery"
               onClick={(e) => {
@@ -120,13 +142,13 @@ export default function Hero() {
                   window.scrollTo({ top: offsetTop, behavior: 'smooth' })
                 }
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase bg-amber-500 text-stone-950 hover:bg-amber-400 hover:shadow-xl hover:shadow-amber-500/25 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-7 sm:px-8 py-4 rounded-full font-bold text-sm tracking-wider uppercase bg-stone-900/80 hover:bg-stone-850 text-white border border-stone-700/80 backdrop-blur-md hover:border-amber-400/50 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none cursor-pointer"
             >
               {t('hero.btnProjects')}
             </a>
 
             <SafeWhatsAppButton
-              className="w-full sm:w-auto group inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase bg-stone-900/80 hover:bg-stone-850 text-white border border-stone-700/80 backdrop-blur-md hover:border-amber-400/50 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none"
+              className="w-full sm:w-auto group inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full font-bold text-sm tracking-wider uppercase bg-stone-900/80 hover:bg-stone-850 text-white border border-stone-700/80 backdrop-blur-md hover:border-emerald-400/50 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none"
               ariaLabel={t('hero.btnDiscuss')}
             >
               <svg className="w-4 h-4 text-[#25D366] fill-current" viewBox="0 0 24 24">

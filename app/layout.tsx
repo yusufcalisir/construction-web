@@ -245,7 +245,7 @@ const localBusinessSchema = {
     { '@type': 'AdministrativeArea', name: 'Ataşehir' },
     { '@type': 'AdministrativeArea', name: 'Şişli' },
     { '@type': 'AdministrativeArea', name: 'Maltepe' },
-    { '@type': 'AdministrativeArea', name: 'Beylikdüzü' },
+    { '@type': 'AdministrativeArea', name: 'Beyoğlu' },
   ],
   aggregateRating: {
     '@type': 'AggregateRating',

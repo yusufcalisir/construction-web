@@ -12,10 +12,8 @@ const DISTRICTS = [
   'Üsküdar',
   'Ataşehir',
   'Şişli',
+  'Beyoğlu',
   'Maltepe',
-  'Beylikdüzü',
-  'Göktürk / Eyüpsultan',
-  'Çekmeköy',
   'Beykoz',
   'Diğer İstanbul İlçesi',
 ]
