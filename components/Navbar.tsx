@@ -571,10 +571,9 @@ export default function Navbar() {
             <a
               href="#on-degerlendirme"
               onClick={(e) => handleNavClick(e, 'on-degerlendirme')}
-              className="flex items-center justify-center gap-2 py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.15em] uppercase transition-all duration-300 border bg-gradient-to-r from-amber-500/20 via-amber-500/30 to-amber-600/20 border-amber-500/50 text-amber-300 hover:bg-amber-500 hover:text-stone-950 shadow-md"
+              className="block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.15em] uppercase transition-all duration-300 border bg-gradient-to-r from-amber-500/20 via-amber-500/30 to-amber-600/20 border-amber-500/50 text-amber-300 hover:bg-amber-500 hover:text-stone-950 shadow-md"
             >
-              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-              <span>{t('nav.quote')}</span>
+              {t('nav.quote')}
             </a>
             
             {/* Mobile Menu Language Switcher */}
