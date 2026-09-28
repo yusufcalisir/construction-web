@@ -318,20 +318,18 @@ export default function Navbar() {
                 }`} />
               </a>
 
-              {/* Teklif Al */}
+              {/* Pre-evaluation CTA */}
               <a
                 href="#on-degerlendirme"
                 onClick={(e) => handleNavClick(e, 'on-degerlendirme')}
-                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.18em] xl:tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
-                  activeSection === 'on-degerlendirme'
-                    ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
-                    : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs uppercase tracking-wider font-bold transition-all duration-300 shadow-sm hover:-translate-y-0.5 ${
+                  isDark
+                    ? 'border-amber-500/50 bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-stone-950 hover:shadow-amber-500/20'
+                    : 'border-amber-500/60 bg-amber-500/15 hover:bg-amber-500 text-amber-700 hover:text-stone-950 hover:shadow-amber-500/20'
                 }`}
               >
-                {t('nav.quote')}
-                <span className={`absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] transition-all duration-300 rounded-full ${
-                  activeSection === 'on-degerlendirme' ? 'w-6 bg-amber-500' : 'w-0 group-hover:w-4 bg-amber-500/60'
-                }`} />
+                <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${isDark ? 'bg-amber-400' : 'bg-amber-500'}`} />
+                <span>{t('nav.quote')}</span>
               </a>
               
               {/* Vertical separator */}
@@ -569,17 +567,13 @@ export default function Navbar() {
               {t('nav.contact')}
             </a>
 
-            {/* Teklif Al */}
+            {/* Pre-evaluation CTA */}
             <a
               href="#on-degerlendirme"
               onClick={(e) => handleNavClick(e, 'on-degerlendirme')}
-              className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
-                activeSection === 'on-degerlendirme'
-                  ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
-                  : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
-              }`}
+              className="block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.15em] uppercase transition-all duration-300 border bg-gradient-to-r from-amber-500/20 via-amber-500/30 to-amber-600/20 border-amber-500/50 text-amber-300 hover:bg-amber-500 hover:text-stone-950 shadow-md"
             >
-              {t('nav.quote')}
+              ✨ {t('nav.quote')}
             </a>
             
             {/* Mobile Menu Language Switcher */}
