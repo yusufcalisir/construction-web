@@ -113,7 +113,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`flex items-center justify-between transition-all duration-500 ${isScrolled ? 'h-16 sm:h-18 lg:h-20' : 'h-18 sm:h-20 lg:h-24'}`}>
             {/* Logo */}
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 mr-4 lg:mr-6 xl:mr-8">
               <a
                 href="#home"
                 onClick={(e) => handleNavClick(e, 'home')}
@@ -127,13 +127,13 @@ export default function Navbar() {
               </a>
             </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8">
+            {/* Desktop Navigation Links */}
+            <nav aria-label="Ana Menü" className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-7">
               {/* Home */}
               <a
                 href="#home"
                 onClick={(e) => handleNavClick(e, 'home')}
-                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
                   activeSection === 'home'
                     ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
                     : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
@@ -149,7 +149,7 @@ export default function Navbar() {
               <a
                 href="#about"
                 onClick={(e) => handleNavClick(e, 'about')}
-                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
                   activeSection === 'about'
                     ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
                     : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
@@ -161,11 +161,11 @@ export default function Navbar() {
                 }`} />
               </a>
 
-              {/* How We Work */}
+              {/* How We Work (Sürecimiz) */}
               <a
                 href="#how-we-work"
                 onClick={(e) => handleNavClick(e, 'how-we-work')}
-                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
                   activeSection === 'how-we-work'
                     ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
                     : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
@@ -181,7 +181,7 @@ export default function Navbar() {
               <a
                 href="#services"
                 onClick={(e) => handleNavClick(e, 'services')}
-                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
                   activeSection === 'services'
                     ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
                     : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
@@ -197,7 +197,7 @@ export default function Navbar() {
               <a
                 href="#gallery"
                 onClick={(e) => handleNavClick(e, 'gallery')}
-                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
                   activeSection === 'gallery'
                     ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
                     : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
@@ -213,7 +213,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, 'contact')}
-                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.2em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
                   activeSection === 'contact'
                     ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
                     : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
@@ -224,30 +224,33 @@ export default function Navbar() {
                   activeSection === 'contact' ? 'w-6 bg-amber-500' : 'w-0 group-hover:w-4 bg-amber-500/60'
                 }`} />
               </a>
+            </nav>
 
+            {/* Desktop Actions */}
+            <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0 ml-auto pl-3 xl:pl-6">
               {/* Pre-evaluation CTA */}
               <a
                 href="#on-degerlendirme"
                 onClick={(e) => handleNavClick(e, 'on-degerlendirme')}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs uppercase tracking-wider font-bold transition-all duration-300 shadow-sm hover:-translate-y-0.5 ${
+                className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border text-xs uppercase tracking-wider font-bold whitespace-nowrap shrink-0 transition-all duration-300 shadow-sm hover:-translate-y-0.5 ${
                   isDark
                     ? 'border-amber-500/50 bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-stone-950 hover:shadow-amber-500/20'
                     : 'border-amber-500/60 bg-amber-500/15 hover:bg-amber-500 text-amber-700 hover:text-stone-950 hover:shadow-amber-500/20'
                 }`}
               >
-                <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${isDark ? 'bg-amber-400' : 'bg-amber-500'}`} />
-                <span>{t('nav.quote')}</span>
+                <span className={`w-1.5 h-1.5 rounded-full shrink-0 animate-pulse ${isDark ? 'bg-amber-400' : 'bg-amber-500'}`} />
+                <span className="whitespace-nowrap">{t('nav.quote')}</span>
               </a>
               
               {/* Vertical separator */}
-              <span className={`h-4 w-[1px] transition-colors duration-500 ${isDark ? 'bg-white/20' : 'bg-stone-200'}`} />
+              <span className={`h-4 w-[1px] shrink-0 transition-colors duration-500 ${isDark ? 'bg-white/20' : 'bg-stone-200'}`} />
 
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2 xl:gap-2.5 shrink-0">
                 {/* Call Button */}
                 <SafePhoneLink
                   variant="icon-button"
                   iconSize="w-4 h-4"
-                  className={`h-10 w-10 flex items-center justify-center rounded-xl transition-all duration-300 border focus:outline-none shrink-0 ${
+                  className={`h-9 w-9 xl:h-10 xl:w-10 flex items-center justify-center rounded-xl transition-all duration-300 border focus:outline-none shrink-0 ${
                     isDark
                       ? 'text-white border-white/20 bg-white/10 hover:bg-white/20 hover:border-white/30 shadow-md backdrop-blur-sm'
                       : 'text-stone-700 border-stone-200 bg-white hover:bg-stone-50 hover:text-stone-950 shadow-sm'
@@ -258,7 +261,7 @@ export default function Navbar() {
                 {/* Modern Capsule Language Switcher */}
                 <div
                   dir="ltr"
-                  className={`h-10 inline-flex items-center p-1 rounded-xl border backdrop-blur-md transition-all duration-300 select-none shadow-sm ${
+                  className={`h-9 xl:h-10 inline-flex items-center p-0.5 xl:p-1 rounded-xl border backdrop-blur-md transition-all duration-300 select-none shadow-sm shrink-0 ${
                     isDark
                       ? 'bg-stone-900/80 border-white/20'
                       : 'bg-stone-100/90 border-stone-200/90'
@@ -267,10 +270,10 @@ export default function Navbar() {
                   aria-label="Dil seçenekleri"
                 >
                   {otherLanguages.map((target, idx) => (
-                    <span key={target.code} className="inline-flex items-center h-full">
+                    <span key={target.code} className="inline-flex items-center h-full shrink-0">
                       {idx > 0 && (
                         <span
-                          className={`w-[1px] h-3.5 transition-colors duration-300 mx-0.5 ${
+                          className={`w-[1px] h-3.5 transition-colors duration-300 mx-0.5 shrink-0 ${
                             isDark ? 'bg-white/20' : 'bg-stone-300'
                           }`}
                         />
@@ -280,7 +283,7 @@ export default function Navbar() {
                         onClick={() => setLanguage(target.code)}
                         title={target.title}
                         aria-label={target.title}
-                        className={`h-8 px-2.5 flex items-center justify-center min-w-[32px] text-center rounded-lg text-xs font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 ${
+                        className={`h-7 xl:h-8 px-2 xl:px-2.5 flex items-center justify-center min-w-[28px] xl:min-w-[32px] text-center rounded-lg text-xs font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 shrink-0 ${
                           isDark
                             ? 'text-stone-200 hover:text-white hover:bg-white/15'
                             : 'text-stone-700 hover:text-amber-600 hover:bg-stone-200/70'
