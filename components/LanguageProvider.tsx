@@ -34,7 +34,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.badge': 'Ber Tadilat',
     'hero.headline': 'İstanbul\'da Anahtar Teslim\nÜst Segment Renovasyon',
-    'hero.subheadline': 'İç mimari tasarımdan uygulamaya; konut, villa ve ticari mekânlarınızı tek elden yönetiyor ve teslim ediyoruz.',
+    'hero.subheadline': '3D mimari tasarımdan anahtar teslim uygulamaya; konut, villa ve ticari mekânlarınızı inşaat mühendisi denetiminde ve şeffaf bütçe garantisiyle tek elden teslim ediyoruz.',
     'hero.btnProjects': 'PROJELERİ İNCELE',
     'hero.btnDiscuss': 'PROJENİZİ GÖRÜŞELİM',
     'hero.getQuote': 'Ücretsiz Keşif Talebi',
@@ -50,7 +50,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // New Project Gallery (Galeri)
     'gallery2.title': 'Proje Galerisi',
-    'gallery2.subtitle': 'Tamamlanan tadilat ve dekorasyon projelerimizden kareler',
+    'gallery2.subtitle': 'İstanbul genelinde inşaat mühendisi denetiminde, 3D mimari projelendirme ve şeffaf bütçe garantisiyle tamamlanan üst segment renovasyon projelerimiz',
     'gallery2.close': 'Kapat',
 
     // Brands
@@ -59,7 +59,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Services, premium categories
     'services.badge': 'Hizmet Kapsamımız',
     'services.title': 'Bütünleşik Proje Hizmetleri',
-    'services.subtitle': 'Tek bir muhatap, tam bir proje. Tasarımdan uygulama ve teslime kadar her adımda yanınızdayız.',
+    'services.subtitle': 'İnşaat mühendisi denetiminde, 3D mimari projelendirme ve şeffaf bütçe garantisiyle tasarımdan anahtar teslim uygulamaya yanınızdayız.',
     'services.cta.label': 'Projenizi konuşmak için hemen iletişime geçin',
     'services.cta.button': 'Ücretsiz Keşif Talebi',
 

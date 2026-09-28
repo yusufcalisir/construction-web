@@ -8,6 +8,25 @@ const FIRST_PHOTOS = [118, 109, 104, 93, 67, 50, 25, 24, 10, 5, 47, 12]
 const EXCLUDED_PHOTOS = new Set([16, 20, 30, 31, 35, 38, 42, 46, 54, 78])
 const TOTAL_CARDS = 48
 
+const PROJECT_DESCRIPTIONS = [
+  'Kadıköy Modern Salon ve Mutfak Renovasyonu',
+  'Beşiktaş Lüks Villa İçi Anahtar Teslim Tadilat',
+  'Sarıyer Özel Tasarım Mutfak ve Ada Tezgah Uygulaması',
+  'Bakırköy Ebeveyn Banyosu ve Doğal Taş Kaplama',
+  'Üsküdar Boğaz Manzaralı Daire İç Mimari Yenileme',
+  'Ataşehir Rezidans Komple Dekorasyon ve Asma Tavan',
+  'Şişli Nişantaşı Daire Tadilatı ve Ahşap Parke Döşeme',
+  'Maltepe Deniz Manzaralı Daire Teras ve Salon Tasarımı',
+  'Beylikdüzü Dubleks Ev Komple Yenileme ve Tesisat',
+  'Kadıköy Caddebostan Lüks Banyo ve Seramik Uygulaması',
+  'Beşiktaş Bebek Daire Modern Mimari Renovasyon',
+  'Sarıyer Zekeriyaköy Müstakil Villa İçi Restorasyon',
+  'Göktürk Kemerburgaz Modern Mutfak ve Yaşam Alanı',
+  'Çekmeköy Müstakil Ev Çatı ve Isı Yalıtımı Projesi',
+  'Kadıköy Moda Tarihi Apartman Dairesi Restorasyonu',
+  'Florya Lüks Konut Akıllı Ev ve Aydınlatma Sistemleri',
+]
+
 interface LightboxState {
   cardIndex: number
   photoIndex: number
@@ -24,6 +43,7 @@ function GalleryCard({ photos, cardIndex, photoIndex, onOpen }: GalleryCardProps
   const [currentIdx, setCurrentIdx] = useState(photoIndex)
   const [prevIdx, setPrevIdx] = useState<number | null>(null)
   const [isSliding, setIsSliding] = useState(false)
+  const projectLabel = PROJECT_DESCRIPTIONS[cardIndex % PROJECT_DESCRIPTIONS.length]
 
   // Preload next and previous images for this card on idle/hover
   const handleMouseEnter = () => {
@@ -62,14 +82,14 @@ function GalleryCard({ photos, cardIndex, photoIndex, onOpen }: GalleryCardProps
           onOpen(currentIdx)
         }
       }}
-      aria-label={`Proje ${cardIndex + 1}`}
+      aria-label={`${projectLabel} - Proje ${cardIndex + 1}`}
     >
       {/* Sliding Outgoing Photo */}
       {isSliding && prevIdx !== null && (
         <div className="absolute inset-0 animate-gallery-slide-out z-0">
           <Image
             src={photos[prevIdx]}
-            alt={`Ber Tadilat Proje ${cardIndex + 1}`}
+            alt={`Ber Tadilat | ${projectLabel} - Görsel ${prevIdx + 1}`}
             fill
             className="object-cover"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
@@ -84,7 +104,7 @@ function GalleryCard({ photos, cardIndex, photoIndex, onOpen }: GalleryCardProps
       >
         <Image
           src={photos[currentIdx]}
-          alt={`Ber Tadilat Proje ${cardIndex + 1}`}
+          alt={`Ber Tadilat | ${projectLabel} - Görsel ${currentIdx + 1}`}
           fill
           className="object-cover"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
@@ -356,7 +376,7 @@ export default function ProjectGallery() {
               <Image
                 key={activePhotos[lightbox.photoIndex]}
                 src={activePhotos[lightbox.photoIndex]}
-                alt={`Proje Fotoğraf ${lightbox.photoIndex + 1}`}
+                alt={`Ber Tadilat Proje | ${PROJECT_DESCRIPTIONS[lightbox.cardIndex % PROJECT_DESCRIPTIONS.length]} - Fotoğraf ${lightbox.photoIndex + 1}`}
                 fill
                 className="object-contain"
                 sizes="(max-width: 1200px) 100vw, 1200px"
@@ -412,7 +432,7 @@ export default function ProjectGallery() {
                   >
                     <Image
                       src={src}
-                      alt="thumbnail"
+                      alt={`${PROJECT_DESCRIPTIONS[lightbox.cardIndex % PROJECT_DESCRIPTIONS.length]} Küçük Resim ${pIdx + 1}`}
                       fill
                       className="object-cover"
                       sizes="56px"

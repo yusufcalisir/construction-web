@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   
   // Temel SEO
   title: {
-    default: 'Ber Tadilat',
+    default: 'Ber Tadilat | İstanbul Anahtar Teslim Üst Segment Renovasyon & Tadilat',
     template: '%s | Ber Tadilat',
   },
   description: 'İstanbul\'da ev, iş yeri ve her türlü mekân için profesyonel tadilat, dekorasyon, restorasyon, boya badana, alçıpan, fayans, mutfak dekorasyon, mutfak tadilat, dekorasyon tavan, tadilat işleri, dekorasyon tadilat, parke, tesisat, akıllı ev sistemleri, ısı-ses yalıtımı ve dış cephe hizmetleri. Dekorasyon firmaları arasında güvenilir çözümler. 7/24 hizmet, ücretsiz keşif ve hızlı teklif imkânı.',
@@ -158,7 +158,9 @@ export const metadata: Metadata = {
     languages: {
       'tr-TR': baseUrl,
       'en-US': `${baseUrl}/?lang=en`,
+      'ar': `${baseUrl}/?lang=ar`,
       'fa-IR': `${baseUrl}/?lang=fa`,
+      'x-default': baseUrl,
     },
   },
   
@@ -197,12 +199,12 @@ const sanitizeJSONLD = (schema: object): string => {
 // JSON-LD Yapılandırılmış Veri (Google için)
 const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': ['LocalBusiness', 'GeneralContractor', 'HomeAndConstructionBusiness'],
   '@id': `${baseUrl}#business`,
   name: 'Ber Tadilat',
-  alternateName: ['Ber Tadilat Dekorasyon', 'Ber Tadilat İstanbul', 'Mutfak Dekorasyon', 'Dekorasyon Firmaları', 'Mutfak Tadilat', 'Dekorasyon Tavan', 'Tadilat Dekorasyon'],
-  description: 'İstanbul\'da ev, iş yeri ve her türlü mekân için profesyonel tadilat, dekorasyon, renovasyon, tesisat ve akıllı ev sistemleri hizmetleri. Mutfak dekorasyon, mutfak tadilat, dekorasyon tavan, tadilat işleri, dekorasyon tadilat. Dekorasyon firmaları arasında güvenilir çözümler. 7/24 hizmet, ücretsiz keşif.',
-  keywords: 'mutfak dekorasyon, dekorasyon firmaları, mutfak tadilat, tadilat işleri dekorasyon tadilat, dekorasyon tavan, tadilat dekorasyon, ber tadilat, istanbul tadilat, istanbul dekorasyon',
+  alternateName: ['Ber Tadilat Dekorasyon', 'Ber Tadilat İstanbul', 'İstanbul Anahtar Teslim Tadilat', 'Mutfak Dekorasyon', 'Dekorasyon Firmaları', 'Mutfak Tadilat', 'Dekorasyon Tavan', 'Tadilat Dekorasyon'],
+  description: 'İstanbul\'da ev, iş yeri, villa ve rezidanslar için inşaat mühendisi denetiminde profesyonel anahtar teslim tadilat, lüks dekorasyon, 3D mimari projelendirme, şeffaf bütçe garantili restorasyon, tesisat ve akıllı ev sistemleri hizmetleri. 7/24 hizmet, ücretsiz keşif.',
+  keywords: 'istanbul anahtar teslim tadilat, general contractor istanbul, lüks tadilat, inşaat mühendisi denetiminde tadilat, mutfak dekorasyon, dekorasyon firmaları, mutfak tadilat, tadilat işleri dekorasyon tadilat, dekorasyon tavan, tadilat dekorasyon, ber tadilat, istanbul tadilat, istanbul dekorasyon',
   url: baseUrl,
   email: 'info@bertadilat.com',
   address: {
@@ -226,16 +228,24 @@ const localBusinessSchema = {
       closes: '23:59',
     },
   ],
-  priceRange: '₺₺',
+  priceRange: '₺₺₺',
   image: [`${baseUrl}/og-image.jpg`],
   logo: `${baseUrl}/favicon/ber-tadilat-gold.png`,
   sameAs: [
     'https://www.instagram.com/berdekorasyontadilat/',
   ],
-  areaServed: {
-    '@type': 'City',
-    name: 'İstanbul',
-  },
+  areaServed: [
+    { '@type': 'City', name: 'İstanbul' },
+    { '@type': 'AdministrativeArea', name: 'Kadıköy' },
+    { '@type': 'AdministrativeArea', name: 'Beşiktaş' },
+    { '@type': 'AdministrativeArea', name: 'Sarıyer' },
+    { '@type': 'AdministrativeArea', name: 'Bakırköy' },
+    { '@type': 'AdministrativeArea', name: 'Üsküdar' },
+    { '@type': 'AdministrativeArea', name: 'Ataşehir' },
+    { '@type': 'AdministrativeArea', name: 'Şişli' },
+    { '@type': 'AdministrativeArea', name: 'Maltepe' },
+    { '@type': 'AdministrativeArea', name: 'Beylikdüzü' },
+  ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Tadilat Hizmetleri',
@@ -389,6 +399,54 @@ const websiteSchema = {
   },
 }
 
+// FAQ Schema (Google Rich Snippets)
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'İstanbul\'da anahtar teslim tadilat ne kadar sürer?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Daire ve villa büyüklüğüne bağlı olarak komple anahtar teslim renovasyon projeleri ortalama 3 ila 6 hafta arasında tamamlanmaktadır. Proje başında iş takvimi yazılı taahhüt edilir.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Tadilat öncesi ücretsiz keşif ve 3D mimari projelendirme yapıyor musunuz?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Evet, İstanbul\'un tüm ilçelerinde yerinde ücretsiz keşif gerçekleştiriyor, ihtiyaçlarınıza özel 3D mimari görselleştirme ve detaylı maliyet analizi sunuyoruz.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Hangi tadilat ve dekorasyon hizmetlerini sunuyorsunuz?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Mutfak ve banyo renovasyonu, salon yenileme, lüks iç mimari tasarım, boya badana, alçıpan asma tavan, seramik/fayans döşeme, parke kaplama, elektrik/su tesisatı ve akıllı ev sistemleri hizmetlerini inşaat mühendisi denetiminde sunuyoruz.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Yapılan tadilat ve renovasyon işlerinde garanti veriyor musunuz?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Tüm uygulamalarımızda 1. sınıf sertifikalı malzemeler kullanılır ve işçilik dahil tüm anahtar teslim tadilat projelerimiz resmi sözleşmeyle garanti altına alınır.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Tadilat maliyeti ve bütçesi nasıl belirlenir?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Keşif sonrası kullanılacak malzeme kalitesi, metrekare ve yapılacak işlerin listesi çıkarılarak şeffaf bütçe garantili sabit fiyat teklifi hazırlanır. Sürpriz maliyetler oluşmaz.',
+      },
+    },
+  ],
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -413,6 +471,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: sanitizeJSONLD(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: sanitizeJSONLD(faqSchema) }}
         />
         
         {/* Additional SEO Meta Tags */}

@@ -9,18 +9,22 @@ const backgroundImages = [
   {
     src: '/calisma-galeri/hero_luxury_renovation.png',
     position: 'object-left sm:object-center',
+    alt: 'Kadıköy Modern Salon ve Daire Renovasyonu - Ber Tadilat',
   },
   {
     src: '/calisma-galeri/hero_luxury_kitchen.png',
     position: 'object-center',
+    alt: 'Beşiktaş Lüks Ada Mutfak Dekorasyon ve Tadilatı - Ber Tadilat',
   },
   {
     src: '/calisma-galeri/hero_luxury_bathroom.png',
     position: 'object-center',
+    alt: 'Sarıyer Üst Segment Banyo Yenileme ve Doğal Mermer Tasarımı - Ber Tadilat',
   },
   {
     src: '/calisma-galeri/hero_luxury_exterior.png',
     position: 'object-center',
+    alt: 'İstanbul Villa Dış Cephe Kaplama ve Isı Yalıtımı - Ber Tadilat',
   },
 ]
 
@@ -70,7 +74,7 @@ export default function Hero() {
             >
               <Image
                 src={image.src}
-                alt="Ber Tadilat Portfolio Slide"
+                alt={image.alt}
                 fill
                 priority={index === 0}
                 unoptimized

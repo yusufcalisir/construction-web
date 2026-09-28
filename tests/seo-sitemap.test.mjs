@@ -56,4 +56,61 @@ test('SEO: Layout metadata and structured data have valid schema and no dead anc
     layoutContent.includes('LocalBusiness'),
     'Layout should include LocalBusiness schema'
   )
+  assert.ok(
+    layoutContent.includes('GeneralContractor'),
+    'Layout should include GeneralContractor schema'
+  )
+  assert.ok(
+    layoutContent.includes('HomeAndConstructionBusiness'),
+    'Layout should include HomeAndConstructionBusiness schema'
+  )
+  assert.ok(
+    layoutContent.includes('areaServed'),
+    'Layout should include areaServed specification'
+  )
+  assert.ok(
+    layoutContent.includes('FAQPage'),
+    'Layout should include FAQPage schema for rich snippets'
+  )
+
+  // Ensure alternates include ar and x-default
+  assert.ok(
+    layoutContent.includes("'x-default': baseUrl"),
+    'Layout metadata should specify x-default hreflang'
+  )
+  assert.ok(
+    layoutContent.includes("'ar': `${baseUrl}/?lang=ar`"),
+    'Layout metadata should include Arabic hreflang alternate'
+  )
+})
+
+test('SEO: robots.ts is properly configured for web crawlers and sitemap', () => {
+  assert.ok(fs.existsSync('app/robots.ts'), 'app/robots.ts should exist')
+  const robotsContent = fs.readFileSync('app/robots.ts', 'utf8')
+  assert.ok(robotsContent.includes('sitemap.xml'), 'robots.ts must reference sitemap.xml')
+  assert.ok(robotsContent.includes('Googlebot'), 'robots.ts must define rules for Googlebot')
+})
+
+test('SEO: Image alt tags are descriptive and avoid generic fallbacks', () => {
+  const heroContent = fs.readFileSync('components/Hero.tsx', 'utf8')
+  assert.strictEqual(
+    heroContent.includes('alt="Ber Tadilat Portfolio Slide"'),
+    false,
+    'Hero images should have descriptive SEO alt tags, not generic placeholders'
+  )
+  assert.ok(
+    heroContent.includes('alt={image.alt}'),
+    'Hero Image component should bind to image.alt'
+  )
+
+  const galleryContent = fs.readFileSync('components/ProjectGallery.tsx', 'utf8')
+  assert.strictEqual(
+    galleryContent.includes('alt="thumbnail"'),
+    false,
+    'Gallery thumbnails should have descriptive SEO alt tags'
+  )
+  assert.ok(
+    galleryContent.includes('PROJECT_DESCRIPTIONS'),
+    'ProjectGallery should define contextual project descriptions for image SEO'
+  )
 })
