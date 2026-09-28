@@ -25,7 +25,7 @@ test('SafeContact: getWhatsAppUrl returns valid wa.me URL with optional message 
   const defaultUrl = getWhatsAppUrl()
   assert.strictEqual(defaultUrl, 'https://wa.me/905458259495')
 
-  const customMessage = 'Merhaba, ücretsiz keşif talebinde bulunmak istiyorum.'
+  const customMessage = 'Merhaba, keşif talebinde bulunmak istiyorum.'
   const customUrl = getWhatsAppUrl(customMessage)
   assert.strictEqual(
     customUrl,

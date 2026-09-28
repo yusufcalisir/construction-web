@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     default: 'Ber Tadilat | İstanbul Anahtar Teslim Üst Segment Renovasyon & Tadilat',
     template: '%s | Ber Tadilat',
   },
-  description: 'İstanbul\'da ev, iş yeri ve her türlü mekân için profesyonel tadilat, dekorasyon, restorasyon, boya badana, alçıpan, fayans, mutfak dekorasyon, mutfak tadilat, dekorasyon tavan, tadilat işleri, dekorasyon tadilat, parke, tesisat, akıllı ev sistemleri, ısı-ses yalıtımı ve dış cephe hizmetleri. Dekorasyon firmaları arasında güvenilir çözümler. 7/24 hizmet, ücretsiz keşif ve hızlı teklif imkânı.',
+  description: 'İstanbul\'da ev, iş yeri ve her türlü mekân için profesyonel tadilat, dekorasyon, restorasyon, boya badana, alçıpan, fayans, mutfak dekorasyon, mutfak tadilat, dekorasyon tavan, tadilat işleri, dekorasyon tadilat, parke, tesisat, akıllı ev sistemleri, ısı-ses yalıtımı ve dış cephe hizmetleri. Dekorasyon firmaları arasında güvenilir çözümler. 7/24 hizmet, yerinde keşif ve hızlı teklif imkânı.',
   keywords: [
     'ber tadilat',
     'ber tadilat istanbul',
@@ -121,7 +121,7 @@ export const metadata: Metadata = {
     siteName: 'Ber Tadilat',
     url: baseUrl,
     title: 'Ber Tadilat | İstanbul Tadilat, Dekorasyon ve Renovasyon Hizmetleri',
-    description: 'İstanbul\'da ev, iş yeri ve her türlü mekân için profesyonel tadilat, dekorasyon, restorasyon, boya badana, alçıpan, fayans, mutfak dekorasyon, mutfak tadilat, parke, tesisat, akıllı ev sistemleri, ısı-ses yalıtımı ve dış cephe hizmetleri. Mutfak dekorasyon, mutfak tadilat, dekorasyon tavan, tadilat işleri, dekorasyon tadilat, dekorasyon firmaları arasında güvenilir çözümler. 7/24 hizmet, ücretsiz keşif!',
+    description: 'İstanbul\'da ev, iş yeri ve her türlü mekân için profesyonel tadilat, dekorasyon, restorasyon, boya badana, alçıpan, fayans, mutfak dekorasyon, mutfak tadilat, parke, tesisat, akıllı ev sistemleri, ısı-ses yalıtımı ve dış cephe hizmetleri. Mutfak dekorasyon, mutfak tadilat, dekorasyon tavan, tadilat işleri, dekorasyon tadilat, dekorasyon firmaları arasında güvenilir çözümler. 7/24 hizmet ve yerinde keşif imkânı.',
     images: [
       {
         url: `${baseUrl}/og-image.jpg`,
@@ -137,7 +137,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Ber Tadilat | İstanbul Tadilat ve Dekorasyon',
-    description: 'İstanbul\'da profesyonel tadilat, dekorasyon, renovasyon, tesisat ve akıllı ev sistemleri hizmetleri. Mutfak dekorasyon, mutfak tadilat, dekorasyon tavan, tadilat işleri, dekorasyon tadilat. Dekorasyon firmaları arasında güvenilir çözümler. Ücretsiz keşif için hemen arayın! 7/24 hizmet.',
+    description: 'İstanbul\'da profesyonel tadilat, dekorasyon, renovasyon, tesisat ve akıllı ev sistemleri hizmetleri. Mutfak dekorasyon, mutfak tadilat, dekorasyon tavan, tadilat işleri, dekorasyon tadilat. Dekorasyon firmaları arasında güvenilir çözümler. Yerinde keşif ve detaylı teklif için hemen arayın! 7/24 hizmet.',
     images: [`${baseUrl}/og-image.jpg`],
     creator: '@berdekorasyontadilat',
   },
@@ -204,7 +204,7 @@ const localBusinessSchema = {
   '@id': `${baseUrl}#business`,
   name: 'Ber Tadilat',
   alternateName: ['Ber Tadilat Dekorasyon', 'Ber Tadilat İstanbul', 'İstanbul Anahtar Teslim Tadilat', 'Mutfak Dekorasyon', 'Dekorasyon Firmaları', 'Mutfak Tadilat', 'Dekorasyon Tavan', 'Tadilat Dekorasyon'],
-  description: 'İstanbul\'da ev, iş yeri, villa ve rezidanslar için mimari tasarım ve profesyonel denetimde anahtar teslim tadilat, lüks dekorasyon, 3D mimari projelendirme, şeffaf bütçe garantili restorasyon, tesisat ve akıllı ev sistemleri hizmetleri. 7/24 hizmet, ücretsiz keşif.',
+  description: 'İstanbul\'da ev, iş yeri, villa ve rezidanslar için mimari tasarım ve profesyonel denetimde anahtar teslim tadilat, lüks dekorasyon, 3D mimari projelendirme, şeffaf bütçe garantili restorasyon, tesisat ve akıllı ev sistemleri hizmetleri. 7/24 hizmet ve yerinde keşif imkânı.',
   keywords: 'istanbul anahtar teslim tadilat, general contractor istanbul, lüks tadilat, anahtar teslim villa tadilatı, mutfak dekorasyon, dekorasyon firmaları, mutfak tadilat, tadilat işleri dekorasyon tadilat, dekorasyon tavan, tadilat dekorasyon, ber tadilat, istanbul tadilat, istanbul dekorasyon',
   url: baseUrl,
   email: 'info@bertadilat.com',
@@ -463,10 +463,10 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'Tadilat öncesi ücretsiz keşif ve 3D mimari projelendirme yapıyor musunuz?',
+      name: 'Tadilat öncesi yerinde keşif ve 3D mimari projelendirme yapıyor musunuz?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Evet, İstanbul\'un tüm ilçelerinde yerinde ücretsiz keşif gerçekleştiriyor, ihtiyaçlarınıza özel 3D mimari görselleştirme ve detaylı maliyet analizi sunuyoruz.',
+        text: 'Evet, İstanbul\'un tüm ilçelerinde yerinde keşif gerçekleştiriyor, ihtiyaçlarınıza özel 3D mimari görselleştirme ve detaylı maliyet analizi sunuyoruz.',
       },
     },
     {
