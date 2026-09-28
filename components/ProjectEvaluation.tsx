@@ -235,7 +235,6 @@ ${notes ? `📝 Not: ${notes}\n` : ''}Detayları ve keşif takvimini görüşebi
             <p className="text-xs sm:text-sm text-amber-200/90 leading-relaxed font-medium">
               <strong className="text-amber-300 font-bold">Önemli Bilgilendirme:</strong> Bu form{' '}
               <strong>300.000 TL ve üzeri</strong> kapsamlı tadilat ve renovasyon projeleri içindir.
-              300.000 TL altındaki tek kalem münferit işler için şu anda proje kabul etmiyoruz.
             </p>
           </div>
         </div>
