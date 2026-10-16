@@ -567,6 +567,22 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+        {/* Google tag (gtag.js) - Google Analytics & Google Ads */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-53L3SGSVNJ"
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-53L3SGSVNJ');
+            gtag('config', 'GT-WPL8SSW9');
+          `}
+        </Script>
+
         {/* Google Tag Manager */}
         <Script
           id="gtm"
@@ -580,6 +596,14 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-MMZXVCDS');
           `}
         </Script>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MMZXVCDS"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <ThemeProvider>
           <LanguageProvider>
             {children}

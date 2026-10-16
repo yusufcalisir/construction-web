@@ -226,6 +226,37 @@ export default function ProjectEvaluation() {
         })
       }
 
+      // Google tag (gtag.js) direct dispatch for GA4 & Google Ads
+      if (typeof win.gtag === 'function') {
+        if (qualified) {
+          win.gtag('event', 'qualified_project_lead', {
+            event_category: 'Lead',
+            event_label: district,
+            lead_district: district,
+            lead_property: propertyType,
+            lead_area: area,
+            lead_scope: selectedServices.join(', '),
+            lead_budget: budget,
+            lead_timeline: timeline,
+            is_qualified: true,
+            user_data: {
+              phone_number: e164Phone,
+              address: {
+                first_name: firstName,
+                last_name: lastName,
+                city: 'İstanbul',
+                region: district,
+                country: 'TR',
+              },
+            },
+          })
+        }
+        win.gtag('event', 'lead_form_submitted', {
+          event_category: 'Lead',
+          is_qualified: qualified,
+        })
+      }
+
       win.dataLayer.push({
         event: 'lead_form_submitted',
         is_qualified: qualified,
