@@ -19,6 +19,25 @@ const nextConfig = {
     minimumCacheTTL: 31536000,
     unoptimized: false,
   },
+
+  // ─── Google Tag Gateway (First-Party Proxy) ───────────────────────────────
+  // GTM ve Google Analytics trafiği kendi domain'imizden (bertadilat.com) geçer.
+  // Reklam engelleyiciler artık blokleyemez; dönüşüm ölçümü daha doğru olur.
+  async rewrites() {
+    return [
+      // GTM Container: GTM-MMZXVCDS → /metrics/
+      {
+        source: '/metrics/:path*',
+        destination: 'https://gtm-mmzxvcds.fps.goog/:path*',
+      },
+      // Google Analytics / Google Ads: G-53L3SGSVNJ → /gtag/
+      {
+        source: '/gtag/:path*',
+        destination: 'https://g-53l3sgsvnj.fps.goog/:path*',
+      },
+    ]
+  },
+
   async headers() {
     return [
       {
@@ -56,12 +75,17 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://ad.doubleclick.net https://*.doubleclick.net https://www.googlesyndication.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://www.gstatic.com",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com",
+              // script-src: kendi domain'imiz üzerinden proxy olduğundan sadece 'self'.
+              // fonts.googleapis.com ve gstatic.com font yüklemesi için kalıyor.
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://www.gstatic.com",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com data:",
-              "img-src 'self' data: https: blob: https://*.google.com https://*.google.com.tr https://*.googleadservices.com https://*.doubleclick.net",
-              "connect-src 'self' https://wa.me https://www.instagram.com https://www.google-analytics.com https://www.googletagmanager.com https://googletagmanager.com https://www.google.com https://www.google.com.tr https://www.googleadservices.com https://googleads.g.doubleclick.net https://ad.doubleclick.net https://*.doubleclick.net https://pagead2.googlesyndication.com https://stats.g.doubleclick.net https://region1.google-analytics.com https://analytics.google.com",
-              "frame-src 'self' https://www.google.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://ad.doubleclick.net https://bid.g.doubleclick.net https://td.doubleclick.net https://*.doubleclick.net https://www.google.com.tr",
+              "img-src 'self' data: https: blob:",
+              // connect-src: ölçüm istekleri kendi domain'imiz üzerinden geçiyor.
+              // WhatsApp ve Instagram için harici izinler gerekli.
+              "connect-src 'self' https://wa.me https://www.instagram.com",
+              // frame-src: Google iframe gerektiren özellikler için (reCAPTCHA vs.)
+              "frame-src 'self' https://www.google.com https://www.google.com.tr",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",
@@ -76,4 +100,3 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
-
