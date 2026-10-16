@@ -567,14 +567,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
-        {/* Google Tag Gateway — Birinci Taraf (First-Party)
-            GTM: bertadilat.com/metrics/ → gtm-mmzxvcds.fps.goog
-            GA4: bertadilat.com/gtag/    → g-53l3sgsvnj.fps.goog
-            Reklam engelleyiciler artık blokleyemez. */}
-
-        {/* GA4 / Google Ads — birinci taraf path üzerinden */}
+        {/* Google tag (gtag.js) - Google Analytics & Google Ads */}
         <Script
-          src="/gtag/js?id=G-53L3SGSVNJ"
+          src="https://www.googletagmanager.com/gtag/js?id=G-53L3SGSVNJ"
           strategy="afterInteractive"
         />
         <Script id="google-tag" strategy="afterInteractive">
@@ -587,13 +582,13 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* GTM Container — birinci taraf path üzerinden */}
+        {/* Google Tag Manager Container */}
         <Script id="gtm" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            '/metrics/?id='+i+dl;f.parentNode.insertBefore(j,f);
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-MMZXVCDS');
           `}
         </Script>
