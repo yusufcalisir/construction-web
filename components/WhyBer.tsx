@@ -30,7 +30,7 @@ export default function WhyBer() {
               ))}
             </div>
             <span className="text-xs font-mono font-bold text-amber-400 tracking-wider">
-              5.0 / 5.0 MEMNUNİYET
+              {t('whyber.reviews.rating')}
             </span>
           </div>
 
@@ -41,7 +41,7 @@ export default function WhyBer() {
             {t('whyber.reviews.title')}
           </h2>
           <p className="text-stone-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-            İstanbul&apos;un seçkin semtlerinde tamamladığımız anahtar teslim renovasyon projelerimizden gerçek müşteri referansları.
+            {t('whyber.reviews.subtitle')}
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export default function WhyBer() {
                       {t(`whyber.review${id}.name`)}
                     </span>
                     <span className="text-[11px] font-mono text-stone-500 block">
-                      İstanbul
+                      {t('whyber.reviews.location')}
                     </span>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export default function WhyBer() {
             ariaLabel={t('whyber.cta')}
           >
             <span>{t('whyber.cta')}</span>
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-4 h-4 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </SafeWhatsAppButton>

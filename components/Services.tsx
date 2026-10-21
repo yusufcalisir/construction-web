@@ -107,13 +107,13 @@ export default function Services() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
           <div className="relative z-10">
             <span className="font-mono text-[11px] sm:text-sm tracking-[0.25em] text-amber-400 uppercase font-bold block mb-2 sm:mb-3">
-              PREMİUM RENOVASYON & KEŞİF
+              {t('services.banner.badge')}
             </span>
             <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold text-white font-serif mb-3 sm:mb-4 leading-tight">
-              Projeniz İçin Hızlı Teklif Alın
+              {t('services.banner.title')}
             </h3>
             <p className="text-stone-300 text-xs sm:text-base max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed">
-              Mekanınıza, ihtiyaçlarınıza ve bütçenize en uygun çözümleri belirlemek için projenizi hemen paylaşın, doğrudan WhatsApp üzerinden değerlendirme ve keşif takviminizi başlatalım.
+              {t('services.banner.desc')}
             </p>
             <a
               href="#on-degerlendirme"
@@ -128,7 +128,7 @@ export default function Services() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
               </svg>
               <span>{t('nav.quote')}</span>
-              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>

@@ -23,7 +23,7 @@ export default function About() {
             {t('about.description')}
           </p>
           <p>
-            Ber Tadilat, İstanbul&apos;un seçkin semtlerinde konut, villa ve ticari mekânlar için anahtar teslim mimari renovasyon hizmeti sunar. Tasarımdan malzeme seçimine, kırım ve altyapıdan ince işçilik ve montaja kadar her aşama şeffaf bütçe, net takvim ve eksiksiz taahhüt güvencesiyle tek elden yönetilir.
+            {t('about.engineer.desc')}
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export default function About() {
             ariaLabel={t('about.cta')}
           >
             <span>{t('about.cta')}</span>
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-4 h-4 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </SafeWhatsAppButton>
