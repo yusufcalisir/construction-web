@@ -399,7 +399,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation Overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-40 bg-stone-950/95 backdrop-blur-lg flex flex-col justify-center px-6 py-20">
+        <div className="lg:hidden fixed inset-0 z-40 bg-stone-950/95 backdrop-blur-lg flex flex-col justify-start sm:justify-center overflow-y-auto px-6 pt-24 pb-12">
           <div className="flex flex-col space-y-2 max-w-sm mx-auto w-full text-center">
             {/* Home */}
             <a
