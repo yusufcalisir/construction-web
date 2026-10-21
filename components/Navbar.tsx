@@ -228,6 +228,22 @@ export default function Navbar() {
 
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0 ml-auto pl-3 xl:pl-6">
+              {/* Installment Badge - Desktop */}
+              <a
+                href="#on-degerlendirme"
+                onClick={(e) => handleNavClick(e, 'on-degerlendirme')}
+                className={`hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide border transition-all duration-300 hover:scale-105 select-none ${
+                  isDark
+                    ? 'bg-amber-500/10 border-amber-500/30 text-amber-300 hover:bg-amber-500/20 hover:border-amber-400/50'
+                    : 'bg-amber-50 border-amber-300/80 text-amber-800 hover:bg-amber-100 hover:border-amber-400'
+                }`}
+              >
+                <svg className="w-3.5 h-3.5 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                </svg>
+                <span>{t('nav.installmentShort')}</span>
+              </a>
+
               {/* Pre-evaluation CTA - Prominent & Large */}
               <a
                 href="#on-degerlendirme"
@@ -471,6 +487,14 @@ export default function Navbar() {
             >
               {t('nav.quote')}
             </a>
+
+            {/* Installment Badge - Mobile Menu */}
+            <div className="flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold text-center">
+              <svg className="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+              </svg>
+              <span>{t('hero.installment')}</span>
+            </div>
             
             {/* Mobile Menu Language Switcher */}
             <div

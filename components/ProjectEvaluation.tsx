@@ -328,16 +328,28 @@ export default function ProjectEvaluation() {
           </p>
 
           {/* Explicit 300K+ Project Criterion Banner */}
-          <div className="mt-8 mx-auto max-w-2xl bg-amber-950/40 border border-amber-500/30 rounded-2xl p-4 sm:p-5 flex items-start sm:items-center gap-3.5 text-left">
-            <div className="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-              </svg>
+          <div className="mt-8 mx-auto max-w-2xl bg-amber-950/40 border border-amber-500/30 rounded-2xl p-4 sm:p-5 text-left space-y-3">
+            <div className="flex items-start sm:items-center gap-3.5">
+              <div className="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </div>
+              <p className="text-xs sm:text-sm text-amber-200/90 leading-relaxed font-medium">
+                <strong className="text-amber-300 font-bold">Önemli Bilgilendirme:</strong> Bu form{' '}
+                <strong>300.000 TL ve üzeri</strong> kapsamlı tadilat ve renovasyon projeleri içindir.
+              </p>
             </div>
-            <p className="text-xs sm:text-sm text-amber-200/90 leading-relaxed font-medium">
-              <strong className="text-amber-300 font-bold">Önemli Bilgilendirme:</strong> Bu form{' '}
-              <strong>300.000 TL ve üzeri</strong> kapsamlı tadilat ve renovasyon projeleri içindir.
-            </p>
+            <div className="pt-2.5 border-t border-amber-500/20 flex items-center gap-2.5 text-xs sm:text-sm text-amber-200/90">
+              <div className="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                <svg className="w-3.5 h-3.5 fill-none stroke-current" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                </svg>
+              </div>
+              <p className="leading-snug">
+                {t('evaluation.installmentNotice')}
+              </p>
+            </div>
           </div>
         </div>
 
@@ -496,6 +508,18 @@ export default function ProjectEvaluation() {
                         </button>
                       )
                     })}
+                  </div>
+
+                  {/* Vade Farksız Taksit Pill */}
+                  <div className="mt-3 p-3 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center gap-2.5">
+                    <span className="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                      <svg className="w-3.5 h-3.5 fill-none stroke-current" strokeWidth={2} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                      </svg>
+                    </span>
+                    <p className="text-[11px] sm:text-xs text-amber-200/90 leading-tight">
+                      {t('evaluation.installmentCard')}
+                    </p>
                   </div>
                 </div>
 

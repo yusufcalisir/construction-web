@@ -162,6 +162,21 @@ export default function Hero() {
             </div>
           </div>
 
+          {/* Prominent Vade Farksız Taksit Pill */}
+          <div className="inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-stone-900/90 border border-amber-500/40 backdrop-blur-md text-xs sm:text-sm text-stone-200 mb-4 shadow-xl shadow-amber-500/10 hover:border-amber-400/70 transition-all duration-300 group cursor-default">
+            <span className="flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-amber-500/20 text-amber-400 shrink-0 group-hover:bg-amber-500 group-hover:text-stone-950 transition-all duration-300">
+              <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-none stroke-current" strokeWidth={2.2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+              </svg>
+            </span>
+            <span className="font-semibold tracking-wide text-stone-200">
+              {t('hero.installment')}
+            </span>
+            <span className="hidden sm:inline-block text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/30">
+              {t('hero.installmentBadge')}
+            </span>
+          </div>
+
           {/* Dynamic rotating slide feature pill */}
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-stone-900/60 border border-white/10 backdrop-blur-sm text-xs sm:text-sm text-stone-300">
             <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />

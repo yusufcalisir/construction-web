@@ -30,12 +30,15 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.gallery': 'Galeri',
     'nav.contact': 'İletişim',
     'nav.quote': 'Teklif Al',
+    'nav.installmentShort': 'Vade Farksız Taksit',
     'nav.navigation': 'Navigasyon',
 
     // Hero
     'hero.badge': 'Ber Tadilat',
     'hero.headline': 'İstanbul\'da Anahtar Teslim\nÜst Segment Renovasyon',
     'hero.subheadline': '3D mimari tasarımdan anahtar teslim uygulamaya; konut, villa ve ticari mekânlarınızı uzman mimari denetim ve şeffaf bütçe garantisiyle tek elden teslim ediyoruz.',
+    'hero.installment': 'Tüm Kredi Kartlarına Vade Farksız Taksit Seçeneği',
+    'hero.installmentBadge': 'AVANTAJ',
     'hero.btnProjects': 'PROJELERİ İNCELE',
     'hero.btnDiscuss': 'PROJENİZİ GÖRÜŞELİM',
     'hero.getQuote': 'Keşif Talebi',
@@ -190,6 +193,8 @@ const translations: Record<Language, Record<string, string>> = {
     'evaluation.badge': 'Proje Ön Değerlendirme & Teklif',
     'evaluation.title': 'Projeniz İçin Hızlı Ön Değerlendirme Alın',
     'evaluation.subtitle': '300.000 TL ve üzeri üst segment anahtar teslim renovasyon projeleriniz için bilgilerinizi iletin; 24 saat içinde maliyet ve takvim ön fizibilitesini çıkaralım.',
+    'evaluation.installmentNotice': 'Tüm projelerinizde anlaşmalı kredi kartlarına vade farksız taksit imkanı sunulmaktadır.',
+    'evaluation.installmentCard': 'Tüm anlaşmalı kartlara vade farksız taksit avantajıyla ödeme kolaylığı.',
 
     // HowWeWork
     'howwework.badge': 'Sürecimiz',
@@ -226,12 +231,15 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.gallery': 'Gallery',
     'nav.contact': 'Contact',
     'nav.quote': 'Get a Quote',
+    'nav.installmentShort': 'Interest-Free Installments',
     'nav.navigation': 'Navigation',
 
     // Hero
     'hero.badge': 'Ber Tadilat',
     'hero.headline': 'Premium Turnkey Renovation\nin Istanbul',
     'hero.subheadline': 'From interior design to execution; we manage and deliver residences, luxury villas, and commercial spaces with end-to-end accountability.',
+    'hero.installment': 'Interest-Free Installment Options on All Credit Cards',
+    'hero.installmentBadge': 'ADVANTAGE',
     'hero.btnProjects': 'EXPLORE PROJECTS',
     'hero.btnDiscuss': 'DISCUSS YOUR PROJECT',
     'hero.getQuote': 'Request a Consultation',
@@ -386,6 +394,8 @@ const translations: Record<Language, Record<string, string>> = {
     'evaluation.badge': 'Project Pre-Evaluation & Estimate',
     'evaluation.title': 'Get an Instant Pre-Evaluation For Your Project',
     'evaluation.subtitle': 'Submit your project details for turnkey renovation projects of 300,000 TL and above; we will prepare an initial cost and timeline feasibility within 24 hours.',
+    'evaluation.installmentNotice': 'Interest-free installment options are available on contracted credit cards for all projects.',
+    'evaluation.installmentCard': 'Easy payment with interest-free installment advantages on all contracted cards.',
 
     // HowWeWork
     'howwework.badge': 'Our Process',
@@ -422,12 +432,15 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.gallery': 'معرض المشاريع',
     'nav.contact': 'اتصل بنا',
     'nav.quote': 'طلب عرض أسعار',
+    'nav.installmentShort': 'تقسيط بدون فوائد',
     'nav.navigation': 'التنقل',
 
     // Hero
     'hero.badge': 'بر تاديلات (Ber Tadilat)',
     'hero.headline': 'تجديد فاخر تسليم مفتاح\nفي إسطنبول',
     'hero.subheadline': 'من التصميم الداخلي المعماري حتى التسليم؛ ندير وننفذ منازلكم وفيلاتكم ومساحاتكم التجارية بجهة مسؤولة واحدة.',
+    'hero.installment': 'خيار التقسيط بدون فوائد على جميع البطاقات الائتمانية',
+    'hero.installmentBadge': 'ميزة',
     'hero.btnProjects': 'استعراض المشاريع',
     'hero.btnDiscuss': 'لنتحدث عن مشروعكم',
     'hero.getQuote': 'طلب معاينة',
@@ -593,6 +606,8 @@ const translations: Record<Language, Record<string, string>> = {
     'evaluation.badge': 'التقييم الأولي للمشروع والتكلفة',
     'evaluation.title': 'احصل على تقييم أولي سريع لمشروعك',
     'evaluation.subtitle': 'أرسل تفاصيل مشروعك للمشاريع الشاملة تسليم مفتاح بقيمة 300,000 ليرة وما فوق؛ وسنقوم بإعداد دراسة أولية للجدول الزمني والتكلفة خلال 24 ساعة.',
+    'evaluation.installmentNotice': 'يتوفر خيار التقسيط بدون فوائد على البطاقات الائتمانية المعتمدة لجميع المشاريع.',
+    'evaluation.installmentCard': 'سهولة الدفع مع ميزة التقسيط بدون فوائد على جميع البطاقات المعتمدة.',
 
     // HowWeWork
     'howwework.badge': 'أسلوب عملنا',
@@ -654,12 +669,15 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.gallery': 'گالری',
     'nav.contact': 'تماس با ما',
     'nav.quote': 'دریافت قیمت',
+    'nav.installmentShort': 'اقساط بدون کارمزد',
     'nav.navigation': 'دسترسی سریع',
 
     // Hero
     'hero.badge': 'بر تادیلات (Ber Tadilat)',
     'hero.headline': 'بازسازی لوکس کلید تحویل\nدر استانبول',
     'hero.subheadline': 'از طراحی معماری داخلی تا تحویل نهایی؛ مدیریت و اجرای یکپارچه پروژه‌های مسکونی، ویلایی و تجاری شما.',
+    'hero.installment': 'امکان پرداخت اقساطی بدون کارمزد با تمامی کارت‌های اعتباری',
+    'hero.installmentBadge': 'مزیت',
     'hero.btnProjects': 'مشاهده پروژه‌ها',
     'hero.btnDiscuss': 'گفتگو درباره پروژه',
     'hero.getQuote': 'درخواست مشاوره و بازدید',
@@ -812,6 +830,8 @@ const translations: Record<Language, Record<string, string>> = {
     'evaluation.badge': 'ارزیابی اولیه و برآورد پروژه',
     'evaluation.title': 'ارزیابی اولیه سریع برای پروژه خود دریافت کنید',
     'evaluation.subtitle': 'اطلاعات پروژه خود را برای بازسازی‌های کلید تحویل ۳۰۰,۰۰۰ لیر و بالاتر ارسال کنید؛ ظرف ۲۴ ساعت برآورد اولیه هزینه و زمان‌بندی را آماده خواهیم کرد.',
+    'evaluation.installmentNotice': 'امکان پرداخت اقساطی بدون کارمزد با کارت‌های اعتباری طرف قرارداد برای کلیه پروژه‌ها فراهم است.',
+    'evaluation.installmentCard': 'سهولت در پرداخت با مزیت اقساط بدون کارمزد با تمامی کارت‌های طرف قرارداد.',
 
     // HowWeWork
     'howwework.badge': 'فرآیند ما',
