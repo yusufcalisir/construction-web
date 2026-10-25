@@ -11,11 +11,15 @@ export default function Footer() {
     e.preventDefault()
     const element = document.getElementById(targetId)
     if (element) {
-      const offsetTop = element.offsetTop - 80
+      const offsetTop = element.getBoundingClientRect().top + window.scrollY - 80
       window.scrollTo({
-        top: offsetTop,
+        top: Math.max(0, offsetTop),
         behavior: 'smooth',
       })
+    }
+    // Clean URL so no #section or ?lang is in address bar
+    if (typeof window !== 'undefined' && (window.location.hash || window.location.search)) {
+      window.history.replaceState(null, '', window.location.pathname)
     }
   }
 
@@ -48,6 +52,7 @@ export default function Footer() {
                 { key: 'home', hash: '#home', id: 'home' },
                 { key: 'about', hash: '#about', id: 'about' },
                 { key: 'services', hash: '#services', id: 'services' },
+                { key: 'howwework', hash: '#how-we-work', id: 'how-we-work' },
                 { key: 'gallery', hash: '#gallery', id: 'gallery' },
                 { key: 'contact', hash: '#contact', id: 'contact' }
               ].map((link) => (

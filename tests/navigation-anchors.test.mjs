@@ -80,8 +80,8 @@ test('Navigation: Navbar scroll-spy sections order matches physical page DOM ord
   const expectedOrder = [
     'home',
     'about',
-    'how-we-work',
     'services',
+    'how-we-work',
     'gallery',
     'contact',
     'footer'

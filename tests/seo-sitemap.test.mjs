@@ -15,6 +15,7 @@ test('SEO: Sitemap contains valid URLs and language alternates without dead anch
   // Ensure valid section anchors exist
   assert.ok(sitemapContent.includes('#about'), 'Sitemap should include #about section')
   assert.ok(sitemapContent.includes('#services'), 'Sitemap should include #services section')
+  assert.ok(sitemapContent.includes('#how-we-work'), 'Sitemap should include #how-we-work section')
   assert.ok(sitemapContent.includes('#gallery'), 'Sitemap should include #gallery section')
   assert.ok(sitemapContent.includes('#contact'), 'Sitemap should include #contact section')
 
@@ -45,6 +46,10 @@ test('SEO: Layout metadata and structured data have valid schema and no dead anc
   assert.ok(
     layoutContent.includes('#services'),
     'Layout breadcrumbs should include #services'
+  )
+  assert.ok(
+    layoutContent.includes('#how-we-work'),
+    'Layout breadcrumbs should include #how-we-work'
   )
 
   // Ensure JSON-LD schemas are embedded

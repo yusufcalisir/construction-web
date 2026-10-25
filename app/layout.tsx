@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   
   // Temel SEO
   title: {
-    default: 'Ber Tadilat | İstanbul Anahtar Teslim Komple Ev Tadilatı ve Dekorasyon',
+    default: 'Ber Tadilat | İstanbul Anahtar Teslim Komple Tadilat ve Dekorasyon',
     template: '%s | Ber Tadilat',
   },
   description: 'İstanbul\'da ev, iş yeri ve her türlü mekân için profesyonel tadilat, dekorasyon, restorasyon, boya badana, alçıpan, fayans, mutfak dekorasyon, mutfak tadilat, dekorasyon tavan, tadilat işleri, dekorasyon tadilat, parke, tesisat, akıllı ev sistemleri, ısı-ses yalıtımı ve dış cephe hizmetleri. Dekorasyon firmaları arasında güvenilir çözümler. 7/24 hizmet, yerinde keşif ve hızlı teklif imkânı.',
@@ -117,7 +117,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'tr_TR',
-    alternateLocale: ['en_US', 'tr_TR'],
+    alternateLocale: ['tr_TR', 'en_US', 'ar_AR', 'fa_IR'],
     siteName: 'Ber Tadilat',
     url: baseUrl,
     title: 'Ber Tadilat | İstanbul Tadilat, Dekorasyon ve Renovasyon Hizmetleri',
@@ -392,7 +392,7 @@ const organizationSchema = {
     email: 'info@bertadilat.com',
     contactType: 'customer service',
     areaServed: 'TR',
-    availableLanguage: ['Turkish', 'English'],
+    availableLanguage: ['Turkish', 'English', 'Arabic', 'Persian'],
   },
   sameAs: [
     'https://www.instagram.com/berdekorasyontadilat/',
@@ -425,6 +425,18 @@ const breadcrumbSchema = {
     {
       '@type': 'ListItem',
       position: 4,
+      name: 'Sürecimiz',
+      item: `${baseUrl}#how-we-work`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 5,
+      name: 'Galeri',
+      item: `${baseUrl}#gallery`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 6,
       name: 'İletişim',
       item: `${baseUrl}#contact`,
     },

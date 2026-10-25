@@ -9,6 +9,7 @@ interface SafeWhatsAppButtonProps {
   className?: string
   ariaLabel?: string
   title?: string
+  id?: string
   onClick?: (e?: React.MouseEvent) => void
 }
 
@@ -18,6 +19,7 @@ export default function SafeWhatsAppButton({
   className = '',
   ariaLabel = 'WhatsApp',
   title = 'WhatsApp',
+  id,
   onClick,
 }: SafeWhatsAppButtonProps) {
   const handleClick = (e: React.MouseEvent) => {
@@ -30,6 +32,7 @@ export default function SafeWhatsAppButton({
   return (
     <button
       type="button"
+      id={id}
       onClick={handleClick}
       className={className}
       aria-label={ariaLabel}

@@ -74,16 +74,18 @@ export default function Services() {
               </div>
 
               {/* Content */}
-              <div className="p-7 flex-1 flex flex-col">
-                <h3 className="text-lg font-bold mb-3 text-white group-hover:text-amber-400 transition-colors font-serif leading-snug">
-                  {t(`service.${service.key}.name`)}
-                </h3>
-                <p className="leading-relaxed text-sm text-stone-400 flex-1">
-                  {t(`service.${service.key}.desc`)}
-                </p>
+              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold mb-3 text-white group-hover:text-amber-400 transition-colors font-serif leading-snug min-h-[3.25rem] flex items-center">
+                    {t(`service.${service.key}.name`)}
+                  </h3>
+                  <p className="leading-relaxed text-sm text-stone-400 line-clamp-4 min-h-[5rem]">
+                    {t(`service.${service.key}.desc`)}
+                  </p>
+                </div>
 
                 {/* Scope tags */}
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-6 pt-5 border-t border-stone-800/60 flex flex-wrap content-start items-center gap-2 min-h-[4.75rem]">
                   {[
                     t(`service.${service.key}.tag1`),
                     t(`service.${service.key}.tag2`),
@@ -91,7 +93,7 @@ export default function Services() {
                   ].map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-3 py-1 rounded-full bg-stone-800/80 text-stone-400 border border-stone-700/50 group-hover:border-amber-500/30 transition-colors duration-300"
+                      className="text-xs px-2.5 sm:px-3 py-1 rounded-full bg-stone-800/80 text-stone-300 border border-stone-700/50 group-hover:border-amber-500/30 transition-colors duration-300 whitespace-nowrap"
                     >
                       {tag}
                     </span>
@@ -121,6 +123,9 @@ export default function Services() {
                 e.preventDefault()
                 const el = document.getElementById('contact')
                 if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' })
+                if (typeof window !== 'undefined' && (window.location.hash || window.location.search)) {
+                  window.history.replaceState(null, '', window.location.pathname)
+                }
               }}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-12 py-3.5 sm:py-5 rounded-full font-black text-xs sm:text-base tracking-wider uppercase bg-amber-500 hover:bg-amber-400 text-stone-950 transition-all duration-300 shadow-xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105 active:scale-95 cursor-pointer border-2 border-amber-400"
             >

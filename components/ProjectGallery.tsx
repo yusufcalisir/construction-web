@@ -273,13 +273,16 @@ export default function ProjectGallery() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
+        <div className="text-center mb-14 sm:mb-16 max-w-3xl mx-auto">
           <span className="font-mono text-xs sm:text-sm tracking-[0.3em] text-amber-600 font-bold uppercase block mb-3">
-            {t('gallery2.title')}
+            {t('gallery2.badge')}
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight leading-tight font-serif">
-            {t('gallery2.subtitle')}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight leading-tight font-serif mb-4">
+            {t('gallery2.title')}
           </h2>
+          <p className="text-stone-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto font-normal">
+            {t('gallery2.subtitle')}
+          </p>
         </div>
 
         {/* 48 Responsive Cards Grid */}

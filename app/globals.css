@@ -24,7 +24,7 @@ body {
 }
 
 /* ═══════════════════════════════════════════
-   Custom Scrollbar — macOS-style auto-hide
+   Custom Scrollbar (macOS-style auto-hide)
    Only visible while scrolling, fades away after.
    ═══════════════════════════════════════════ */
 
@@ -350,5 +350,12 @@ html[lang="ar"] p, html[lang="fa"] p {
 /* Hide floating WhatsApp button when mobile navigation menu is open */
 body.mobile-menu-open #whatsapp-floating-button {
   display: none !important;
+}
+
+/* ═══════════════════════════════════════════
+   iOS Safe Area / Sticky Mobile CTA Support
+   ═══════════════════════════════════════════ */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 

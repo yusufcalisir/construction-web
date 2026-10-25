@@ -95,7 +95,7 @@ export default function WhatsAppWidget() {
   return (
     <>
       {/* Floating Persistent Call & WhatsApp Actions */}
-      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2 sm:gap-3 select-none">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2 sm:gap-3 select-none" dir="ltr">
         {/* Floating Call Button: Ücretsiz Keşif İçin Hemen Ara */}
         <button
           type="button"
@@ -110,14 +110,14 @@ export default function WhatsAppWidget() {
             </svg>
           </span>
           <span className="whitespace-nowrap font-extrabold hidden xs:inline">{t('nav.freeDiscoveryCall')}</span>
-          <span className="whitespace-nowrap font-extrabold xs:hidden">Hemen Ara</span>
+          <span className="whitespace-nowrap font-extrabold xs:hidden">{t('nav.callNow')}</span>
         </button>
 
         {/* Floating WhatsApp Button */}
-        <button
+        <button type="button"
           id="whatsapp-floating-button"
           onClick={() => setIsOpen(!isOpen)}
-          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20BA5A] shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center group shrink-0 hover:scale-105 active:scale-95 cursor-pointer"
+          className="flex w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20BA5A] shadow-xl hover:shadow-2xl transition-all duration-300 items-center justify-center group shrink-0 hover:scale-105 active:scale-95 cursor-pointer"
           aria-label={t('whatsapp.ariaLabel')}
         >
           <svg
@@ -150,7 +150,7 @@ export default function WhatsAppWidget() {
               </h3>
               <p className="text-white/80 text-xs truncate">{t('whatsapp.status')}</p>
             </div>
-            <button
+            <button type="button"
               onClick={() => setIsOpen(false)}
               className="text-white/80 hover:text-white transition-colors p-1"
               aria-label={t('whatsapp.close')}
@@ -184,7 +184,7 @@ export default function WhatsAppWidget() {
 
           {/* Footer Button */}
           <div className="bg-white px-4 py-4 border-t border-gray-200">
-            <button
+            <button type="button"
               onClick={handleConnect}
               className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
             >

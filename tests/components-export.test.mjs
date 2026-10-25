@@ -39,12 +39,12 @@ test('Components: app/page.tsx imports and renders all required section componen
     'Navbar',
     'Hero',
     'About',
-    'HowWeWork',
     'Services',
+    'HowWeWork',
+    'WhyBer',
     'ProjectGallery',
     'Contact',
     'BrandMarquee',
-    'WhyBer',
     'Footer'
   ]
 

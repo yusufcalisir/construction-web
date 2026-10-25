@@ -51,6 +51,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${baseUrl}/#how-we-work`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+      alternates: {
+        languages: {
+          tr: `${baseUrl}/#how-we-work`,
+          en: `${baseUrl}/?lang=en#how-we-work`,
+          ar: `${baseUrl}/?lang=ar#how-we-work`,
+          fa: `${baseUrl}/?lang=fa#how-we-work`,
+          'x-default': `${baseUrl}/#how-we-work`,
+        },
+      },
+    },
+    {
       url: `${baseUrl}/#gallery`,
       lastModified: now,
       changeFrequency: 'monthly',

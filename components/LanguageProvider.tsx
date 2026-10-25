@@ -19,7 +19,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': 'Ana Sayfa',
     'nav.about': 'Hakkımızda',
     'nav.about.corporate': 'Kurumsal & Vizyonumuz',
-    'nav.about.corporate.desc': 'Komple Ev Tadilatı ve Proje Yönetimi',
+    'nav.about.corporate.desc': 'Komple Tadilat, Renovasyon ve Proje Yönetimi',
     'nav.about.whyber': 'Müşteri Değerlendirmeleri',
     'nav.about.whyber.desc': 'Doğrulanmış müşteri deneyimleri ve referanslar',
     'nav.about.process': 'Çalışma Sürecimiz',
@@ -40,10 +40,10 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     'hero.badge': 'BER TADİLAT',
-    'hero.headline': 'İstanbul’da Komple Ev Tadilatı ve Dekorasyon',
-    'hero.subheadIntro': 'Evinizi Güvenle Yenileyin',
+    'hero.headline': 'İstanbul’da Komple Tadilat ve Dekorasyon',
+    'hero.subheadIntro': 'Mekânınızı Güvenle Yenileyin',
     'hero.subheadline': 'Mutfağınızdan banyonuza, evinizin tüm yaşam alanlarını kaliteli işçilik ve mühendis kontrolünde yeniliyoruz.\n\nİhtiyaçlarınıza ve bütçenize uygun malzeme seçeneklerini birlikte belirliyor, işe başlamadan önce maliyetleri ve uygulama takvimini netleştiriyoruz.',
-    'hero.desc1': 'Mutfağınızdan banyonuza, evinizin tüm yaşam alanlarını kaliteli işçilik ve mühendis kontrolünde yeniliyoruz.',
+    'hero.desc1': 'Konut, villa ve ticari tüm yaşam alanlarınızı kaliteli işçilik ve mühendis kontrolünde yeniliyoruz.',
     'hero.desc2': 'İhtiyaçlarınıza ve bütçenize uygun malzeme seçeneklerini birlikte belirliyor, işe başlamadan önce maliyetleri ve uygulama takvimini netleştiriyoruz.',
     'hero.installment': 'Tüm Kredi Kartlarına Vade Farksız Taksit Seçeneği',
     'hero.installmentBadge': 'AVANTAJ',
@@ -53,8 +53,8 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.phoneLabel': 'Doğrudan Keşif & Bilgi Hattı:',
     'hero.phoneSubtext': '(7/24 Kesintisiz Keşif & Danışmanlık)',
     'hero.trust.engineering': 'Mühendis Kontrolünde',
-    'hero.trust.pricing': 'Şeffaf Fiyatlandırma',
-    'hero.trust.turnkey': 'Anahtar Teslim Uygulama',
+    'hero.trust.pricing': 'Şeffaf Sabit Fiyat',
+    'hero.trust.turnkey': 'Anahtar Teslim',
     'hero.btnDiscuss': 'PROJENİZİ GÖRÜŞELİM',
     'hero.getQuote': 'Keşif Talebi',
     'hero.slide0': 'Villa, rezidans ve büyük daireler için konseptten teslime tam kapsamlı proje yönetimi.',
@@ -68,8 +68,9 @@ const translations: Record<Language, Record<string, string>> = {
     'gallery.image': 'Görsel',
 
     // New Project Gallery (Galeri)
-    'gallery2.title': 'Proje Galerisi',
-    'gallery2.subtitle': 'İstanbul genelinde uzman mimari denetimde, 3D mimari projelendirme ve şeffaf bütçe garantisiyle tamamlanan anahtar teslim komple ev tadilatı ve dekorasyon projelerimiz',
+    'gallery2.badge': 'PORTFÖY',
+    'gallery2.title': 'Tamamlanan Seçkin Projelerimiz',
+    'gallery2.subtitle': 'İstanbul genelinde mimari denetim ve şeffaf bütçeyle hayata geçirdiğimiz anahtar teslim renovasyon çalışmaları.',
     'gallery2.close': 'Kapat',
 
     // Brands
@@ -136,6 +137,18 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.weekdays': 'Hafta İçi',
     'contact.weekends': 'Hafta Sonu',
     'contact.allDay': '7/24',
+    'hero.discoveryLine247': '7/24 Keşif Hattı',
+    'hero.btnWhatsAppFree': 'WhatsApp ile Ücretsiz Keşif',
+    'contact.discoveryBadge': '7/24 Keşif Hattı',
+    'contact.whatsappDesc': 'Mekanınızın fotoğraflarını veya isteklerinizi iletin; ortalama 2 dakika içinde değerlendirip ücretsiz keşif randevusu belirleyelim.',
+    'contact.whatsappBtn': 'WhatsApp ile Hemen Yazın',
+    'contact.phoneDesc': 'Tadilat ve renovasyon uzmanlarımızla doğrudan görüşün; projenizin kapsamını, bütçesini ve takvimini anında netleştirin.',
+    'contact.copyPhone': 'Numarayı Kopyala',
+    'contact.locationDetail': 'Avrupa ve Anadolu yakasında yerinde ücretsiz keşif',
+    'contact.workingHoursDetail': 'Haftanın 7 günü esnek keşif ve danışmanlık',
+    'contact.guaranteeTitle': 'Güven & Garanti',
+    'contact.guaranteeSubtitle': 'Şeffaf Sabit Fiyat Sözleşmesi',
+    'contact.guaranteeDetail': 'Mimar & mühendis denetiminde anahtar teslim güvence',
 
         'overview.footer': 'Tek bir odanın yenilenmesinden tüm yapının anahtar teslim renovasyonuna kadar, projelerinizi en yüksek kalite ve profesyonel disiplinle hayata geçiriyoruz. Keşif ve detaylı görüşme için bizimle iletişime geçebilirsiniz.',
 
@@ -158,7 +171,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.since': 'İstanbul • Komple Tadilat',
     'about.discipline': 'Mimari Renovasyon',
     'about.engineer.name': 'Ber Tadilat',
-    'about.engineer.title': 'Komple Ev Tadilatı & Mimari Tasarım',
+    'about.engineer.title': 'Komple Tadilat, Renovasyon & Mimari Tasarım',
     'about.engineer.edu': '3D Mimari Tasarım & Projelendirme',
     'about.engineer.exp': 'İstanbul Geneli Seçkin Proje Portföyü',
     'about.engineer.desc': 'Ber Tadilat, İstanbul\'un seçkin semtlerinde konut, villa ve ticari mekânlar için anahtar teslim renovasyon hizmeti sunar. Tasarımdan malzeme seçimine, kırım ve altyapıdan ince işçilik ve montaja kadar her aşama şeffaf bütçe ve eksiksiz taahhüt güvencesiyle tek elden yönetilir.',
@@ -213,11 +226,11 @@ const translations: Record<Language, Record<string, string>> = {
     'whyber.review3.comment': 'Salonu ve mutfağı yenilettik. Çok memnun kaldık. Oldukça kaliteli ve piyasaya göre uygun fiyat.',
     'evaluation.badge': 'Ücretsiz Keşif & Proje Danışmanlığı',
     'evaluation.title': 'Evinizi Güvenle Birlikte Yenileyelim',
-    'evaluation.subtitle': '300.000 TL ve üzeri anahtar teslim komple ev tadilatı ve dekorasyon projeleriniz için form doldurmanıza gerek yok; ister hemen arayın, ister WhatsApp’tan projenizi anlatın, 24 saat içinde ücretsiz keşif planınızı oluşturalım.',
+    'evaluation.subtitle': '300.000 TL ve üzeri anahtar teslim komple tadilat ve dekorasyon projeleriniz için form doldurmanıza gerek yok; ister hemen arayın, ister WhatsApp’tan projenizi anlatın, 24 saat içinde ücretsiz keşif planınızı oluşturalım.',
     'evaluation.installmentNotice': 'Tüm projelerinizde anlaşmalı kredi kartlarına vade farksız taksit imkanı sunulmaktadır.',
     'evaluation.installmentCard': 'Tüm anlaşmalı kartlara vade farksız taksit avantajıyla ödeme kolaylığı.',
     'evaluation.criterionTitle': 'Önemli Bilgilendirme:',
-    'evaluation.criterionText': '300.000 TL ve üzeri kapsamlı anahtar teslim ev tadilatı ve dekorasyon projeleri için hizmet vermekteyiz.',
+    'evaluation.criterionText': '300.000 TL ve üzeri kapsamlı anahtar teslim tadilat ve dekorasyon projeleri için hizmet vermekteyiz.',
     'evaluation.step1': '1. Proje Lokasyonu (İlçe Seçimi) *',
     'evaluation.selectDistrict': 'Lütfen İlçe Seçiniz',
     'evaluation.otherDistrict': 'Diğer İstanbul İlçesi',
@@ -266,7 +279,7 @@ const translations: Record<Language, Record<string, string>> = {
     'howwework.step.budget.desc': 'Kalem kalem maliyet tablosu, net takvim ve taahhütlerin yer aldığı resmi sözleşme imzalanır.',
     'howwework.step.execution.title': 'Uygulama ve Kalite Denetimi',
     'howwework.step.execution.desc': 'Tüm uygulamalar uzman proje yöneticilerimiz gözetiminde yürütülür. Düzenli ilerleme raporları sizi sürekli bilgilendirir.',
-    'howwework.step.quality.title': 'Kalite Kontrol ve Punch-List',
+    'howwework.step.quality.title': 'Kalite Kontrol ve Eksik Giderme',
     'howwework.step.quality.desc': 'Teslimden önce kapsamlı kalite kontrolü yapılır; tespit edilen her eksik tamamlanır.',
     'howwework.step.delivery.title': 'Anahtar Teslim ve Destek',
     'howwework.step.delivery.desc': 'Projenizi teslim alır, tüm garanti belgelerini edinirsiniz. Teslim sonrası destek kapsamında kalırsınız.',
@@ -278,7 +291,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': 'Home',
     'nav.about': 'About Us',
     'nav.about.corporate': 'Corporate & Vision',
-    'nav.about.corporate.desc': 'Complete Home Renovation & Project Management',
+    'nav.about.corporate.desc': 'Complete Renovation & Project Management',
     'nav.about.whyber': 'Client Reviews',
     'nav.about.whyber.desc': 'Verified customer experiences and references',
     'nav.about.process': 'How We Work',
@@ -299,10 +312,10 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     'hero.badge': 'BER TADİLAT',
-    'hero.headline': 'Complete Home Renovation and Decoration in Istanbul',
-    'hero.subheadIntro': 'Renovate Your Home with Confidence',
+    'hero.headline': 'Complete Renovation and Decoration in Istanbul',
+    'hero.subheadIntro': 'Renovate Your Space with Confidence',
     'hero.subheadline': 'From your kitchen to your bathroom, we renovate all your living spaces under engineering supervision with top-quality craftsmanship.\n\nWe determine material options tailored to your needs and budget together, finalizing costs and the project schedule before work begins.',
-    'hero.desc1': 'From your kitchen to your bathroom, we renovate all your living spaces under engineering supervision with top-quality craftsmanship.',
+    'hero.desc1': 'From residential villas to commercial spaces, we renovate all your living areas under engineering supervision with top-quality craftsmanship.',
     'hero.desc2': 'We determine material options tailored to your needs and budget together, finalizing costs and the project schedule before work begins.',
     'hero.installment': 'Interest-Free Installment Options on All Credit Cards',
     'hero.installmentBadge': 'ADVANTAGE',
@@ -327,8 +340,9 @@ const translations: Record<Language, Record<string, string>> = {
     'gallery.image': 'Image',
 
     // New Project Gallery (Gallery)
-    'gallery2.title': 'Project Gallery',
-    'gallery2.subtitle': 'Moments from our completed renovation and decoration projects',
+    'gallery2.badge': 'PORTFOLIO',
+    'gallery2.title': 'Selected Completed Projects',
+    'gallery2.subtitle': 'Turnkey renovation and interior transformations delivered across Istanbul with architectural precision.',
     'gallery2.close': 'Close',
 
     // Brands (Brand Partners)
@@ -395,6 +409,18 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.weekdays': 'Weekdays',
     'contact.weekends': 'Weekends',
     'contact.allDay': '24/7',
+    'hero.discoveryLine247': '24/7 Discovery Line',
+    'hero.btnWhatsAppFree': 'Free Discovery on WhatsApp',
+    'contact.discoveryBadge': '24/7 Discovery Line',
+    'contact.whatsappDesc': 'Send photos or details of your space; we evaluate within minutes and schedule your free discovery visit.',
+    'contact.whatsappBtn': 'Message on WhatsApp',
+    'contact.phoneDesc': 'Speak directly with our renovation experts to clarify project scope, budget, and timeline immediately.',
+    'contact.copyPhone': 'Copy Number',
+    'contact.locationDetail': 'On-site free discovery across European & Asian sides of Istanbul',
+    'contact.workingHoursDetail': '7 days a week flexible discovery & consultation',
+    'contact.guaranteeTitle': 'Trust & Guarantee',
+    'contact.guaranteeSubtitle': 'Transparent Fixed-Price Contract',
+    'contact.guaranteeDetail': 'Turnkey assurance under architect & engineer supervision',
 
         'overview.footer': 'From a single-room renovation to full-scale turnkey villa and commercial projects, we execute every detail with superior quality and professional discipline. Contact us today to discuss your project.',
 
@@ -417,7 +443,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.since': 'Istanbul • Complete Renovation',
     'about.discipline': 'Architectural Renovation',
     'about.engineer.name': 'Ber Tadilat',
-    'about.engineer.title': 'Complete Home Renovation & Architectural Design',
+    'about.engineer.title': 'Complete Renovation & Architectural Design',
     'about.engineer.edu': '3D Architectural Design & Planning',
     'about.engineer.exp': 'Extensive Istanbul Project Portfolio',
     'about.engineer.desc': 'Ber Tadilat delivers turnkey renovation services for residential spaces, villas, and commercial properties across Istanbul\'s premier neighborhoods. From initial concept and material curation to demolition, infrastructure, fine craftsmanship, and final handover, every step is coordinated with transparent budgeting and strict accountability.',
@@ -537,7 +563,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': 'الرئيسية',
     'nav.about': 'من نحن',
     'nav.about.corporate': 'عن الشركة ورؤيتنا',
-    'nav.about.corporate.desc': 'تجديد المنازل بالكامل وإدارة المشاريع',
+    'nav.about.corporate.desc': 'التجديد الشامل وإدارة المشاريع',
     'nav.about.whyber': 'آراء العملاء',
     'nav.about.whyber.desc': 'تجارب العملاء الموثقة والآراء الحقيقية',
     'nav.about.process': 'مراحل عملنا',
@@ -558,10 +584,10 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     'hero.badge': 'بير للتجديدات (BER TADİLAT)',
-    'hero.headline': 'تجديد وديكور المنازل بالكامل في إسطنبول',
-    'hero.subheadIntro': 'جدد منزلك بثقة وأمان',
+    'hero.headline': 'تجديد وديكور شامل في إسطنبول',
+    'hero.subheadIntro': 'جدد مساحتك بثقة وأمان',
     'hero.subheadline': 'من مطبخك إلى حمامك، نجدد جميع مساحات منزلك بحرفية عالية وتحت إشراف هندسي متخصص.\n\nنحدد معاً خيارات المواد المناسبة لاحتياجاتك وميزانيتك، ونوضح التكاليف وجدول التنفيذ قبل بدء العمل.',
-    'hero.desc1': 'من مطبخك إلى حمامك، نجدد جميع مساحات منزلك بحرفية عالية وتحت إشراف هندسي متخصص.',
+    'hero.desc1': 'من المنازل والفلل إلى المساحات التجارية، نجدد جميع مساحاتكم بحرفية عالية وتحت إشراف هندسي متخصص.',
     'hero.desc2': 'نحدد معاً خيارات المواد المناسبة لاحتياجاتك وميزانيتك، ونوضح التكاليف وجدول التنفيذ قبل بدء العمل.',
     'hero.installment': 'خيار التقسيط بدون فوائد على جميع البطاقات الائتمانية',
     'hero.installmentBadge': 'ميزة',
@@ -586,8 +612,9 @@ const translations: Record<Language, Record<string, string>> = {
     'gallery.image': 'صورة',
 
     // New Project Gallery (Galeri)
-    'gallery2.title': 'معرض المشاريع',
-    'gallery2.subtitle': 'لقطات مختارة من مشاريعنا المنجزة في التجديد والديكور',
+    'gallery2.badge': 'أعمالنا',
+    'gallery2.title': 'مشاريعنا المنجزة المميزة',
+    'gallery2.subtitle': 'أعمال تجديد وتسليم مفتاح تم تنفيذها في جميع أنحاء إسطنبول بإشراف معماري دقيق.',
     'gallery2.close': 'إغلاق',
 
     // Brands (Çözüm Ortakları & İş Birlikleri)
@@ -667,6 +694,18 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.weekdays': 'أيام الأسبوع',
     'contact.weekends': 'عطلة نهاية الأسبوع',
     'contact.allDay': 'على مدار الساعة 24/7',
+    'hero.discoveryLine247': 'خط المعاينة 24/7',
+    'hero.btnWhatsAppFree': 'معاينة مجانية عبر واتساب',
+    'contact.discoveryBadge': 'خط المعاينة 24/7',
+    'contact.whatsappDesc': 'أرسل صور أو متطلبات مساحتك؛ نقوم بالتقييم خلال دقائق ونحدد موعد معاينة مجانية.',
+    'contact.whatsappBtn': 'راسلنا عبر واتساب',
+    'contact.phoneDesc': 'تحدث مباشرة مع خبرائنا لتوضيح نطاق المشروع والميزانية والجدول الزمني فوراً.',
+    'contact.copyPhone': 'نسخ الرقم',
+    'contact.locationDetail': 'معاينة مجانية في الموقع في الجانبين الأوروبي والآسيوي لإسطنبول',
+    'contact.workingHoursDetail': 'معاينة واستشارات مرنة طوال 7 أيام في الأسبوع',
+    'contact.guaranteeTitle': 'الثقة والضمان',
+    'contact.guaranteeSubtitle': 'عقد بسعر ثابت وشفاف',
+    'contact.guaranteeDetail': 'ضمان تسليم مفتاح تحت إشراف معماري وهندسي',
 
     // Footer
     'footer.description': 'بسنوات طويلة من الخبرة في إسطنبول، نقدم مشاريع تجديد وتصميم داخلي فاخرة للعملاء الراقيين سكنياً وتجارياً. إشراف فني معماري، ضمان العلامة التجارية، ميزانية شفافة، شريكك المتكامل في المشاريع.',
@@ -687,7 +726,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.since': 'إسطنبول • تجديد كامل',
     'about.discipline': 'التجديد المعماري',
     'about.engineer.name': 'بر تاديلات (Ber Tadilat)',
-    'about.engineer.title': 'تجديد المنازل بالكامل والتصميم المعماري',
+    'about.engineer.title': 'التجديد المتكامل والتصميم المعماري',
     'about.engineer.edu': 'تصميم معماري ثلاثي الأبعاد وتخطيط شامل',
     'about.engineer.exp': 'سجل مشاريع متميزة في مختلف مناطق إسطنبول',
     'about.engineer.desc': 'تقدم بر تاديلات خدمات تجديد تسليم مفتاح للمساكن والفيلات والمساحات التجارية في أرقى أحياء إسطنبول. من الفكرة واختيار المواد إلى البنية التحتية والتشطيبات الفاخرة، تُدار جميع المراحل بميزانية شفافة والتزام تام.',
@@ -832,7 +871,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': 'صفحه اصلی',
     'nav.about': 'درباره ما',
     'nav.about.corporate': 'درباره شرکت و چشم‌انداز',
-    'nav.about.corporate.desc': 'بازسازی کامل خانه و مدیریت پروژه',
+    'nav.about.corporate.desc': 'بازسازی کامل و مدیریت پروژه',
     'nav.about.whyber': 'نظرات مشتریان',
     'nav.about.whyber.desc': 'تجربیات و نظرات تأیید شده مشتریان ما',
     'nav.about.process': 'فرایند کاری ما',
@@ -853,10 +892,10 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     'hero.badge': 'بر تادیلات (BER TADİLAT)',
-    'hero.headline': 'بازسازی و دکوراسیون کامل خانه در استانبول',
-    'hero.subheadIntro': 'خانه خود را با اطمینان نوسازی کنید',
+    'hero.headline': 'بازسازی و دکوراسیون کامل در استانبول',
+    'hero.subheadIntro': 'فضای خود را با اطمینان نوسازی کنید',
     'hero.subheadline': 'از آشپزخانه تا حمام، تمامی فضاهای زندگی شما را با مهارت بالا و تحت نظارت مهندسی نوسازی می‌کنیم.\n\nگزینه‌های مصالح متناسب با نیازها و بودجه شما را با هم مشخص کرده و هزینه‌ها و تقویم اجرایی را پیش از شروع کار نهایی می‌کنیم.',
-    'hero.desc1': 'از آشپزخانه تا حمام، تمامی فضاهای زندگی شما را با مهارت بالا و تحت نظارت مهندسی نوسازی می‌کنیم.',
+    'hero.desc1': 'از پروژه‌های مسکونی و ویلایی تا فضاهای تجاری، تمامی فضاهای شما را با مهارت بالا و تحت نظارت مهندسی نوسازی می‌کنیم.',
     'hero.desc2': 'گزینه‌های مصالح متناسب با نیازها و بودجه شما را با هم مشخص کرده و هزینه‌ها و تقویم اجرایی را پیش از شروع کار نهایی می‌کنیم.',
     'hero.installment': 'امکان پرداخت اقساطی بدون کارمزد با تمامی کارت‌های اعتباری',
     'hero.installmentBadge': 'مزیت',
@@ -881,8 +920,9 @@ const translations: Record<Language, Record<string, string>> = {
     'gallery.image': 'تصویر',
 
     // New Project Gallery (Galeri)
-    'gallery2.title': 'گالری پروژه‌ها',
-    'gallery2.subtitle': 'تصاویر منتخب از پروژه‌های اجرا شده بازسازی و دکوراسیون',
+    'gallery2.badge': 'نمونه کارها',
+    'gallery2.title': 'پروژه‌های برگزیده اجرا شده',
+    'gallery2.subtitle': 'پروژه‌های بازسازی کلید تحویل اجرا شده در استانبول با نظارت دقیق معماری.',
     'gallery2.close': 'بستن',
 
     // Brands (Brand Partners)
@@ -949,6 +989,18 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.weekdays': 'روزهای کاری',
     'contact.weekends': 'آخر هفته',
     'contact.allDay': '۲۴ ساعته / ۷ روز هفته',
+    'hero.discoveryLine247': 'خط مشاوره و بازدید ۲۴/۷',
+    'hero.btnWhatsAppFree': 'مشاوره و بازدید رایگان در واتس‌اپ',
+    'contact.discoveryBadge': 'خط مشاوره و بازدید ۲۴/۷',
+    'contact.whatsappDesc': 'تصاویر یا مشخصات فضای خود را ارسال کنید؛ در کوتاه‌ترین زمان بررسی کرده و نوبت بازدید رایگان تنظیم می‌کنیم.',
+    'contact.whatsappBtn': 'ارسال پیام در واتس‌اپ',
+    'contact.phoneDesc': 'مستقیماً با کارشناسان بازسازی ما گفتگو کنید و محدوده، بودجه و زمان‌بندی پروژه را فوراً مشخص نمایید.',
+    'contact.copyPhone': 'کپی شماره',
+    'contact.locationDetail': 'بازدید و مشاوره رایگان در تمامی مناطق بخش اروپایی و آسیایی استانبول',
+    'contact.workingHoursDetail': '۷ روز هفته مشاوره و بازدید منعطف',
+    'contact.guaranteeTitle': 'اعتماد و تضمین',
+    'contact.guaranteeSubtitle': 'قرارداد قیمت ثابت و شفاف',
+    'contact.guaranteeDetail': 'تضمین تحویل کلید در دست تحت نظارت مهندسی و معماری',
 
     // Footer
     'footer.description': 'با سال‌ها تجربه درخشان در استانبول، ارائه‌دهنده پروژه‌های بازسازی لوکس و طراحی داخلی برای مشتریان مسکونی و تجاری برتر هستیم. نظارت تخصصی معماری، ضمانت برند، بودجه شفاف، شریک کامل پروژه شما.',
@@ -969,7 +1021,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.since': 'استانبول • بازسازی کامل',
     'about.discipline': 'بازسازی معماری',
     'about.engineer.name': 'بر تادیلات (Ber Tadilat)',
-    'about.engineer.title': 'بازسازی کامل خانه و طراحی معماری',
+    'about.engineer.title': 'نوسازی کامل و طراحی معماری',
     'about.engineer.edu': 'طراحی معماری سه‌بعدی و برنامه‌ریزی',
     'about.engineer.exp': 'پرتفوی گسترده پروژه‌های استانبول',
     'about.engineer.desc': 'بر تادیلات خدمات بازسازی کلید تحویل را برای واحدهای مسکونی، ویلایی و تجاری در بهترین مناطق استانبول ارائه می‌دهد. از ایده و انتخاب متریال تا تخریب، تأسیسات و نازک‌کاری دقیق، تمام مراحل با بودجه شفاف و تعهد کامل مدیریت می‌شود.',
@@ -1116,9 +1168,37 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true)
-    const saved = localStorage.getItem('language') as Language | null
-    if (saved && (saved === 'tr' || saved === 'en' || saved === 'ar' || saved === 'fa')) {
-      setLanguage(saved)
+    let initialLang: Language | null = null
+
+    if (typeof window !== 'undefined') {
+      try {
+        const urlParams = new URLSearchParams(window.location.search)
+        const urlLang = urlParams.get('lang') as Language | null
+        if (urlLang && (urlLang === 'tr' || urlLang === 'en' || urlLang === 'ar' || urlLang === 'fa')) {
+          initialLang = urlLang
+        }
+      } catch (e) {}
+    }
+
+    if (!initialLang && typeof localStorage !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('language') as Language | null
+        if (saved && (saved === 'tr' || saved === 'en' || saved === 'ar' || saved === 'fa')) {
+          initialLang = saved
+        }
+      } catch (e) {}
+    }
+
+    if (initialLang) {
+      setLanguage(initialLang)
+      try {
+        localStorage.setItem('language', initialLang)
+      } catch (e) {}
+    }
+
+    // Clean URL so ?lang= or #hash is never visible in address bar
+    if (typeof window !== 'undefined' && (window.location.search || window.location.hash)) {
+      window.history.replaceState(null, '', window.location.pathname)
     }
   }, [])
 

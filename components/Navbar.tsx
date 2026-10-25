@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from './LanguageProvider'
 import SafePhoneLink from './SafePhoneLink'
 import SafeWhatsAppButton from './SafeWhatsAppButton'
@@ -10,6 +10,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const manualScrollUntilRef = useRef(0)
 
   // All languages in order: TR, EN, AR, FA (Arabic between EN and FA)
   const ALL_LANGUAGES = [
@@ -26,17 +27,26 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
 
-      // Determine active section based on scroll position
-      const sections = ['home', 'about', 'how-we-work', 'services', 'gallery', 'contact', 'footer']
-      const scrollPosition = window.scrollY + 100
+      // If user recently clicked a nav link, preserve the target active state during smooth scroll animation
+      if (Date.now() < manualScrollUntilRef.current) {
+        return
+      }
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const element = document.getElementById(sections[i])
-        if (element && element.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i])
-          break
+      // Determine active section based on scroll position using exact viewport bounds
+      const sections = ['home', 'about', 'services', 'how-we-work', 'gallery', 'contact', 'footer']
+      let currentSection = sections[0]
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          if (rect.top <= 140) {
+            currentSection = sectionId
+          }
         }
       }
+
+      setActiveSection(currentSection)
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll() // Initial check
@@ -72,20 +82,25 @@ export default function Navbar() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
     setActiveSection(targetId)
+    manualScrollUntilRef.current = Date.now() + 1200
     const element = document.getElementById(targetId)
     if (element) {
-      const offsetTop = element.offsetTop - 80
+      const targetTop = element.getBoundingClientRect().top + window.scrollY - 80
       window.scrollTo({
-        top: offsetTop,
+        top: Math.max(0, targetTop),
         behavior: 'smooth',
       })
+    }
+    // Clean URL so no #section or ?lang is ever appended to address bar
+    if (typeof window !== 'undefined' && (window.location.hash || window.location.search)) {
+      window.history.replaceState(null, '', window.location.pathname)
     }
     setIsMobileMenuOpen(false)
   }
 
   // Check if current active section has a dark background
   const isDarkSection = (section: string) => {
-    return ['home', 'how-we-work', 'services', 'footer'].includes(section)
+    return ['home', 'services', 'contact', 'footer'].includes(section)
   }
 
   const isDark = !isScrolled || isMobileMenuOpen || isDarkSection(activeSection)
@@ -108,6 +123,7 @@ export default function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${getNavbarBg()}`}
+        dir="ltr"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`flex items-center justify-between transition-all duration-500 ${isScrolled ? 'h-16 sm:h-18 lg:h-20' : 'h-18 sm:h-20 lg:h-24'}`}>
@@ -127,12 +143,12 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Navigation Links */}
-            <nav aria-label="Ana Menü" className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-7">
+            <nav aria-label="Ana Menü" className="hidden lg:flex items-center gap-2 xl:gap-4 2xl:gap-6">
               {/* Home */}
               <a
                 href="#home"
                 onClick={(e) => handleNavClick(e, 'home')}
-                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                className={`relative py-2 text-[11px] xl:text-xs uppercase font-semibold tracking-[0.12em] xl:tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
                   activeSection === 'home'
                     ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
                     : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
@@ -148,7 +164,7 @@ export default function Navbar() {
               <a
                 href="#about"
                 onClick={(e) => handleNavClick(e, 'about')}
-                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                className={`relative py-2 text-[11px] xl:text-xs uppercase font-semibold tracking-[0.12em] xl:tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
                   activeSection === 'about'
                     ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
                     : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
@@ -160,27 +176,11 @@ export default function Navbar() {
                 }`} />
               </a>
 
-              {/* How We Work (Sürecimiz) */}
-              <a
-                href="#how-we-work"
-                onClick={(e) => handleNavClick(e, 'how-we-work')}
-                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
-                  activeSection === 'how-we-work'
-                    ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
-                    : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
-                }`}
-              >
-                {t('nav.howwework')}
-                <span className={`absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] transition-all duration-300 rounded-full ${
-                  activeSection === 'how-we-work' ? 'w-6 bg-amber-500' : 'w-0 group-hover:w-4 bg-amber-500/60'
-                }`} />
-              </a>
-
               {/* Services */}
               <a
                 href="#services"
                 onClick={(e) => handleNavClick(e, 'services')}
-                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                className={`relative py-2 text-[11px] xl:text-xs uppercase font-semibold tracking-[0.12em] xl:tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
                   activeSection === 'services'
                     ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
                     : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
@@ -192,11 +192,27 @@ export default function Navbar() {
                 }`} />
               </a>
 
+              {/* How We Work (Sürecimiz) */}
+              <a
+                href="#how-we-work"
+                onClick={(e) => handleNavClick(e, 'how-we-work')}
+                className={`relative py-2 text-[11px] xl:text-xs uppercase font-semibold tracking-[0.12em] xl:tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                  activeSection === 'how-we-work'
+                    ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
+                    : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
+                }`}
+              >
+                {t('nav.howwework')}
+                <span className={`absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] transition-all duration-300 rounded-full ${
+                  activeSection === 'how-we-work' ? 'w-6 bg-amber-500' : 'w-0 group-hover:w-4 bg-amber-500/60'
+                }`} />
+              </a>
+
               {/* Gallery */}
               <a
                 href="#gallery"
                 onClick={(e) => handleNavClick(e, 'gallery')}
-                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                className={`relative py-2 text-[11px] xl:text-xs uppercase font-semibold tracking-[0.12em] xl:tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
                   activeSection === 'gallery'
                     ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
                     : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
@@ -212,7 +228,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, 'contact')}
-                className={`relative py-2 text-xs uppercase font-semibold tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
+                className={`relative py-2 text-[11px] xl:text-xs uppercase font-semibold tracking-[0.12em] xl:tracking-[0.16em] whitespace-nowrap transition-all duration-300 group focus:outline-none ${
                   activeSection === 'contact'
                     ? isDark ? 'text-amber-400 font-bold' : 'text-amber-600 font-bold'
                     : isDark ? 'text-stone-300 hover:text-white' : 'text-stone-600 hover:text-stone-900'
@@ -338,6 +354,7 @@ export default function Navbar() {
               )}
               
               <button
+                type="button"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={`h-9 w-9 flex items-center justify-center rounded-xl transition-all duration-300 border focus:outline-none shrink-0 ${
                   isDark
@@ -370,137 +387,102 @@ export default function Navbar() {
 
       {/* Mobile Navigation Overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-40 bg-stone-950/95 backdrop-blur-lg flex flex-col justify-start sm:justify-center overflow-y-auto px-6 pt-24 pb-12">
-          <div className="flex flex-col space-y-2 max-w-sm mx-auto w-full text-center">
-            {/* Home */}
-            <a
-              href="#home"
-              onClick={(e) => handleNavClick(e, 'home')}
-              className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
-                activeSection === 'home'
-                  ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
-                  : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
-              }`}
-            >
-              {t('nav.home')}
-            </a>
+        <div className="lg:hidden fixed inset-0 z-40 bg-stone-950/98 backdrop-blur-2xl flex flex-col justify-between overflow-y-auto px-6 pt-24 pb-8" dir="ltr">
+          <div className="max-w-sm mx-auto w-full flex flex-col justify-between min-h-full">
+            {/* Minimalist Typographic Nav Links */}
+            <nav className="flex flex-col space-y-1 py-3">
+              {[
+                { id: 'home', label: t('nav.home') },
+                { id: 'about', label: t('nav.about') },
+                { id: 'services', label: t('nav.services') },
+                { id: 'how-we-work', label: t('nav.howwework') },
+                { id: 'gallery', label: t('nav.gallery') },
+                { id: 'contact', label: t('nav.contact') },
+              ].map((item) => {
+                const isActive = activeSection === item.id
+                return (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={(e) => handleNavClick(e, item.id)}
+                    className={`flex items-center justify-between py-3 px-4 rounded-xl text-base font-serif tracking-wide transition-all duration-200 ${
+                      isActive
+                        ? 'text-amber-400 font-bold bg-white/5 border border-amber-500/20'
+                        : 'text-stone-300 hover:text-white hover:bg-white/5 border border-transparent'
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    {isActive ? (
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                    ) : (
+                      <svg className="w-4 h-4 text-stone-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    )}
+                  </a>
+                )
+              })}
+            </nav>
 
-            {/* About */}
-            <a
-              href="#about"
-              onClick={(e) => handleNavClick(e, 'about')}
-              className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
-                activeSection === 'about'
-                  ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
-                  : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
-              }`}
-            >
-              {t('nav.about')}
-            </a>
+            {/* Bottom Actions: Simplified & Elegant */}
+            <div className="pt-6 border-t border-stone-800/80 space-y-3.5">
+              {/* WhatsApp & Call Buttons (Sleek Pair) */}
+              <div className="grid grid-cols-2 gap-3">
+                <SafeWhatsAppButton
+                  className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold text-xs tracking-wider uppercase transition-all shadow-lg shadow-green-500/20 active:scale-95 cursor-pointer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.372a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                  </svg>
+                  <span>WhatsApp</span>
+                </SafeWhatsAppButton>
 
-            {/* How We Work */}
-            <a
-              href="#how-we-work"
-              onClick={(e) => handleNavClick(e, 'how-we-work')}
-              className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
-                activeSection === 'how-we-work'
-                  ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
-                  : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
-              }`}
-            >
-              {t('nav.howwework')}
-            </a>
-
-            {/* Services */}
-            <a
-              href="#services"
-              onClick={(e) => handleNavClick(e, 'services')}
-              className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
-                activeSection === 'services'
-                  ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
-                  : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
-              }`}
-            >
-              {t('nav.services')}
-            </a>
-
-            {/* Gallery */}
-            <a
-              href="#gallery"
-              onClick={(e) => handleNavClick(e, 'gallery')}
-              className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
-                activeSection === 'gallery'
-                  ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
-                  : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
-              }`}
-            >
-              {t('nav.gallery')}
-            </a>
-
-            {/* Contact */}
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, 'contact')}
-              className={`block py-3 px-5 rounded-2xl text-xs sm:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 border ${
-                activeSection === 'contact'
-                  ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-lg shadow-amber-500/20'
-                  : 'text-stone-300 hover:text-white border-white/10 hover:border-white/20 bg-white/5'
-              }`}
-            >
-              {t('nav.contact')}
-            </a>
-
-            {/* Free Discovery Call CTA - Mobile Menu */}
-            <button
-              type="button"
-              onClick={() => {
-                setIsMobileMenuOpen(false)
-                triggerPhoneCall()
-              }}
-              className="w-full flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl text-sm sm:text-base font-black tracking-[0.15em] uppercase text-center transition-all duration-300 bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-xl shadow-amber-500/30 active:scale-95 cursor-pointer"
-            >
-              <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
-                <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
-              </svg>
-              <span>{t('hero.btnCall')}</span>
-            </button>
-            
-            {/* Mobile Menu Language Switcher */}
-            <div
-              dir="ltr"
-              className="p-1 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex items-center justify-center gap-1.5 mx-auto w-full max-w-xs select-none"
-              role="group"
-              aria-label="Dil seçenekleri"
-            >
-              {otherLanguages.map((target) => (
                 <button
-                  key={target.code}
                   type="button"
                   onClick={() => {
-                    setLanguage(target.code)
                     setIsMobileMenuOpen(false)
+                    triggerPhoneCall()
                   }}
-                  title={target.title}
-                  aria-label={target.title}
-                  className="flex-1 py-2 px-1.5 rounded-xl text-center font-bold tracking-wider transition-all duration-200 focus:outline-none touch-manipulation active:scale-95 bg-white/10 hover:bg-amber-500 text-white shadow-sm flex flex-col items-center justify-center"
+                  className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-extrabold text-xs tracking-wider uppercase transition-all shadow-lg shadow-amber-500/20 active:scale-95 cursor-pointer"
                 >
-                  <span className="text-xs font-bold">{target.label}</span>
-                  <span className="text-[10px] opacity-75 font-normal mt-0.5">({target.title})</span>
+                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                    <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
+                  </svg>
+                  <span>{t('nav.callNow')}</span>
                 </button>
-              ))}
-            </div>
+              </div>
 
-            {/* WhatsApp CTA Button */}
-            <div className="pt-4">
-              <SafeWhatsAppButton
-                className="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-green-500 hover:bg-green-600 text-white font-bold tracking-widest uppercase text-xs transition-all duration-300 shadow-lg shadow-green-500/20"
-                onClick={() => setIsMobileMenuOpen(false)}
+              {/* Minimal Language Switcher Segmented Control */}
+              <div
+                dir="ltr"
+                className="p-1 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center gap-1 select-none"
+                role="group"
+                aria-label="Dil seçenekleri"
               >
-                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.372a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                </svg>
-                <span>{t('hero.getQuote')}</span>
-              </SafeWhatsAppButton>
+                {ALL_LANGUAGES.map((target) => {
+                  const isCurrent = target.code === language
+                  return (
+                    <button
+                      key={target.code}
+                      type="button"
+                      onClick={() => {
+                        setLanguage(target.code)
+                        setIsMobileMenuOpen(false)
+                      }}
+                      title={target.title}
+                      aria-label={target.title}
+                      className={`flex-1 py-2 px-2 rounded-lg text-center text-xs font-bold tracking-wider transition-all duration-200 focus:outline-none ${
+                        isCurrent
+                          ? 'bg-amber-500 text-stone-950 shadow-sm'
+                          : 'text-stone-400 hover:text-white hover:bg-white/5'
+                      }`}
+                    >
+                      {target.label}
+                    </button>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>

@@ -59,18 +59,18 @@ export default function HowWeWork() {
   return (
     <section
       id="how-we-work"
-      className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-stone-950 transition-colors duration-300"
+      className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-stone-50 border-t border-stone-200/80 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 sm:mb-20 max-w-3xl mx-auto">
-          <span className="font-mono text-xs sm:text-sm tracking-[0.3em] text-amber-400 font-bold uppercase block mb-4">
+          <span className="font-mono text-xs sm:text-sm tracking-[0.3em] text-amber-600 font-bold uppercase block mb-4">
             {t('howwework.badge')}
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight font-serif">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight leading-tight font-serif">
             {t('howwework.title')}
           </h2>
-          <p className="mt-6 text-stone-400 text-base sm:text-lg leading-relaxed">
+          <p className="mt-6 text-stone-600 text-base sm:text-lg leading-relaxed">
             {t('howwework.subtitle')}
           </p>
         </div>
@@ -80,17 +80,17 @@ export default function HowWeWork() {
           {STEPS.map((step) => (
             <div
               key={step.key}
-              className="group relative bg-stone-900/90 rounded-2xl p-8 border border-stone-800/80 hover:border-amber-500/40 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/5 hover:-translate-y-1"
+              className="group relative bg-white rounded-2xl p-8 border border-stone-200/90 hover:border-amber-500/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-amber-500/5 hover:-translate-y-1"
             >
               {/* Step Icon */}
-              <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-400 mb-6 group-hover:bg-amber-500/20 group-hover:border-amber-500/40 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center text-amber-600 mb-6 group-hover:bg-amber-500 group-hover:text-stone-950 transition-all duration-300">
                 <span>{step.icon}</span>
               </div>
 
-              <h3 className="text-lg font-bold text-white mb-3 font-serif group-hover:text-amber-400 transition-colors duration-300">
+              <h3 className="text-lg font-bold text-stone-900 mb-3 font-serif group-hover:text-amber-600 transition-colors duration-300">
                 {t(`howwework.step.${step.key}.title`)}
               </h3>
-              <p className="text-sm text-stone-400 leading-relaxed">
+              <p className="text-sm text-stone-600 leading-relaxed">
                 {t(`howwework.step.${step.key}.desc`)}
               </p>
             </div>
@@ -98,8 +98,8 @@ export default function HowWeWork() {
         </div>
 
         {/* Bottom callout */}
-        <div className="mt-16 rounded-2xl border border-amber-500/20 bg-amber-500/5 p-8 text-center max-w-4xl mx-auto">
-          <p className="text-stone-300 text-base sm:text-lg leading-relaxed">
+        <div className="mt-16 rounded-2xl border border-amber-500/30 bg-amber-500/[0.08] p-8 text-center max-w-4xl mx-auto">
+          <p className="text-stone-800 text-base sm:text-lg leading-relaxed font-medium">
             {t('howwework.callout')}
           </p>
         </div>
