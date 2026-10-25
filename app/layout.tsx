@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   
   // Temel SEO
   title: {
-    default: 'Ber Tadilat | İstanbul Anahtar Teslim Üst Segment Renovasyon & Tadilat',
+    default: 'Ber Tadilat | İstanbul Anahtar Teslim Komple Ev Tadilatı ve Dekorasyon',
     template: '%s | Ber Tadilat',
   },
   description: 'İstanbul\'da ev, iş yeri ve her türlü mekân için profesyonel tadilat, dekorasyon, restorasyon, boya badana, alçıpan, fayans, mutfak dekorasyon, mutfak tadilat, dekorasyon tavan, tadilat işleri, dekorasyon tadilat, parke, tesisat, akıllı ev sistemleri, ısı-ses yalıtımı ve dış cephe hizmetleri. Dekorasyon firmaları arasında güvenilir çözümler. 7/24 hizmet, yerinde keşif ve hızlı teklif imkânı.',

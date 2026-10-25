@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useLanguage } from './LanguageProvider'
 import SafePhoneLink from './SafePhoneLink'
 import SafeWhatsAppButton from './SafeWhatsAppButton'
+import { triggerPhoneCall } from '@/lib/safeContact'
 
 export default function Navbar() {
   const { t, language, setLanguage } = useLanguage()
@@ -244,18 +245,18 @@ export default function Navbar() {
                 <span>{t('nav.installmentShort')}</span>
               </a>
 
-              {/* Pre-evaluation CTA - Prominent & Large */}
-              <a
-                href="#on-degerlendirme"
-                onClick={(e) => handleNavClick(e, 'on-degerlendirme')}
-                className="inline-flex items-center gap-2 px-5 xl:px-6 py-2 xl:py-2.5 rounded-full font-black text-xs xl:text-sm uppercase tracking-wider whitespace-nowrap shrink-0 transition-all duration-300 bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-md shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/40 hover:scale-105 active:scale-95"
+              {/* Free Discovery Call CTA */}
+              <button
+                type="button"
+                onClick={() => triggerPhoneCall()}
+                className="inline-flex items-center gap-2 px-4 xl:px-5 py-2 xl:py-2.5 rounded-full font-black text-xs xl:text-sm uppercase tracking-wider whitespace-nowrap shrink-0 transition-all duration-300 bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-md shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/40 hover:scale-105 active:scale-95 cursor-pointer"
+                title={t('hero.btnCall')}
               >
-                <span className="w-2 h-2 rounded-full shrink-0 bg-stone-950 animate-pulse" />
-                <span className="whitespace-nowrap font-extrabold">{t('nav.quote')}</span>
-                <svg className="w-3.5 h-3.5 fill-none stroke-current" strokeWidth={2.5} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
+                  <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
                 </svg>
-              </a>
+                <span className="whitespace-nowrap font-extrabold">{t('nav.freeDiscoveryCall')}</span>
+              </button>
               
               {/* Vertical separator */}
               <span className={`h-4 w-[1px] shrink-0 transition-colors duration-500 ${isDark ? 'bg-white/20' : 'bg-stone-200'}`} />
@@ -479,14 +480,20 @@ export default function Navbar() {
               {t('nav.contact')}
             </a>
 
-            {/* Pre-evaluation CTA - Prominent & Large */}
-            <a
-              href="#on-degerlendirme"
-              onClick={(e) => handleNavClick(e, 'on-degerlendirme')}
-              className="block py-4 px-6 rounded-2xl text-sm sm:text-base font-black tracking-[0.15em] uppercase text-center transition-all duration-300 bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-xl shadow-amber-500/30 active:scale-95"
+            {/* Free Discovery Call CTA - Mobile Menu */}
+            <button
+              type="button"
+              onClick={() => {
+                setIsMobileMenuOpen(false)
+                triggerPhoneCall()
+              }}
+              className="w-full flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl text-sm sm:text-base font-black tracking-[0.15em] uppercase text-center transition-all duration-300 bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-xl shadow-amber-500/30 active:scale-95 cursor-pointer"
             >
-              {t('nav.quote')}
-            </a>
+              <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
+              </svg>
+              <span>{t('hero.btnCall')}</span>
+            </button>
 
             {/* Installment Badge - Mobile Menu */}
             <div className="flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold text-center">
