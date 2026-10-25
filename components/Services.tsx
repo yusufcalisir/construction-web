@@ -116,10 +116,10 @@ export default function Services() {
               {t('services.banner.desc')}
             </p>
             <a
-              href="#on-degerlendirme"
+              href="#contact"
               onClick={(e) => {
                 e.preventDefault()
-                const el = document.getElementById('on-degerlendirme')
+                const el = document.getElementById('contact')
                 if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' })
               }}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-12 py-3.5 sm:py-5 rounded-full font-black text-xs sm:text-base tracking-wider uppercase bg-amber-500 hover:bg-amber-400 text-stone-950 transition-all duration-300 shadow-xl shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105 active:scale-95 cursor-pointer border-2 border-amber-400"

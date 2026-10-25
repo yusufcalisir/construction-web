@@ -6,7 +6,6 @@ import About from '@/components/About'
 import HowWeWork from '@/components/HowWeWork'
 import Services from '@/components/Services'
 import ProjectGallery from '@/components/ProjectGallery'
-import ProjectEvaluation from '@/components/ProjectEvaluation'
 import Contact from '@/components/Contact'
 import BrandMarquee from '@/components/BrandMarquee'
 import WhyBer from '@/components/WhyBer'
@@ -21,7 +20,6 @@ export default function Home() {
       <HowWeWork />
       <Services />
       <ProjectGallery />
-      <ProjectEvaluation />
       <Contact />
       <BrandMarquee />
       <WhyBer />

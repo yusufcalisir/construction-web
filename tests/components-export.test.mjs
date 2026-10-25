@@ -10,7 +10,6 @@ const REQUIRED_PAGE_COMPONENTS = [
   'HowWeWork.tsx',
   'Services.tsx',
   'ProjectGallery.tsx',
-  'ProjectEvaluation.tsx',
   'Contact.tsx',
   'BrandMarquee.tsx',
   'Footer.tsx',
@@ -43,7 +42,6 @@ test('Components: app/page.tsx imports and renders all required section componen
     'HowWeWork',
     'Services',
     'ProjectGallery',
-    'ProjectEvaluation',
     'Contact',
     'BrandMarquee',
     'WhyBer',
@@ -104,23 +102,8 @@ test('Components: WhyBer renders 3 customer reviews with 5 stars and no reviewer
   assert.ok(langContent.includes("'whyber.review3.name': 'Büşra A.'"), 'Reviewer 3 name should be Büşra A.')
 })
 
-test('Components: ProjectEvaluation enforces 300K+ threshold, triggers GTM event, and api/lead targets livangur94@gmail.com', () => {
-  const evalContent = fs.readFileSync('components/ProjectEvaluation.tsx', 'utf8')
+test('Components: api/lead targets livangur94@gmail.com', () => {
   const apiContent = fs.readFileSync('app/api/lead/route.ts', 'utf8')
-
-  // Ensure 300.000 TL+ notice and options exist
-  assert.ok(
-    evalContent.includes('300.000 TL ve üzeri') || evalContent.includes('300.000'),
-    'ProjectEvaluation must explicitly state the 300.000 TL+ criteria'
-  )
-  assert.ok(
-    evalContent.includes('qualified_project_lead'),
-    'ProjectEvaluation must trigger the qualified_project_lead GTM dataLayer event'
-  )
-  assert.ok(
-    evalContent.includes('id="on-degerlendirme"'),
-    'ProjectEvaluation must have section id="on-degerlendirme"'
-  )
 
   // Ensure lead API route targets livangur94@gmail.com
   assert.ok(

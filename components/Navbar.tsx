@@ -5,12 +5,10 @@ import { useLanguage } from './LanguageProvider'
 import SafePhoneLink from './SafePhoneLink'
 import SafeWhatsAppButton from './SafeWhatsAppButton'
 import { triggerPhoneCall } from '@/lib/safeContact'
-
 export default function Navbar() {
   const { t, language, setLanguage } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
   const [activeSection, setActiveSection] = useState('home')
 
   // All languages in order: TR, EN, AR, FA (Arabic between EN and FA)
@@ -228,53 +226,25 @@ export default function Navbar() {
             </nav>
 
             {/* Desktop Actions */}
-            <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0 ml-auto pl-3 xl:pl-6">
-              {/* Installment Badge - Desktop */}
-              <a
-                href="#on-degerlendirme"
-                onClick={(e) => handleNavClick(e, 'on-degerlendirme')}
-                className={`hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide border transition-all duration-300 hover:scale-105 select-none ${
-                  isDark
-                    ? 'bg-amber-500/10 border-amber-500/30 text-amber-300 hover:bg-amber-500/20 hover:border-amber-400/50'
-                    : 'bg-amber-50 border-amber-300/80 text-amber-800 hover:bg-amber-100 hover:border-amber-400'
-                }`}
-              >
-                <svg className="w-3.5 h-3.5 text-amber-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
-                </svg>
-                <span>{t('nav.installmentShort')}</span>
-              </a>
-
-              {/* Free Discovery Call CTA */}
+            <div className="hidden lg:flex items-center gap-2 xl:gap-2.5 shrink-0 ml-auto pl-2 xl:pl-4">
+              {/* Free Discovery Call CTA ("Hemen Ara") */}
               <button
                 type="button"
                 onClick={() => triggerPhoneCall()}
-                className="inline-flex items-center gap-2 px-4 xl:px-5 py-2 xl:py-2.5 rounded-full font-black text-xs xl:text-sm uppercase tracking-wider whitespace-nowrap shrink-0 transition-all duration-300 bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-md shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/40 hover:scale-105 active:scale-95 cursor-pointer"
-                title={t('hero.btnCall')}
+                className="inline-flex items-center gap-1.5 px-3.5 xl:px-4 py-2 xl:py-2.5 rounded-full font-bold text-xs uppercase tracking-wider whitespace-nowrap shrink-0 transition-all duration-300 bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-md shadow-amber-500/25 hover:shadow-lg hover:shadow-amber-500/35 hover:scale-105 active:scale-95 cursor-pointer"
+                title={t('nav.callNow')}
               >
                 <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
                   <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
                 </svg>
-                <span className="whitespace-nowrap font-extrabold">{t('nav.freeDiscoveryCall')}</span>
+                <span className="whitespace-nowrap font-extrabold">{t('nav.callNow')}</span>
               </button>
               
               {/* Vertical separator */}
-              <span className={`h-4 w-[1px] shrink-0 transition-colors duration-500 ${isDark ? 'bg-white/20' : 'bg-stone-200'}`} />
+              <span className={`h-4 w-[1px] shrink-0 transition-colors duration-500 ${isDark ? 'bg-white/20' : 'bg-stone-300'}`} />
 
               <div className="flex items-center gap-2 xl:gap-2.5 shrink-0">
-                {/* Call Button */}
-                <SafePhoneLink
-                  variant="icon-button"
-                  iconSize="w-4 h-4"
-                  className={`h-9 w-9 xl:h-10 xl:w-10 flex items-center justify-center rounded-xl transition-all duration-300 border focus:outline-none shrink-0 ${
-                    isDark
-                      ? 'text-white border-white/20 bg-white/10 hover:bg-white/20 hover:border-white/30 shadow-md backdrop-blur-sm'
-                      : 'text-stone-700 border-stone-200 bg-white hover:bg-stone-50 hover:text-stone-950 shadow-sm'
-                  }`}
-                  ariaLabel="Call us"
-                />
-                
-                {/* Modern Capsule Language Switcher */}
+                {/* Modern Capsule Language Switcher ("Dil") */}
                 <div
                   dir="ltr"
                   className={`h-9 xl:h-10 inline-flex items-center p-0.5 xl:p-1 rounded-xl border backdrop-blur-md transition-all duration-300 select-none shadow-sm shrink-0 ${
@@ -494,14 +464,6 @@ export default function Navbar() {
               </svg>
               <span>{t('hero.btnCall')}</span>
             </button>
-
-            {/* Installment Badge - Mobile Menu */}
-            <div className="flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold text-center">
-              <svg className="w-4 h-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
-              </svg>
-              <span>{t('hero.installment')}</span>
-            </div>
             
             {/* Mobile Menu Language Switcher */}
             <div
