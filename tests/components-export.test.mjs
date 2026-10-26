@@ -10,6 +10,7 @@ const REQUIRED_PAGE_COMPONENTS = [
   'HowWeWork.tsx',
   'Services.tsx',
   'ProjectGallery.tsx',
+  'FAQ.tsx',
   'Contact.tsx',
   'BrandMarquee.tsx',
   'Footer.tsx',
@@ -43,6 +44,7 @@ test('Components: app/page.tsx imports and renders all required section componen
     'HowWeWork',
     'WhyBer',
     'ProjectGallery',
+    'FAQ',
     'Contact',
     'BrandMarquee',
     'Footer'

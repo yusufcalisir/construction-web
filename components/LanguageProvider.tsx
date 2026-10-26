@@ -284,6 +284,29 @@ const translations: Record<Language, Record<string, string>> = {
     'howwework.step.delivery.title': 'Anahtar Teslim ve Destek',
     'howwework.step.delivery.desc': 'Projenizi teslim alır, tüm garanti belgelerini edinirsiniz. Teslim sonrası destek kapsamında kalırsınız.',
     'howwework.callout': 'Her proje bir yolculuktur. Biz bu yolculuğu şeffaf, öngörülebilir ve stressiz hale getiriyoruz, siz sadece hayalinize odaklanın.',
+
+    // FAQ
+    'faq.badge': 'SIKÇA SORULAN SORULAR',
+    'faq.title': 'Tadilat Sürecine Dair Merak Edilenler',
+    'faq.subtitle': 'İstanbul genelinde anahtar teslim komple tadilat ve dekorasyon projelerimiz hakkında en çok sorulan soruların yanıtları.',
+    'faq.q1': 'İstanbul\'da anahtar teslim tadilat ne kadar sürer?',
+    'faq.a1': 'Daire ve villa büyüklüğüne bağlı olarak komple anahtar teslim renovasyon projeleri ortalama 3 ila 6 hafta arasında tamamlanmaktadır. Proje başında iş takvimi yazılı taahhüt edilir.',
+    'faq.q2': 'Tadilat öncesi yerinde keşif ve 3D mimari projelendirme yapıyor musunuz?',
+    'faq.a2': 'Evet, İstanbul\'un tüm ilçelerinde yerinde keşif gerçekleştiriyor, ihtiyaçlarınıza özel 3D mimari görselleştirme ve detaylı maliyet analizi sunuyoruz.',
+    'faq.q3': 'Hangi tadilat ve dekorasyon hizmetlerini sunuyorsunuz?',
+    'faq.a3': 'Mutfak ve banyo renovasyonu, salon yenileme, lüks iç mimari tasarım, boya badana, alçıpan asma tavan, seramik/fayans döşeme, parke kaplama, elektrik/su tesisatı ve akıllı ev sistemleri hizmetlerini uzman mimari ve teknik denetimde sunuyoruz.',
+    'faq.q4': 'Yapılan tadilat ve renovasyon işlerinde garanti veriyor musunuz?',
+    'faq.a4': 'Tüm uygulamalarımızda 1. sınıf sertifikalı malzemeler kullanılır ve işçilik dahil tüm anahtar teslim tadilat projelerimiz resmi sözleşmeyle garanti altına alınır.',
+    'faq.q5': 'Tadilat maliyeti ve bütçesi nasıl belirlenir?',
+    'faq.a5': 'Keşif sonrası kullanılacak malzeme kalitesi, metrekare ve yapılacak işlerin listesi çıkarılarak şeffaf bütçe garantili sabit fiyat teklifi hazırlanır. Sürpriz maliyetler oluşmaz.',
+    'faq.askExpert': 'Başka bir sorunuz mu var? Uzman mimarımızla hemen görüşün.',
+    'faq.btnWhatsApp': 'WhatsApp ile Sorun',
+    'faq.btnCall': 'Mimarımızı Arayın',
+
+    // Local SEO Districts
+    'contact.districts.badge': 'HİZMET BÖLGELERİMİZ',
+    'contact.districts.title': 'İstanbul’un Tüm İlçelerinde Yerinde Keşif & Anahtar Teslim Uygulama',
+    'contact.districts.desc': 'Kadıköy, Beşiktaş, Sarıyer, Bakırköy, Ataşehir, Üsküdar, Şişli, Beyoğlu, Maltepe ve tüm İstanbul ilçelerinde uzman mimari ekibimizle hizmetinizdeyiz.',
   },
   
   en: {
@@ -556,6 +579,29 @@ const translations: Record<Language, Record<string, string>> = {
     'howwework.step.delivery.title': 'Turnkey Handover and Support',
     'howwework.step.delivery.desc': 'You receive your project and all warranty documents. You remain within post-handover support coverage.',
     'howwework.callout': 'Every project is a journey. We make that journey transparent, predictable and stress-free, you just focus on your vision.',
+
+    // FAQ
+    'faq.badge': 'FREQUENTLY ASKED QUESTIONS',
+    'faq.title': 'Frequently Asked Questions About Renovation',
+    'faq.subtitle': 'Answers to the most common questions about our turnkey complete renovation and decoration projects across Istanbul.',
+    'faq.q1': 'How long does a turnkey renovation take in Istanbul?',
+    'faq.a1': 'Depending on the size of the apartment or villa, complete turnkey renovation projects are typically completed within 3 to 6 weeks. A written schedule is committed at the beginning of the project.',
+    'faq.q2': 'Do you provide on-site survey and 3D architectural design before renovation?',
+    'faq.a2': 'Yes, we carry out on-site surveys in all districts of Istanbul, providing custom 3D architectural visualisations and detailed cost analysis tailored to your needs.',
+    'faq.q3': 'Which renovation and decoration services do you provide?',
+    'faq.a3': 'We offer kitchen and bathroom renovations, living room refurbishment, luxury interior design, painting, drywall false ceilings, ceramic/tile flooring, parquet installation, electrical/plumbing installations and smart home systems under expert architectural and technical supervision.',
+    'faq.q4': 'Do you provide a warranty for the renovation works performed?',
+    'faq.a4': 'First-class certified materials are used in all our applications, and all turnkey renovation projects, including workmanship, are protected under a formal written contract and warranty.',
+    'faq.q5': 'How is the renovation cost and budget determined?',
+    'faq.a5': 'Following on-site discovery, an itemised fixed-price quotation with transparent budget guarantee is prepared based on material quality, square metres, and the scope of work. No surprise extra costs occur.',
+    'faq.askExpert': 'Have more questions? Consult directly with our expert architect.',
+    'faq.btnWhatsApp': 'Ask on WhatsApp',
+    'faq.btnCall': 'Call Our Architect',
+
+    // Local SEO Districts
+    'contact.districts.badge': 'SERVICE REGIONS',
+    'contact.districts.title': 'On-Site Survey & Turnkey Renovation Across All Districts of Istanbul',
+    'contact.districts.desc': 'We serve with our expert architectural team in Kadıköy, Beşiktaş, Sarıyer, Bakırköy, Ataşehir, Üsküdar, Şişli, Beyoğlu, Maltepe and all Istanbul districts.',
   },
   
   ar: {
@@ -864,6 +910,29 @@ const translations: Record<Language, Record<string, string>> = {
     'overview.install.item2': 'تمديدات المياه والصرف والغاز الطبيعي',
     'overview.install.item3': 'أنظمة المنازل الذكية والأتمتة الكاملة',
     'overview.footer': 'من تجديد غرفة واحدة وحتى إعادة تأهيل مبنى كامل، نقدم حلول تسليم مفتاح تناسب جميع المشروعات. اتصل بنا الآن لتحديد موعد معاينة وتنسيق المشروع.',
+
+    // FAQ
+    'faq.badge': 'الأسئلة الشائعة',
+    'faq.title': 'كل ما تود معرفته عن مراحل التجديد',
+    'faq.subtitle': 'إجابات على الأسئلة الأكثر شيوعاً حول مشاريع التجديد والديكور تسليم مفتاح في جميع أنحاء إسطنبول.',
+    'faq.q1': 'كم يستغرق التجديد الشامل تسليم مفتاح في إسطنبول؟',
+    'faq.a1': 'اعتماداً على مساحة الشقة أو الفيلا، تكتمل مشاريع التجديد الشامل تسليم مفتاح في غضون 3 إلى 6 أسابيع تقريباً. نلتزم بجدول زمني رسمي ومكتوب في بداية المشروع.',
+    'faq.q2': 'هل تقدمون خدمة المعاينة الميدانية والتصميم المعماري ثلاثي الأبعاد قبل البدء؟',
+    'faq.a2': 'نعم، نقوم بزيارة ميدانية ومعاينة في جميع مناطق إسطنبول، ونقدم تصوراً معمارياً ثلاثي الأبعاد وتحليلاً دقيقاً ومفصلاً للتكاليف وفق احتياجاتكم.',
+    'faq.q3': 'ما هي خدمات التجديد والديكور التي تقدمونها؟',
+    'faq.a3': 'نقدم تجديد المطابخ والحمامات، وتجديد غرف المعيشة، والتصميم الداخلي الفاخر، والدهانات، والأسقف المعلقة من الجبس بورد، وتركيب السيراميك والباركيه، وتمديدات الكهرباء والسباكة، وأنظمة المنازل الذكية تحت إشراف هندسي ومعماري دقيق.',
+    'faq.q4': 'هل تقدمون ضماناً على أعمال التجديد والترميم المنجزة؟',
+    'faq.a4': 'نستخدم مواد معتمدة من الدرجة الأولى في جميع أعمالنا، وتكون جميع مشاريع التجديد تسليم مفتاح، بما في ذلك جودة المصنعية، محمية بعقد رسمي وضمان معتمد.',
+    'faq.q5': 'كيف يتم تحديد تكلفة وميزانية التجديد؟',
+    'faq.a5': 'بعد المعاينة الميدانية، يتم تحديد جودة المواد والمساحة وقائمة الأعمال المطلوبة، وإعداد عرض أسعار بسعر ثابت وميزانية شفافة مضمونة بدون أي تكاليف خفية أو مفاجئة.',
+    'faq.askExpert': 'هل لديك سؤال آخر؟ استشر مهندسنا المعماري مباشرة الآن.',
+    'faq.btnWhatsApp': 'اسأل عبر واتساب',
+    'faq.btnCall': 'اتصل بمهندسنا',
+
+    // Local SEO Districts
+    'contact.districts.badge': 'مناطق الخدمة',
+    'contact.districts.title': 'معاينة ميدانية وتنفيذ تسليم مفتاح في جميع أحياء ومناطق إسطنبول',
+    'contact.districts.desc': 'نحن في خدمتكم مع فريقنا المعماري المتخصص في قاضي كوي، بشكتاش، ساريير، باكركوي، أتاشهير، أوسكودار، شيشلي، بيوغلو، مالتبه وكافة مناطق إسطنبول.',
   },
   
   fa: {
@@ -1159,6 +1228,29 @@ const translations: Record<Language, Record<string, string>> = {
     'overview.install.item2': 'لوله‌کشی آب، فاضلاب و گاز',
     'overview.install.item3': 'هوشمندسازی ساختمان و اتوماسیون خانگی',
     'overview.footer': 'از بازسازی یک اتاق تا نوسازی کامل ساختمان و نما، پروژه‌های شما را با بالاترین کیفیت و به‌صورت کلید تحویل اجرا می‌کنیم. جهت بازدید و برآورد رایگان با ما تماس بگیرید.',
+
+    // FAQ
+    'faq.badge': 'پرسش‌های متداول',
+    'faq.title': 'پاسخ به پرسش‌های شما درباره بازسازی',
+    'faq.subtitle': 'پاسخ به سوالات پرتکرار پیرامون پروژه‌های بازسازی کامل و دکوراسیون کلید تحویل در سراسر استانبول.',
+    'faq.q1': 'بازسازی کامل کلید تحویل در استانبول چقدر زمان می‌برد؟',
+    'faq.a1': 'بسته به متراژ آپارتمان یا ویلا، پروژه‌های بازسازی کامل کلید تحویل معمولاً بین ۳ تا ۶ هفته تکمیل می‌شوند. زمان‌بندی دقیق در ابتدای پروژه به صورت مکتوب تعهد می‌گردد.',
+    'faq.q2': 'آیا قبل از شروع بازسازی، بازدید حضوری و طراحی سه‌بعدی معماری انجام می‌دهید؟',
+    'faq.a2': 'بله، در کلیه مناطق استانبول بازدید و کارشناسی حضوری انجام داده و طرح‌های سه‌بعدی معماری اختصاصی همراه با برآورد دقیق و شفاف هزینه‌ها ارائه می‌دهیم.',
+    'faq.q3': 'چه خدماتی در زمینه بازسازی و دکوراسیون ارائه می‌دهید؟',
+    'faq.a3': 'خدمات بازسازی آشپزخانه و حمام، نوسازی سالن پذیرایی، طراحی داخلی لوکس، نقاشی ساختمان، کناف و سقف کاذب، کاشی و سرامیک، پارکت، تاسیسات برق و لوله‌کشی و سیستم‌های خانه هوشمند را تحت نظارت تخصصی مهندسی ارائه می‌دهیم.',
+    'faq.q4': 'آیا برای امور بازسازی و تغییر دکوراسیون ضمانت ارائه می‌دهید؟',
+    'faq.a4': 'در تمامی پروژه‌ها از بهترین مصالح دارای استاندارد درجه یک استفاده شده و کلیه خدمات کلید تحویل شامل مصالح و دستمزد، تحت پوشش قرارداد رسمی و ضمانت‌نامه کتبی قرار می‌گیرند.',
+    'faq.q5': 'هزینه و بودجه بازسازی چگونه تعیین می‌شود؟',
+    'faq.a5': 'پس از بازدید، با توجه به متراژ، کیفیت مصالح انتخابی و فهرست دقیق خدمات، پیش‌فاکتور شفاف با قیمت مقطوع و بدون هزینه‌های پیش‌بینی‌نشده تقدیم می‌شود.',
+    'faq.askExpert': 'سوال دیگری دارید؟ مستقیماً با معمار ارشد ما مشورت کنید.',
+    'faq.btnWhatsApp': 'پرسش در واتس‌اپ',
+    'faq.btnCall': 'تماس با معمار ما',
+
+    // Local SEO Districts
+    'contact.districts.badge': 'مناطق تحت پوشش',
+    'contact.districts.title': 'بازدید حضوری و اجرای کلید تحویل در تمامی مناطق استانبول',
+    'contact.districts.desc': 'با تیم مجرب مهندسی و معماری خود در کادیکوی، بشیکتاش، ساری‌یر، باکیرکوی، آتاشهیر، اسکودار، شیشلی، بی‌اوغلو، مال‌تپه و کلیه مناطق استانبول در خدمت شما هستیم.',
   },
 }
 

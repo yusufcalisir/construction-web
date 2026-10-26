@@ -220,6 +220,66 @@ export default function Contact() {
           </div>
         </div>
 
+        {/* Local SEO Service Districts Badges */}
+        <div className="mt-14 sm:mt-16 pt-12 border-t border-stone-800/80 text-center">
+          <span className="font-mono text-xs tracking-[0.25em] text-amber-500 font-bold uppercase block mb-2">
+            {t('contact.districts.badge')}
+          </span>
+          <h3 className="text-xl sm:text-2xl font-bold text-white font-serif mb-3">
+            {t('contact.districts.title')}
+          </h3>
+          <p className="text-stone-400 text-xs sm:text-sm max-w-2xl mx-auto mb-7 leading-relaxed">
+            {t('contact.districts.desc')}
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 max-w-4xl mx-auto">
+            {[
+              'Kadıköy',
+              'Beşiktaş',
+              'Sarıyer',
+              'Bakırköy',
+              'Ataşehir',
+              'Üsküdar',
+              'Şişli',
+              'Beyoğlu',
+              'Maltepe',
+              'Beykoz',
+              'Kartal',
+              'Pendik',
+              'Tuzla',
+              'Zeytinburnu',
+              'Fatih',
+              'Eyüpsultan',
+              'Başakşehir',
+              'Tüm İstanbul',
+            ].map((district) => (
+              <span
+                key={district}
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-stone-950/70 border border-stone-800 hover:border-amber-500/40 text-stone-300 hover:text-amber-400 text-xs font-medium transition-all duration-200"
+              >
+                <svg
+                  className="w-3 h-3 text-amber-500/70 shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                {district}
+              </span>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   )
