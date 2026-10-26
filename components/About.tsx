@@ -14,14 +14,14 @@ export default function About() {
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
-        <div className="max-w-2xl mb-14">
-          <span className="font-mono text-xs tracking-[0.3em] text-amber-600 font-bold uppercase block mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <span className="font-mono text-xs sm:text-sm tracking-[0.3em] text-amber-600 font-bold uppercase block mb-4">
             {t('about.badge')}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight leading-tight font-serif mb-6">
             {t('about.title')}
           </h2>
-          <p className="text-stone-600 leading-relaxed text-base sm:text-lg">
+          <p className="text-stone-600 leading-relaxed text-base sm:text-lg max-w-2xl mx-auto">
             {t('about.description')}
           </p>
         </div>
