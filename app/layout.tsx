@@ -9,12 +9,14 @@ import WhatsAppWidget from '@/components/WhatsAppWidget'
 const inter = Inter({ 
   subsets: ['latin', 'latin-ext'],
   variable: '--font-inter',
+  display: 'swap',
 })
 
 const playfair = Playfair_Display({
   subsets: ['latin', 'latin-ext'],
   variable: '--font-playfair',
   weight: ['400', '500', '600', '700', '800', '900'],
+  display: 'swap',
 })
 
 const baseUrl = 'https://bertadilat.com' // Domain ayarlandıktan sonra güncellenecek

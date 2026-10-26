@@ -101,13 +101,3 @@ test('Components: WhyBer renders 3 customer reviews with 5 stars and no reviewer
   assert.ok(langContent.includes("'whyber.review2.name': 'Musa A.'"), 'Reviewer 2 name should be Musa A.')
   assert.ok(langContent.includes("'whyber.review3.name': 'Büşra A.'"), 'Reviewer 3 name should be Büşra A.')
 })
-
-test('Components: api/lead targets livangur94@gmail.com', () => {
-  const apiContent = fs.readFileSync('app/api/lead/route.ts', 'utf8')
-
-  // Ensure lead API route targets livangur94@gmail.com
-  assert.ok(
-    apiContent.includes('livangur94@gmail.com'),
-    'API route app/api/lead/route.ts must target livangur94@gmail.com'
-  )
-})

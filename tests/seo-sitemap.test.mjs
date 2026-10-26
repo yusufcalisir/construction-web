@@ -119,3 +119,26 @@ test('SEO: Image alt tags are descriptive and avoid generic fallbacks', () => {
     'ProjectGallery should define contextual project descriptions for image SEO'
   )
 })
+
+test('Analytics & Tag Manager: GTM and Google Analytics IDs must remain strictly preserved', () => {
+  const layoutContent = fs.readFileSync('app/layout.tsx', 'utf8')
+
+  // GTM Container ID
+  assert.ok(
+    layoutContent.includes('GTM-MMZXVCDS'),
+    'Google Tag Manager container ID (GTM-MMZXVCDS) must not be altered or removed'
+  )
+
+  // GA4 Measurement ID
+  assert.ok(
+    layoutContent.includes('G-53L3SGSVNJ'),
+    'Google Analytics measurement ID (G-53L3SGSVNJ) must not be altered or removed'
+  )
+
+  // Google Tag / Ads ID
+  assert.ok(
+    layoutContent.includes('GT-WPL8SSW9'),
+    'Google Ads / Google Tag ID (GT-WPL8SSW9) must not be altered or removed'
+  )
+})
+

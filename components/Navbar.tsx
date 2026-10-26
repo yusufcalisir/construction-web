@@ -79,6 +79,17 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  // Close mobile menu on Escape key press for accessibility
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isMobileMenuOpen])
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
     setActiveSection(targetId)

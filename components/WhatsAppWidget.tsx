@@ -84,6 +84,17 @@ export default function WhatsAppWidget() {
     }
   }, [])
 
+  // Close WhatsApp popup on Escape key press for accessibility
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isOpen])
+
   const handleConnect = () => {
     openWhatsApp()
   }
@@ -132,7 +143,12 @@ export default function WhatsAppWidget() {
 
       {/* Chat Popup */}
       {isOpen && (
-        <div className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-80 md:w-96 max-w-sm bg-white rounded-lg shadow-2xl overflow-hidden animate-[slideUp_0.3s_ease-out]">
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={t('whatsapp.title')}
+          className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-80 md:w-96 max-w-sm bg-white rounded-lg shadow-2xl overflow-hidden animate-[slideUp_0.3s_ease-out]"
+        >
           {/* Header */}
           <div className="bg-[#075E54] px-4 py-3 flex items-center gap-3">
             <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-white/20 flex items-center justify-center">
