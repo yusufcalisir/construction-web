@@ -139,7 +139,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`flex items-center justify-between transition-all duration-500 ${isScrolled ? 'h-16 sm:h-18 lg:h-20' : 'h-18 sm:h-20 lg:h-24'}`}>
             {/* Logo */}
-            <div className="flex-shrink-0 mr-2 sm:mr-4 lg:mr-6 xl:mr-8 whitespace-nowrap">
+            <div className="flex-shrink-0 whitespace-nowrap">
               <a
                 href="#home"
                 onClick={(e) => handleNavClick(e, 'home')}
@@ -154,7 +154,7 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Navigation Links */}
-            <nav aria-label="Ana Menü" className="hidden lg:flex items-center gap-2 xl:gap-4 2xl:gap-6">
+            <nav aria-label="Ana Menü" className="hidden lg:flex items-center justify-center mx-auto px-2 xl:px-4 gap-2 xl:gap-3.5 2xl:gap-5">
               {/* Home */}
               <a
                 href="#home"
@@ -253,7 +253,7 @@ export default function Navbar() {
             </nav>
 
             {/* Desktop Actions */}
-            <div className="hidden lg:flex items-center gap-2 xl:gap-2.5 shrink-0 ml-auto pl-2 xl:pl-4">
+            <div className="hidden lg:flex items-center gap-2 xl:gap-2.5 shrink-0">
               {/* Free Discovery Call CTA ("Hemen Ara") */}
               <button
                 type="button"
