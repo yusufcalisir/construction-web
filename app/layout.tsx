@@ -476,15 +476,15 @@ const faqSchema = {
       name: 'İstanbul\'da anahtar teslim tadilat ne kadar sürer?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Daire ve villa büyüklüğüne bağlı olarak komple anahtar teslim renovasyon projeleri ortalama 3 ila 6 hafta arasında tamamlanmaktadır. Proje başında iş takvimi yazılı taahhüt edilir.',
+        text: 'Daire ve villa büyüklüğüne bağlı olarak komple tadilat ve yenileme projeleri ortalama birkaç hafta içinde tamamlanmaktadır. Proje başında uygulama takvimi karşılıklı olarak belirlenir.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Tadilat öncesi yerinde keşif ve 3D mimari projelendirme yapıyor musunuz?',
+      name: 'Tadilat öncesi yerinde keşif yapıyor musunuz?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Evet, İstanbul\'un tüm ilçelerinde yerinde keşif gerçekleştiriyor, ihtiyaçlarınıza özel 3D mimari görselleştirme ve detaylı maliyet analizi sunuyoruz.',
+        text: 'Evet, İstanbul\'un tüm ilçelerinde yerinde keşif gerçekleştiriyor, ihtiyaçlarınıza ve mekanınıza uygun çözümler ile detaylı maliyet planlaması sunuyoruz.',
       },
     },
     {
@@ -492,15 +492,15 @@ const faqSchema = {
       name: 'Hangi tadilat ve dekorasyon hizmetlerini sunuyorsunuz?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Mutfak ve banyo renovasyonu, salon yenileme, lüks iç mimari tasarım, boya badana, alçıpan asma tavan, seramik/fayans döşeme, parke kaplama, elektrik/su tesisatı ve akıllı ev sistemleri hizmetlerini uzman mimari ve teknik denetimde sunuyoruz.',
+        text: 'Mutfak ve banyo yenileme, salon tadilatı, boya badana, alçıpan ve asma tavan, seramik ve fayans döşeme, parke kaplama, elektrik ve su tesisatı gibi tüm tadilat ve dekorasyon ihtiyaçlarınızda anahtar teslim çözümler sunuyoruz.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Yapılan tadilat ve renovasyon işlerinde garanti veriyor musunuz?',
+      name: 'Yapılan tadilat ve yenileme işlerinde kalite nasıl sağlanır?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Tüm uygulamalarımızda 1. sınıf sertifikalı malzemeler kullanılır ve işçilik dahil tüm anahtar teslim tadilat projelerimiz resmi sözleşmeyle garanti altına alınır.',
+        text: 'Tüm uygulamalarımızda kaliteli ve dayanıklı malzemeler tercih edilir, işçilik ve uygulama süreçleri titizlikle takip edilerek işin her aşamasında müşteri memnuniyeti ve güven ön planda tutulur.',
       },
     },
     {
@@ -508,7 +508,7 @@ const faqSchema = {
       name: 'Tadilat maliyeti ve bütçesi nasıl belirlenir?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Keşif sonrası kullanılacak malzeme kalitesi, metrekare ve yapılacak işlerin listesi çıkarılarak şeffaf bütçe garantili sabit fiyat teklifi hazırlanır. Sürpriz maliyetler oluşmaz.',
+        text: 'Yerinde keşif sonrasında mekanın büyüklüğü, tercih edilen malzeme seçenekleri ve yapılacak işlerin kapsamı doğrultusunda şeffaf ve bütçenize uygun bir fiyatlandırma sunulur.',
       },
     },
   ],
