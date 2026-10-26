@@ -75,18 +75,19 @@ export default function Hero() {
           <button
             type="button"
             onClick={() => triggerPhoneCall()}
-            className="group flex items-center gap-2.5 mb-6 cursor-pointer focus:outline-none"
+            className="group inline-flex items-center gap-3 mb-6 cursor-pointer focus:outline-none"
             title="Aramak için tıklayın"
+            aria-label={`${t('hero.discoveryLine247')}: ${getDisplayPhone()}`}
           >
-            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-amber-500/20 border border-amber-500/30 shrink-0 group-hover:bg-amber-500/30 transition-colors">
-              <svg className="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 24 24">
+            <span className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-amber-500/20 border border-amber-500/30 shrink-0 group-hover:bg-amber-500/40 transition-colors">
+              <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-amber-400" viewBox="0 0 24 24">
                 <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
               </svg>
             </span>
-            <span className="font-mono text-sm font-bold text-white/80 group-hover:text-amber-400 transition-colors tracking-widest" dir="ltr">
+            <span className="font-mono text-2xl sm:text-3xl font-extrabold text-amber-400 group-hover:text-amber-300 transition-colors tracking-wider" dir="ltr">
               {getDisplayPhone()}
             </span>
-            <span className="text-white/40 text-xs">· {t('hero.discoveryLine247')}</span>
+            <span className="hidden sm:inline-block text-white/60 text-xs sm:text-sm font-medium">· {t('hero.discoveryLine247')}</span>
           </button>
 
           {/* Headline */}

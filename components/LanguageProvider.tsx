@@ -150,9 +150,9 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.guaranteeSubtitle': 'Şeffaf Sabit Fiyat Güvencesi',
     'contact.guaranteeDetail': 'Kaliteli işçilik ve güvenilir anahtar teslim çözümler',
 
-        'overview.footer': 'Tek bir odanın yenilenmesinden tüm yapının anahtar teslim renovasyonuna kadar, projelerinizi en yüksek kalite ve profesyonel disiplinle hayata geçiriyoruz. Keşif ve detaylı görüşme için bizimle iletişime geçebilirsiniz.',
+    'overview.footer': 'Tek bir odanın yenilenmesinden tüm yapının anahtar teslim renovasyonuna kadar, projelerinizi en yüksek kalite ve profesyonel disiplinle hayata geçiriyoruz. Keşif ve detaylı görüşme için bizimle iletişime geçebilirsiniz.',
 
-// Footer
+    // Footer
     'footer.description': 'Yılların deneyimi ile İstanbul\'da inşaat, renovasyon, dekorasyon, tesisat ve akıllı ev sistemleri hizmetleri sunuyoruz. Evinizi, iş yerinizi veya ticari alanlarınızı modern standartlara uygun şekilde dönüştürüyoruz. Kaliteli malzemeler, profesyonel işçilik ve zamanında teslimat garantisi ile müşteri memnuniyetini ön planda tutuyoruz.',
     'footer.copyright': '© 2026 Ber Tadilat. Tüm hakları saklıdır.',
 
@@ -308,7 +308,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.districts.title': 'İstanbul’un Tüm İlçelerinde Yerinde Keşif & Anahtar Teslim Uygulama',
     'contact.districts.desc': 'Kadıköy, Beşiktaş, Sarıyer, Bakırköy, Ataşehir, Üsküdar, Şişli, Beyoğlu, Maltepe başta olmak üzere İstanbul\'un tüm ilçelerinde anahtar teslim tadilat ve dekorasyon hizmeti veriyoruz.',
   },
-  
+
   en: {
     // Navigation
     'nav.home': 'Home',
@@ -445,9 +445,9 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.guaranteeSubtitle': 'Transparent Fixed-Price Assurance',
     'contact.guaranteeDetail': 'Turnkey solutions with quality workmanship and dependability',
 
-        'overview.footer': 'From a single-room renovation to full-scale turnkey villa and commercial projects, we execute every detail with superior quality and professional discipline. Contact us today to discuss your project.',
+    'overview.footer': 'From a single-room renovation to full-scale turnkey villa and commercial projects, we execute every detail with superior quality and professional discipline. Contact us today to discuss your project.',
 
-// Footer
+    // Footer
     'footer.description': 'With extensive experience in Istanbul, we deliver premium turnkey renovation and interior design projects for high-end residential and commercial clients. Architecturally supervised, brand-guaranteed, transparent budget, your complete project partner.',
     'footer.copyright': '© 2026 Ber Tadilat. All rights reserved.',
 
@@ -603,7 +603,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.districts.title': 'On-Site Survey & Turnkey Renovation Across All Districts of Istanbul',
     'contact.districts.desc': 'We serve across all districts of Istanbul, particularly in Kadıköy, Beşiktaş, Sarıyer, Bakırköy, Ataşehir, Üsküdar, Şişli, Beyoğlu, and Maltepe.',
   },
-  
+
   ar: {
     // Navigation
     'nav.home': 'الرئيسية',
@@ -934,7 +934,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.districts.title': 'معاينة ميدانية وتنفيذ تسليم مفتاح في جميع أحياء ومناطق إسطنبول',
     'contact.districts.desc': 'نحن في خدمتكم في كافة مناطق إسطنبول، وخاصة في قاضي كوي، بشكتاش، ساريير، باكركوي، أتاشهير، أوسكودار، شيشلي، بيوغلو، ومالتبه.',
   },
-  
+
   fa: {
     // Navigation
     'nav.home': 'صفحه اصلی',
@@ -1269,7 +1269,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         if (urlLang && (urlLang === 'tr' || urlLang === 'en' || urlLang === 'ar' || urlLang === 'fa')) {
           initialLang = urlLang
         }
-      } catch (e) {}
+      } catch (e) { }
     }
 
     if (!initialLang && typeof localStorage !== 'undefined') {
@@ -1278,14 +1278,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         if (saved && (saved === 'tr' || saved === 'en' || saved === 'ar' || saved === 'fa')) {
           initialLang = saved
         }
-      } catch (e) {}
+      } catch (e) { }
     }
 
     if (initialLang) {
       setLanguage(initialLang)
       try {
         localStorage.setItem('language', initialLang)
-      } catch (e) {}
+      } catch (e) { }
     }
 
     // Clean URL so ?lang= or #hash is never visible in address bar
