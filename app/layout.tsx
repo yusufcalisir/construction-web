@@ -91,15 +91,15 @@ export const metadata: Metadata = {
   // Favicon
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
-      { url: '/favicon/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
-      { url: '/favicon/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon.ico?v=2', sizes: 'any' },
+      { url: '/favicon/favicon-48x48.png?v=2', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon/favicon-96x96.png?v=2', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon/favicon-192x192.png?v=2', sizes: '192x192', type: 'image/png' },
     ],
     apple: [
-      { url: '/favicon/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/favicon/apple-touch-icon.png?v=2', sizes: '180x180', type: 'image/png' },
     ],
-    shortcut: '/favicon/favicon-192x192.png',
+    shortcut: '/favicon/favicon-192x192.png?v=2',
   },
   
   // Robots
@@ -233,7 +233,7 @@ const localBusinessSchema = {
   ],
   priceRange: '₺₺₺',
   image: [`${baseUrl}/og-image.jpg`],
-  logo: `${baseUrl}/favicon/ber-tadilat-gold.png`,
+  logo: `${baseUrl}/favicon/ber-tadilat-gold.png?v=2`,
   sameAs: [
     'https://www.instagram.com/berdekorasyontadilat/',
   ],
@@ -388,7 +388,7 @@ const organizationSchema = {
   '@id': `${baseUrl}#organization`,
   name: 'Ber Tadilat',
   url: baseUrl,
-  logo: `${baseUrl}/favicon/ber-tadilat-gold.png`,
+  logo: `${baseUrl}/favicon/ber-tadilat-gold.png?v=2`,
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'info@bertadilat.com',
@@ -545,11 +545,11 @@ export default function RootLayout({
         />
         
         {/* Favicon Links for Google Search Snippet and Browsers */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-48x48.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicon/favicon-192x192.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-48x48.png?v=2" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png?v=2" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon/favicon-192x192.png?v=2" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=2" />
         
         {/* Additional SEO Meta Tags */}
         <meta name="mobile-web-app-capable" content="yes" />

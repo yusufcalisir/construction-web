@@ -116,7 +116,7 @@ export default function Footer() {
             {t('footer.copyright')}
           </p>
           <img 
-            src="/favicon/ber-tadilat-gold.png" 
+            src="/favicon/ber-tadilat-gold.png?v=2" 
             alt="Ber Tadilat" 
             className="w-5 h-5 rounded-full opacity-60 hover:opacity-100 transition-opacity duration-300 shrink-0"
           />

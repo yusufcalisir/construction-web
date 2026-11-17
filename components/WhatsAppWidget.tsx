@@ -149,10 +149,11 @@ export default function WhatsAppWidget() {
           <div className="bg-[#075E54] px-4 py-3 flex items-center gap-3">
             <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-white/20 flex items-center justify-center">
               <Image
-                src="/logo/wp-logo.jpeg"
+                src="/logo/wp-logo.jpeg?v=2"
                 alt="Ber Tadilat"
                 width={40}
                 height={40}
+                unoptimized
                 className="w-full h-full object-cover"
               />
             </div>
