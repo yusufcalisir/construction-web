@@ -20,6 +20,13 @@ export function getRawPhone(): string {
 }
 
 /**
+ * Returns tel: href string for Click URL-compatible call links
+ */
+export function getPhoneHref(): string {
+  return `tel:${getRawPhone()}`;
+}
+
+/**
  * Returns formatted phone string for display (0545 825 94 95)
  */
 export function getDisplayPhone(): string {

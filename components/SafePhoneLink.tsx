@@ -2,9 +2,8 @@
 
 import React, { useState } from 'react'
 import {
-  getRawPhone,
   getDisplayPhone,
-  triggerPhoneCall,
+  getPhoneHref,
   copyPhoneNumber,
 } from '@/lib/safeContact'
 import { useLanguage } from './LanguageProvider'
@@ -43,12 +42,11 @@ export default function SafePhoneLink({
     }
   }
 
-  // 1. Icon-only Button (For Navbar & Headers)
+  // 1. Icon-only Link (For Navbar & Headers)
   if (variant === 'icon-button') {
     return (
-      <button
-        type="button"
-        onClick={() => triggerPhoneCall()}
+      <a
+        href={getPhoneHref()}
         className={className}
         aria-label={ariaLabel || t('contact.callNow')}
         title={t('contact.callNow')}
@@ -67,16 +65,15 @@ export default function SafePhoneLink({
             d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
           />
         </svg>
-      </button>
+      </a>
     )
   }
 
-  // 2. Full Action Button
+  // 2. Full Action Link
   if (variant === 'button') {
     return (
-      <button
-        type="button"
-        onClick={() => triggerPhoneCall()}
+      <a
+        href={getPhoneHref()}
         className={buttonClassName || className}
         aria-label={ariaLabel || t('contact.callNow')}
       >
@@ -95,7 +92,7 @@ export default function SafePhoneLink({
           />
         </svg>
         <span>{t('contact.callNow')}</span>
-      </button>
+      </a>
     )
   }
 
@@ -104,10 +101,9 @@ export default function SafePhoneLink({
 
   return (
     <div className={`inline-flex items-center gap-3 ${className}`}>
-      {/* Phone Number Display / Direct Call Trigger */}
-      <button
-        type="button"
-        onClick={() => triggerPhoneCall()}
+      {/* Phone Number Display / Direct Call Link */}
+      <a
+        href={getPhoneHref()}
         className={`group text-left rtl:text-right font-bold tracking-wide transition-all duration-300 focus:outline-none flex items-center gap-2 cursor-pointer ${
           isDark
             ? 'text-stone-200 hover:text-amber-400'
@@ -118,7 +114,7 @@ export default function SafePhoneLink({
         <span className="font-mono tracking-wider text-inherit whitespace-nowrap" dir="ltr">
           {getDisplayPhone()}
         </span>
-      </button>
+      </a>
 
       {/* Copy Button */}
       {showCopy && (

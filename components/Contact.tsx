@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { useLanguage } from './LanguageProvider'
 import SafeWhatsAppButton from './SafeWhatsAppButton'
-import { triggerPhoneCall, getDisplayPhone, copyPhoneNumber } from '@/lib/safeContact'
+import { getPhoneHref, getDisplayPhone, copyPhoneNumber } from '@/lib/safeContact'
 
 export default function Contact() {
   const { t } = useLanguage()
@@ -105,15 +105,15 @@ export default function Contact() {
 
               {/* Large Clickable Phone Number + Copy */}
               <div className="flex items-center gap-3 mb-4">
-                <button
-                  type="button"
-                  onClick={() => triggerPhoneCall()}
+                <a
+                  id="contact-phone-link"
+                  href={getPhoneHref()}
                   className="font-mono text-2xl sm:text-3xl font-extrabold text-amber-400 hover:text-amber-300 tracking-wider transition-colors focus:outline-none cursor-pointer"
                   dir="ltr"
                   title={t('contact.clickToCall')}
                 >
                   {getDisplayPhone()}
-                </button>
+                </a>
                 <button
                   type="button"
                   onClick={handleCopy}
@@ -141,17 +141,16 @@ export default function Contact() {
               </p>
             </div>
 
-            <button
-              type="button"
+            <a
               id="contact-call-btn"
-              onClick={() => triggerPhoneCall()}
+              href={getPhoneHref()}
               className="w-full py-4 px-6 rounded-2xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-extrabold text-sm tracking-wide uppercase flex items-center justify-center gap-2.5 shadow-xl shadow-amber-500/25 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                 <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
               </svg>
               <span>{t('contact.callNow')}</span>
-            </button>
+            </a>
           </div>
 
         </div>

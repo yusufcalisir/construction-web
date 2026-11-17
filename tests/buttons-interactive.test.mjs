@@ -9,15 +9,22 @@ test('Buttons: All interactive CTA buttons have accessible labels and safe click
   const footerContent = fs.readFileSync('components/Footer.tsx', 'utf8')
   const widgetContent = fs.readFileSync('components/WhatsAppWidget.tsx', 'utf8')
   const contactContent = fs.readFileSync('components/Contact.tsx', 'utf8')
+  const faqContent = fs.readFileSync('components/FAQ.tsx', 'utf8')
+  const safeWhatsAppContent = fs.readFileSync('components/SafeWhatsAppButton.tsx', 'utf8')
+  const safePhoneContent = fs.readFileSync('components/SafePhoneLink.tsx', 'utf8')
+
+  // Click URL (<a> with href) compliance for GTM tracking
+  assert.ok(safeWhatsAppContent.includes('<a') && safeWhatsAppContent.includes('href={getWhatsAppUrl(message)}'), 'SafeWhatsAppButton must render an anchor with Click URL href')
+  assert.ok(safePhoneContent.includes('<a') && safePhoneContent.includes('href={getPhoneHref()}'), 'SafePhoneLink must render anchors with tel: Click URL href')
 
   // Hero Buttons
-  assert.ok(heroContent.includes('triggerPhoneCall'), 'Hero call button must use triggerPhoneCall')
+  assert.ok(heroContent.includes('href={getPhoneHref()}'), 'Hero call buttons must expose tel: Click URL href')
   assert.ok(heroContent.includes('SafeWhatsAppButton'), 'Hero WhatsApp button must use SafeWhatsAppButton')
   assert.ok(heroContent.includes('id="hero-call-btn"'), 'Hero call button must have descriptive ID')
   assert.ok(heroContent.includes('id="hero-whatsapp-btn"'), 'Hero WhatsApp button must have descriptive ID')
 
   // Navbar Buttons
-  assert.ok(navbarContent.includes('triggerPhoneCall'), 'Navbar must trigger phone call safely')
+  assert.ok(navbarContent.includes('href={getPhoneHref()}'), 'Navbar call links must expose tel: Click URL href')
   assert.ok(navbarContent.includes('aria-label="Dil seçenekleri"'), 'Language switcher must have accessible group label')
   assert.ok(navbarContent.includes('aria-label="Toggle menu"'), 'Mobile menu toggle button must have aria-label')
   assert.ok(navbarContent.includes('aria-expanded={isMobileMenuOpen}'), 'Mobile menu toggle must declare aria-expanded state')
@@ -28,11 +35,15 @@ test('Buttons: All interactive CTA buttons have accessible labels and safe click
 
   // WhatsApp Widget Floating Buttons
   assert.ok(widgetContent.includes('id="whatsapp-floating-button"'), 'Floating WhatsApp button must have ID')
+  assert.ok(widgetContent.includes('href={getPhoneHref()}'), 'Floating call button must expose tel: Click URL href')
+  assert.ok(widgetContent.includes('href={getWhatsAppUrl()}'), 'Floating widget connect link must expose wa.me Click URL href')
   assert.ok(widgetContent.includes('dir="ltr"'), 'Floating action buttons container must preserve LTR order')
 
-  // Contact Direct Action Buttons
+  // Contact & FAQ Direct Action Buttons
   assert.ok(contactContent.includes('id="contact-whatsapp-btn"'), 'Contact section must have WhatsApp CTA button with ID')
   assert.ok(contactContent.includes('id="contact-call-btn"'), 'Contact section must have Call CTA button with ID')
+  assert.ok(contactContent.includes('href={getPhoneHref()}'), 'Contact call links must expose tel: Click URL href')
+  assert.ok(faqContent.includes('href={getPhoneHref()}'), 'FAQ call button must expose tel: Click URL href')
 })
 
 test('Buttons: No button element is missing a type attribute or has an unhandled click action', () => {

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useLanguage } from './LanguageProvider'
 import SafeWhatsAppButton from './SafeWhatsAppButton'
-import { triggerPhoneCall, getDisplayPhone } from '@/lib/safeContact'
+import { getPhoneHref, getDisplayPhone } from '@/lib/safeContact'
 
 const backgroundImages = [
   {
@@ -72,9 +72,9 @@ export default function Hero() {
         <div className="w-full max-w-2xl mx-auto px-5 sm:px-6 relative z-[2] flex flex-col items-center text-center pt-28 pb-16 lg:pt-0 lg:pb-0">
 
           {/* Phone number - top of hero */}
-          <button
-            type="button"
-            onClick={() => triggerPhoneCall()}
+          <a
+            id="hero-phone-link"
+            href={getPhoneHref()}
             className="group inline-flex items-center gap-3 mb-6 cursor-pointer focus:outline-none"
             title="Aramak için tıklayın"
             aria-label={`${t('hero.discoveryLine247')}: ${getDisplayPhone()}`}
@@ -88,7 +88,7 @@ export default function Hero() {
               {getDisplayPhone()}
             </span>
             <span className="hidden sm:inline-block text-white/60 text-xs sm:text-sm font-medium">· {t('hero.discoveryLine247')}</span>
-          </button>
+          </a>
 
           {/* Headline */}
           <h1
@@ -121,17 +121,16 @@ export default function Hero() {
             </SafeWhatsAppButton>
 
             {/* Call - secondary */}
-            <button
-              type="button"
+            <a
               id="hero-call-btn"
-              onClick={() => triggerPhoneCall()}
+              href={getPhoneHref()}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl font-semibold text-[15px] bg-white/10 hover:bg-white/18 text-white border border-white/25 hover:border-white/50 backdrop-blur-sm transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] cursor-pointer"
             >
               <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
                 <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
               </svg>
               <span>{t('nav.callNow')}</span>
-            </button>
+            </a>
           </div>
 
           {/* Trust strip */}

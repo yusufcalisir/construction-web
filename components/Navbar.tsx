@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from './LanguageProvider'
 import SafePhoneLink from './SafePhoneLink'
 import SafeWhatsAppButton from './SafeWhatsAppButton'
-import { triggerPhoneCall } from '@/lib/safeContact'
+import { getPhoneHref } from '@/lib/safeContact'
 export default function Navbar() {
   const { t, language, setLanguage } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
@@ -255,9 +255,9 @@ export default function Navbar() {
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center gap-2 xl:gap-2.5 shrink-0">
               {/* Free Discovery Call CTA ("Hemen Ara") */}
-              <button
-                type="button"
-                onClick={() => triggerPhoneCall()}
+              <a
+                id="navbar-call-btn"
+                href={getPhoneHref()}
                 className="inline-flex items-center gap-1.5 px-3.5 xl:px-4 py-2 xl:py-2.5 rounded-full font-bold text-xs uppercase tracking-wider whitespace-nowrap shrink-0 transition-all duration-300 bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-md shadow-amber-500/25 hover:shadow-lg hover:shadow-amber-500/35 hover:scale-105 active:scale-95 cursor-pointer"
                 title={t('nav.callNow')}
               >
@@ -265,7 +265,7 @@ export default function Navbar() {
                   <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
                 </svg>
                 <span className="whitespace-nowrap font-extrabold">{t('nav.callNow')}</span>
-              </button>
+              </a>
               
               {/* Vertical separator */}
               <span className={`h-4 w-[1px] shrink-0 transition-colors duration-500 ${isDark ? 'bg-white/20' : 'bg-stone-300'}`} />
@@ -449,19 +449,17 @@ export default function Navbar() {
                   <span>WhatsApp</span>
                 </SafeWhatsAppButton>
 
-                <button
-                  type="button"
-                  onClick={() => {
-                    setIsMobileMenuOpen(false)
-                    triggerPhoneCall()
-                  }}
+                <a
+                  id="mobile-menu-call-btn"
+                  href={getPhoneHref()}
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className="flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-extrabold text-xs tracking-wider uppercase transition-all shadow-lg shadow-amber-500/20 active:scale-95 cursor-pointer"
                 >
                   <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
                     <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
                   </svg>
                   <span>{t('nav.callNow')}</span>
-                </button>
+                </a>
               </div>
 
               {/* Minimal Language Switcher Segmented Control */}

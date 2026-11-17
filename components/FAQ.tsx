@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { useLanguage } from './LanguageProvider'
 import SafeWhatsAppButton from './SafeWhatsAppButton'
-import { triggerPhoneCall } from '@/lib/safeContact'
+import { getPhoneHref } from '@/lib/safeContact'
 
 const FAQ_ITEMS = [
   { q: 'faq.q1', a: 'faq.a1' },
@@ -134,17 +134,16 @@ export default function FAQ() {
               </svg>
               <span>{t('faq.btnWhatsApp')}</span>
             </SafeWhatsAppButton>
-            <button
-              type="button"
+            <a
               id="faq-call-btn"
-              onClick={() => triggerPhoneCall()}
+              href={getPhoneHref()}
               className="px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 text-xs sm:text-sm font-bold flex items-center gap-2 shadow-lg shadow-amber-500/20 transition-all hover:scale-105 cursor-pointer"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                 <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.4-1.1-.6-2.3-.6-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
               </svg>
               <span>{t('faq.btnCall')}</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>

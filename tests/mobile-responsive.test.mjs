@@ -24,7 +24,7 @@ test('Mobile Responsive: Navbar mobile menu handles state, scroll lock, and all 
 
   // Check mobile bottom action pair (WhatsApp and Call)
   assert.ok(navbarContent.includes('SafeWhatsAppButton'), 'Mobile menu must include WhatsApp action')
-  assert.ok(navbarContent.includes('triggerPhoneCall()'), 'Mobile menu must include Call action')
+  assert.ok(navbarContent.includes('href={getPhoneHref()}'), 'Mobile menu must include Call Click URL action')
 })
 
 test('Mobile Responsive: Hero and Services sections use responsive flex/grid wrappers', () => {

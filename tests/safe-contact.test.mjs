@@ -3,6 +3,7 @@ import assert from 'node:assert'
 import fs from 'node:fs'
 import {
   getRawPhone,
+  getPhoneHref,
   getDisplayPhone,
   getWhatsAppUrl,
   redirectWhatsApp,
@@ -14,6 +15,11 @@ test('SafeContact: getRawPhone returns valid E.164 Turkish phone number', () => 
   assert.strictEqual(typeof raw, 'string')
   assert.strictEqual(raw, '+905458259495')
   assert.match(raw, /^\+90[0-9]{10}$/)
+})
+
+test('SafeContact: getPhoneHref returns valid tel: URL for Click URL tracking', () => {
+  const href = getPhoneHref()
+  assert.strictEqual(href, 'tel:+905458259495')
 })
 
 test('SafeContact: getDisplayPhone returns properly formatted phone number', () => {

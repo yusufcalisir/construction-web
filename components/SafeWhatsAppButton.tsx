@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { openWhatsApp } from '@/lib/safeContact'
+import { getWhatsAppUrl } from '@/lib/safeContact'
 
 interface SafeWhatsAppButtonProps {
   children?: React.ReactNode
@@ -10,7 +10,7 @@ interface SafeWhatsAppButtonProps {
   ariaLabel?: string
   title?: string
   id?: string
-  onClick?: (e?: React.MouseEvent) => void
+  onClick?: (e?: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
 export default function SafeWhatsAppButton({
@@ -22,23 +22,18 @@ export default function SafeWhatsAppButton({
   id,
   onClick,
 }: SafeWhatsAppButtonProps) {
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    if (onClick) onClick(e)
-    openWhatsApp(message)
-  }
-
   return (
-    <button
-      type="button"
+    <a
+      href={getWhatsAppUrl(message)}
+      target="_blank"
+      rel="noopener noreferrer"
       id={id}
-      onClick={handleClick}
+      onClick={onClick}
       className={className}
       aria-label={ariaLabel}
       title={title}
     >
       {children}
-    </button>
+    </a>
   )
 }
